@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input[type="url"],
+        input[type="file"],
+        select {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result.error {
+            border-left-color: #f44336;
+            background: #ffebee;
+        }
+
+        .video-info {
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-row {
+            display: flex;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 120px;
+            color: #555;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        .status.processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status.completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .action-buttons button {
+            flex: 1;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .tool-card input,
+        .tool-card select,
+        .tool-card button {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        video {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .platforms {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .platform-tag {
+            padding: 5px 10px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Downloader & Tools</h1>
+        <p class="subtitle">Download videos from multiple platforms in high quality</p>
+
+        <div class="section">
+            <h2 class="section-title">Download Video</h2>
+            <div class="platforms">
+                <span class="platform-tag">YouTube</span>
+                <span class="platform-tag">TikTok</span>
+                <span class="platform-tag">Facebook</span>
+                <span class="platform-tag">Instagram</span>
+                <span class="platform-tag">Twitter</span>
+            </div>
+            <div class="input-group">
+                <input type="url" id="videoUrl" placeholder="Enter video URL">
+                <button onclick="downloadVideo()" id="downloadBtn">Download</button>
+            </div>
+            <div id="videoResult" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Media Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h3>Image to ICO</h3>
+                    <input type="file" id="icoFile" accept="image/*">
+                    <button onclick="convertToICO()">Convert</button>
+                    <div id="icoResult" class="result"></div>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Video to GIF</h3>
+                    <input type="file" id="gifFile" accept="video/*">
+                    <button onclick="convertToGIF()">Convert</button>
+                    <div id="gifResult" class="result"></div>
+                </div>
+
+                <div class="tool-card">
+                    <h3>Audio Converter</h3>
+                    <input type="file" id="audioFile" accept="audio/*">
+                    <select id="audioFormat">
+                        <option value="mp3">MP3</option>
+                        <option value="wav">WAV</option>
+                        <option value="aac">AAC</option>
+                        <option value="flac">FLAC</option>
+                        <option value="ogg">OGG</option>
+                    </select>
+                    <button onclick="convertAudio()">Convert</button>
+                    <div id="audioResult" class="result"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://m.snd.qzz.io';
+        let checkInterval;
+
+        async function downloadVideo() {
+            const url = document.getElementById('videoUrl').value;
+            if (!url) {
+                alert('Please enter video URL');
+                return;
+            }
+
+            const btn = document.getElementById('downloadBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span>Processing...';
+
+            try {
+                const response = await fetch(`${API_URL}/api/video?url=${encodeURIComponent(url)}`);
+                const data = await response.json();
+
+                if (data.code) {
+                    showVideoStatus(data);
+                    startChecking(data.code);
+                }
+            } catch (error) {
+                showError('videoResult', 'Error: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = 'Download';
+            }
+        }
+
+        function startChecking(code) {
+            if (checkInterval) clearInterval(checkInterval);
+
+            checkInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`${API_URL}/api/videos/code=${code}`);
+                    const data = await response.json();
+
+                    showVideoStatus(data);
+
+                    if (data.status === 'completed' || data.status === 'error') {
+                        clearInterval(checkInterval);
+                    }
+                } catch (error) {
+                    console.error('Error checking status:', error);
+                }
+            }, 2000);
+        }
+
+        function showVideoStatus(data) {
+            const result = document.getElementById('videoResult');
+            result.classList.add('show');
+            result.classList.remove('error');
+
+            let content = '<div class="video-info">';
+
+            if (data.title) {
+                content += `<div class="info-row"><span class="info-label">Title:</span><span class="info-value">${data.title}</span></div>`;
+            }
+
+            content += `<div class="info-row"><span class="info-label">Status:</span><span class="info-value"><span class="status ${data.status}">${getStatusText(data.status)}</span></span></div>`;
+
+            if (data.duration) {
+                content += `<div class="info-row"><span class="info-label">Duration:</span><span class="info-value">${data.duration}</span></div>`;
+            }
+
+            if (data.quality) {
+                content += `<div class="info-row"><span class="info-label">Quality:</span><span class="info-value">${data.quality}</span></div>`;
+            }
+
+            content += '</div>';
+
+            if (data.status === 'completed') {
+                content += `
+                    <div class="action-buttons">
+                        <button onclick="window.open('${API_URL}${data.download_url}', '_blank')">Download File</button>
+                        <button onclick="previewVideo('${API_URL}${data.stream_url}')">Preview Video</button>
+                    </div>
+                    <div id="videoPreview"></div>
+                `;
+            }
+
+            result.innerHTML = content;
+        }
+
+        function previewVideo(url) {
+            const preview = document.getElementById('videoPreview');
+            preview.innerHTML = `<video controls src="${url}"></video>`;
+        }
+
+        function getStatusText(status) {
+            const texts = {
+                'processing': 'Processing',
+                'downloading': 'Downloading',
+                'completed': 'Completed',
+                'error': 'Error'
+            };
+            return texts[status] || status;
+        }
+
+        function showError(resultId, message) {
+            const result = document.getElementById(resultId);
+            result.classList.add('show', 'error');
+            result.innerHTML = `<strong>Error:</strong> ${message}`;
+        }
+
+        async function uploadAndConvert(endpoint, fileInput, resultId, format = null) {
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file');
+                return;
+            }
+
+            const result = document.getElementById(resultId);
+            result.classList.add('show');
+            result.classList.remove('error');
+            result.innerHTML = '<span class="loading"></span>Processing...';
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const uploadResponse = await fetch(`${API_URL}/api/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!uploadResponse.ok) {
+                    throw new Error('Upload failed');
+                }
+
+                const uploadData = await uploadResponse.json();
+
+                const requestBody = {
+                    file_url: uploadData.url
+                };
+
+                if (format) {
+                    requestBody.format = format;
+                }
+
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+
+                const data = await response.json();
+
+                if (data.download_url) {
+                    result.innerHTML = `
+                        <p><strong>Status:</strong> <span class="status completed">Completed</span></p>
+                        <button onclick="window.open('${API_URL}${data.download_url}', '_blank')" style="width: 100%; margin-top: 10px;">Download File</button>
+                    `;
+                } else {
+                    showError(resultId, 'Conversion failed');
+                }
+            } catch (error) {
+                showError(resultId, error.message);
+            }
+        }
+
+        function convertToICO() {
+            uploadAndConvert('/api/tool/image-to-ico', document.getElementById('icoFile'), 'icoResult');
+        }
+
+        function convertToGIF() {
+            uploadAndConvert('/api/tool/video-to-gif', document.getElementById('gifFile'), 'gifResult');
+        }
+
+        function convertAudio() {
+            const format = document.getElementById('audioFormat').value;
+            uploadAndConvert('/api/tool/audio-convert', document.getElementById('audioFile'), 'audioResult', format);
+        }
+    </script>
+</body>
+</html>
