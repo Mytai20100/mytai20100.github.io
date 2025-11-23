@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaPro - Video Downloader & Converter</title>
+    <title>SND - Video Downloader & Media Tools</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -15,15 +16,17 @@
         :root {
             --primary: #3b82f6;
             --primary-dark: #2563eb;
+            --primary-light: #60a5fa;
             --success: #10b981;
             --warning: #f59e0b;
             --error: #ef4444;
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #0f172a;
-            --text-light: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-tertiary: #334155;
+            --text: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+            --shadow: rgba(0, 0, 0, 0.3);
         }
 
         body {
@@ -31,56 +34,171 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            padding: 40px 0 30px;
-        }
-
-        header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 8px;
+        /* Loading Skeleton */
+        .skeleton-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--bg);
+            z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        header p {
-            color: var(--text-light);
-            font-size: 15px;
+        .skeleton-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        .skeleton-text {
+            width: 200px;
+            height: 24px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, var(--bg-secondary) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
+            object-fit: cover;
         }
 
-        /* Main Card */
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-tagline {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Dock Menu */
+        .dock {
+            display: flex;
+            gap: 8px;
+            background: var(--bg-tertiary);
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .dock-item {
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dock-item:hover {
+            background: var(--bg-secondary);
+            color: var(--text);
+        }
+
+        .dock-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 30px;
+        }
+
+        /* Card */
         .card {
-            background: var(--surface);
+            background: var(--bg-secondary);
             border-radius: 16px;
-            padding: 32px;
-            box-shadow: var(--shadow);
+            padding: 30px;
             border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .card-header {
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Section Content */
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Input Group */
@@ -90,30 +208,39 @@
             margin-bottom: 20px;
         }
 
-        input[type="url"] {
+        input[type="url"],
+        input[type="text"],
+        input[type="file"],
+        select {
             flex: 1;
             padding: 14px 16px;
+            background: var(--bg-tertiary);
             border: 2px solid var(--border);
             border-radius: 10px;
-            font-size: 15px;
+            color: var(--text);
+            font-size: 14px;
             font-family: inherit;
             transition: all 0.2s;
-            background: var(--bg);
         }
 
-        input:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: var(--primary);
-            background: white;
         }
 
+        input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Buttons */
         .btn {
             padding: 14px 24px;
             background: var(--primary);
             color: white;
             border: none;
             border-radius: 10px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
@@ -129,32 +256,39 @@
         }
 
         .btn:disabled {
-            background: var(--border);
+            background: var(--bg-tertiary);
             cursor: not-allowed;
             transform: none;
         }
 
         .btn-secondary {
-            background: var(--bg);
+            background: var(--bg-tertiary);
             color: var(--text);
-            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
             background: var(--border);
         }
 
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
         /* Quality Options */
-        .quality-options {
+        .quality-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 10px;
             margin-bottom: 20px;
         }
 
-        .quality-btn {
-            padding: 12px;
-            background: var(--bg);
+        .quality-option {
+            padding: 14px;
+            background: var(--bg-tertiary);
             border: 2px solid var(--border);
             border-radius: 10px;
             cursor: pointer;
@@ -164,32 +298,35 @@
             font-weight: 500;
         }
 
-        .quality-btn:hover {
+        .quality-option:hover {
             border-color: var(--primary);
         }
 
-        .quality-btn.active {
+        .quality-option.active {
             background: var(--primary);
-            color: white;
             border-color: var(--primary);
+            color: white;
         }
 
-        /* Format Options */
-        .format-options {
+        /* Format Toggle */
+        .format-toggle {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
         }
 
         .format-btn {
-            padding: 10px 20px;
-            background: var(--bg);
+            flex: 1;
+            padding: 12px;
+            background: var(--bg-tertiary);
             border: 2px solid var(--border);
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
+            text-align: center;
             font-size: 14px;
             font-weight: 500;
+            color: var(--text);
         }
 
         .format-btn:hover {
@@ -198,43 +335,47 @@
 
         .format-btn.active {
             background: var(--primary);
-            color: white;
             border-color: var(--primary);
+            color: white;
         }
 
         /* Status */
-        .status {
+        .status-box {
             padding: 16px;
             border-radius: 10px;
             margin-top: 20px;
             display: none;
             align-items: center;
             gap: 12px;
+            border-left: 4px solid;
         }
 
-        .status.show {
+        .status-box.show {
             display: flex;
         }
 
-        .status.processing {
-            background: #fef3c7;
-            color: #92400e;
+        .status-box.processing {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--warning);
+            color: var(--warning);
         }
 
-        .status.success {
-            background: #d1fae5;
-            color: #065f46;
+        .status-box.success {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--success);
+            color: var(--success);
         }
 
-        .status.error {
-            background: #fee2e2;
-            color: #991b1b;
+        .status-box.error {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--error);
+            color: var(--error);
         }
 
         .spinner {
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(0,0,0,0.1);
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.2);
             border-top-color: currentColor;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
@@ -244,11 +385,11 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Progress */
+        /* Progress Bar */
         .progress-bar {
             width: 100%;
             height: 6px;
-            background: var(--border);
+            background: var(--bg-tertiary);
             border-radius: 3px;
             overflow: hidden;
             margin-top: 12px;
@@ -256,7 +397,7 @@
 
         .progress-fill {
             height: 100%;
-            background: var(--primary);
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
             width: 0%;
             transition: width 0.3s;
         }
@@ -276,12 +417,24 @@
         }
 
         .info-label {
-            color: var(--text-light);
-            font-weight: 500;
+            color: var(--text-secondary);
         }
 
         .info-value {
             color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Cache Badge */
+        .cache-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: 600;
         }
 
@@ -293,74 +446,98 @@
             margin-top: 20px;
         }
 
-        /* Platforms */
-        .platforms {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            padding: 20px 0;
-            justify-content: center;
+        /* Tool Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .platform {
-            padding: 8px 16px;
-            background: var(--bg);
+        .tool-card {
+            background: var(--bg-tertiary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .tool-card h3 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .tool-card input,
+        .tool-card select,
+        .tool-card button {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .result-box {
+            margin-top: 16px;
+            display: none;
+        }
+
+        .result-box.show {
+            display: block;
+        }
+
+        /* Platform Pills */
+        .platform-pills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .platform-pill {
+            padding: 6px 14px;
+            background: var(--bg-tertiary);
             border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
             font-size: 13px;
-            color: var(--text-light);
+        }
+
+        .footer-content {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
-        /* Cache Info */
-        .cache-badge {
+        .github-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 12px;
-            background: #dcfce7;
-            color: #166534;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            .container {
-                padding: 16px;
-            }
-
-            header h1 {
-                font-size: 24px;
-            }
-
-            .card {
-                padding: 24px;
-            }
-
-            .input-group {
-                flex-direction: column;
-            }
-
-            .quality-options {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .github-link:hover {
+            color: var(--text);
         }
 
-        /* Toast Notification */
+        /* Toast */
         .toast {
             position: fixed;
-            top: 20px;
+            top: 90px;
             right: 20px;
-            background: white;
+            background: var(--bg-secondary);
             padding: 16px 20px;
             border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            box-shadow: 0 10px 40px var(--shadow);
+            border-left: 4px solid;
             z-index: 1000;
             animation: slideIn 0.3s;
             max-width: 400px;
@@ -378,63 +555,239 @@
         }
 
         .toast.success {
-            border-left: 4px solid var(--success);
+            border-color: var(--success);
         }
 
         .toast.error {
-            border-left: 4px solid var(--error);
+            border-color: var(--error);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 20px;
+                height: auto;
+                flex-direction: column;
+                gap: 15px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+
+            .dock {
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+            }
+
+            .dock-item {
+                padding: 10px 16px;
+                white-space: nowrap;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .quality-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>
-                <span class="logo">📹</span>
-                MediaPro
-            </h1>
-            <p>Tải video chất lượng cao từ mọi nền tảng</p>
-        </header>
+    <!-- Loading Skeleton -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-logo"></div>
+        <div class="skeleton-text"></div>
+    </div>
 
-        <div class="platforms">
-            <span class="platform">▶️ YouTube</span>
-            <span class="platform">🎵 TikTok</span>
-            <span class="platform">👍 Facebook</span>
-            <span class="platform">📷 Instagram</span>
-            <span class="platform">🐦 Twitter</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-section">
+            <img src="https://r.snd.qzz.io/Untitled.png" alt="SND Logo" class="logo">
+            <div class="brand">
+                <div class="brand-name">SND</div>
+                <div class="brand-tagline">Video Downloader & Media Tools</div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="input-group">
-                <input 
-                    type="url" 
-                    id="videoUrl" 
-                    placeholder="Dán link video vào đây..."
-                    autocomplete="off"
-                >
-                <button class="btn" onclick="fetchVideoInfo()">
-                    <span>🔍</span> Tải xuống
-                </button>
-            </div>
+        <nav class="dock">
+            <button class="dock-item active" onclick="switchSection('download')">
+                <i class="fas fa-download"></i> Download
+            </button>
+            <button class="dock-item" onclick="switchSection('convert')">
+                <i class="fas fa-exchange-alt"></i> Convert
+            </button>
+            <button class="dock-item" onclick="switchSection('tools')">
+                <i class="fas fa-tools"></i> Tools
+            </button>
+            <button class="dock-item" onclick="switchSection('history')">
+                <i class="fas fa-history"></i> History
+            </button>
+        </nav>
+    </header>
 
-            <div id="qualitySection" style="display: none;">
-                <h3 style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">Chọn chất lượng:</h3>
-                <div class="quality-options" id="qualityOptions"></div>
-            </div>
+    <div class="container">
+        <!-- Download Section -->
+        <section id="downloadSection" class="section active">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-cloud-download-alt"></i>
+                    Video Downloader
+                </div>
 
-            <div id="formatSection" style="display: none;">
-                <h3 style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">Chọn định dạng:</h3>
-                <div class="format-options">
-                    <button class="format-btn active" data-format="video">📹 Video</button>
-                    <button class="format-btn" data-format="audio">🎵 Audio</button>
+                <div class="platform-pills">
+                    <span class="platform-pill">YouTube</span>
+                    <span class="platform-pill">TikTok</span>
+                    <span class="platform-pill">Facebook</span>
+                    <span class="platform-pill">Instagram</span>
+                    <span class="platform-pill">Twitter</span>
+                    <span class="platform-pill">Vimeo</span>
+                </div>
+
+                <div class="input-group">
+                    <input type="url" id="videoUrl" placeholder="Paste video URL here..." autocomplete="off">
+                    <button class="btn" onclick="fetchVideoInfo()">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+
+                <div id="formatSection" style="display: none;">
+                    <label style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 10px;">Select Format:</label>
+                    <div class="format-toggle">
+                        <button class="format-btn active" data-format="video" onclick="selectFormat('video')">
+                            <i class="fas fa-video"></i> Video
+                        </button>
+                        <button class="format-btn" data-format="audio" onclick="selectFormat('audio')">
+                            <i class="fas fa-music"></i> Audio Only
+                        </button>
+                    </div>
+                </div>
+
+                <div id="qualitySection" style="display: none;">
+                    <label style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 10px;">Select Quality:</label>
+                    <div class="quality-grid" id="qualityGrid"></div>
+                </div>
+
+                <div id="statusBox" class="status-box"></div>
+
+                <div id="videoInfo" style="display: none;"></div>
+            </div>
+        </section>
+
+        <!-- Convert Section -->
+        <section id="convertSection" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-exchange-alt"></i>
+                    Media Converter
+                </div>
+
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h3><i class="fas fa-music"></i> Audio Converter</h3>
+                        <input type="file" id="audioFile" accept="audio/*,video/*">
+                        <select id="audioFormat">
+                            <option value="mp3">MP3</option>
+                            <option value="aac">AAC</option>
+                            <option value="wav">WAV</option>
+                            <option value="flac">FLAC</option>
+                            <option value="ogg">OGG</option>
+                            <option value="m4a">M4A</option>
+                        </select>
+                        <button class="btn" onclick="convertAudio()">
+                            <i class="fas fa-magic"></i> Convert
+                        </button>
+                        <div id="audioResult" class="result-box"></div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3><i class="fas fa-film"></i> Video to GIF</h3>
+                        <input type="file" id="gifFile" accept="video/*">
+                        <button class="btn" onclick="convertToGIF()">
+                            <i class="fas fa-magic"></i> Convert
+                        </button>
+                        <div id="gifResult" class="result-box"></div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3><i class="fas fa-compress"></i> Video Compressor</h3>
+                        <input type="file" id="compressFile" accept="video/*">
+                        <button class="btn" onclick="compressVideo()">
+                            <i class="fas fa-compress-arrows-alt"></i> Compress
+                        </button>
+                        <div id="compressResult" class="result-box"></div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div id="status" class="status"></div>
+        <!-- Tools Section -->
+        <section id="toolsSection" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-toolbox"></i>
+                    Media Tools
+                </div>
 
-            <div id="videoInfo" style="display: none;"></div>
-        </div>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h3><i class="fas fa-image"></i> Image to ICO</h3>
+                        <input type="file" id="icoFile" accept="image/*">
+                        <button class="btn" onclick="convertToICO()">
+                            <i class="fas fa-magic"></i> Convert
+                        </button>
+                        <div id="icoResult" class="result-box"></div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3><i class="fas fa-volume-up"></i> Extract Audio</h3>
+                        <input type="file" id="extractFile" accept="video/*">
+                        <select id="extractFormat">
+                            <option value="mp3">MP3</option>
+                            <option value="aac">AAC</option>
+                            <option value="wav">WAV</option>
+                        </select>
+                        <button class="btn" onclick="extractAudio()">
+                            <i class="fas fa-scissors"></i> Extract
+                        </button>
+                        <div id="extractResult" class="result-box"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="historySection" class="section">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-clock-rotate-left"></i>
+                    Download History
+                </div>
+                <div id="historyList"></div>
+            </div>
+        </section>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>SND v2.0.0</span>
+            <span>•</span>
+            <a href="https://github.com/mytai20100/mytai20100.github.io" target="_blank" class="github-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        <div>© 2024 SND. All rights reserved.</div>
+    </footer>
 
     <script>
         const API_URL = 'https://m.snd.qzz.io';
@@ -442,14 +795,37 @@
         let selectedQuality = 'best';
         let selectedFormat = 'video';
         let checkInterval = null;
+        let downloadHistory = JSON.parse(localStorage.getItem('downloadHistory') || '[]');
+
+        // Hide skeleton loader after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('skeletonLoader').classList.add('hidden');
+            }, 800);
+        });
+
+        // Switch sections
+        function switchSection(section) {
+            document.querySelectorAll('.dock-item').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(section + 'Section').classList.add('active');
+
+            if (section === 'history') {
+                displayHistory();
+            }
+        }
 
         // Toast notification
         function showToast(message, type = 'success') {
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
             toast.innerHTML = `
-                <span style="font-size: 20px;">${type === 'success' ? '✅' : '❌'}</span>
-                <span>${message}</span>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}" style="font-size: 18px;"></i>
+                    <span>${message}</span>
+                </div>
             `;
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
@@ -457,13 +833,13 @@
 
         // Show status
         function showStatus(message, type, progress = null) {
-            const status = document.getElementById('status');
-            status.className = `status ${type} show`;
+            const status = document.getElementById('statusBox');
+            status.className = `status-box ${type} show`;
             
             let icon = '';
             if (type === 'processing') icon = '<div class="spinner"></div>';
-            else if (type === 'success') icon = '✅';
-            else if (type === 'error') icon = '❌';
+            else if (type === 'success') icon = '<i class="fas fa-check-circle"></i>';
+            else if (type === 'error') icon = '<i class="fas fa-times-circle"></i>';
             
             let html = `${icon}<span>${message}</span>`;
             
@@ -474,43 +850,45 @@
             status.innerHTML = html;
         }
 
+        // Select format
+        function selectFormat(format) {
+            selectedFormat = format;
+            document.querySelectorAll('.format-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[data-format="${format}"]`).classList.add('active');
+        }
+
         // Fetch video info
         async function fetchVideoInfo() {
             const url = document.getElementById('videoUrl').value.trim();
             if (!url) {
-                showToast('Vui lòng nhập link video', 'error');
+                showToast('Please enter video URL', 'error');
                 return;
             }
 
-            showStatus('Đang phân tích video...', 'processing', 20);
+            showStatus('Analyzing video...', 'processing', 20);
             
             try {
-                const response = await fetch(`${API_URL}/api/v1/video/info?url=${encodeURIComponent(url)}`);
+                const response = await fetch(`${API_URL}/api/video?url=${encodeURIComponent(url)}`);
                 const data = await response.json();
                 
                 if (data.error) {
-                    throw new Error(data.message);
+                    throw new Error(data.message || data.error);
                 }
 
                 currentCode = data.code;
                 
-                // Show quality options
-                if (data.formats && data.formats.length > 0) {
-                    showQualityOptions(data.formats);
-                }
-                
-                // Show format options
+                // Show format and quality options
                 document.getElementById('formatSection').style.display = 'block';
+                document.getElementById('qualitySection').style.display = 'block';
                 
-                // Show video info
+                showQualityOptions();
                 showVideoInfo(data);
                 
-                // Check if cached
-                if (data.cached) {
-                    showStatus(`✨ Video đã có sẵn trong bộ nhớ cache`, 'success');
+                if (data.status === 'completed') {
+                    showStatus('Video ready from cache!', 'success');
                     showDownloadButtons(data);
                 } else {
-                    startDownload(data.code, url);
+                    checkDownloadStatus(data.code);
                 }
                 
             } catch (error) {
@@ -520,91 +898,52 @@
         }
 
         // Show quality options
-        function showQualityOptions(formats) {
-            const section = document.getElementById('qualitySection');
-            const options = document.getElementById('qualityOptions');
+        function showQualityOptions() {
+            const grid = document.getElementById('qualityGrid');
+            const qualities = ['4K', '1080p', '720p', '480p', '360p', 'Best'];
             
-            section.style.display = 'block';
-            options.innerHTML = '';
-            
-            const qualities = [...new Set(formats.map(f => f.quality))];
-            
+            grid.innerHTML = '';
             qualities.forEach((quality, index) => {
                 const btn = document.createElement('button');
-                btn.className = 'quality-btn' + (index === 0 ? ' active' : '');
+                btn.className = 'quality-option' + (index === qualities.length - 1 ? ' active' : '');
                 btn.textContent = quality;
                 btn.onclick = () => {
-                    document.querySelectorAll('.quality-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.quality-option').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    selectedQuality = quality;
+                    selectedQuality = quality.toLowerCase();
                 };
-                options.appendChild(btn);
+                grid.appendChild(btn);
             });
-        }
-
-        // Handle format selection
-        document.querySelectorAll('.format-btn').forEach(btn => {
-            btn.onclick = () => {
-                document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                selectedFormat = btn.dataset.format;
-            };
-        });
-
-        // Start download
-        async function startDownload(code, url) {
-            showStatus('Đang tải xuống video...', 'processing', 40);
-            
-            const downloadData = {
-                url: url,
-                quality: selectedQuality,
-                format: selectedFormat
-            };
-            
-            try {
-                const response = await fetch(`${API_URL}/api/v1/video/download`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(downloadData)
-                });
-                
-                const data = await response.json();
-                
-                if (data.error) {
-                    throw new Error(data.message);
-                }
-                
-                // Start checking status
-                checkDownloadStatus(data.code);
-                
-            } catch (error) {
-                showStatus(error.message, 'error');
-                showToast(error.message, 'error');
-            }
         }
 
         // Check download status
         function checkDownloadStatus(code) {
             if (checkInterval) clearInterval(checkInterval);
             
+            let progress = 40;
+            showStatus('Downloading...', 'processing', progress);
+            
             checkInterval = setInterval(async () => {
                 try {
-                    const response = await fetch(`${API_URL}/api/v1/video/status/${code}`);
+                    const response = await fetch(`${API_URL}/api/videos/code=${code}`);
                     const data = await response.json();
+                    
+                    progress = Math.min(progress + 10, 95);
                     
                     if (data.status === 'completed') {
                         clearInterval(checkInterval);
-                        showStatus('✅ Tải xuống hoàn tất!', 'success');
+                        showStatus('Download completed!', 'success', 100);
                         showDownloadButtons(data);
-                        showToast('Video đã sẵn sàng!');
+                        showToast('Video ready to download!');
+                        addToHistory(data);
                     } else if (data.status === 'error') {
                         clearInterval(checkInterval);
-                        showStatus(data.error || 'Có lỗi xảy ra', 'error');
+                        showStatus(data.error || 'Download failed', 'error');
                     } else {
-                        showStatus(`Đang xử lý... ${data.progress || 0}%`, 'processing', data.progress);
+                        showStatus(`Downloading... ${progress}%`, 'processing', progress);
                     }
                 } catch (error) {
-                    console.error('Check status error:', error);
+                    console.error('Status check error:', error);
                 }
             }, 2000);
         }
@@ -618,29 +957,29 @@
             
             if (data.title) {
                 html += `<div class="info-row">
-                    <span class="info-label">Tiêu đề</span>
+                    <span class="info-label">Title</span>
                     <span class="info-value">${data.title}</span>
                 </div>`;
             }
             
             if (data.duration) {
                 html += `<div class="info-row">
-                    <span class="info-label">Thời lượng</span>
+                    <span class="info-label">Duration</span>
                     <span class="info-value">${data.duration}</span>
                 </div>`;
             }
             
             if (data.platform) {
                 html += `<div class="info-row">
-                    <span class="info-label">Nền tảng</span>
+                    <span class="info-label">Platform</span>
                     <span class="info-value">${data.platform}</span>
                 </div>`;
             }
             
-            if (data.cached) {
+            if (data.file_size) {
                 html += `<div class="info-row">
-                    <span class="info-label">Trạng thái</span>
-                    <span class="cache-badge">⚡ Cached - Tải nhanh</span>
+                    <span class="info-label">File Size</span>
+                    <span class="info-value">${data.file_size}</span>
                 </div>`;
             }
             
@@ -653,11 +992,14 @@
             const infoDiv = document.getElementById('videoInfo');
             
             let html = `<div class="download-actions">
-                <button class="btn" onclick="window.open('${API_URL}${data.download_url}', '_blank')">
-                    ⬇️ Tải xuống
+                <button class="btn btn-success" onclick="window.open('${API_URL}${data.download_url}', '_blank')">
+                    <i class="fas fa-download"></i> Download
+                </button>
+                <button class="btn btn-secondary" onclick="window.open('${API_URL}${data.stream_url}', '_blank')">
+                    <i class="fas fa-play"></i> Preview
                 </button>
                 <button class="btn btn-secondary" onclick="copyLink('${API_URL}${data.download_url}')">
-                    📋 Copy link
+                    <i class="fas fa-copy"></i> Copy Link
                 </button>
             </div>`;
             
@@ -667,13 +1009,212 @@
         // Copy link
         function copyLink(url) {
             navigator.clipboard.writeText(url).then(() => {
-                showToast('Đã copy link!');
+                showToast('Link copied to clipboard!');
             }).catch(() => {
-                showToast('Không thể copy link', 'error');
+                showToast('Failed to copy link', 'error');
             });
         }
 
-        // Keyboard shortcut
+        // Upload and convert helper
+        async function uploadAndConvert(endpoint, fileInput, resultId, format = null) {
+            const file = fileInput.files[0];
+            if (!file) {
+                showToast('Please select a file', 'error');
+                return;
+            }
+
+            if (file.size > 100 * 1024 * 1024) {
+                showToast('File too large! Max 100MB', 'error');
+                return;
+            }
+
+            const result = document.getElementById(resultId);
+            result.classList.add('show');
+            result.innerHTML = `
+                <div class="status-box processing show">
+                    <div class="spinner"></div>
+                    <span>Processing... Please wait</span>
+                </div>
+            `;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const uploadResponse = await fetch(`${API_URL}/api/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!uploadResponse.ok) {
+                    throw new Error('Upload failed');
+                }
+
+                const uploadData = await uploadResponse.json();
+
+                const requestBody = {
+                    file_url: uploadData.url
+                };
+
+                if (format) {
+                    requestBody.format = format;
+                }
+
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+
+                const data = await response.json();
+
+                if (data.download_url) {
+                    result.innerHTML = `
+                        <div class="status-box success show">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Conversion completed!</span>
+                        </div>
+                        <button class="btn btn-success" onclick="window.open('${API_URL}${data.download_url}', '_blank')" style="margin-top: 12px;">
+                            <i class="fas fa-download"></i> Download File
+                        </button>
+                    `;
+                    showToast('Conversion completed!');
+                } else {
+                    throw new Error('Conversion failed');
+                }
+            } catch (error) {
+                result.innerHTML = `
+                    <div class="status-box error show">
+                        <i class="fas fa-times-circle"></i>
+                        <span>${error.message}</span>
+                    </div>
+                `;
+                showToast(error.message, 'error');
+            }
+        }
+
+        // Convert to ICO
+        function convertToICO() {
+            uploadAndConvert('/api/tool/image-to-ico', document.getElementById('icoFile'), 'icoResult');
+        }
+
+        // Convert to GIF
+        function convertToGIF() {
+            uploadAndConvert('/api/tool/video-to-gif', document.getElementById('gifFile'), 'gifResult');
+        }
+
+        // Convert Audio
+        function convertAudio() {
+            const format = document.getElementById('audioFormat').value;
+            uploadAndConvert('/api/tool/audio-convert', document.getElementById('audioFile'), 'audioResult', format);
+        }
+
+        // Compress Video
+        function compressVideo() {
+            uploadAndConvert('/api/tool/video-compress', document.getElementById('compressFile'), 'compressResult');
+        }
+
+        // Extract Audio
+        function extractAudio() {
+            const format = document.getElementById('extractFormat').value;
+            uploadAndConvert('/api/tool/extract-audio', document.getElementById('extractFile'), 'extractResult', format);
+        }
+
+        // Add to history
+        function addToHistory(data) {
+            const historyItem = {
+                code: data.code,
+                title: data.title || 'Untitled',
+                url: data.url,
+                thumbnail: data.thumbnail || '',
+                duration: data.duration || '',
+                downloadUrl: data.download_url,
+                timestamp: new Date().toISOString()
+            };
+
+            downloadHistory.unshift(historyItem);
+            
+            if (downloadHistory.length > 50) {
+                downloadHistory = downloadHistory.slice(0, 50);
+            }
+
+            localStorage.setItem('downloadHistory', JSON.stringify(downloadHistory));
+        }
+
+        // Display history
+        function displayHistory() {
+            const historyList = document.getElementById('historyList');
+            
+            if (downloadHistory.length === 0) {
+                historyList.innerHTML = `
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                        <i class="fas fa-inbox" style="font-size: 48px; margin-bottom: 16px; display: block; opacity: 0.5;"></i>
+                        <p>No download history yet</p>
+                    </div>
+                `;
+                return;
+            }
+
+            historyList.innerHTML = downloadHistory.map(item => `
+                <div style="background: var(--bg-tertiary); padding: 16px; border-radius: 10px; margin-bottom: 12px; display: flex; align-items: center; gap: 16px;">
+                    ${item.thumbnail ? 
+                        `<img src="${item.thumbnail}" style="width: 80px; height: 50px; border-radius: 6px; object-fit: cover;">` :
+                        `<div style="width: 80px; height: 50px; background: var(--bg-secondary); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-video" style="color: var(--text-secondary);"></i>
+                        </div>`
+                    }
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 500; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${item.title}</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">
+                            ${formatDate(item.timestamp)}
+                            ${item.duration ? ` • ${item.duration}` : ''}
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn btn-secondary" onclick="window.open('${API_URL}${item.downloadUrl}', '_blank')" style="padding: 8px 16px;">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="deleteHistoryItem('${item.code}')" style="padding: 8px 16px; background: var(--error);">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Delete history item
+        function deleteHistoryItem(code) {
+            downloadHistory = downloadHistory.filter(h => h.code !== code);
+            localStorage.setItem('downloadHistory', JSON.stringify(downloadHistory));
+            displayHistory();
+            showToast('Removed from history');
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = now - date;
+            
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            
+            if (minutes < 1) return 'Just now';
+            if (minutes < 60) return `${minutes}m ago`;
+            if (hours < 24) return `${hours}h ago`;
+            if (days < 7) return `${days}d ago`;
+            
+            return date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
+            });
+        }
+
+        // Keyboard shortcuts
         document.getElementById('videoUrl').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 fetchVideoInfo();
@@ -685,12 +1226,39 @@
             try {
                 const text = await navigator.clipboard.readText();
                 if (text && (text.includes('youtube.com') || text.includes('tiktok.com') || 
-                    text.includes('facebook.com') || text.includes('instagram.com'))) {
-                    document.getElementById('videoUrl').value = text;
-                    showToast('Đã dán link từ clipboard');
+                    text.includes('facebook.com') || text.includes('instagram.com') || 
+                    text.includes('twitter.com'))) {
+                    const input = document.getElementById('videoUrl');
+                    if (!input.value) {
+                        input.value = text;
+                        showToast('Video URL pasted from clipboard');
+                    }
                 }
             } catch (err) {}
-        }, 500);
+        }, 1000);
+
+        // Drag and drop support
+        const dropZone = document.getElementById('videoUrl');
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'var(--primary)';
+        });
+        
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.style.borderColor = 'var(--border)';
+        });
+        
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.style.borderColor = 'var(--border)';
+            
+            const url = e.dataTransfer.getData('text/plain');
+            if (url) {
+                dropZone.value = url;
+                showToast('URL dropped');
+            }
+        });
     </script>
 </body>
 </html>
