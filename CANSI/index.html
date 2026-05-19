@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANSI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #333;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #fff;
+            letter-spacing: 3px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+
+        .sidebar {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+            font-size: 0.85em;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+        input[type="color"] {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #444;
+            background: #2a2a2a;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .color-picker-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .color-display {
+            flex: 1;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid #444;
+        }
+
+        .mode-tabs {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .mode-tab {
+            flex: 1;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            color: #aaa;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .mode-tab.active {
+            background: #444;
+            color: #fff;
+            border-color: #666;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .preview-section {
+            background: #000;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: auto;
+            position: relative;
+            max-width: 100%;
+        }
+
+        .preview-wrapper {
+            display: inline-block;
+            min-width: 100%;
+        }
+
+        .preview {
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            line-height: 1.2;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .copy-preview-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 15px;
+            background: rgba(51, 51, 51, 0.9);
+            border: 1px solid #555;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            font-size: 0.85em;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .preview-section:hover .copy-preview-btn {
+            opacity: 1;
+        }
+
+        .copy-preview-btn:hover {
+            background: rgba(68, 68, 68, 0.9);
+        }
+
+        .export-section {
+            background: #222;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .export-section.show {
+            max-height: 600px;
+        }
+
+        .export-toggle {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            border: 1px solid #555;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .export-toggle:hover {
+            background: #444;
+        }
+
+        .export-section h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        .export-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #333;
+            border: 1px solid #555;
+            color: #fff;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            transition: all 0.2s;
+            font-size: 0.85em;
+        }
+
+        button:hover {
+            background: #444;
+            border-color: #777;
+        }
+
+        button.active {
+            background: #555;
+            border-color: #888;
+        }
+
+        .code-output {
+            background: #0a0a0a;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            max-height: 300px;
+            overflow: auto;
+        }
+
+        .code-output pre {
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 968px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="control-group">
+                    <div class="mode-tabs">
+                        <div class="mode-tab active" onclick="setMode('banner')">BANNER</div>
+                        <div class="mode-tab" onclick="setMode('logo')">LOGO</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Text Input</label>
+                    <input type="text" id="textInput" placeholder="Enter text..." value="TEST">
+                </div>
+
+                <div class="control-group">
+                    <h3>Style</h3>
+                    <select id="styleSelect">
+                        <option value="standard">Standard</option>
+                        <option value="slant">Slant</option>
+                        <option value="banner">Banner</option>
+                        <option value="block">Block</option>
+                        <option value="bubble">Bubble</option>
+                        <option value="digital">Digital</option>
+                        <option value="graffiti">Graffiti</option>
+                        <option value="small">Small</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <h3>Color (RGB)</h3>
+                    <div class="color-picker-group">
+                        <input type="color" id="colorPicker" value="#00ff00">
+                        <div class="color-display" id="colorDisplay" style="background: #00ff00;"></div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Options</h3>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="italicCheck">
+                        <label for="italicCheck" style="margin-bottom: 0;">Italic</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="boldCheck">
+                        <label for="boldCheck" style="margin-bottom: 0;">Bold</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <div class="preview-section">
+                    <button class="copy-preview-btn" onclick="copyPreview()">Copy</button>
+                    <div class="preview-wrapper">
+                        <div class="preview" id="preview" contenteditable="true"></div>
+                    </div>
+                </div>
+
+                <button class="export-toggle" onclick="toggleExport()">Show Export Code</button>
+
+                <div class="export-section" id="exportSection">
+                    <h3>Export Code</h3>
+                    <div class="export-grid">
+                        <button onclick="setExportFormat('plain')">Plain Text</button>
+                        <button onclick="setExportFormat('ansi')">ANSI</button>
+                        <button onclick="setExportFormat('bash')">Bash</button>
+                        <button onclick="setExportFormat('python')">Python</button>
+                        <button onclick="setExportFormat('javascript')">JavaScript</button>
+                        <button onclick="setExportFormat('node')">Node.js</button>
+                        <button onclick="setExportFormat('c')">C</button>
+                        <button onclick="setExportFormat('cpp')">C++</button>
+                        <button onclick="setExportFormat('java')">Java</button>
+                        <button onclick="setExportFormat('csharp')">C#</button>
+                        <button onclick="setExportFormat('go')">Go</button>
+                        <button onclick="setExportFormat('rust')">Rust</button>
+                        <button onclick="setExportFormat('php')">PHP</button>
+                        <button onclick="setExportFormat('ruby')">Ruby</button>
+                        <button onclick="setExportFormat('perl')">Perl</button>
+                    </div>
+
+                    <div class="code-output">
+                        <pre id="codeOutput"></pre>
+                    </div>
+
+                    <button class="copy-btn" onclick="copyToClipboard()">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fonts = {
+            standard: {
+                'A': ['  ##  ', ' #  # ', '#    #', '######', '#    #', '#    #'],
+                'B': ['##### ', '#    #', '##### ', '#    #', '#    #', '##### '],
+                'C': [' #### ', '#    #', '#     ', '#     ', '#    #', ' #### '],
+                'D': ['##### ', '#    #', '#    #', '#    #', '#    #', '##### '],
+                'E': ['######', '#     ', '##### ', '#     ', '#     ', '######'],
+                'F': ['######', '#     ', '##### ', '#     ', '#     ', '#     '],
+                'G': [' #### ', '#    #', '#     ', '#  ###', '#    #', ' #### '],
+                'H': ['#    #', '#    #', '######', '#    #', '#    #', '#    #'],
+                'I': ['######', '  ##  ', '  ##  ', '  ##  ', '  ##  ', '######'],
+                'J': ['######', '   ## ', '   ## ', '   ## ', '#  ## ', ' ###  '],
+                'K': ['#    #', '#   # ', '####  ', '#  #  ', '#   # ', '#    #'],
+                'L': ['#     ', '#     ', '#     ', '#     ', '#     ', '######'],
+                'M': ['#    #', '##  ##', '# ## #', '#    #', '#    #', '#    #'],
+                'N': ['#    #', '##   #', '# #  #', '#  # #', '#   ##', '#    #'],
+                'O': [' #### ', '#    #', '#    #', '#    #', '#    #', ' #### '],
+                'P': ['##### ', '#    #', '##### ', '#     ', '#     ', '#     '],
+                'Q': [' #### ', '#    #', '#    #', '#  # #', '#   # ', ' ### #'],
+                'R': ['##### ', '#    #', '##### ', '#   # ', '#    #', '#    #'],
+                'S': [' #### ', '#     ', ' #### ', '     #', '     #', ' #### '],
+                'T': ['######', '  ##  ', '  ##  ', '  ##  ', '  ##  ', '  ##  '],
+                'U': ['#    #', '#    #', '#    #', '#    #', '#    #', ' #### '],
+                'V': ['#    #', '#    #', '#    #', '#    #', ' #  # ', '  ##  '],
+                'W': ['#    #', '#    #', '#    #', '# ## #', '##  ##', '#    #'],
+                'X': ['#    #', ' #  # ', '  ##  ', '  ##  ', ' #  # ', '#    #'],
+                'Y': ['#    #', ' #  # ', '  ##  ', '  ##  ', '  ##  ', '  ##  '],
+                'Z': ['######', '    # ', '   #  ', '  #   ', ' #    ', '######'],
+                '0': [' #### ', '#   ##', '#  # #', '# #  #', '##   #', ' #### '],
+                '1': ['  ##  ', ' ###  ', '  ##  ', '  ##  ', '  ##  ', '######'],
+                '2': [' #### ', '#    #', '    # ', '  ##  ', ' #    ', '######'],
+                '3': [' #### ', '#    #', '  ### ', '     #', '#    #', ' #### '],
+                '4': ['   ## ', '  # # ', ' #  # ', '######', '    # ', '    # '],
+                '5': ['######', '#     ', '##### ', '     #', '#    #', ' #### '],
+                '6': [' #### ', '#     ', '##### ', '#    #', '#    #', ' #### '],
+                '7': ['######', '    # ', '   #  ', '  #   ', ' #    ', ' #    '],
+                '8': [' #### ', '#    #', ' #### ', '#    #', '#    #', ' #### '],
+                '9': [' #### ', '#    #', ' #####', '     #', '     #', ' #### '],
+                '!': ['  ##  ', '  ##  ', '  ##  ', '  ##  ', '      ', '  ##  '],
+                '?': [' #### ', '#    #', '    # ', '  ##  ', '      ', '  ##  '],
+                '.': ['      ', '      ', '      ', '      ', '  ##  ', '  ##  '],
+                ',': ['      ', '      ', '      ', '  ##  ', '  ##  ', ' #    '],
+                '-': ['      ', '      ', '######', '      ', '      ', '      '],
+                '_': ['      ', '      ', '      ', '      ', '      ', '######'],
+                ':': ['      ', '  ##  ', '  ##  ', '      ', '  ##  ', '  ##  '],
+                ';': ['      ', '  ##  ', '  ##  ', '      ', '  ##  ', ' #    '],
+                '+': ['      ', '  ##  ', '######', '  ##  ', '      ', '      '],
+                '=': ['      ', '######', '      ', '######', '      ', '      '],
+                '/': ['     #', '    # ', '   #  ', '  #   ', ' #    ', '#     '],
+                '\\': ['#     ', ' #    ', '  #   ', '   #  ', '    # ', '     #'],
+                '(': ['   ## ', '  #   ', ' #    ', ' #    ', '  #   ', '   ## '],
+                ')': ['##    ', '  #   ', '   #  ', '   #  ', '  #   ', '##    '],
+                '[': ['####  ', '##    ', '##    ', '##    ', '##    ', '####  '],
+                ']': ['  ####', '    ##', '    ##', '    ##', '    ##', '  ####'],
+                '{': ['  ### ', ' ##   ', ' #    ', '###   ', ' #    ', ' ##   ', '  ### '],
+                '}': ['###   ', '   ## ', '    # ', '   ###', '    # ', '   ## ', '###   '],
+                '<': ['    # ', '   #  ', '  #   ', ' #    ', '  #   ', '   #  ', '    # '],
+                '>': [' #    ', '  #   ', '   #  ', '    # ', '   #  ', '  #   ', ' #    '],
+                '@': [' #### ', '#    #', '# ## #', '# ## #', '#     ', ' #### '],
+                '#': [' #  # ', '######', ' #  # ', '######', ' #  # ', '      '],
+                '$': ['  ##  ', ' #####', '# #   ', ' #### ', '   # #', '##### ', '  ##  '],
+                '%': ['##   #', '##  # ', '   #  ', '  #   ', ' #  ##', '#   ##'],
+                '^': ['  ##  ', ' #  # ', '#    #', '      ', '      ', '      '],
+                '&': [' ###  ', '#   # ', ' ###  ', '# # # ', '#  # #', ' ### #'],
+                '*': ['      ', ' # # #', '  ###  ', '######', '  ###  ', ' # # #'],
+                ' ': ['      ', '      ', '      ', '      ', '      ', '      ']
+            },
+            slant: {
+                'A': ['    ____ ', '   /   /', '  /___/ ', ' /   /  ', '/   /   '],
+                'B': ['____   ', '\\   \\  ', ' \\___\\ ', ' \\   \\ ', '  \\___\\'],
+                'C': ['  ____ ', ' /     ', '/      ', '\\      ', ' \\____ '],
+                'D': ['____   ', '\\   \\  ', ' \\   \\ ', ' \\   \\ ', '  \\___\\'],
+                'E': ['______', '|      ', '|___   ', '|      ', '|_____ '],
+                'S': ['  ____ ', ' /     ', ' \\___\\ ', '     \\ ', ' ____/ '],
+                'T': ['_______', '  |    ', '  |    ', '  |    ', '  |    '],
+                ' ': ['       ', '       ', '       ', '       ', '       ']
+            },
+            banner: {
+                'A': ['#####  ', '#   #  ', '#####  ', '#   #  ', '#   #  '],
+                'B': ['####   ', '#   #  ', '####   ', '#   #  ', '####   '],
+                'C': [' ####  ', '#      ', '#      ', '#      ', ' ####  '],
+                'D': ['####   ', '#   #  ', '#   #  ', '#   #  ', '####   '],
+                'E': ['#####  ', '#      ', '####   ', '#      ', '#####  '],
+                'S': [' ####  ', '#      ', ' ####  ', '     # ', ' ####  '],
+                'T': ['#####  ', '  #    ', '  #    ', '  #    ', '  #    '],
+                ' ': ['       ', '       ', '       ', '       ', '       ']
+            }
+        };
+
+        let currentArt = '';
+        let currentFormat = 'plain';
+        let currentColor = '#00ff00';
+        let currentMode = 'banner';
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            updatePreview();
+        }
+
+        function generateASCIIArt(text, style) {
+            text = text.toUpperCase();
+            const font = fonts[style] || fonts.standard;
+            const height = font['A'] ? font['A'].length : 6;
+            const lines = Array(height).fill('');
+
+            for (let char of text) {
+                const charArt = font[char] || font[' '];
+                for (let i = 0; i < height; i++) {
+                    lines[i] += (charArt[i] || '      ') + ' ';
+                }
+            }
+
+            return lines.join('\n');
+        }
+
+        function applyItalic(text) {
+            const lines = text.split('\n');
+            const spaces = [4, 3, 2, 1, 0, 0];
+            return lines.map((line, i) => {
+                const space = ' '.repeat(spaces[i] || 0);
+                return space + line;
+            }).join('\n');
+        }
+
+        function applyBold(text) {
+            return text.split('').map(c => c === '#' ? '█' : c).join('');
+        }
+
+        function updatePreview() {
+            const text = document.getElementById('textInput').value || 'TEST';
+            const style = document.getElementById('styleSelect').value;
+            const italic = document.getElementById('italicCheck').checked;
+            const bold = document.getElementById('boldCheck').checked;
+
+            let art = generateASCIIArt(text, style);
+            
+            if (currentMode === 'logo') {
+                const maxWidth = Math.max(...art.split('\n').map(l => l.length));
+                art = '╔' + '═'.repeat(maxWidth) + '╗\n' +
+                      art.split('\n').map(line => '║' + line + ' '.repeat(maxWidth - line.length) + '║').join('\n') + '\n' +
+                      '╚' + '═'.repeat(maxWidth) + '╝';
+            }
+            
+            if (italic) {
+                art = applyItalic(art);
+            }
+            
+            if (bold) {
+                art = applyBold(art);
+            }
+
+            currentArt = art;
+            const preview = document.getElementById('preview');
+            preview.textContent = art;
+            preview.style.color = currentColor;
+            updateExport();
+        }
+
+        function toggleExport() {
+            const section = document.getElementById('exportSection');
+            section.classList.toggle('show');
+            event.target.textContent = section.classList.contains('show') ? 'Hide Export Code' : 'Show Export Code';
+        }
+
+        function setExportFormat(format) {
+            currentFormat = format;
+            document.querySelectorAll('.export-grid button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            updateExport();
+        }
+
+        function hexToAnsi(hex) {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `38;2;${r};${g};${b}`;
+        }
+
+        function updateExport() {
+            const output = document.getElementById('codeOutput');
+            const lines = currentArt.split('\n');
+            const ansiCode = hexToAnsi(currentColor);
+
+            switch(currentFormat) {
+                case 'plain':
+                    output.textContent = currentArt;
+                    break;
+
+                case 'ansi':
+                    output.textContent = `\\033[${ansiCode}m${currentArt}\\033[0m`;
+                    break;
+
+                case 'bash':
+                    output.textContent = `#!/bin/bash\n\necho -e "\\033[${ansiCode}m${lines.join('\\033[0m\\n\\033[' + ansiCode + 'm')}\\033[0m"`;
+                    break;
+
+                case 'python':
+                    const pyLines = lines.map(l => `    print("\\033[${ansiCode}m${l}\\033[0m")`).join('\n');
+                    output.textContent = `def print_logo():\n${pyLines}\n\nif __name__ == "__main__":\n    print_logo()`;
+                    break;
+
+                case 'javascript':
+                case 'node':
+                    const jsLines = lines.map(l => `  console.log("\\x1b[${ansiCode}m${l}\\x1b[0m");`).join('\n');
+                    output.textContent = `function printLogo() {\n${jsLines}\n}\n\nprintLogo();`;
+                    break;
+
+                case 'c':
+                    const cLines = lines.map(l => `    printf("\\033[${ansiCode}m${l}\\033[0m\\n");`).join('\n');
+                    output.textContent = `#include <stdio.h>\n\nint main() {\n${cLines}\n    return 0;\n}`;
+                    break;
+
+                case 'cpp':
+                    const cppLines = lines.map(l => `    std::cout << "\\033[${ansiCode}m${l}\\033[0m" << std::endl;`).join('\n');
+                    output.textContent = `#include <iostream>\n\nint main() {\n${cppLines}\n    return 0;\n}`;
+                    break;
+
+                case 'java':
+                    const javaLines = lines.map(l => `        System.out.println("\\033[${ansiCode}m${l}\\033[0m");`).join('\n');
+                    output.textContent = `public class Logo {\n    public static void main(String[] args) {\n${javaLines}\n    }\n}`;
+                    break;
+
+                case 'csharp':
+                    const csLines = lines.map(l => `        Console.WriteLine("\\x1b[${ansiCode}m${l}\\x1b[0m");`).join('\n');
+                    output.textContent = `using System;\n\nclass Program {\n    static void Main() {\n${csLines}\n    }\n}`;
+                    break;
+
+                case 'go':
+                    const goLines = lines.map(l => `    fmt.Printf("\\033[${ansiCode}m${l}\\033[0m\\n")`).join('\n');
+                    output.textContent = `package main\n\nimport "fmt"\n\nfunc main() {\n${goLines}\n}`;
+                    break;
+
+                case 'rust':
+                    const rustLines = lines.map(l => `    println!("\\x1b[${ansiCode}m${l}\\x1b[0m");`).join('\n');
+                    output.textContent = `fn main() {\n${rustLines}\n}`;
+                    break;
+
+                case 'php':
+                    const phpLines = lines.map(l => `echo "\\033[${ansiCode}m${l}\\033[0m\\n";`).join('\n');
+                    output.textContent = `<?php\n\n${phpLines}\n\n?>`;
+                    break;
+
+                case 'ruby':
+                    const rubyLines = lines.map(l => `puts "\\033[${ansiCode}m${l}\\033[0m"`).join('\n');
+                    output.textContent = `#!/usr/bin/env ruby\n\n${rubyLines}`;
+                    break;
+
+                case 'perl':
+                    const perlLines = lines.map(l => `print "\\033[${ansiCode}m${l}\\033[0m\\n";`).join('\n');
+                    output.textContent = `#!/usr/bin/perl\nuse strict;\nuse warnings;\n\n${perlLines}`;
+                    break;
+            }
+        }
+
+        function copyPreview() {
+            const text = document.getElementById('preview').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('codeOutput').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+
+        document.getElementById('textInput').addEventListener('input', updatePreview);
+        document.getElementById('styleSelect').addEventListener('change', updatePreview);
+        document.getElementById('italicCheck').addEventListener('change', updatePreview);
+        document.getElementById('boldCheck').addEventListener('change', updatePreview);
+        
+        document.getElementById('colorPicker').addEventListener('input', function() {
+            currentColor = this.value;
+            document.getElementById('colorDisplay').style.background = this.value;
+            updatePreview();
+        });
+
+        updatePreview();
+        setExportFormat('plain');
+    </script>
+</body>
+</html>
