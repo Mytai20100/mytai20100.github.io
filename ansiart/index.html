@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artansi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0a0a0a;
+            --fg: #e0e0e0;
+            --accent: #ffffff;
+            --border: #333;
+            --hover: #1a1a1a;
+        }
+
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --accent: #000000;
+            --border: #e0e0e0;
+            --hover: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--fg);
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+        }
+
+        h1 {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .upload-zone {
+            border: 1px dashed var(--border);
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: var(--hover);
+            margin-bottom: 2rem;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--accent);
+        }
+
+        .upload-zone svg {
+            margin-bottom: 1rem;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .controls {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .controls.active {
+            opacity: 1;
+        }
+
+        .control-group {
+            display: grid;
+            grid-template-columns: 120px 1fr 60px;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .control-group label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 2px;
+            background: var(--border);
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            cursor: pointer;
+            border: none;
+        }
+
+        select {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--fg);
+            padding: 0.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        select:hover {
+            border-color: var(--accent);
+        }
+
+        select option {
+            background: var(--bg);
+            color: var(--fg);
+        }
+
+        .value-display {
+            text-align: right;
+            font-size: 0.85rem;
+        }
+
+        .output {
+            background: var(--bg);
+            padding: 2rem;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            min-height: 200px;
+            display: none;
+        }
+
+        [data-theme="light"] .output {
+            background: #f5f5f5;
+        }
+
+        .output.active {
+            display: block;
+        }
+
+        .ansi-art {
+            font-family: 'Courier New', monospace;
+            line-height: 1.2;
+            white-space: pre;
+            font-size: 8px;
+        }
+
+        .preview-img {
+            display: none;
+        }
+
+        .btn {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.75rem 2rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .btn:disabled:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .output-header.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .output-header span {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--fg);
+            padding: 0.5rem 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+
+        .btn-small:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-small.copied {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .usage-guide {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            font-size: 0.75rem;
+            line-height: 1.6;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .usage-guide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .usage-guide h3 {
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .usage-guide pre {
+            background: var(--bg);
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 0.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        [data-theme="light"] .usage-guide pre {
+            background: #f5f5f5;
+        }
+
+        .usage-guide code {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle">◐</button>
+    
+    <div class="container">
+        <div class="upload-zone" id="uploadZone">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <div>upload image</div>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="controls" id="controls">
+            <div class="control-group">
+                <label>density</label>
+                <input type="range" id="density" min="20" max="200" value="100">
+                <span class="value-display" id="densityValue">100</span>
+            </div>
+            <div class="control-group">
+                <label>depth</label>
+                <input type="range" id="depth" min="2" max="16" value="8">
+                <span class="value-display" id="depthValue">8</span>
+            </div>
+            <div class="control-group">
+                <label>size</label>
+                <input type="range" id="size" min="6" max="16" value="8">
+                <span class="value-display" id="sizeValue">8</span>
+            </div>
+            <div class="control-group">
+                <label>charset</label>
+                <select id="charset">
+                    <option value="detailed" selected>detailed</option>
+                    <option value="standard">standard</option>
+                    <option value="extended">extended</option>
+                    <option value="blocks">blocks</option>
+                    <option value="simple">simple</option>
+                </select>
+                <span></span>
+            </div>
+            <div class="control-group">
+                <label>transparent</label>
+                <select id="transparentMode">
+                    <option value="skip" selected>skip</option>
+                    <option value="blend">blend black</option>
+                </select>
+                <span></span>
+            </div>
+            <button class="btn" id="convertBtn" disabled>convert</button>
+        </div>
+
+        <div class="output-header" id="outputHeader">
+            <span>output</span>
+            <div class="btn-group">
+                <button class="btn-small" id="copyHtml">copy html</button>
+                <button class="btn-small" id="copyAnsi">copy ansi</button>
+            </div>
+        </div>
+
+        <div class="output" id="output">
+            <div class="ansi-art" id="ansiArt"></div>
+        </div>
+
+        <div class="usage-guide" id="usageGuide">
+            <h3>usage</h3>
+            <div>
+                <strong>bash/shell:</strong>
+                <pre>#!/bin/bash
+echo -e "<code>copied_ansi_here</code>"</pre>
+            </div>
+            <div style="margin-top: 1rem;">
+                <strong>python:</strong>
+                <pre>logo = """<code>copied_ansi_here</code>"""
+print(logo)</pre>
+            </div>
+            <div style="margin-top: 1rem;">
+                test: <code>echo -e "your_copied_ansi" | cat</code>
+            </div>
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                <strong>charsets:</strong><br>
+                detailed = 70+ ASCII chars (best)<br>
+                standard = medium detail<br>
+                extended = compact ASCII<br>
+                blocks = solid blocks ░▒▓█<br>
+                simple = minimal 10 chars
+            </div>
+            <div style="margin-top: 1rem;">
+                <strong>transparent:</strong><br>
+                skip = empty space (for logos)<br>
+                blend black = fill with black
+            </div>
+        </div>
+
+        <img class="preview-img" id="previewImg">
+    </div>
+
+    <script>
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('fileInput');
+        const controls = document.getElementById('controls');
+        const convertBtn = document.getElementById('convertBtn');
+        const output = document.getElementById('output');
+        const ansiArt = document.getElementById('ansiArt');
+        const previewImg = document.getElementById('previewImg');
+        const outputHeader = document.getElementById('outputHeader');
+        const usageGuide = document.getElementById('usageGuide');
+        const copyHtmlBtn = document.getElementById('copyHtml');
+        const copyAnsiBtn = document.getElementById('copyAnsi');
+        const themeToggle = document.getElementById('themeToggle');
+        
+        const densitySlider = document.getElementById('density');
+        const depthSlider = document.getElementById('depth');
+        const sizeSlider = document.getElementById('size');
+        const charsetSelect = document.getElementById('charset');
+        const transparentMode = document.getElementById('transparentMode');
+        const densityValue = document.getElementById('densityValue');
+        const depthValue = document.getElementById('depthValue');
+        const sizeValue = document.getElementById('sizeValue');
+
+        let currentImage = null;
+        let ansiOutput = '';
+        let htmlOutput = '';
+
+        // Theme toggle
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            if (newTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // ANSI color palette (16 colors)
+        const ansiColors = [
+            [0, 0, 0],       // black
+            [170, 0, 0],     // red
+            [0, 170, 0],     // green
+            [170, 85, 0],    // yellow
+            [0, 0, 170],     // blue
+            [170, 0, 170],   // magenta
+            [0, 170, 170],   // cyan
+            [170, 170, 170], // white
+            [85, 85, 85],    // bright black
+            [255, 85, 85],   // bright red
+            [85, 255, 85],   // bright green
+            [255, 255, 85],  // bright yellow
+            [85, 85, 255],   // bright blue
+            [255, 85, 255],  // bright magenta
+            [85, 255, 255],  // bright cyan
+            [255, 255, 255]  // bright white
+        ];
+
+        // Character sets - more detailed options
+        const charSets = {
+            simple: ' .:-=+*#%@',
+            standard: ' .·,;!>*+=~|%#@',
+            blocks: ' ░▒▓█',
+            detailed: ' `.-\':_,^=;><+!rc*/z?sLTv)J7(|Fi{C}fI31tlu[neoZ5Yxjya]2ESwqkP6h9d4VpOGbUAKXHm8RD#$Bg0MNWQ%&@',
+            extended: ' .:;+=xX$&#@'
+        };
+
+        const chars = charSets.detailed;
+
+        // Update value displays
+        densitySlider.addEventListener('input', (e) => {
+            densityValue.textContent = e.target.value;
+        });
+
+        depthSlider.addEventListener('input', (e) => {
+            depthValue.textContent = e.target.value;
+        });
+
+        sizeSlider.addEventListener('input', (e) => {
+            sizeValue.textContent = e.target.value;
+            ansiArt.style.fontSize = e.target.value + 'px';
+        });
+
+        // Auto-convert on slider change
+        densitySlider.addEventListener('change', () => {
+            if (currentImage) convertImage();
+        });
+
+        depthSlider.addEventListener('change', () => {
+            if (currentImage) convertImage();
+        });
+
+        charsetSelect.addEventListener('change', () => {
+            if (currentImage) convertImage();
+        });
+
+        transparentMode.addEventListener('change', () => {
+            if (currentImage) convertImage();
+        });
+
+        // Upload handling
+        uploadZone.addEventListener('click', () => fileInput.click());
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = 'var(--accent)';
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.style.borderColor = 'var(--border)';
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = 'var(--border)';
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleFile(file);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        });
+
+        function handleFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImg.src = e.target.result;
+                previewImg.onload = () => {
+                    currentImage = previewImg;
+                    controls.classList.add('active');
+                    convertBtn.disabled = false;
+                    convertImage();
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+
+        convertBtn.addEventListener('click', convertImage);
+
+        // Copy functions
+        copyHtmlBtn.addEventListener('click', () => {
+            if (!htmlOutput) {
+                console.error('No HTML output to copy');
+                return;
+            }
+            navigator.clipboard.writeText(htmlOutput).then(() => {
+                const original = copyHtmlBtn.textContent;
+                copyHtmlBtn.textContent = 'copied';
+                copyHtmlBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyHtmlBtn.textContent = original;
+                    copyHtmlBtn.classList.remove('copied');
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy HTML:', err);
+                copyHtmlBtn.textContent = 'failed';
+                setTimeout(() => {
+                    copyHtmlBtn.textContent = 'copy html';
+                }, 1500);
+            });
+        });
+
+        copyAnsiBtn.addEventListener('click', () => {
+            if (!ansiOutput) {
+                console.error('No ANSI output to copy');
+                return;
+            }
+            navigator.clipboard.writeText(ansiOutput).then(() => {
+                const original = copyAnsiBtn.textContent;
+                copyAnsiBtn.textContent = 'copied';
+                copyAnsiBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyAnsiBtn.textContent = original;
+                    copyAnsiBtn.classList.remove('copied');
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy ANSI:', err);
+                copyAnsiBtn.textContent = 'failed';
+                setTimeout(() => {
+                    copyAnsiBtn.textContent = 'copy ansi';
+                }, 1500);
+            });
+        });
+
+        function convertImage() {
+            if (!currentImage) return;
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            const density = parseInt(densitySlider.value);
+            const colorDepth = parseInt(depthSlider.value);
+            const selectedCharset = charSets[charsetSelect.value];
+            const skipTransparent = transparentMode.value === 'skip';
+            
+            // Calculate dimensions
+            const aspectRatio = currentImage.height / currentImage.width;
+            canvas.width = density;
+            canvas.height = Math.floor(density * aspectRatio * 0.5);
+            
+            // Fill with black background only if blending mode
+            if (!skipTransparent) {
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            ctx.drawImage(currentImage, 0, 0, canvas.width, canvas.height);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            let htmlResult = '';
+            let ansiResult = '';
+            
+            for (let y = 0; y < canvas.height; y++) {
+                for (let x = 0; x < canvas.width; x++) {
+                    const i = (y * canvas.width + x) * 4;
+                    let r = imageData.data[i];
+                    let g = imageData.data[i + 1];
+                    let b = imageData.data[i + 2];
+                    const a = imageData.data[i + 3] / 255;
+                    
+                    // Skip transparent pixels if in skip mode
+                    if (skipTransparent && a < 0.5) {
+                        htmlResult += ' ';
+                        ansiResult += ' ';
+                        continue;
+                    }
+                    
+                    // Alpha blend with black background if in blend mode
+                    if (!skipTransparent) {
+                        r = Math.floor(r * a);
+                        g = Math.floor(g * a);
+                        b = Math.floor(b * a);
+                    }
+                    
+                    // Get brightness
+                    const brightness = (r + g + b) / 3;
+                    const charIndex = Math.floor((brightness / 255) * (selectedCharset.length - 1));
+                    let char = selectedCharset[charIndex];
+                    
+                    // Escape HTML characters
+                    const escapeChar = char
+                        .replace(/&/g, '&amp;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                    
+                    // Find closest ANSI color
+                    const colorIndex = findClosestColor(r, g, b, colorDepth);
+                    const color = ansiColors[colorIndex];
+                    
+                    // HTML output
+                    htmlResult += `<span style="color: rgb(${color[0]}, ${color[1]}, ${color[2]})">${escapeChar}</span>`;
+                    
+                    // ANSI output with escape codes
+                    ansiResult += `\x1b[38;5;${colorIndex}m${char}`;
+                }
+                htmlResult += '\n';
+                ansiResult += `\x1b[0m\n`;
+            }
+            
+            htmlOutput = htmlResult;
+            ansiOutput = ansiResult;
+            
+            ansiArt.innerHTML = htmlResult;
+            output.classList.add('active');
+            outputHeader.classList.add('active');
+            usageGuide.classList.add('active');
+        }
+
+        function findClosestColor(r, g, b, depth) {
+            let minDist = Infinity;
+            let closestIndex = 0;
+            const maxColors = Math.min(depth, ansiColors.length);
+            
+            for (let i = 0; i < maxColors; i++) {
+                const [cr, cg, cb] = ansiColors[i];
+                const dist = Math.sqrt(
+                    Math.pow(r - cr, 2) +
+                    Math.pow(g - cg, 2) +
+                    Math.pow(b - cb, 2)
+                );
+                
+                if (dist < minDist) {
+                    minDist = dist;
+                    closestIndex = i;
+                }
+            }
+            
+            return closestIndex;
+        }
+    </script>
+</body>
+</html>
