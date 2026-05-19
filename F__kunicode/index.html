@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F_ckunicode</title>
+    <link rel="icon" href="favourite.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        body.light {
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        body.dark {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: none;
+            border: 2px solid;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .light .theme-toggle {
+            border-color: #333;
+            color: #333;
+        }
+
+        .dark .theme-toggle {
+            border-color: #e0e0e0;
+            color: #e0e0e0;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .select-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: none;
+        }
+
+        .light .select-btn {
+            border-color: #333;
+            color: #333;
+        }
+
+        .dark .select-btn {
+            border-color: #e0e0e0;
+            color: #e0e0e0;
+        }
+
+        .select-btn:hover {
+            transform: scale(1.05);
+            background: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .light .modal-content {
+            background: #f5f5f5;
+        }
+
+        .dark .modal-content {
+            background: #1a1a1a;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8em;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .light .close-btn {
+            color: #333;
+        }
+
+        .dark .close-btn {
+            color: #e0e0e0;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,0,0,0.1);
+            transform: rotate(90deg);
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .modal-card {
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid;
+        }
+
+        .light .modal-card {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .dark .modal-card {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        .modal-card:hover {
+            border-color: #4CAF50;
+            transform: translateX(5px);
+        }
+
+        .modal-card-name {
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid;
+            font-size: 16px;
+            resize: vertical;
+            min-height: 120px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .light textarea {
+            background: white;
+            border-color: #ddd;
+            color: #333;
+        }
+
+        .dark textarea {
+            background: #2a2a2a;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .style-card {
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .light .style-card {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .dark .style-card {
+            background: #2a2a2a;
+            border-color: #444;
+        }
+
+        .style-card:hover {
+            transform: translateY(-2px);
+            border-color: #4CAF50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .style-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .style-preview {
+            font-size: 18px;
+            word-break: break-word;
+            line-height: 1.4;
+        }
+
+        .output-section {
+            margin-top: 20px;
+        }
+
+        .output-box {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            word-break: break-word;
+            position: relative;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .light .output-box {
+            background: white;
+            border: 2px solid #ddd;
+        }
+
+        .dark .output-box {
+            background: #2a2a2a;
+            border: 2px solid #444;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: #45a049;
+        }
+
+        .copy-btn.copied {
+            background: #2196F3;
+        }
+
+        .encrypt-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border: none;
+        }
+
+        .encrypt-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);
+        }
+
+        .encrypt-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .encrypt-modal.active {
+            display: flex;
+        }
+
+        .encrypt-modal-content {
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .light .encrypt-modal-content {
+            background: #f5f5f5;
+        }
+
+        .dark .encrypt-modal-content {
+            background: #1a1a1a;
+        }
+
+        .encrypt-algo-group {
+            margin-bottom: 25px;
+        }
+
+        .encrypt-algo-group h3 {
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            color: #4CAF50;
+        }
+
+        .encrypt-algo-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .encrypt-algo-btn {
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: none;
+        }
+
+        .light .encrypt-algo-btn {
+            border-color: #ddd;
+            color: #333;
+        }
+
+        .dark .encrypt-algo-btn {
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .encrypt-algo-btn:hover {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .encrypt-close-btn {
+            background: #666;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .encrypt-close-btn:hover {
+            background: #555;
+        }
+
+        .cipher-output {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            word-break: break-all;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="container">
+        <header>
+            <h1>F_ckunicode</h1>
+            <button class="theme-toggle" id="themeBtn">THEME</button>
+        </header>
+
+        <div class="input-section">
+            <textarea id="input" placeholder="Type your text here..."></textarea>
+        </div>
+
+        <div class="controls">
+            <button class="select-btn" id="selectBtn">SELECT STYLE</button>
+            <button class="encrypt-btn" id="encryptBtn">ENCRYPT</button>
+        </div>
+
+        <div class="styles-grid" id="stylesGrid"></div>
+
+        <div class="output-section" id="output"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>CHOOSE STYLE</h2>
+                <button class="close-btn" id="closeBtn">&times;</button>
+            </div>
+            <div class="modal-grid" id="modalGrid"></div>
+        </div>
+    </div>
+
+    <div class="encrypt-modal" id="encryptModal">
+        <div class="encrypt-modal-content">
+            <h2 style="margin-bottom: 15px;">ENCRYPTION TOOLS</h2>
+            <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <button id="encryptToggle" style="flex:1; padding:10px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">ENCRYPT</button>
+                <button id="decryptToggle" style="flex:1; padding:10px; background:#999; color:white; border:none; border-radius:4px; cursor:pointer;">DECRYPT</button>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>CONVERSION (Số/Text)</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="a1z26">A1Z26</button>
+                    <button class="encrypt-algo-btn" data-algo="ascii-decimal">ASCII Decimal</button>
+                    <button class="encrypt-algo-btn" data-algo="binary">Binary</button>
+                    <button class="encrypt-algo-btn" data-algo="hex">Hexadecimal</button>
+                    <button class="encrypt-algo-btn" data-algo="base32">Base32</button>
+                    <button class="encrypt-algo-btn" data-algo="base64">Base64</button>
+                </div>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>CLASSIC CIPHERS</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="caesar">Caesar (Shift)</button>
+                    <button class="encrypt-algo-btn" data-algo="rot13">ROT13</button>
+                    <button class="encrypt-algo-btn" data-algo="atbash">Atbash</button>
+                    <button class="encrypt-algo-btn" data-algo="reverse">Reverse</button>
+                    <button class="encrypt-algo-btn" data-algo="substitution">Substitution</button>
+                    <button class="encrypt-algo-btn" data-algo="homophonic">Homophonic</button>
+                </div>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>POLYALPHABETIC</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="vigenere">Vigenère</button>
+                    <button class="encrypt-algo-btn" data-algo="vigenere-numeric">Vigenère (Numeric)</button>
+                    <button class="encrypt-algo-btn" data-algo="playfair">Playfair</button>
+                    <button class="encrypt-algo-btn" data-algo="otp">One-Time Pad</button>
+                </div>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>POSITIONAL/NUMERIC</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="polybius">Polybius Square</button>
+                    <button class="encrypt-algo-btn" data-algo="book-cipher">Book Cipher</button>
+                    <button class="encrypt-algo-btn" data-algo="phone-keypad">Phone Keypad</button>
+                    <button class="encrypt-algo-btn" data-algo="modular">Modular (mod 26)</button>
+                    <button class="encrypt-algo-btn" data-algo="fibonacci">Fibonacci Index</button>
+                    <button class="encrypt-algo-btn" data-algo="xor-cipher">XOR Cipher</button>
+                </div>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>TRANSPOSITION</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="railfence">Rail Fence</button>
+                    <button class="encrypt-algo-btn" data-algo="transposition">Transposition</button>
+                    <button class="encrypt-algo-btn" data-algo="bacon">Bacon Cipher</button>
+                </div>
+            </div>
+
+            <div class="encrypt-algo-group">
+                <h3>MODERN/SPECIAL</h3>
+                <div class="encrypt-algo-list">
+                    <button class="encrypt-algo-btn" data-algo="morse">Morse Code</button>
+                    <button class="encrypt-algo-btn" data-algo="nato-phonetic">NATO Phonetic</button>
+                    <button class="encrypt-algo-btn" data-algo="binary-redstone">Binary/Redstone</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <label>Key/Password (if needed):
+                    <input type="text" id="cipherKey" placeholder="e.g., SECRET" style="padding:8px; border-radius:4px; border:1px solid #ccc; width:100%; margin-top:8px;">
+                </label>
+            </div>
+
+            <div id="encryptOutput" style="margin-top: 15px;"></div>
+            <button class="encrypt-close-btn" id="encryptCloseBtn">CLOSE</button>
+        </div>
+    </div>
+
+    <script>
+        const styles = {
+            'BOLD': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 119743);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 119737);
+                if (code >= 48 && code <= 57) return String.fromCharCode(code + 120734);
+                return c;
+            }).join('') },
+
+            'ITALIC': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 119795);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 119789);
+                return c;
+            }).join('') },
+
+            'BOLD ITALIC': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 119847);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 119841);
+                return c;
+            }).join('') },
+
+            'SCRIPT': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 119951);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 119945);
+                return c;
+            }).join('') },
+
+            'SCRIPT BOLD': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120003);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 119997);
+                return c;
+            }).join('') },
+
+            'FRAKTUR': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120055);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120049);
+                return c;
+            }).join('') },
+
+            'FRAKTUR BOLD': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120107);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120101);
+                return c;
+            }).join('') },
+
+            'DOUBLE STRUCK': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120159);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120153);
+                if (code >= 48 && code <= 57) return String.fromCharCode(code + 120734);
+                return c;
+            }).join('') },
+
+            'SANS': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120211);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120205);
+                if (code >= 48 && code <= 57) return String.fromCharCode(code + 120734);
+                return c;
+            }).join('') },
+
+            'SANS BOLD': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120263);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120257);
+                if (code >= 48 && code <= 57) return String.fromCharCode(code + 120734);
+                return c;
+            }).join('') },
+
+            'SANS ITALIC': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120315);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120309);
+                return c;
+            }).join('') },
+
+            'MONOSPACE': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 65 && code <= 90) return String.fromCharCode(code + 120367);
+                if (code >= 97 && code <= 122) return String.fromCharCode(code + 120361);
+                if (code >= 48 && code <= 57) return String.fromCharCode(code + 120734);
+                return c;
+            }).join('') },
+
+            'SUPERSCRIPT': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'ᵃ','b':'ᵇ','c':'ᶜ','d':'ᵈ','e':'ᵉ','f':'ᶠ','g':'ᵍ','h':'ʰ','i':'ⁱ','j':'ʲ','k':'ᵏ','l':'ˡ','m':'ᵐ','n':'ⁿ','o':'ᵒ','p':'ᵖ','q':'ᑫ','r':'ʳ','s':'ˢ','t':'ᵗ','u':'ᵘ','v':'ᵛ','w':'ʷ','x':'ˣ','y':'ʸ','z':'ᶻ',
+                    'A':'ᴬ','B':'ᴮ','C':'ᶜ','D':'ᴰ','E':'ᴱ','F':'ᶠ','G':'ᴳ','H':'ᴴ','I':'ᴵ','J':'ᴶ','K':'ᴷ','L':'ᴸ','M':'ᴹ','N':'ᴺ','O':'ᴼ','P':'ᴾ','Q':'Q','R':'ᴿ','S':'ˢ','T':'ᵀ','U':'ᵁ','V':'ⱽ','W':'ᵂ','X':'ˣ','Y':'ʸ','Z':'ᶻ',
+                    '0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','+':'⁺','-':'⁻','=':'⁼','(':'⁽',')':'⁾'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'SUBSCRIPT': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'ₐ','e':'ₑ','h':'ₕ','i':'ᵢ','j':'ⱼ','k':'ₖ','l':'ₗ','m':'ₘ','n':'ₙ','o':'ₒ','p':'ₚ','r':'ᵣ','s':'ₛ','t':'ₜ','u':'ᵤ','v':'ᵥ','x':'ₓ',
+                    '0':'₀','1':'₁','2':'₂','3':'₃','4':'₄','5':'₅','6':'₆','7':'₇','8':'₈','9':'₉','+':'₊','-':'₋','=':'₌','(':'₍',')':'₎'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'UPSIDE DOWN': { fn: t => t.split('').reverse().map(c => {
+                const map = {
+                    'a':'ɐ','b':'q','c':'ɔ','d':'p','e':'ǝ','f':'ɟ','g':'ƃ','h':'ɥ','i':'ᴉ','j':'ɾ','k':'ʞ','l':'l','m':'ɯ','n':'u','o':'o','p':'d','q':'b','r':'ɹ','s':'s','t':'ʇ','u':'n','v':'ʌ','w':'ʍ','x':'x','y':'ʎ','z':'z',
+                    'A':'∀','B':'q','C':'Ɔ','D':'p','E':'Ǝ','F':'Ⅎ','G':'פ','H':'H','I':'I','J':'ſ','K':'⋊','L':'˥','M':'W','N':'N','O':'O','P':'Ԁ','Q':'b','R':'ᴚ','S':'S','T':'┴','U':'∩','V':'Λ','W':'M','X':'X','Y':'⅄','Z':'Z',
+                    '0':'0','1':'Ɩ','2':'ᄅ','3':'Ɛ','4':'ㄣ','5':'ϛ','6':'9','7':'ㄥ','8':'8','9':'6','?':'¿','!':'¡','.':'˙',',':'\'','\'':',','"':',,'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'STRIKETHROUGH': { fn: t => t.split('').map(c => c + '\u0336').join('') },
+
+            'UNDERLINE': { fn: t => t.split('').map(c => c + '\u0332').join('') },
+
+            'DOUBLE UNDERLINE': { fn: t => t.split('').map(c => c + '\u0333').join('') },
+
+            'OVERLINE': { fn: t => t.split('').map(c => c + '\u0305').join('') },
+
+            'SLASH': { fn: t => t.split('').map(c => c + '\u0338').join('') },
+
+            'ZALGO LIGHT': { fn: t => {
+                const marks = ['̖','̗','̘','̙','̜','̝','̞','̟','̠','̤','̥','̦','̩','̪','̫','̬'];
+                return t.split('').map(c => c + marks[Math.floor(Math.random() * marks.length)]).join('');
+            }},
+
+            'ZALGO MEDIUM': { fn: t => {
+                const marks = ['̖','̗','̘','̙','̜','̝','̞','̟','̠','̤','̥','̦','̩','̪','̫','̬','̭','̮','̯','̰','̱','̲','̳','̹','̺','̻','̼','ͅ','͇','͈','͉','͍','͎'];
+                return t.split('').map(c => c + marks[Math.floor(Math.random() * marks.length)] + marks[Math.floor(Math.random() * marks.length)]).join('');
+            }},
+
+            'ZALGO HEAVY': { fn: t => {
+                const marks = ['̖','̗','̘','̙','̜','̝','̞','̟','̠','̤','̥','̦','̩','̪','̫','̬','̭','̮','̯','̰','̱','̲','̳','̹','̺','̻','̼','ͅ','͇','͈','͉','͍','͎','͓','͔','͕','͖','͙','͚','͐','͑','͒','͗','͘','͜','͝','͞','͟','͠','͢'];
+                return t.split('').map(c => c + marks[Math.floor(Math.random() * marks.length)] + marks[Math.floor(Math.random() * marks.length)] + marks[Math.floor(Math.random() * marks.length)]).join('');
+            }},
+
+            'BUBBLE': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'ⓐ','b':'ⓑ','c':'ⓒ','d':'ⓓ','e':'ⓔ','f':'ⓕ','g':'ⓖ','h':'ⓗ','i':'ⓘ','j':'ⓙ','k':'ⓚ','l':'ⓛ','m':'ⓜ','n':'ⓝ','o':'ⓞ','p':'ⓟ','q':'ⓠ','r':'ⓡ','s':'ⓢ','t':'ⓣ','u':'ⓤ','v':'ⓥ','w':'ⓦ','x':'ⓧ','y':'ⓨ','z':'ⓩ',
+                    'A':'Ⓐ','B':'Ⓑ','C':'Ⓒ','D':'Ⓓ','E':'Ⓔ','F':'Ⓕ','G':'Ⓖ','H':'Ⓗ','I':'Ⓘ','J':'Ⓙ','K':'Ⓚ','L':'Ⓛ','M':'Ⓜ','N':'Ⓝ','O':'Ⓞ','P':'Ⓟ','Q':'Ⓠ','R':'Ⓡ','S':'Ⓢ','T':'Ⓣ','U':'Ⓤ','V':'Ⓥ','W':'Ⓦ','X':'Ⓧ','Y':'Ⓨ','Z':'Ⓩ',
+                    '0':'⓪','1':'①','2':'②','3':'③','4':'④','5':'⑤','6':'⑥','7':'⑦','8':'⑧','9':'⑨'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'NEGATIVE BUBBLE': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'🅐','b':'🅑','c':'🅒','d':'🅓','e':'🅔','f':'🅕','g':'🅖','h':'🅗','i':'🅘','j':'🅙','k':'🅚','l':'🅛','m':'🅜','n':'🅝','o':'🅞','p':'🅟','q':'🅠','r':'🅡','s':'🅢','t':'🅣','u':'🅤','v':'🅥','w':'🅦','x':'🅧','y':'🅨','z':'🅩',
+                    'A':'🅐','B':'🅑','C':'🅒','D':'🅓','E':'🅔','F':'🅕','G':'🅖','H':'🅗','I':'🅘','J':'🅙','K':'🅚','L':'🅛','M':'🅜','N':'🅝','O':'🅞','P':'🅟','Q':'🅠','R':'🅡','S':'🅢','T':'🅣','U':'🅤','V':'🅥','W':'🅦','X':'🅧','Y':'🅨','Z':'🅩'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'SQUARE': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'🄰','b':'🄱','c':'🄲','d':'🄳','e':'🄴','f':'🄵','g':'🄶','h':'🄷','i':'🄸','j':'🄹','k':'🄺','l':'🄻','m':'🄼','n':'🄽','o':'🄾','p':'🄿','q':'🅀','r':'🅁','s':'🅂','t':'🅃','u':'🅄','v':'🅅','w':'🅆','x':'🅇','y':'🅈','z':'🅉',
+                    'A':'🄰','B':'🄱','C':'🄲','D':'🄳','E':'🄴','F':'🄵','G':'🄶','H':'🄷','I':'🄸','J':'🄹','K':'🄺','L':'🄻','M':'🄼','N':'🄽','O':'🄾','P':'🄿','Q':'🅀','R':'🅁','S':'🅂','T':'🅃','U':'🅄','V':'🅅','W':'🅆','X':'🅇','Y':'🅈','Z':'🅉'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'NEGATIVE SQUARE': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'🅰','b':'🅱','c':'🅲','d':'🅳','e':'🅴','f':'🅵','g':'🅶','h':'🅷','i':'🅸','j':'🅹','k':'🅺','l':'🅻','m':'🅼','n':'🅽','o':'🅾','p':'🅿','q':'🆀','r':'🆁','s':'🆂','t':'🆃','u':'🆄','v':'🆅','w':'🆆','x':'🆇','y':'🆈','z':'🆉',
+                    'A':'🅰','B':'🅱','C':'🅲','D':'🅳','E':'🅴','F':'🅵','G':'🅶','H':'🅷','I':'🅸','J':'🅹','K':'🅺','L':'🅻','M':'🅼','N':'🅽','O':'🅾','P':'🅿','Q':'🆀','R':'🆁','S':'🆂','T':'🆃','U':'🆄','V':'🆅','W':'🆆','X':'🆇','Y':'🆈','Z':'🆉'
+                };
+                return map[c] || c;
+            }).join('') },
+
+            'WIDE': { fn: t => t.split('').map(c => {
+                const code = c.charCodeAt(0);
+                if (code >= 33 && code <= 126) return String.fromCharCode(code + 65248);
+                return c;
+            }).join('') },
+
+            'WINGDINGS': { fn: t => t.split('').map(c => {
+                const map = {
+                    'a':'♋︎','b':'♌︎','c':'♍︎','d':'♎︎','e':'♏︎','f':'♐︎','g':'♑︎','h':'♒︎','i':'♓︎','j':'🙰','k':'🙵','l':'●','m':'❍','n':'■','o':'□','p':'◻','q':'❑','r':'❒','s':'⬧','t':'⧫','u':'◆','v':'❖','w':'⬥','x':'⌧','y':'⍓','z':'⌘',
+                    'A':'♋︎','B':'♌︎','C':'♍︎','D':'♎︎','E':'♏︎','F':'♐︎','G':'♑︎','H':'♒︎','I':'♓︎','J':'🙰','K':'🙵','L':'●','M':'❍','N':'■','O':'□','P':'◻','Q':'❑','R':'❒','S':'⬧','T':'⧫','U':'◆','V':'❖','W':'⬥','X':'⌧','Y':'⍓','Z':'⌘'
+                };
+                return map[c] || c;
+            }).join('') }
+        };
+
+        const input = document.getElementById('input');
+        const stylesGrid = document.getElementById('stylesGrid');
+        const output = document.getElementById('output');
+        const modal = document.getElementById('modal');
+        const modalGrid = document.getElementById('modalGrid');
+        const themeBtn = document.getElementById('themeBtn');
+        const selectBtn = document.getElementById('selectBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        themeBtn.addEventListener('click', function() {
+            document.body.classList.toggle('light');
+            document.body.classList.toggle('dark');
+        });
+
+        selectBtn.addEventListener('click', function() {
+            modal.classList.add('active');
+            populateModal();
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        function populateModal() {
+            modalGrid.innerHTML = '';
+
+            Object.keys(styles).forEach(function(styleName) {
+                const card = document.createElement('div');
+                card.className = 'modal-card';
+                card.innerHTML = '<div class="modal-card-name">' + styleName + '</div>';
+                card.addEventListener('click', function() {
+                    showOutput(styleName);
+                    modal.classList.remove('active');
+                });
+                modalGrid.appendChild(card);
+            });
+        }
+
+        function generatePreviews() {
+            stylesGrid.innerHTML = '';
+            const text = input.value || 'Sample Text';
+
+            Object.keys(styles).forEach(function(styleName) {
+                const card = document.createElement('div');
+                card.className = 'style-card';
+                const preview = styles[styleName].fn(text);
+                const shortPreview = preview.substring(0, 100);
+                card.innerHTML = '<div class="style-name">' + styleName + '</div><div class="style-preview">' + shortPreview + '</div>';
+                card.addEventListener('click', function() {
+                    showOutput(styleName);
+                });
+                stylesGrid.appendChild(card);
+            });
+        }
+
+        function showOutput(styleName) {
+            const text = input.value;
+            if (!text) return;
+
+            const converted = styles[styleName].fn(text);
+            const outputDiv = document.createElement('div');
+            outputDiv.className = 'output-box';
+
+            const btn = document.createElement('button');
+            btn.className = 'copy-btn';
+            btn.textContent = 'COPY';
+            btn.addEventListener('click', function() {
+                copyText(converted, btn);
+            });
+
+            const textDiv = document.createElement('div');
+            textDiv.textContent = converted;
+
+            outputDiv.appendChild(btn);
+            outputDiv.appendChild(textDiv);
+
+            output.innerHTML = '';
+            output.appendChild(outputDiv);
+        }
+
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(function() {
+                btn.textContent = 'COPIED!';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.textContent = 'COPY';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        input.addEventListener('input', generatePreviews);
+        generatePreviews();
+
+        // ===== ENCRYPTION ALGORITHMS =====
+        const encryptAlgos = {
+            'a1z26': {
+                name: 'A1Z26',
+                encrypt: (text) => text.replace(/[a-z]/gi, c => (c.toUpperCase().charCodeAt(0) - 64) + ' ').trim(),
+                decrypt: (text) => text.split(' ').map(n => String.fromCharCode(parseInt(n) + 64)).join('')
+            },
+            'ascii-decimal': {
+                name: 'ASCII Decimal',
+                encrypt: (text) => text.split('').map(c => c.charCodeAt(0)).join(' '),
+                decrypt: (text) => text.split(' ').map(n => String.fromCharCode(parseInt(n))).join('')
+            },
+            'binary': {
+                name: 'Binary',
+                encrypt: (text) => text.split('').map(c => c.charCodeAt(0).toString(2).padStart(8, '0')).join(' '),
+                decrypt: (text) => text.split(' ').map(b => String.fromCharCode(parseInt(b, 2))).join('')
+            },
+            'hex': {
+                name: 'Hexadecimal',
+                encrypt: (text) => text.split('').map(c => c.charCodeAt(0).toString(16).padStart(2, '0')).join(' '),
+                decrypt: (text) => text.split(' ').map(h => String.fromCharCode(parseInt(h, 16))).join('')
+            },
+            'base32': {
+                name: 'Base32',
+                encrypt: (text) => {
+                    const base32 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+                    let bits = '', result = '';
+                    for (let c of text) bits += c.charCodeAt(0).toString(2).padStart(8, '0');
+                    for (let i = 0; i < bits.length; i += 5) result += base32[parseInt(bits.substr(i, 5), 2)];
+                    return result;
+                },
+                decrypt: (text) => {
+                    const base32 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+                    let bits = '';
+                    for (let c of text) bits += base32.indexOf(c).toString(2).padStart(5, '0');
+                    let result = '';
+                    for (let i = 0; i < bits.length; i += 8) result += String.fromCharCode(parseInt(bits.substr(i, 8), 2));
+                    return result.replace(/\x00/g, '');
+                }
+            },
+            'base64': {
+                name: 'Base64',
+                encrypt: (text) => {
+                    try { return btoa(unescape(encodeURIComponent(text))); } catch (e) { return btoa(text); }
+                },
+                decrypt: (text) => {
+                    try { return decodeURIComponent(escape(atob(text))); } catch (e) { return atob(text); }
+                }
+            },
+            'caesar': {
+                name: 'Caesar Cipher (shift 3)',
+                encrypt: (text, shift = 3) => {
+                    return text.split('').map(c => {
+                        if (c >= 'a' && c <= 'z') return String.fromCharCode((c.charCodeAt(0) - 97 + shift) % 26 + 97);
+                        if (c >= 'A' && c <= 'Z') return String.fromCharCode((c.charCodeAt(0) - 65 + shift) % 26 + 65);
+                        return c;
+                    }).join('');
+                },
+                decrypt: (text, shift = 3) => {
+                    return text.split('').map(c => {
+                        if (c >= 'a' && c <= 'z') return String.fromCharCode((c.charCodeAt(0) - 97 - shift + 26) % 26 + 97);
+                        if (c >= 'A' && c <= 'Z') return String.fromCharCode((c.charCodeAt(0) - 65 - shift + 26) % 26 + 65);
+                        return c;
+                    }).join('');
+                }
+            },
+            'rot13': {
+                name: 'ROT13',
+                encrypt: (text) => {
+                    return text.split('').map(c => {
+                        if (c >= 'a' && c <= 'z') return String.fromCharCode((c.charCodeAt(0) - 97 + 13) % 26 + 97);
+                        if (c >= 'A' && c <= 'Z') return String.fromCharCode((c.charCodeAt(0) - 65 + 13) % 26 + 65);
+                        return c;
+                    }).join('');
+                },
+                decrypt: function(text) { return this.encrypt(text); }
+            },
+            'atbash': {
+                name: 'Atbash Cipher',
+                encrypt: (text) => {
+                    const map = {};
+                    for (let i = 0; i < 26; i++) {
+                        map[String.fromCharCode(97 + i)] = String.fromCharCode(122 - i);
+                        map[String.fromCharCode(65 + i)] = String.fromCharCode(90 - i);
+                    }
+                    return text.split('').map(c => map[c] || c).join('');
+                },
+                decrypt: function(text) { return this.encrypt(text); }
+            },
+            'reverse': {
+                name: 'Reverse Text',
+                encrypt: (text) => text.split('').reverse().join(''),
+                decrypt: function(text) { return this.encrypt(text); }
+            },
+            'substitution': {
+                name: 'Simple Substitution',
+                encrypt: (text) => {
+                    const alpha = 'abcdefghijklmnopqrstuvwxyz';
+                    const sub = 'zyxwvutsrqponmlkjihgfedcba';
+                    const map = {};
+                    for (let i = 0; i < 26; i++) {
+                        map[alpha[i]] = sub[i];
+                        map[alpha[i].toUpperCase()] = sub[i].toUpperCase();
+                    }
+                    return text.split('').map(c => map[c] || c).join('');
+                },
+                decrypt: function(text) { return this.encrypt(text); }
+            },
+            'homophonic': {
+                name: 'Homophonic Cipher',
+                encrypt: (text, key = '12345678') => {
+                    const map = {};
+                    const alpha = 'abcdefghijklmnopqrstuvwxyz';
+                    for (let i = 0; i < alpha.length; i++) {
+                        map[alpha[i]] = key.charCodeAt(i % key.length) + i;
+                        map[alpha[i].toUpperCase()] = key.charCodeAt(i % key.length) + i;
+                    }
+                    return text.split('').map(c => map[c] || c).join('|');
+                },
+                decrypt: (text) => '(Decryption requires the key mapping)'
+            },
+            'vigenere': {
+                name: 'Vigenère Cipher',
+                encrypt: (text, key = 'SECRET') => {
+                    let out = '';
+                    let ki = 0;
+                    for (let i = 0; i < text.length; i++) {
+                        const c = text[i];
+                        const k = key.toUpperCase().charCodeAt(ki % key.length) - 65;
+                        if (c >= 'a' && c <= 'z') { out += String.fromCharCode((c.charCodeAt(0) - 97 + k) % 26 + 97); ki++; }
+                        else if (c >= 'A' && c <= 'Z') { out += String.fromCharCode((c.charCodeAt(0) - 65 + k) % 26 + 65); ki++; }
+                        else out += c;
+                    }
+                    return out + ' [Key: ' + key + ']';
+                },
+                decrypt: (text, key = 'SECRET') => {
+                    const ct = text.split('[')[0].trim();
+                    let out = '';
+                    let ki = 0;
+                    for (let i = 0; i < ct.length; i++) {
+                        const c = ct[i];
+                        const k = key.toUpperCase().charCodeAt(ki % key.length) - 65;
+                        if (c >= 'a' && c <= 'z') { out += String.fromCharCode((c.charCodeAt(0) - 97 - k + 26) % 26 + 97); ki++; }
+                        else if (c >= 'A' && c <= 'Z') { out += String.fromCharCode((c.charCodeAt(0) - 65 - k + 26) % 26 + 65); ki++; }
+                        else out += c;
+                    }
+                    return out;
+                }
+            },
+            'vigenere-numeric': {
+                name: 'Vigenère Numeric',
+                encrypt: (text, key = '12345') => {
+                    let out = '';
+                    let ki = 0;
+                    for (let i = 0; i < text.length; i++) {
+                        const c = text[i];
+                        const k = parseInt(key[ki % key.length]);
+                        if (c >= 'a' && c <= 'z') { out += String.fromCharCode((c.charCodeAt(0) - 97 + k) % 26 + 97); ki++; }
+                        else if (c >= 'A' && c <= 'Z') { out += String.fromCharCode((c.charCodeAt(0) - 65 + k) % 26 + 65); ki++; }
+                        else out += c;
+                    }
+                    return out.split('').map(c => c.charCodeAt(0) - 96) + ' [Key: ' + key + ']';
+                },
+                decrypt: (text) => '(Use Vigenère decrypt with numeric key)'
+            },
+            'playfair': {
+                name: 'Playfair Cipher',
+                encrypt: (text, key = 'PLAYFAIR') => {
+                    const alpha = 'ABCDEFGHIKLMNOPQRSTUVWXYZ'; // no J
+                    text = text.replace(/j/gi, 'i').toUpperCase();
+                    let result = '';
+                    for (let i = 0; i < text.length; i += 2) {
+                        let a = text[i], b = text[i + 1] || 'X';
+                        result += (a + b) + ' ';
+                    }
+                    return result;
+                },
+                decrypt: (text) => '(Playfair decryption requires full grid implementation)'
+            },
+            'otp': {
+                name: 'One-Time Pad',
+                encrypt: (text, key) => {
+                    key = key || Array(text.length).fill(0).map(() => String.fromCharCode(65 + Math.random() * 26)).join('');
+                    let out = '';
+                    for (let i = 0; i < text.length; i++) {
+                        if (text[i] >= 'a' && text[i] <= 'z') {
+                            out += String.fromCharCode((text.charCodeAt(i) - 97 + key.charCodeAt(i % key.length) - 65) % 26 + 97);
+                        } else if (text[i] >= 'A' && text[i] <= 'Z') {
+                            out += String.fromCharCode((text.charCodeAt(i) - 65 + key.charCodeAt(i % key.length) - 65) % 26 + 65);
+                        } else out += text[i];
+                    }
+                    return out + ' [Key: ' + key + ']';
+                },
+                decrypt: (text, key = 'SECRET') => '(OTP requires exact key)'
+            },
+            'polybius': {
+                name: 'Polybius Square',
+                encrypt: (text) => {
+                    const grid = 'abcdefghiklmnopqrstuvwxyz';
+                    const map = {};
+                    for (let i = 0; i < 25; i++) {
+                        map[grid[i]] = String(Math.floor(i / 5) + 1) + (i % 5 + 1);
+                        map[grid[i].toUpperCase()] = String(Math.floor(i / 5) + 1) + (i % 5 + 1);
+                    }
+                    return text.split('').map(c => map[c] || c).join(' ');
+                },
+                decrypt: (text) => {
+                    const grid = 'abcdefghiklmnopqrstuvwxyz';
+                    const map = {};
+                    for (let i = 0; i < 25; i++) map[String(Math.floor(i / 5) + 1) + (i % 5 + 1)] = grid[i];
+                    return text.split(' ').map(p => map[p] || p).join('');
+                }
+            },
+            'book-cipher': {
+                name: 'Book Cipher (Numeric)',
+                encrypt: (text) => {
+                    return text.split('').map((c, i) => (i + 1) + ':' + c.charCodeAt(0)).join(',');
+                },
+                decrypt: (text) => {
+                    return text.split(',').map(p => String.fromCharCode(parseInt(p.split(':')[1]))).join('');
+                }
+            },
+            'phone-keypad': {
+                name: 'Phone Keypad (T9)',
+                encrypt: (text) => {
+                    const map = { 'a':'2','b':'22','c':'222','d':'3','e':'33','f':'333','g':'4','h':'44','i':'444','j':'5','k':'55','l':'555','m':'6','n':'66','o':'666','p':'7','q':'77','r':'777','s':'7777','t':'8','u':'88','v':'888','w':'9','x':'99','y':'999','z':'9999',' ':'0' };
+                    return text.toLowerCase().split('').map(c => map[c] || c).join('-');
+                },
+                decrypt: (text) => '(Phone keypad decryption ambiguous without space)'
+            },
+            'modular': {
+                name: 'Modular Cipher (mod 26)',
+                encrypt: (text, mod = 7) => {
+                    return text.split('').map(c => {
+                        if (c >= 'a' && c <= 'z') return String.fromCharCode((c.charCodeAt(0) - 97) * mod % 26 + 97);
+                        if (c >= 'A' && c <= 'Z') return String.fromCharCode((c.charCodeAt(0) - 65) * mod % 26 + 65);
+                        return c;
+                    }).join('');
+                },
+                decrypt: (text) => '(Modular decryption requires modular inverse)'
+            },
+            'fibonacci': {
+                name: 'Fibonacci Index Cipher',
+                encrypt: (text) => {
+                    const fib = [1, 1];
+                    for (let i = 2; i < 20; i++) fib.push(fib[i-1] + fib[i-2]);
+                    return text.split('').map(c => {
+                        if (c >= 'a' && c <= 'z') return fib[(c.charCodeAt(0) - 97) % fib.length];
+                        return c;
+                    }).join(' ');
+                },
+                decrypt: (text) => '(Fibonacci decryption requires reverse mapping)'
+            },
+            'xor-cipher': {
+                name: 'XOR Cipher',
+                encrypt: (text, key = '42') => {
+                    const keyNum = parseInt(key) || 42;
+                    return text.split('').map(c => (c.charCodeAt(0) ^ keyNum).toString(16)).join(' ');
+                },
+                decrypt: (text, key = '42') => {
+                    const keyNum = parseInt(key) || 42;
+                    return text.split(' ').map(h => String.fromCharCode(parseInt(h, 16) ^ keyNum)).join('');
+                }
+            },
+            'railfence': {
+                name: 'Rail Fence Cipher',
+                encrypt: (text, rails = 3) => {
+                    const fence = Array(rails).fill('');
+                    let rail = 0, direction = 1;
+                    for (let char of text) {
+                        fence[rail] += char;
+                        rail += direction;
+                        if (rail === 0 || rail === rails - 1) direction *= -1;
+                    }
+                    return fence.join('|');
+                },
+                decrypt: (text) => '(Rail fence decryption requires rail count)'
+            },
+            'transposition': {
+                name: 'Transposition Cipher',
+                encrypt: (text, key = 'KEY') => {
+                    const cols = key.length;
+                    const rows = Math.ceil(text.length / cols);
+                    let grid = text.padEnd(rows * cols, 'X').split('');
+                    const result = Array(cols).fill('');
+                    for (let i = 0; i < grid.length; i++) {
+                        result[i % cols] += grid[i];
+                    }
+                    return result.join('|');
+                },
+                decrypt: (text) => '(Transposition decryption requires key order)'
+            },
+            'bacon': {
+                name: 'Bacon Cipher',
+                encrypt: (text) => {
+                    const map = { 'a':'aaaaa','b':'aaaab','c':'aaaba','d':'aaabb','e':'aabaa','f':'aabab','g':'aabba','h':'aabbb','i':'abaaa','j':'abaab','k':'ababa','l':'ababb','m':'abbaa','n':'abbab','o':'abbba','p':'abbbb','q':'baaaa','r':'baaab','s':'baaba','t':'baabb','u':'babaa','v':'babab','w':'babba','x':'babbb','y':'bbaaa','z':'bbaab' };
+                    return text.toLowerCase().split('').map(c => map[c] || '').join(' ');
+                },
+                decrypt: (text) => {
+                    const map = { 'aaaaa':'a','aaaab':'b','aaaba':'c','aaabb':'d','aabaa':'e','aabab':'f','aabba':'g','aabbb':'h','abaaa':'i','abaab':'j','ababa':'k','ababb':'l','abbaa':'m','abbab':'n','abbba':'o','abbbb':'p','baaaa':'q','baaab':'r','baaba':'s','baabb':'t','babaa':'u','babab':'v','babba':'w','babbb':'x','bbaaa':'y','bbaab':'z' };
+                    return text.split(' ').map(b => map[b] || '').join('');
+                }
+            },
+            'morse': {
+                name: 'Morse Code',
+                encrypt: (text) => {
+                    const morse = { 'a':'.-','b':'-...','c':'-.-.','d':'-..','e':'.','f':'..-.','g':'--.','h':'....','i':'..','j':'.---','k':'-.-','l':'.-..','m':'--','n':'-.','o':'---','p':'.--.','q':'--.-','r':'.-.','s':'...','t':'-','u':'..-','v':'...-','w':'.--','x':'-..-','y':'-.--','z':'--..','0':'-----','1':'.----','2':'..---','3':'...--','4':'....-','5':'.....','6':'-....','7':'--...','8':'---..','9':'----.','.':".-.-.-",',':'--..--','?':'..--..','!':'-.-.--',' ':'/' };
+                    return text.toLowerCase().split('').map(c => morse[c] || c).join(' ');
+                },
+                decrypt: (text) => {
+                    const morse = { '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f','--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l','--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r','...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x','-.--':'y','--..':'z','-----':'0','.----':'1','..---':'2','...--':'3','....-':'4','.....':'5','-....':'6','--...':'7','---..':'8','----.':'9','.-.-.-':'.','--..--':',','..--..':'?','-.-.--':'!' };
+                    return text.split(' ').map(m => morse[m] || m).join('');
+                }
+            },
+            'nato-phonetic': {
+                name: 'NATO Phonetic',
+                encrypt: (text) => {
+                    const nato = { 'a':'Alpha','b':'Bravo','c':'Charlie','d':'Delta','e':'Echo','f':'Foxtrot','g':'Golf','h':'Hotel','i':'India','j':'Juliett','k':'Kilo','l':'Lima','m':'Mike','n':'November','o':'Oscar','p':'Papa','q':'Quebec','r':'Romeo','s':'Sierra','t':'Tango','u':'Uniform','v':'Victor','w':'Whiskey','x':'X-ray','y':'Yankee','z':'Zulu',' ':'-' };
+                    return text.toLowerCase().split('').map(c => nato[c] || c).join(' ');
+                },
+                decrypt: (text) => {
+                    const nato = { 'alpha':'a','bravo':'b','charlie':'c','delta':'d','echo':'e','foxtrot':'f','golf':'g','hotel':'h','india':'i','juliett':'j','kilo':'k','lima':'l','mike':'m','november':'n','oscar':'o','papa':'p','quebec':'q','romeo':'r','sierra':'s','tango':'t','uniform':'u','victor':'v','whiskey':'w','x-ray':'x','yankee':'y','zulu':'z','-':' ' };
+                    return text.toLowerCase().split(' ').map(w => nato[w] || w).join('');
+                }
+            },
+            'binary-redstone': {
+                name: 'Binary / Redstone',
+                encrypt: (text) => {
+                    return text.split('').map(c => c.charCodeAt(0).toString(2).padStart(8, '0').replace(/0/g, '⬛').replace(/1/g, '🟥')).join(' ');
+                },
+                decrypt: (text) => {
+                    const binary = text.split(' ').map(b => b.replace(/⬛/g, '0').replace(/🟥/g, '1')).join(' ');
+                    return binary.split(' ').map(b => String.fromCharCode(parseInt(b, 2))).join('');
+                }
+            }
+        };
+
+        const encryptBtn = document.getElementById('encryptBtn');
+        const encryptModal = document.getElementById('encryptModal');
+        const encryptCloseBtn = document.getElementById('encryptCloseBtn');
+        const encryptOutput = document.getElementById('encryptOutput');
+        const encryptToggle = document.getElementById('encryptToggle');
+        const decryptToggle = document.getElementById('decryptToggle');
+        const cipherKey = document.getElementById('cipherKey');
+
+        let isEncrypt = true;
+
+        encryptBtn.addEventListener('click', () => {
+            encryptModal.classList.add('active');
+            encryptOutput.innerHTML = '';
+        });
+
+        encryptCloseBtn.addEventListener('click', () => {
+            encryptModal.classList.remove('active');
+        });
+
+        encryptModal.addEventListener('click', (e) => {
+            if (e.target === encryptModal) {
+                encryptModal.classList.remove('active');
+            }
+        });
+
+        encryptToggle.addEventListener('click', () => {
+            isEncrypt = true;
+            encryptToggle.style.background = '#4CAF50';
+            decryptToggle.style.background = '#999';
+        });
+
+        decryptToggle.addEventListener('click', () => {
+            isEncrypt = false;
+            encryptToggle.style.background = '#999';
+            decryptToggle.style.background = '#2196F3';
+        });
+
+        document.querySelectorAll('.encrypt-algo-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const algo = e.target.dataset.algo;
+                const text = input.value;
+                const key = cipherKey.value;
+                if (!text) {
+                    alert('Please enter text');
+                    return;
+                }
+
+                let result = '';
+                if (isEncrypt) {
+                    result = encryptAlgos[algo].encrypt(text, key);
+                } else {
+                    result = encryptAlgos[algo].decrypt ? encryptAlgos[algo].decrypt(text, key) : '(Decryption not available)';
+                }
+
+                const mode = isEncrypt ? 'ENCRYPTED' : 'DECRYPTED';
+                encryptOutput.innerHTML = '<div class="cipher-output"><strong>Algorithm:</strong> ' + encryptAlgos[algo].name + '<br><strong>Mode:</strong> ' + mode + '<br><strong>Result:</strong><br><textarea style="width:100%; height:120px; padding:10px; border:1px solid #ccc; border-radius:4px; font-family:monospace;">' + result + '</textarea><button style="margin-top:10px; padding:8px 15px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;" onclick="navigator.clipboard.writeText(this.previousElementSibling.value); this.textContent=\'COPIED!\'; setTimeout(()=>this.textContent=\'COPY TO CLIPBOARD\',2000);">COPY TO CLIPBOARD</button></div>';
+            });
+        });
+    </script>
+</body>
+</html>
