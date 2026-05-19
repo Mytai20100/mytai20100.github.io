@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg-ng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #d0d0d0;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 320px;
+            background: #151515;
+            padding: 30px;
+            border-right: 1px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .logo {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2a2a2a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .reload-btn {
+            background: #2a2a2a;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #888;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+
+        .reload-btn:hover {
+            background: #333;
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .settings {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .setting-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .setting-group label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 4px;
+            background: #2a2a2a;
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #6366f1;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #6366f1;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .slider-value {
+            min-width: 35px;
+            text-align: right;
+            font-size: 14px;
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .theme-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+
+        .theme-btn {
+            padding: 10px;
+            border: 2px solid #2a2a2a;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #1a1a1a;
+            color: #888;
+            font-size: 12px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .theme-btn:hover {
+            border-color: #6366f1;
+            color: #fff;
+        }
+
+        .theme-btn.active {
+            border-color: #6366f1;
+            background: #6366f1;
+            color: #fff;
+        }
+
+        .upload-area {
+            border: 2px dashed #333;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #0a0a0a;
+        }
+
+        .upload-area:hover {
+            border-color: #6366f1;
+            background: #151515;
+        }
+
+        .upload-area.dragover {
+            border-color: #6366f1;
+            background: #1a1a1a;
+        }
+
+        .upload-icon {
+            font-size: 64px;
+            margin-bottom: 12px;
+            opacity: 0.3;
+            font-weight: 300;
+        }
+
+        .upload-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .upload-text strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: #2a2a2a;
+            color: #fff;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #333;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: auto;
+        }
+
+        .preview-container {
+            background: #151515;
+            border-radius: 12px;
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .preview-header h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            background: #2a2a2a;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #888;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .icon-btn:hover:not(:disabled) {
+            background: #333;
+            color: #fff;
+        }
+
+        .icon-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .preview-area {
+            flex: 1;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        .preview-area.theme-white {
+            background: #ffffff;
+        }
+
+        .preview-area.theme-black {
+            background: #000000;
+        }
+
+        .preview-area.theme-transparent {
+            background: repeating-conic-gradient(#2a2a2a 0% 25%, #1a1a1a 0% 50%) 50% / 20px 20px;
+        }
+
+        .preview-area img, .preview-area svg {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .code-area {
+            background: #0a0a0a;
+            color: #d0d0d0;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: 400px;
+            overflow: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            border: 1px solid #2a2a2a;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 3px solid #2a2a2a;
+            border-top: 3px solid #6366f1;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .placeholder {
+            text-align: center;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 16px;
+            background: #0a0a0a;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>svg-ng</h1>
+            <button class="reload-btn" id="reloadBtn" title="Reload">↻</button>
+        </div>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">+</div>
+            <div class="upload-text">
+                <strong>Drop image here</strong>
+                or click to browse
+            </div>
+            <input type="file" id="fileInput" accept="image/*">
+        </div>
+
+        <div class="settings">
+            <div class="setting-group">
+                <label>Background Theme</label>
+                <div class="theme-selector">
+                    <button class="theme-btn" data-theme="dark">Dark</button>
+                    <button class="theme-btn" data-theme="white">White</button>
+                    <button class="theme-btn" data-theme="black">Black</button>
+                </div>
+                <div class="theme-selector" style="grid-template-columns: 1fr;">
+                    <button class="theme-btn active" data-theme="transparent">Transparent</button>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Detail Level</label>
+                <div class="slider-container">
+                    <input type="range" id="detailSlider" min="1" max="10" value="6">
+                    <span class="slider-value" id="detailValue">6</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Color Threshold</label>
+                <div class="slider-container">
+                    <input type="range" id="thresholdSlider" min="1" max="255" value="128">
+                    <span class="slider-value" id="thresholdValue">128</span>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <label>Smoothing</label>
+                <div class="slider-container">
+                    <input type="range" id="smoothSlider" min="0" max="10" value="4">
+                    <span class="slider-value" id="smoothValue">4</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-primary" id="convertBtn" disabled>
+            Convert to SVG
+        </button>
+
+        <button class="btn btn-secondary" id="downloadBtn" disabled style="display: none;">
+            Download SVG
+        </button>
+    </div>
+
+    <div class="main-content">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h2>Preview</h2>
+                <div class="preview-actions">
+                    <button class="icon-btn" id="viewCodeBtn" disabled>
+                        View Code
+                    </button>
+                    <button class="icon-btn" id="copyCodeBtn" disabled>
+                        Copy
+                    </button>
+                </div>
+            </div>
+
+            <div class="preview-area theme-transparent" id="previewArea">
+                <div class="placeholder">No image uploaded yet</div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Processing image...</div>
+                </div>
+            </div>
+
+            <div class="stats" id="stats" style="display: none;">
+                <div class="stat-item">
+                    <div class="stat-label">Original</div>
+                    <div class="stat-value" id="originalSize">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">SVG Size</div>
+                    <div class="stat-value" id="svgSize">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Elements</div>
+                    <div class="stat-value" id="elementCount">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Time</div>
+                    <div class="stat-value" id="processTime">-</div>
+                </div>
+            </div>
+
+            <div class="code-area" id="codeArea" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        let currentImage = null;
+        let svgCode = '';
+        let originalFileSize = 0;
+        
+        const titles = [
+            'svg-ng',
+            'Processing...',
+            'Image to Vector',
+            'SVG Creator',
+            'Vector Magic',
+            'Convert Now'
+        ];
+        let titleIndex = 0;
+
+        setInterval(() => {
+            titleIndex = (titleIndex + 1) % titles.length;
+            document.title = titles[titleIndex];
+        }, 2000);
+
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const previewArea = document.getElementById('previewArea');
+        const convertBtn = document.getElementById('convertBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const viewCodeBtn = document.getElementById('viewCodeBtn');
+        const copyCodeBtn = document.getElementById('copyCodeBtn');
+        const codeArea = document.getElementById('codeArea');
+        const loading = document.getElementById('loading');
+        const stats = document.getElementById('stats');
+        const reloadBtn = document.getElementById('reloadBtn');
+
+        const detailSlider = document.getElementById('detailSlider');
+        const thresholdSlider = document.getElementById('thresholdSlider');
+        const smoothSlider = document.getElementById('smoothSlider');
+        const detailValue = document.getElementById('detailValue');
+        const thresholdValue = document.getElementById('thresholdValue');
+        const smoothValue = document.getElementById('smoothValue');
+
+        // Reload button
+        reloadBtn.addEventListener('click', () => {
+            location.reload();
+        });
+
+        // Theme selector
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        themeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                themeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const theme = btn.dataset.theme;
+                previewArea.className = 'preview-area';
+                
+                if (theme === 'white') {
+                    previewArea.classList.add('theme-white');
+                } else if (theme === 'black') {
+                    previewArea.classList.add('theme-black');
+                } else if (theme === 'transparent') {
+                    previewArea.classList.add('theme-transparent');
+                }
+            });
+        });
+
+        detailSlider.addEventListener('input', (e) => {
+            detailValue.textContent = e.target.value;
+        });
+
+        thresholdSlider.addEventListener('input', (e) => {
+            thresholdValue.textContent = e.target.value;
+        });
+
+        smoothSlider.addEventListener('input', (e) => {
+            smoothValue.textContent = e.target.value;
+        });
+
+        uploadArea.addEventListener('click', () => fileInput.click());
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleFile(file);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                handleFile(file);
+            }
+        });
+
+        function handleFile(file) {
+            originalFileSize = file.size;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                currentImage = new Image();
+                currentImage.onload = () => {
+                    previewArea.innerHTML = '';
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'placeholder';
+                    placeholder.style.display = 'none';
+                    previewArea.appendChild(placeholder);
+                    previewArea.appendChild(currentImage);
+                    convertBtn.disabled = false;
+                    viewCodeBtn.disabled = true;
+                    copyCodeBtn.disabled = true;
+                    downloadBtn.style.display = 'none';
+                    codeArea.style.display = 'none';
+                    stats.style.display = 'none';
+                    
+                    document.getElementById('originalSize').textContent = formatFileSize(originalFileSize);
+                };
+                currentImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        convertBtn.addEventListener('click', () => {
+            if (!currentImage) return;
+
+            loading.classList.add('active');
+            convertBtn.disabled = true;
+
+            const startTime = performance.now();
+
+            // Use Web Worker simulation with requestIdleCallback for better performance
+            requestIdleCallback(() => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d', { willReadFrequently: true });
+                
+                canvas.width = currentImage.naturalWidth;
+                canvas.height = currentImage.naturalHeight;
+                ctx.drawImage(currentImage, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const detail = parseInt(detailSlider.value);
+                const threshold = parseInt(thresholdSlider.value);
+                const smooth = parseInt(smoothSlider.value);
+                
+                // Process in chunks for better performance
+                svgCode = convertToAdvancedSVGFast(imageData, canvas.width, canvas.height, detail, threshold, smooth);
+                
+                const endTime = performance.now();
+                const processTime = ((endTime - startTime) / 1000).toFixed(2);
+                
+                previewArea.innerHTML = '';
+                previewArea.innerHTML = svgCode;
+                
+                const svgBytes = new Blob([svgCode]).size;
+                document.getElementById('svgSize').textContent = formatFileSize(svgBytes);
+                document.getElementById('elementCount').textContent = (svgCode.match(/<path|<rect|<circle/g) || []).length;
+                document.getElementById('processTime').textContent = processTime + 's';
+                
+                loading.classList.remove('active');
+                viewCodeBtn.disabled = false;
+                copyCodeBtn.disabled = false;
+                downloadBtn.style.display = 'block';
+                downloadBtn.disabled = false;
+                stats.style.display = 'grid';
+            });
+        });
+
+        function convertToAdvancedSVGFast(imageData, width, height, detail, threshold, smooth) {
+            const step = Math.max(1, 11 - detail);
+            const data = imageData.data;
+            let paths = '';
+            
+            // Optimized edge detection
+            const edges = detectEdgesFast(data, width, height, step);
+            
+            // Process in parallel-friendly chunks
+            for (let y = 0; y < height; y += step) {
+                for (let x = 0; x < width; x += step) {
+                    const i = (y * width + x) * 4;
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    const a = data[i + 3];
+                    
+                    if (a < 10) continue;
+                    
+                    const brightness = (r + g + b) / 3;
+                    const isEdge = edges[Math.floor(y / step) * Math.floor(width / step) + Math.floor(x / step)];
+                    
+                    if (isEdge || brightness < threshold || a > 200) {
+                        const size = step * (isEdge ? 0.8 : 1);
+                        const opacity = a / 255;
+                        
+                        if (smooth > 5) {
+                            paths += `<circle cx="${x + step/2}" cy="${y + step/2}" r="${size/2}" fill="rgb(${r},${g},${b})" opacity="${opacity.toFixed(2)}"/>\n`;
+                        } else {
+                            paths += `<rect x="${x}" y="${y}" width="${size}" height="${size}" fill="rgb(${r},${g},${b})" opacity="${opacity.toFixed(2)}"/>\n`;
+                        }
+                    }
+                }
+            }
+
+            return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">\n${paths}</svg>`;
+        }
+
+        function detectEdgesFast(data, width, height, step) {
+            const reducedWidth = Math.floor(width / step);
+            const reducedHeight = Math.floor(height / step);
+            const edges = new Uint8Array(reducedWidth * reducedHeight);
+            const threshold = 30;
+            
+            for (let y = 1; y < reducedHeight - 1; y++) {
+                for (let x = 1; x < reducedWidth - 1; x++) {
+                    const px = x * step;
+                    const py = y * step;
+                    const i = (py * width + px) * 4;
+                    const centerGray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                    
+                    let maxDiff = 0;
+                    for (let dy = -1; dy <= 1; dy++) {
+                        for (let dx = -1; dx <= 1; dx++) {
+                            const nx = px + dx * step;
+                            const ny = py + dy * step;
+                            const ni = (ny * width + nx) * 4;
+                            const neighborGray = (data[ni] + data[ni + 1] + data[ni + 2]) / 3;
+                            maxDiff = Math.max(maxDiff, Math.abs(centerGray - neighborGray));
+                        }
+                    }
+                    
+                    edges[y * reducedWidth + x] = maxDiff > threshold ? 1 : 0;
+                }
+            }
+            
+            return edges;
+        }
+
+        viewCodeBtn.addEventListener('click', () => {
+            if (codeArea.style.display === 'none') {
+                codeArea.style.display = 'block';
+                codeArea.textContent = svgCode;
+                viewCodeBtn.textContent = 'Hide Code';
+            } else {
+                codeArea.style.display = 'none';
+                viewCodeBtn.textContent = 'View Code';
+            }
+        });
+
+        copyCodeBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(svgCode).then(() => {
+                const originalText = copyCodeBtn.textContent;
+                copyCodeBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyCodeBtn.textContent = originalText;
+                }, 2000);
+            });
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'converted-image.svg';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
