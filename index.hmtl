@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9router config generator</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+  :root {
+    --bg: #ffffff; --bg2: #f5f5f4; --bg3: #eeece8;
+    --text: #1a1a18; --text2: #6b6b67; --text3: #9b9b97;
+    --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.22);
+    --success: #2d7a3a; --danger: #b83232;
+    --radius: 8px; --radius-lg: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a; --bg2: #242422; --bg3: #2e2e2c;
+      --text: #f0ede8; --text2: #a0a09c; --text3: #6b6b67;
+      --border: rgba(255,255,255,0.1); --border2: rgba(255,255,255,0.2);
+      --success: #5dbf6e; --danger: #e87070;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg3); color: var(--text);
+    min-height: 100vh; display: flex; align-items: flex-start;
+    justify-content: center; padding: 2rem 1rem 5rem;
+  }
+  .wrap { width: 100%; max-width: 520px; }
+  .header { margin-bottom: 1.25rem; }
+  .header h1 { font-size: 18px; font-weight: 600; }
+  .header p { font-size: 13px; color: var(--text2); margin-top: 3px; }
+  .card {
+    background: var(--bg); border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg); padding: 1.25rem;
+  }
+  label { font-size: 13px; color: var(--text2); display: block; margin-bottom: 5px; }
+  input[type=text], input[type=password], select {
+    width: 100%; padding: 8px 10px;
+    border: 0.5px solid var(--border2); border-radius: var(--radius);
+    background: var(--bg); color: var(--text); font-size: 14px;
+    font-family: inherit; outline: none; transition: border-color .15s; margin-bottom: 1rem;
+  }
+  input:focus, select:focus { border-color: var(--text2); }
+  .row { display: flex; gap: 8px; align-items: flex-start; }
+  .row input { margin-bottom: 0; }
+  .btn {
+    padding: 8px 16px; border-radius: var(--radius); font-size: 14px;
+    font-weight: 500; cursor: pointer; border: 0.5px solid var(--border2);
+    background: var(--bg); color: var(--text); font-family: inherit;
+    transition: background .15s, opacity .15s; white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn:hover { background: var(--bg2); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn-primary:hover { opacity: .82; background: var(--text); }
+  .btn-sm { padding: 6px 12px; font-size: 13px; }
+  .status { font-size: 13px; color: var(--text2); margin-top: 8px; min-height: 18px; }
+  .status.err { color: var(--danger); }
+  .status.ok { color: var(--success); }
+
+  .overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.48);
+    display: flex; align-items: center; justify-content: center; z-index: 999; padding: 1rem;
+  }
+  .modal {
+    background: var(--bg); border-radius: var(--radius-lg); border: 0.5px solid var(--border);
+    padding: 1.5rem; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto;
+  }
+  .modal-header {
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;
+  }
+  .modal-header h3 { font-size: 16px; font-weight: 500; }
+  .modal-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--text2); font-size: 22px; line-height: 1; padding: 0 2px;
+  }
+  .modal-close:hover { color: var(--text); }
+
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; }
+  .mode-card {
+    border: 0.5px solid var(--border); border-radius: var(--radius);
+    padding: 1rem; cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .mode-card:hover { background: var(--bg2); }
+  .mode-card.selected { border-color: var(--text); background: var(--bg2); }
+  .mode-card i { font-size: 24px; color: var(--text2); display: block; margin-bottom: 6px; }
+  .mode-card .mc-title { font-size: 14px; font-weight: 500; }
+  .mode-card .mc-desc { font-size: 12px; color: var(--text2); margin-top: 2px; }
+
+  .section { margin-bottom: 1rem; }
+  .section label { margin-bottom: 4px; }
+  .section input, .section select { margin-bottom: 0; }
+
+  .models-list {
+    max-height: 180px; overflow-y: auto; border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 6px; background: var(--bg2);
+  }
+  .model-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px; border-radius: 6px; cursor: pointer;
+  }
+  .model-item:hover { background: var(--bg3); }
+  .model-item input[type=radio] { accent-color: var(--text); flex-shrink: 0; }
+  .model-item span { font-size: 12px; font-family: monospace; color: var(--text); }
+
+  .code-box {
+    background: var(--bg2); border: 0.5px solid var(--border); border-radius: var(--radius);
+    padding: 1rem; font-family: monospace; font-size: 12px; white-space: pre;
+    overflow-x: auto; max-height: 280px; overflow-y: auto; color: var(--text); line-height: 1.5;
+  }
+  .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .copy-msg { font-size: 12px; color: var(--success); margin-top: 6px; min-height: 16px; }
+
+  .spinner {
+    display: inline-block; width: 13px; height: 13px;
+    border: 2px solid var(--border2); border-top-color: var(--text);
+    border-radius: 50%; animation: spin .7s linear infinite; vertical-align: -2px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .footer { text-align: center; font-size: 12px; color: var(--text3); margin-top: 1.5rem; }
+
+  .mcp-add-row { display: flex; gap: 6px; align-items: flex-start; flex-wrap: wrap; }
+  .mcp-add-row input { margin-bottom: 0; min-width: 80px; }
+  .mcp-row {
+    display: flex; align-items: center; gap: 8px; padding: 6px 8px;
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: var(--radius); margin-bottom: 5px;
+  }
+  .mcp-name { font-size: 13px; font-weight: 500; display: block; }
+  .mcp-pkg { font-size: 11px; font-family: monospace; color: var(--text2); display: block; margin-top: 1px; }
+  .btn-icon {
+    background: none; border: none; cursor: pointer; color: var(--text2);
+    padding: 4px; border-radius: 4px; display: flex; align-items: center;
+    transition: color .15s, background .15s; flex-shrink: 0;
+  }
+  .btn-icon:hover { color: var(--danger); background: var(--bg3); }
+
+  /* lang switcher */
+  .lang-bar {
+    position: fixed; bottom: 1.25rem; right: 1.25rem;
+    display: flex; gap: 4px; z-index: 100;
+    background: var(--bg); border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  }
+  .lang-btn {
+    padding: 5px 11px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    cursor: pointer; border: none; background: none; color: var(--text2);
+    font-family: inherit; transition: background .12s, color .12s;
+  }
+  .lang-btn:hover { background: var(--bg2); color: var(--text); }
+  .lang-btn.active { background: var(--text); color: var(--bg); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <h1 data-i="title">9router config generator</h1>
+    <p data-i="subtitle">Tạo config.jsonc cho OpenCode desktop hoặc CLI</p>
+  </div>
+  <div class="card">
+    <label data-i="baseUrlLabel">Base URL</label>
+    <input type="text" id="baseUrl" data-i-ph="baseUrlPh">
+
+    <label data-i="apiKeyLabel">API Key</label>
+    <div class="row" style="margin-bottom:1rem">
+      <input type="password" id="apiKey" data-i-ph="apiKeyPh" style="flex:1;margin-bottom:0">
+      <button class="btn btn-sm" id="toggleKey" data-i="showBtn">Hiện</button>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="btn btn-primary" id="startBtn" onclick="startCheck()">
+        <i class="ti ti-player-play"></i> <span data-i="startBtn">Start</span>
+      </button>
+      <div class="status" id="statusMsg"></div>
+    </div>
+  </div>
+  <div class="footer" data-i="footer">Không lưu API key — chỉ dùng trong phiên này</div>
+</div>
+
+<!-- Modal -->
+<div class="overlay" id="overlay" style="display:none" onclick="overlayClick(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <h3 id="modalTitle"></h3>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- Lang bar -->
+<div class="lang-bar">
+  <button class="lang-btn active" id="btn-vi" onclick="setLang('vi')">VI</button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+
+<script>
+  // ── i18n ──────────────────────────────────────────────────────────────────
+  const T = {
+    vi: {
+      title: '9router config generator',
+      subtitle: 'Tạo config.jsonc cho OpenCode desktop hoặc CLI',
+      baseUrlLabel: 'Base URL', baseUrlPh: 'Nhập base URL...',
+      apiKeyLabel: 'API Key', apiKeyPh: 'sk-...',
+      showBtn: 'Hiện', hideBtn: 'Ẩn',
+      startBtn: 'Start',
+      footer: 'Không lưu API key — chỉ dùng trong phiên này',
+      errUrl: 'Vui lòng nhập Base URL',
+      errKey: 'Vui lòng nhập API Key',
+      fetching: 'Đang fetch models...',
+      found: (n) => `✓ Tìm thấy ${n} model`,
+      errHttp: (s) => `HTTP ${s} — kiểm tra lại URL hoặc API key`,
+      errNoModel: 'Không tìm thấy model nào',
+      errPrefix: 'Lỗi: ',
+      // mode select
+      modeTitle: 'Chọn phiên bản config',
+      modeDesktopTitle: 'Desktop', modeDesktopDesc: 'OpenCode GUI app',
+      modeCliTitle: 'CLI', modeCliDesc: 'Command line tool',
+      nextBtn: 'Tiếp theo',
+      // config form
+      configTitle: 'Tùy chỉnh config',
+      modelLabel: 'Model ưu tiên (default)',
+      modelSearch: 'Tìm model...',
+      modelNotFound: 'Không tìm thấy model',
+      agentLabel: 'Mô tả explorer agent',
+      shellLabel: 'Shell',
+      mcpLabel: 'MCP Servers',
+      mcpNamePh: 'Tên server (vd: browsermcp)',
+      mcpPkgPh: 'Package (vd: @browsermcp/mcp)',
+      mcpAddBtn: 'Thêm',
+      mcpEmpty: 'Chưa có MCP server nào',
+      mcpHint: 'Vui lòng nhập đủ tên và package',
+      mcpRemove: 'Xóa',
+      previewBtn: 'Xem config',
+      // preview
+      previewTitle: 'Config đã tạo',
+      modeLabel: 'Chế độ',
+      modelLabelShort: 'Model',
+      copyBtn: 'Copy',
+      downloadDesktop: 'Tải config.jsonc',
+      downloadCli: 'Tải opencode.json',
+      editBtn: 'Chỉnh sửa',
+      copied: '✓ Đã copy vào clipboard',
+    },
+    en: {
+      title: '9router config generator',
+      subtitle: 'Generate config.jsonc for OpenCode desktop or CLI',
+      baseUrlLabel: 'Base URL', baseUrlPh: 'Enter base URL...',
+      apiKeyLabel: 'API Key', apiKeyPh: 'sk-...',
+      showBtn: 'Show', hideBtn: 'Hide',
+      startBtn: 'Start',
+      footer: 'API key is not stored — session only',
+      errUrl: 'Please enter a Base URL',
+      errKey: 'Please enter an API Key',
+      fetching: 'Fetching models...',
+      found: (n) => `✓ Found ${n} model${n !== 1 ? 's' : ''}`,
+      errHttp: (s) => `HTTP ${s} — check your URL or API key`,
+      errNoModel: 'No models found',
+      errPrefix: 'Error: ',
+      modeTitle: 'Choose version',
+      modeDesktopTitle: 'Desktop', modeDesktopDesc: 'OpenCode GUI app',
+      modeCliTitle: 'CLI', modeCliDesc: 'Command line tool',
+      nextBtn: 'Next',
+      configTitle: 'Customize config',
+      modelLabel: 'Default model',
+      modelSearch: 'Search models...',
+      modelNotFound: 'No models found',
+      agentLabel: 'Explorer agent description',
+      shellLabel: 'Shell',
+      mcpLabel: 'MCP Servers',
+      mcpNamePh: 'Server name (e.g. browsermcp)',
+      mcpPkgPh: 'Package (e.g. @browsermcp/mcp)',
+      mcpAddBtn: 'Add',
+      mcpEmpty: 'No MCP servers added yet',
+      mcpHint: 'Please fill in both name and package',
+      mcpRemove: 'Remove',
+      previewBtn: 'Preview config',
+      previewTitle: 'Generated config',
+      modeLabel: 'Mode',
+      modelLabelShort: 'Model',
+      copyBtn: 'Copy',
+      downloadDesktop: 'Download config.jsonc',
+      downloadCli: 'Download opencode.json',
+      editBtn: 'Edit',
+      copied: '✓ Copied to clipboard',
+    }
+  };
+
+  let lang = 'vi';
+
+  function t(key, ...args) {
+    const v = T[lang][key];
+    return typeof v === 'function' ? v(...args) : (v || key);
+  }
+
+  function applyLang() {
+    document.querySelectorAll('[data-i]').forEach(el => {
+      const k = el.getAttribute('data-i');
+      if (T[lang][k] !== undefined) el.textContent = T[lang][k];
+    });
+    document.querySelectorAll('[data-i-ph]').forEach(el => {
+      const k = el.getAttribute('data-i-ph');
+      if (T[lang][k] !== undefined) el.placeholder = T[lang][k];
+    });
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-' + lang).classList.add('active');
+    document.documentElement.lang = lang;
+  }
+
+  function setLang(l) {
+    lang = l;
+    applyLang();
+    // update toggle button if visible
+    const tb = document.getElementById('toggleKey');
+    if (tb) {
+      const inp = document.getElementById('apiKey');
+      tb.textContent = inp.type === 'password' ? t('showBtn') : t('hideBtn');
+    }
+  }
+  let allModels = [], selectedMode = '', _baseUrl = '', _apiKey = '', mcpServers = [];
+  document.getElementById('toggleKey').onclick = function () {
+    const inp = document.getElementById('apiKey');
+    if (inp.type === 'password') { inp.type = 'text'; this.textContent = t('hideBtn'); }
+    else { inp.type = 'password'; this.textContent = t('showBtn'); }
+  }
+  function setStatus(msg, type) {
+    const el = document.getElementById('statusMsg');
+    el.className = 'status' + (type ? ' ' + type : '');
+    el.innerHTML = msg;
+  }
+  function overlayClick(e) {
+    if (e.target === document.getElementById('overlay')) closeModal();
+  }
+  async function startCheck() {
+    _baseUrl = document.getElementById('baseUrl').value.trim().replace(/\/+$/, '');
+    _apiKey = document.getElementById('apiKey').value.trim();
+    if (!_baseUrl) { setStatus(t('errUrl'), 'err'); return; }
+    if (!_apiKey)  { setStatus(t('errKey'), 'err'); return; }
+
+    setStatus('<span class="spinner"></span> ' + t('fetching'));
+    document.getElementById('startBtn').disabled = true;
+
+    try {
+      const url = _baseUrl.endsWith('/models') ? _baseUrl : _baseUrl + '/models';
+      const res = await fetch(url, {
+        headers: { 'Authorization': 'Bearer ' + _apiKey, 'Content-Type': 'application/json' }
+      });
+      if (!res.ok) throw new Error(t('errHttp', res.status));
+      const data = await res.json();
+      const list = data.data || data.models || data || [];
+      allModels = Array.isArray(list)
+        ? list.map(m => typeof m === 'string' ? m : (m.id || m.name || '')).filter(Boolean)
+        : [];
+      if (!allModels.length) throw new Error(t('errNoModel'));
+      setStatus(t('found', allModels.length), 'ok');
+      mcpServers = [];
+      showModeSelect();
+    } catch (e) {
+      setStatus(t('errPrefix') + e.message, 'err');
+      document.getElementById('startBtn').disabled = false;
+    }
+  }
+  function showModeSelect() {
+    setModalTitle(t('modeTitle'));
+    setModalBody(`
+      <div class="mode-grid">
+        <div class="mode-card" id="card-desktop" onclick="selectMode('desktop')">
+          <i class="ti ti-device-desktop"></i>
+          <div class="mc-title">${t('modeDesktopTitle')}</div>
+          <div class="mc-desc">${t('modeDesktopDesc')}</div>
+        </div>
+        <div class="mode-card" id="card-cli" onclick="selectMode('cli')">
+          <i class="ti ti-terminal-2"></i>
+          <div class="mc-title">${t('modeCliTitle')}</div>
+          <div class="mc-desc">${t('modeCliDesc')}</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <button class="btn btn-primary" id="proceedBtn" onclick="showConfigForm()" disabled>
+          ${t('nextBtn')} <i class="ti ti-arrow-right"></i>
+        </button>
+      </div>
+    `);
+    openModal();
+  }
+
+  function selectMode(mode) {
+    selectedMode = mode;
+    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('selected'));
+    document.getElementById('card-' + mode).classList.add('selected');
+    document.getElementById('proceedBtn').disabled = false;
+  }
+
+  function renderModelItems(filter) {
+    const q = (filter || '').toLowerCase();
+    const filtered = q ? allModels.filter(m => m.toLowerCase().includes(q)) : allModels;
+    if (!filtered.length) return `<div style="padding:8px 6px;font-size:12px;color:var(--text2)">${t('modelNotFound')}</div>`;
+    return filtered.map((m, i) => `
+      <label class="model-item">
+        <input type="radio" name="modelPick" value="${esc(m)}" ${i === 0 && !q ? 'checked' : ''}>
+        <span>${esc(m)}</span>
+      </label>`).join('');
+  }
+
+  function filterModels(q) {
+    document.getElementById('modelsList').innerHTML = renderModelItems(q);
+  }
+
+  // ── MCP helpers ───────────────────────────────────────────────────────────
+  function renderMcpList() {
+    const el = document.getElementById('mcpList');
+    if (!el) return;
+    if (!mcpServers.length) {
+      el.innerHTML = `<div style="font-size:12px;color:var(--text3);padding:6px 4px">${t('mcpEmpty')}</div>`;
+      return;
+    }
+    el.innerHTML = mcpServers.map((s, i) => `
+      <div class="mcp-row">
+        <div style="flex:1;min-width:0">
+          <span class="mcp-name">${esc(s.name)}</span>
+          <span class="mcp-pkg">${esc(s.package)}</span>
+        </div>
+        <button class="btn-icon" onclick="removeMcp(${i})" title="${t('mcpRemove')}">
+          <i class="ti ti-trash" style="font-size:14px"></i>
+        </button>
+      </div>`).join('');
+  }
+
+  function addMcp() {
+    const nameEl = document.getElementById('mcpName');
+    const pkgEl  = document.getElementById('mcpPkg');
+    const name = nameEl.value.trim(), pkg = pkgEl.value.trim();
+    if (!name || !pkg) {
+      const hint = document.getElementById('mcpHint');
+      hint.textContent = t('mcpHint');
+      setTimeout(() => { hint.textContent = ''; }, 2000);
+      return;
+    }
+    mcpServers.push({ name, package: pkg });
+    nameEl.value = ''; pkgEl.value = '';
+    renderMcpList();
+  }
+
+  function removeMcp(i) { mcpServers.splice(i, 1); renderMcpList(); }
+  function showConfigForm() {
+    setModalTitle(t('configTitle'));
+    const shellRow = selectedMode === 'desktop' ? `
+      <div class="section">
+        <label>${t('shellLabel')}</label>
+        <select id="shellSel">
+          <option value="powershell">powershell</option>
+          <option value="bash">bash</option>
+          <option value="zsh">zsh</option>
+          <option value="sh">sh</option>
+        </select>
+      </div>` : '';
+
+    setModalBody(`
+      <div class="section">
+        <label>${t('modelLabel')}</label>
+        <div style="position:relative;margin-bottom:6px">
+          <i class="ti ti-search" style="position:absolute;left:9px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text2);pointer-events:none"></i>
+          <input type="text" id="modelSearch" placeholder="${t('modelSearch')}" style="padding-left:30px;margin-bottom:0" oninput="filterModels(this.value)">
+        </div>
+        <div class="models-list" id="modelsList">${renderModelItems('')}</div>
+      </div>
+
+      <div class="section" style="margin-top:1rem">
+        <label>${t('agentLabel')}</label>
+        <input type="text" id="explorerDesc" value="Fast explorer subagent for codebase exploration">
+      </div>
+
+      ${shellRow}
+
+      <div class="section" style="margin-top:0.25rem">
+        <label style="margin-bottom:8px">${t('mcpLabel')}</label>
+        <div class="mcp-add-row">
+          <input type="text" id="mcpName" placeholder="${t('mcpNamePh')}" style="flex:1;margin-bottom:0">
+          <input type="text" id="mcpPkg"  placeholder="${t('mcpPkgPh')}"  style="flex:1.4;margin-bottom:0">
+          <button class="btn btn-sm" onclick="addMcp()" style="flex-shrink:0">
+            <i class="ti ti-plus"></i> ${t('mcpAddBtn')}
+          </button>
+        </div>
+        <div style="font-size:11px;color:var(--danger);min-height:14px;margin-top:3px" id="mcpHint"></div>
+        <div id="mcpList" style="margin-top:6px"></div>
+      </div>
+
+      <div style="text-align:right;margin-top:1rem">
+        <button class="btn btn-primary" onclick="showPreview()">
+          ${t('previewBtn')} <i class="ti ti-eye"></i>
+        </button>
+      </div>
+    `);
+    renderMcpList();
+  }
+  function showPreview() {
+    const cfg = buildConfig();
+    const json = JSON.stringify(cfg, null, 2);
+    const model = getPickedModel();
+    setModalTitle(t('previewTitle'));
+    setModalBody(`
+      <div style="font-size:13px;color:var(--text2);margin-bottom:8px">
+        ${t('modeLabel')}: <strong>${selectedMode}</strong> &nbsp;·&nbsp;
+        ${t('modelLabelShort')}: <code style="font-size:12px">9router/${esc(model)}</code>
+      </div>
+      <div class="code-box" id="cfgCode">${esc(json)}</div>
+      <div class="actions">
+        <button class="btn btn-sm" onclick="copyConfig()">
+          <i class="ti ti-copy"></i> ${t('copyBtn')}
+        </button>
+        <button class="btn btn-sm btn-primary" onclick="downloadConfig()">
+          <i class="ti ti-download"></i> ${selectedMode === 'cli' ? t('downloadCli') : t('downloadDesktop')}
+        </button>
+        <button class="btn btn-sm" onclick="showConfigForm()">
+          <i class="ti ti-arrow-left"></i> ${t('editBtn')}
+        </button>
+      </div>
+      <div class="copy-msg" id="copyMsg"></div>
+    `);
+  }
+  function getPickedModel() {
+    const r = document.querySelector('input[name="modelPick"]:checked');
+    return r ? r.value : (allModels[0] || 'provider/model-id');
+  }
+
+  function buildMcpBlock() {
+    if (!mcpServers.length) return undefined;
+    const block = {};
+    mcpServers.forEach(s => {
+      block[s.name] = { type: 'local', command: ['npx', '-y', s.package], enabled: true };
+    });
+    return block;
+  }
+  function buildConfig() {
+    const model = getPickedModel();
+    const desc  = (document.getElementById('explorerDesc') || {}).value || 'Fast explorer subagent for codebase exploration';
+    const shell = (document.getElementById('shellSel') || {}).value || 'powershell';
+    const fullModel = '9router/' + model;
+    const modelsObj = {};
+    allModels.forEach(m => {
+      modelsObj[m] = { name: m, modalities: { input: ['text', 'image'], output: ['text'] } };
+    });
+    const mcp = buildMcpBlock();
+
+    if (selectedMode === 'desktop') {
+      const cfg = {
+        '$schema': 'https://opencode.ai/config.json',
+        shell, disabled_providers: [],
+        provider: {
+          '9router': { name: '9router', npm: '@ai-sdk/openai-compatible', options: { baseURL: _baseUrl }, models: modelsObj }
+        },
+        model: fullModel,
+        agent: { explorer: { description: desc, mode: 'subagent', model: fullModel } }
+      };
+      if (mcp) cfg.mcp = mcp;
+      return cfg;
+    } else {
+      const cfg = {
+        provider: {
+          '9router': { npm: '@ai-sdk/openai-compatible', options: { baseURL: _baseUrl, apiKey: _apiKey }, models: modelsObj }
+        },
+        model: fullModel,
+        agent: { explorer: { description: desc, mode: 'subagent', model: fullModel } }
+      };
+      if (mcp) cfg.mcp = mcp;
+      return cfg;
+    }
+  }
+  function copyConfig() {
+    const text = document.getElementById('cfgCode').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      document.getElementById('copyMsg').textContent = t('copied');
+      setTimeout(() => { document.getElementById('copyMsg').textContent = ''; }, 2000);
+    });
+  }
+
+  function downloadConfig() {
+    const text = document.getElementById('cfgCode').textContent;
+    const blob = new Blob([text], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = selectedMode === 'cli' ? 'opencode.json' : 'config.jsonc';
+    a.click();
+  }
+  function openModal()  { document.getElementById('overlay').style.display = 'flex'; }
+  function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('startBtn').disabled = false;
+    setStatus('');
+  }
+  function setModalTitle(t) { document.getElementById('modalTitle').textContent = t; }
+  function setModalBody(h)  { document.getElementById('modalBody').innerHTML = h; }
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // init
+  applyLang();
+</script>
+</body>
+</html>
