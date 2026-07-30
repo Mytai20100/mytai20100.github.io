@@ -246,6 +246,8 @@
       downloadCli: 'Tải opencode.json',
       editBtn: 'Chỉnh sửa',
       copied: '✓ Đã copy vào clipboard',
+      errCors: 'Không kết nối được — có thể do lỗi CORS (server chưa cho phép truy cập từ trình duyệt) hoặc URL sai. Thử kiểm tra lại URL, hoặc gọi qua proxy/backend.',
+      errMixed: 'Trang đang chạy HTTPS nhưng Base URL là HTTP — trình duyệt sẽ chặn request này (mixed content). Dùng HTTPS cho Base URL hoặc mở trang này qua HTTP.'
     },
     en: {
       title: '9router config generator',
@@ -288,6 +290,8 @@
       downloadCli: 'Download opencode.json',
       editBtn: 'Edit',
       copied: '✓ Copied to clipboard',
+      errCors: 'Could not connect — likely a CORS issue (server hasn\'t allowed browser access) or wrong URL. Check the URL, or call through a proxy/backend instead.',
+      errMixed: 'This page is HTTPS but the Base URL is HTTP — the browser will block this request (mixed content). Use HTTPS for the Base URL, or open this page over HTTP.'
     }
   };
 
@@ -346,25 +350,32 @@
     document.getElementById('startBtn').disabled = true;
 
     try {
-      const url = _baseUrl.endsWith('/models') ? _baseUrl : _baseUrl + '/models';
-      const res = await fetch(url, {
-        headers: { 'Authorization': 'Bearer ' + _apiKey, 'Content-Type': 'application/json' }
-      });
-      if (!res.ok) throw new Error(t('errHttp', res.status));
-      const data = await res.json();
-      const list = data.data || data.models || data || [];
-      allModels = Array.isArray(list)
-        ? list.map(m => typeof m === 'string' ? m : (m.id || m.name || '')).filter(Boolean)
-        : [];
-      if (!allModels.length) throw new Error(t('errNoModel'));
-      setStatus(t('found', allModels.length), 'ok');
-      mcpServers = [];
-      showModeSelect();
-    } catch (e) {
-      setStatus(t('errPrefix') + e.message, 'err');
-      document.getElementById('startBtn').disabled = false;
-    }
+  const url = _baseUrl.endsWith('/models') ? _baseUrl : _baseUrl + '/models';
+  if (location.protocol === 'https:' && url.startsWith('http://')) {
+    throw new Error(t('errMixed'));
   }
+
+  const res = await fetch(url, {
+    headers: { 'Authorization': 'Bearer ' + _apiKey, 'Content-Type': 'application/json' }
+  });
+  if (!res.ok) throw new Error(t('errHttp', res.status));
+  const data = await res.json();
+  const list = data.data || data.models || data || [];
+  allModels = Array.isArray(list)
+    ? list.map(m => typeof m === 'string' ? m : (m.id || m.name || '')).filter(Boolean)
+    : [];
+  if (!allModels.length) throw new Error(t('errNoModel'));
+  setStatus(t('found', allModels.length), 'ok');
+  mcpServers = [];
+  showModeSelect();
+} catch (e) {
+  if (e instanceof TypeError) {
+    setStatus(t('errCors'), 'err');
+  } else {
+    setStatus(t('errPrefix') + e.message, 'err');
+  }
+  document.getElementById('startBtn').disabled = false;
+}
   function showModeSelect() {
     setModalTitle(t('modeTitle'));
     setModalBody(`
