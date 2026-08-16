@@ -1,646 +1,87 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hmmm idk</title>
-    <link rel="icon" type="image/png" href="https://r.snd.qzz.io/raw/hmmm.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R34 Anarchy — Platypus Anarchy Minecraft Server</title>
+<meta name="description" content="R34 Anarchy — server Minecraft thể loại Platypus Anarchy. Không luật, không shop, không p2w. Slimefun + CrazyEnchant. Java 26.1.2, Bedrock crossplay.">
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('https://r.snd.qzz.io/raw/HD-wallpaper-earth-night-milky-way-stars-tree.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 20px;
-            overflow-x: hidden;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        .profile-card {
-            background: rgba(20, 20, 25, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            padding: 32px;
-            max-width: 520px;
-            width: 100%;
-            color: #dcddde;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-
-        @keyframes popIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .profile-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.15);
-            margin-bottom: 16px;
-            object-fit: cover;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .profile-name {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #ffffff;
-        }
-
-        .profile-role {
-            font-size: 14px;
-            color: #b9bbbe;
-            margin-bottom: 4px;
-        }
-
-        .github-link {
-            display: inline-block;
-            color: #00a8ff;
-            text-decoration: none;
-            font-size: 13px;
-            margin-top: 4px;
-        }
-
-        .github-link:hover {
-            text-decoration: underline;
-        }
-
-        .server-status {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 3px solid #43b581;
-        }
-
-        .server-status.offline {
-            border-left-color: #f04747;
-        }
-
-        .server-status.checking {
-            border-left-color: #faa61a;
-        }
-
-        .server-info {
-            flex: 1;
-        }
-
-        .server-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 4px;
-        }
-
-        .server-url {
-            font-size: 11px;
-            color: #72767d;
-            font-family: 'Consolas', 'Monaco', monospace;
-        }
-
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #43b581;
-            animation: pulse 2s infinite;
-        }
-
-        .status-dot.offline {
-            background: #f04747;
-            animation: none;
-        }
-
-        .status-dot.checking {
-            background: #faa61a;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .profile-stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            padding: 16px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 20px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 4px;
-            color: #ffffff;
-        }
-
-        .stat-label {
-            font-size: 11px;
-            color: #b9bbbe;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .section-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: #b9bbbe;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .profile-bio {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            line-height: 1.5;
-            font-size: 13px;
-        }
-
-        .profile-bio p {
-            color: #dcddde;
-            margin-bottom: 8px;
-        }
-
-        .profile-bio p:last-child {
-            margin-bottom: 0;
-        }
-
-        .profile-bio strong {
-            color: #ffffff;
-        }
-
-        .profile-bio a {
-            color: #00a8ff;
-            text-decoration: none;
-        }
-
-        .profile-bio a:hover {
-            text-decoration: underline;
-        }
-
-        .profile-bio ul {
-            margin-left: 20px;
-            margin-top: 8px;
-        }
-
-        .profile-bio li {
-            margin-bottom: 4px;
-        }
-
-        .profile-bio code {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 12px;
-        }
-
-        .skills-section {
-            margin-bottom: 16px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-
-        .skill-item {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px;
-            border-radius: 6px;
-            text-align: center;
-            font-size: 11px;
-            color: #b9bbbe;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .interests-section {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-        }
-
-        .interest-category {
-            margin-bottom: 12px;
-        }
-
-        .interest-category:last-child {
-            margin-bottom: 0;
-        }
-
-        .interest-title {
-            font-size: 12px;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-
-        .interest-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .interest-tag {
-            background: rgba(88, 101, 242, 0.2);
-            color: #b9bbbe;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 11px;
-            border: 1px solid rgba(88, 101, 242, 0.3);
-        }
-
-        .repos-section {
-            margin-bottom: 16px;
-        }
-
-        .repo-item {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            border-left: 3px solid #00a8ff;
-        }
-
-        .repo-name {
-            font-size: 13px;
-            font-weight: 600;
-            color: #00a8ff;
-            margin-bottom: 4px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .repo-name:hover {
-            text-decoration: underline;
-        }
-
-        .repo-desc {
-            font-size: 12px;
-            color: #b9bbbe;
-            margin-bottom: 6px;
-        }
-
-        .repo-stats {
-            font-size: 11px;
-            color: #72767d;
-        }
-
-        .repo-stats span {
-            margin-right: 12px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-link:hover {
-            background: rgba(0, 0, 0, 0.5);
-            transform: translateY(-2px);
-        }
-
-        .social-link img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .loading {
-            color: #b9bbbe;
-            font-size: 12px;
-        }
-
-        @media (max-width: 500px) {
-            .profile-card {
-                padding: 24px 16px;
-            }
-
-            .profile-name {
-                font-size: 20px;
-            }
-
-            .stat-number {
-                font-size: 18px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
-            }
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="assets/server-icon.png">
 </head>
-<body>
-    <div class="profile-card">
-        <div class="profile-header">
-            <img src="https://r.snd.qzz.io/raw/hmmm.png" alt="Profile" class="profile-image">
-            <h1 class="profile-name">Mytai20100</h1>
-            <p class="profile-role">DevOps | Cybersecurity | Network Manager</p>
-            <a href="https://github.com/Mytai20100" class="github-link" target="_blank">github.com/Mytai20100</a>
-        </div>
+<body
+  data-servers='[
+    {"label":"r34.cc.cd","java":"r34.cc.cd:25565","bedrock":"r34.cc.cd:19132"},
+    {"label":"servernotdie.cc.cd","java":"servernotdie.cc.cd:25565","bedrock":"servernotdie.cc.cd:19132"}
+  ]'
+>
 
-        <div class="server-status checking" id="serverStatus1">
-            <div class="server-info">
-                <div class="server-name">Tunnel for sgvipor</div>
-                <div class="server-url">sg.servernotdie.dpdns.org:8080</div>
-            </div>
-            <div class="status-indicator">
-                <span class="status-dot checking" id="statusDot1"></span>
-                <span id="statusText1">Checking...</span>
-            </div>
-        </div>
-
-        <div class="server-status checking" id="serverStatus2">
-            <div class="server-info">
-                <div class="server-name">snd-stats</div>
-                <div class="server-url">api.snd.qzz.io</div>
-            </div>
-            <div class="status-indicator">
-                <span class="status-dot checking" id="statusDot2"></span>
-                <span id="statusText2">Checking...</span>
-            </div>
-        </div>
-
-        <div class="profile-stats">
-            <div class="stat-item">
-                <span class="stat-number" id="followers">--</span>
-                <span class="stat-label">Followers</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" id="repos">--</span>
-                <span class="stat-label">Repos</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" id="views">--</span>
-                <span class="stat-label">Views</span>
-            </div>
-        </div>
-
-        <div class="skills-section">
-            <h3 class="section-title">Tech Stack</h3>
-            <div class="skills-grid">
-                <div class="skill-item">C</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">Java</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Lua</div>
-                <div class="skill-item">Go</div>
-                <div class="skill-item">Docker</div>
-                <div class="skill-item">Bash</div>
-                <div class="skill-item">React</div>
-                <div class="skill-item">Node.js</div>
-            </div>
-        </div>
-
-        <div class="profile-bio" id="bioContent">
-            <p class="loading">Loading...</p>
-        </div>
-
-        <div class="interests-section">
-            <div class="interest-category">
-                <div class="interest-title">Hobbies</div>
-                <div class="interest-items">
-                    <span class="interest-tag">Physics</span>
-                    <span class="interest-tag">Chemistry</span>
-                    <span class="interest-tag">Technology</span>
-                    <span class="interest-tag">Furry Community</span>
-                    <span class="interest-tag">Chill Life</span>
-                    <span class="interest-tag">Sleep</span>
-                    <span class="interest-tag">Drawing</span>
-                    <span class="interest-tag">Server Setup</span>
-                </div>
-            </div>
-            <div class="interest-category">
-                <div class="interest-title">Music</div>
-                <div class="interest-items">
-                    <span class="interest-tag">Phonk</span>
-                    <span class="interest-tag">Lofi</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="repos-section">
-            <h3 class="section-title">Popular Repositories</h3>
-            <div id="reposList">
-                <p class="loading">Loading repositories...</p>
-            </div>
-        </div>
-
-        <div class="social-links">
-            <a href="https://github.com/Mytai20100" class="social-link" target="_blank" title="GitHub">
-                <img src="https://api.snd.qzz.io/icon/social/github?size=24&color=%23ffffff" alt="GitHub">
-            </a>
-            <a href="https://www.youtube.com/@mytai2010" class="social-link" target="_blank" title="YouTube">
-                <img src="https://api.snd.qzz.io/icon/social/youtube?size=24&color=%23FF0000" alt="YouTube">
-            </a>
-            <a href="https://www.tiktok.com/@taimy630" class="social-link" target="_blank" title="TikTok">
-                <img src="https://api.snd.qzz.io/icon/social/tiktok?size=24&color=%23ffffff" alt="TikTok">
-            </a>
-            <a href="https://dash.servernotdie.dpdns.org" class="social-link" target="_blank" title="Dashboard">
-                <span style="font-size: 18px;">:>></span>
-            </a>
-        </div>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <img class="brand-icon" src="assets/server-icon.png" alt="R34 Anarchy" width="34" height="34">
+        R34 Anarchy
+      </div>
+      <div class="status-pill" id="status-pill">
+        <span class="dot" aria-hidden="true"></span>
+        <span id="status-label">Đang kiểm tra…</span>
+      </div>
     </div>
+  </header>
 
-    <script>
-        const username = 'Mytai20100';
-        const API_BASE = 'https://api.snd.qzz.io';
-        
-        const bioMarkdown = `### About Me
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-logo-row">
+          <img class="hero-logo" src="assets/server-icon.png" alt="" width="72" height="72">
+          <span class="hero-eyebrow">Platypus Anarchy · Java 26.1.2</span>
+        </div>
 
-DevOps Engineer passionate about **infrastructure**, **security**, and **technology**.
+        <div class="server-card">
+          <div class="players">
+            <span class="count is-loading" id="player-count">–</span>
+            <span class="sep">/</span>
+            <span class="max" id="player-max">–</span>
+            <span class="label">Người chơi đang online</span>
+          </div>
+          <div class="motd" id="motd"></div>
+        </div>
 
-**What I do:**
-- Infrastructure & DevOps
-- Cybersecurity & Network Management
-- Mining Tunnel Management
-- Server Setup & Configuration
+        <div class="ip-picker" role="group" aria-label="Chọn server và phiên bản">
+          <div class="picker-group" id="server-picker"></div>
+          <div class="picker-group" id="edition-picker">
+            <button class="picker-btn is-active" data-edition="java" type="button">Java</button>
+            <button class="picker-btn" data-edition="bedrock" type="button">Bedrock</button>
+          </div>
+        </div>
 
-**Free Mining Tunnel:**
-\`stratum+tcp://sg.servernotdie.dpdns.org:8080\`
+        <div class="ip-row">
+          <div class="ip-value" id="ip-value">đang tải…</div>
+          <button class="copy-btn" id="copy-btn" type="button">Copy IP</button>
+        </div>
+      </div>
+    </section>
 
-Alternative: \`stratum+tcp://snd.qzz.io:8080\`
+    <section class="content-section">
+      <div class="wrap">
+        <div class="section-label">Giới thiệu</div>
+        <article class="markdown-body is-loading" id="markdown-body">
+          Đang tải nội dung…
+        </article>
+      </div>
+    </section>
+  </main>
 
-Dashboard: [dash.servernotdie.dpdns.org](https://dash.servernotdie.dpdns.org)`;
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>Make by mytai20100</span>
+    </div>
+  </footer>
 
-        document.getElementById('bioContent').innerHTML = marked.parse(bioMarkdown);
-
-        async function checkServerStatus(serverId, url, fallbackUrl = null) {
-            const serverStatus = document.getElementById(`serverStatus${serverId}`);
-            const statusDot = document.getElementById(`statusDot${serverId}`);
-            const statusText = document.getElementById(`statusText${serverId}`);
-            
-            try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 5000);
-                
-                const response = await fetch(url, {
-                    method: 'HEAD',
-                    signal: controller.signal,
-                    mode: 'no-cors'
-                });
-                
-                clearTimeout(timeoutId);
-                
-                serverStatus.classList.remove('checking', 'offline');
-                statusDot.classList.remove('checking', 'offline');
-                statusText.textContent = 'Online';
-            } catch (error) {
-                if (fallbackUrl) {
-                    try {
-                        await fetch(fallbackUrl, { 
-                            method: 'HEAD', 
-                            mode: 'no-cors',
-                            signal: AbortSignal.timeout(5000)
-                        });
-                        serverStatus.classList.remove('checking', 'offline');
-                        statusDot.classList.remove('checking', 'offline');
-                        statusText.textContent = 'Online';
-                        return;
-                    } catch {
-                        // Continue to offline state
-                    }
-                }
-                
-                serverStatus.classList.remove('checking');
-                serverStatus.classList.add('offline');
-                statusDot.classList.remove('checking');
-                statusDot.classList.add('offline');
-                statusText.textContent = error.name === 'AbortError' ? 'Timeout' : 'Offline';
-            }
-        }
-
-        async function fetchGitHubData() {
-            try {
-                const userResponse = await fetch(`https://api.github.com/users/${username}`);
-                const userData = await userResponse.json();
-                
-                document.getElementById('followers').textContent = userData.followers || 0;
-                document.getElementById('repos').textContent = userData.public_repos || 0;
-                
-                const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=stars&per_page=3`);
-                const reposData = await reposResponse.json();
-                
-                if (reposData.length > 0) {
-                    const reposList = document.getElementById('reposList');
-                    reposList.innerHTML = '';
-                    
-                    reposData.forEach(repo => {
-                        const repoItem = document.createElement('div');
-                        repoItem.className = 'repo-item';
-                        repoItem.innerHTML = `
-                            <a href="${repo.html_url}" class="repo-name" target="_blank">${repo.name}</a>
-                            <div class="repo-desc">${repo.description || 'No description'}</div>
-                            <div class="repo-stats">
-                                <span>★ ${repo.stargazers_count}</span>
-                                <span>⑂ ${repo.forks_count}</span>
-                                ${repo.language ? `<span>${repo.language}</span>` : ''}
-                            </div>
-                        `;
-                        reposList.appendChild(repoItem);
-                    });
-                }
-                
-                try {
-                    const viewsImg = new Image();
-                    viewsImg.onload = function() {
-                        document.getElementById('views').textContent = '∞';
-                    };
-                    viewsImg.src = `${API_BASE}/view/${username}?logo=heart&logo_color=ff69b4&_t=${Date.now()}`;
-                } catch {
-                    document.getElementById('views').textContent = '--';
-                }
-            } catch (error) {
-                console.error('Error fetching GitHub data:', error);
-                document.getElementById('followers').textContent = '--';
-                document.getElementById('repos').textContent = '--';
-                document.getElementById('views').textContent = '--';
-            }
-        }
-
-        // Check server 1: Tunnel for sgvipor
-        checkServerStatus(1, 'https://sg.servernotdie.dpdns.org:8080', 'https://dash.servernotdie.dpdns.org');
-        
-        // Check server 2: snd-stats with fallback
-        checkServerStatus(2, 'https://api.snd.qzz.io', 'https://snd-stats.vercel.app');
-        
-        fetchGitHubData();
-        
-        // Refresh status every 30 seconds
-        setInterval(() => {
-            checkServerStatus(1, 'https://sg.servernotdie.dpdns.org:8080', 'https://dash.servernotdie.dpdns.org');
-            checkServerStatus(2, 'https://api.snd.qzz.io', 'https://snd-stats.vercel.app');
-        }, 30000);
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
