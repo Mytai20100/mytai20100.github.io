@@ -26,6 +26,7 @@ Chả có :D
 
 ```AuthMeBia, Mememoon, SlimeEasy , AdvancedTech, AuthMe, AxGraves, BackpackPlus, BetterReactor, Bump, CrazyEnchantments, DankTech2, Draconic, DynaTech , EMCTech, floodgate, FluffyMachines, FNAmplifications, FoxyMachines, Geyser-Spigot, GrimAC, GSit, GuizhanLibPlugin, InfinityExpansion , LiteXpansion, LuckPerms, MissileWarfare, MobCapturer, MomoTech, Networks, packetevents, PlaceholderAPI, randomspawn, SimpleMaterialGenerators , SimpleUtils, SkinsRestorer, Slimefun, SlimefunLuckyBlocks, SlimeGlue, SlimeHUD, SlimeTinker, SoulJars, SoundMuffler, Supreme ,TAB, TPA, VanillaRefresh, ViaBackwards, ViaVersion, voicechat, WorldStatus, zEssentials, zMenu ```
 
+
 ## Mã nguồn
 
 - Core server chạy trên [Lophine](https://github.com/LophineLabs/Lophine) (LophineLabs).
@@ -40,3 +41,4 @@ Chả có :D
 - Địa hình: [Terralith](https://github.com/servernotdie/Terralith)
 - Công trình #1 : [Incendium](https://github.com/servernotdie/Incendium)
 - Công trình #2 : [Dungeons_and_Taverns](https://github.com/servernotdie/Dungeons_and_Taverns)
+  
