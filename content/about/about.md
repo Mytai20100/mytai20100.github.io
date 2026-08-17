@@ -24,7 +24,7 @@ Chả có :D
 
 ## Full list plugin 
 
-```AuthMeBia, Mememoon, SlimeEasy , AdvancedTech, AuthMe, AxGraves, BackpackPlus, BetterReactor, Bump, CrazyEnchantments, DankTech2, Draconic, DynaTech , EMCTech, floodgate, FluffyMachines, FNAmplifications, FoxyMachines, Geyser-Spigot, GrimAC, GSit, GuizhanLibPlugin, InfinityExpansion , LiteXpansion, LuckPerms, MissileWarfare, MobCapturer, MomoTech, Networks, packetevents, PlaceholderAPI, randomspawn, SimpleMaterialGenerators , SimpleUtils, SkinsRestorer, Slimefun, SlimefunLuckyBlocks, SlimeGlue, SlimeHUD, SlimeTinker, SoulJars, SoundMuffler, Supreme ,TAB, TPA, VanillaRefresh, ViaBackwards, ViaVersion, voicechat, WorldStatus, zEssentials, zMenu ```
+AuthMeBia, Mememoon, SlimeEasy , AdvancedTech, AuthMe, AxGraves, BackpackPlus, BetterReactor, Bump, CrazyEnchantments, DankTech2, Draconic, DynaTech , EMCTech, floodgate, FluffyMachines, FNAmplifications, FoxyMachines, Geyser-Spigot, GrimAC, GSit, GuizhanLibPlugin, InfinityExpansion , LiteXpansion, LuckPerms, MissileWarfare, MobCapturer, MomoTech, Networks, packetevents, PlaceholderAPI, randomspawn, SimpleMaterialGenerators , SimpleUtils, SkinsRestorer, Slimefun, SlimefunLuckyBlocks, SlimeGlue, SlimeHUD, SlimeTinker, SoulJars, SoundMuffler, Supreme ,TAB, TPA, VanillaRefresh, ViaBackwards, ViaVersion, voicechat, WorldStatus, zEssentials, zMenu
 
 
 ## Mã nguồn
