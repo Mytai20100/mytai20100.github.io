@@ -1,5 +1,6 @@
 (function () {
   "use strict";
+
   let SERVERS = [];
   try {
     SERVERS = JSON.parse(document.body.dataset.servers || "[]");
@@ -9,8 +10,10 @@
   if (!SERVERS.length) {
     SERVERS = [{ label: "server", java: "localhost:25565", bedrock: "localhost:19132" }];
   }
+
   let currentServerIndex = 0;
-  let currentEdition = "java"; // "java" | "bedrock"
+  let currentEdition = "java";
+
   const ipValueEl = document.getElementById("ip-value");
   const copyBtn = document.getElementById("copy-btn");
   const statusPill = document.getElementById("status-pill");
@@ -21,12 +24,15 @@
   const markdownBody = document.getElementById("markdown-body");
   const serverPickerEl = document.getElementById("server-picker");
   const editionPickerEl = document.getElementById("edition-picker");
+
   function currentIp() {
     return SERVERS[currentServerIndex][currentEdition];
   }
+
   function updateIpDisplay() {
     if (ipValueEl) ipValueEl.textContent = currentIp();
   }
+
   function buildServerPicker() {
     if (!serverPickerEl) return;
     if (SERVERS.length < 2) {
@@ -51,6 +57,7 @@
       serverPickerEl.appendChild(btn);
     });
   }
+
   if (editionPickerEl) {
     editionPickerEl.addEventListener("click", (e) => {
       const btn = e.target.closest(".picker-btn");
@@ -61,6 +68,7 @@
       updateIpDisplay();
     });
   }
+
   function resetPlayerCounts() {
     playerCountEl.textContent = "–";
     playerCountEl.classList.add("is-loading");
@@ -68,6 +76,7 @@
     motdEl.classList.remove("show");
     motdEl.textContent = "";
   }
+
   if (copyBtn) {
     copyBtn.addEventListener("click", async () => {
       const ip = currentIp();
@@ -91,6 +100,7 @@
       }
     });
   }
+
   function showCopied() {
     const original = copyBtn.textContent;
     copyBtn.textContent = "Đã copy!";
@@ -100,6 +110,7 @@
       copyBtn.classList.remove("copied");
     }, 1800);
   }
+
   async function fetchServerStatus() {
     const javaHost = SERVERS[currentServerIndex].java;
     const url = `https://api.mcsrvstat.us/3/${javaHost}`;
@@ -116,6 +127,7 @@
       setUnknown();
     }
   }
+
   function setOnline(data) {
     const online = data.players && typeof data.players.online === "number" ? data.players.online : "—";
     const max = data.players && typeof data.players.max === "number" ? data.players.max : "—";
@@ -150,10 +162,311 @@
     playerMaxEl.textContent = "?";
     statusDotLabel.textContent = "Không rõ";
   }
+
   buildServerPicker();
   updateIpDisplay();
   fetchServerStatus();
   setInterval(fetchServerStatus, 60000);
+
+  function escapeHtml(s) {
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  function escapeAttr(s) {
+    return escapeHtml(s).replace(/"/g, "&quot;");
+  }
+
+  const ESCAPABLE_CHARS = "\\`*_{}[]()#+-.!>~|";
+
+  function protectEscapes(s) {
+    return s.replace(/\\([\\`*_{}[\]()#+\-.!>~|])/g, (_, ch) => {
+      return "\uE000" + ch.charCodeAt(0) + "\uE001";
+    });
+  }
+
+  function restoreEscapes(s) {
+    return s.replace(/\uE000(\d+)\uE001/g, (_, code) => String.fromCharCode(Number(code)));
+  }
+
+  function inline(raw) {
+    let s = protectEscapes(raw);
+    s = escapeHtml(s);
+
+    s = s.replace(
+      /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
+      (_, alt, src, title) => {
+        const titleAttr = title ? ` title="${escapeAttr(title)}"` : "";
+        return `<img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}"${titleAttr} loading="lazy">`;
+      }
+    );
+
+    const codeSpans = [];
+    s = s.replace(/`([^`]+)`/g, (_, code) => {
+      const idx = codeSpans.push(code) - 1;
+      return `\uE010${idx}\uE011`;
+    });
+
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    s = s.replace(/__([^_]+)__/g, "<strong>$1</strong>");
+
+    s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    s = s.replace(/(^|[^\w])_([^_]+)_(?!\w)/g, "$1<em>$2</em>");
+
+    s = s.replace(/~~([^~]+)~~/g, "<del>$1</del>");
+
+    s = s.replace(
+      /\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g,
+      (_, text, url, title) => {
+        const titleAttr = title ? ` title="${escapeAttr(title)}"` : "";
+        return `<a href="${escapeAttr(url)}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`;
+      }
+    );
+
+    s = s.replace(/&lt;(https?:\/\/[^\s&]+)&gt;/g, (_, url) => {
+      return `<a href="${escapeAttr(url)}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    });
+
+    s = s.replace(/\uE010(\d+)\uE011/g, (_, idx) => `<code>${codeSpans[Number(idx)]}</code>`);
+
+    s = s.replace(/ {2,}$/gm, "<br>").replace(/\\$/gm, "<br>");
+
+    return restoreEscapes(s);
+  }
+
+  function indentWidth(line) {
+    let width = 0;
+    for (const ch of line) {
+      if (ch === "\t") width += 4;
+      else if (ch === " ") width += 1;
+      else break;
+    }
+    return width;
+  }
+
+  function isBlank(line) {
+    return /^\s*$/.test(line);
+  }
+  function isHeading(line) {
+    return /^ {0,3}#{1,6}\s+/.test(line);
+  }
+  function isHr(line) {
+    return /^ {0,3}([-*_])(?:\s*\1){2,}\s*$/.test(line);
+  }
+  function isFence(line) {
+    return /^ {0,3}(```|~~~)/.test(line);
+  }
+  function isBlockquote(line) {
+    return /^ {0,3}>\s?/.test(line);
+  }
+  function isUl(line) {
+    return /^ {0,3}[-*+]\s+/.test(line);
+  }
+  function isOl(line) {
+    return /^ {0,3}\d+[.)]\s+/.test(line);
+  }
+  function isTableRow(line) {
+    return /\|/.test(line) && !isBlockquote(line);
+  }
+  function isTableDivider(line) {
+    return /^ {0,3}\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)*\|?\s*$/.test(line);
+  }
+
+  function parseBlock(lines) {
+    let html = "";
+    let i = 0;
+
+    while (i < lines.length) {
+      const line = lines[i];
+
+      if (isBlank(line)) {
+        i++;
+        continue;
+      }
+
+      if (isHr(line)) {
+        html += "<hr>\n";
+        i++;
+        continue;
+      }
+
+      if (isHeading(line)) {
+        const m = line.match(/^ {0,3}(#{1,6})\s+(.*?)\s*#*\s*$/);
+        const level = m[1].length;
+        html += `<h${level}>${inline(m[2])}</h${level}>\n`;
+        i++;
+        continue;
+      }
+
+      if (isFence(line)) {
+        const fenceMatch = line.match(/^ {0,3}(```|~~~)(.*)$/);
+        const fenceChar = fenceMatch[1];
+        const lang = fenceMatch[2].trim();
+        i++;
+        const codeLines = [];
+        while (i < lines.length && !lines[i].trim().startsWith(fenceChar)) {
+          codeLines.push(lines[i]);
+          i++;
+        }
+        i++;
+        const langAttr = lang ? ` data-lang="${escapeAttr(lang)}"` : "";
+
+        html += `<pre${langAttr}><code>${escapeHtml(codeLines.join("\n"))}</code></pre>\n`;
+        continue;
+      }
+
+      if (isBlockquote(line)) {
+        const quoteLines = [];
+        while (i < lines.length && (isBlockquote(lines[i]) || (!isBlank(lines[i]) && quoteLines.length && isBlockquote(lines[i - 1] || "")))) {
+          quoteLines.push(lines[i].replace(/^ {0,3}>\s?/, ""));
+          i++;
+        }
+        html += `<blockquote>\n${parseBlock(quoteLines)}</blockquote>\n`;
+        continue;
+      }
+
+      if (isTableRow(line) && lines[i + 1] && isTableDivider(lines[i + 1])) {
+        const splitRow = (row) =>
+          row
+            .trim()
+            .replace(/^\|/, "")
+            .replace(/\|$/, "")
+            .split("|")
+            .map((cell) => cell.trim());
+
+        const headerCells = splitRow(line);
+        const alignCells = splitRow(lines[i + 1]).map((cell) => {
+          const left = cell.startsWith(":");
+          const right = cell.endsWith(":");
+          if (left && right) return "center";
+          if (right) return "right";
+          if (left) return "left";
+          return "";
+        });
+        i += 2;
+
+        const bodyRows = [];
+        while (i < lines.length && isTableRow(lines[i]) && !isBlank(lines[i])) {
+          bodyRows.push(splitRow(lines[i]));
+          i++;
+        }
+
+        const alignAttr = (idx) => (alignCells[idx] ? ` style="text-align:${alignCells[idx]}"` : "");
+        let thead = "<thead><tr>";
+        headerCells.forEach((cell, idx) => {
+          thead += `<th${alignAttr(idx)}>${inline(cell)}</th>`;
+        });
+        thead += "</tr></thead>";
+
+        let tbody = "<tbody>";
+        bodyRows.forEach((row) => {
+          tbody += "<tr>";
+          headerCells.forEach((_, idx) => {
+            tbody += `<td${alignAttr(idx)}>${inline(row[idx] || "")}</td>`;
+          });
+          tbody += "</tr>";
+        });
+        tbody += "</tbody>";
+
+        html += `<div class="table-scroll"><table>${thead}${tbody}</table></div>\n`;
+        continue;
+      }
+
+      if (isUl(line) || isOl(line)) {
+        const ordered = isOl(line);
+        const baseIndent = indentWidth(line);
+        const items = [];
+
+        while (i < lines.length) {
+          const cur = lines[i];
+          if (isBlank(cur)) {
+            const next = lines[i + 1];
+            if (next === undefined || (indentWidth(next) < baseIndent && !isBlank(next))) {
+              break;
+            }
+            if (items.length) items[items.length - 1].childLines.push("");
+            i++;
+            continue;
+          }
+          const curIndent = indentWidth(cur);
+          const curIsMarker = (ordered ? isOl(cur) : isUl(cur)) && curIndent === baseIndent;
+
+          if (curIsMarker) {
+            const markerRe = ordered ? /^ {0,3}\d+[.)]\s+(.*)$/ : /^ {0,3}[-*+]\s+(.*)$/;
+            const m = cur.match(markerRe);
+            items.push({ text: m[1], childLines: [] });
+            i++;
+            continue;
+          }
+          if (curIndent > baseIndent && items.length) {
+            items[items.length - 1].childLines.push(cur.slice(Math.min(cur.length, baseIndent + 2)));
+            i++;
+            continue;
+          }
+
+          break;
+        }
+
+        items.forEach((it) => {
+          while (it.childLines.length && isBlank(it.childLines[it.childLines.length - 1])) {
+            it.childLines.pop();
+          }
+        });
+
+        const isTaskList = items.length > 0 && items.every((it) => /^\[[ xX]\]\s+/.test(it.text));
+
+        const tag = ordered ? "ol" : "ul";
+        const listClass = isTaskList ? ' class="task-list"' : "";
+        html += `<${tag}${listClass}>\n`;
+        items.forEach((it) => {
+          let itemText = it.text;
+          let taskAttrs = "";
+          let taskClass = "";
+          if (isTaskList) {
+            const checked = /^\[[xX]\]/.test(itemText);
+            itemText = itemText.replace(/^\[[ xX]\]\s+/, "");
+            taskAttrs = ` type="checkbox" disabled${checked ? " checked" : ""}`;
+            taskClass = checked ? ' class="task-item is-done"' : ' class="task-item"';
+          }
+          const childHtml = it.childLines.length ? parseBlock(it.childLines) : "";
+          const inner = isTaskList
+            ? `<input${taskAttrs}>${inline(itemText)}`
+            : inline(itemText);
+          html += `<li${taskClass}>${inner}${childHtml ? "\n" + childHtml : ""}</li>\n`;
+        });
+        html += `</${tag}>\n`;
+        continue;
+      }
+
+      const paraLines = [line];
+      i++;
+      while (
+        i < lines.length &&
+        !isBlank(lines[i]) &&
+        !isHeading(lines[i]) &&
+        !isHr(lines[i]) &&
+        !isFence(lines[i]) &&
+        !isBlockquote(lines[i]) &&
+        !isUl(lines[i]) &&
+        !isOl(lines[i]) &&
+        !(isTableRow(lines[i]) && lines[i + 1] && isTableDivider(lines[i + 1]))
+      ) {
+        paraLines.push(lines[i]);
+        i++;
+      }
+      html += `<p>${inline(paraLines.join("\n"))}</p>\n`;
+    }
+
+    return html;
+  }
+
+  function renderMarkdown(md) {
+    const lines = md.replace(/\r\n/g, "\n").split("\n");
+    return parseBlock(lines);
+  }
+
   async function loadAbout() {
     if (!markdownBody) return;
     try {
@@ -167,68 +480,6 @@
       markdownBody.classList.remove("is-loading");
       markdownBody.classList.add("is-error");
     }
-  }
-  function renderMarkdown(md) {
-    const escapeHtml = (s) =>
-      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    const inline = (s) => {
-      s = escapeHtml(s);
-      s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
-      s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-      s = s.replace(/\*([^*]+)\*/g, "<em>$1</em>");
-      s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-      return s;
-    };
-    const lines = md.replace(/\r\n/g, "\n").split("\n");
-    let html = "";
-    let i = 0;
-    while (i < lines.length) {
-      const line = lines[i];
-      if (/^\s*$/.test(line)) {
-        i++;
-        continue;
-      }
-      let m = line.match(/^(#{1,6})\s+(.*)$/);
-      if (m) {
-        const level = m[1].length;
-        html += `<h${level}>${inline(m[2])}</h${level}>\n`;
-        i++;
-        continue;
-      }
-      if (/^\s*[-*]\s+/.test(line)) {
-        html += "<ul>\n";
-        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
-          html += `<li>${inline(lines[i].replace(/^\s*[-*]\s+/, ""))}</li>\n`;
-          i++;
-        }
-        html += "</ul>\n";
-        continue;
-      }
-      if (/^\s*\d+\.\s+/.test(line)) {
-        html += "<ol>\n";
-        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) {
-          html += `<li>${inline(lines[i].replace(/^\s*\d+\.\s+/, ""))}</li>\n`;
-          i++;
-        }
-        html += "</ol>\n";
-        continue;
-      }
-      let para = [line];
-      i++;
-      while (
-        i < lines.length &&
-        !/^\s*$/.test(lines[i]) &&
-        !/^(#{1,6})\s+/.test(lines[i]) &&
-        !/^\s*[-*]\s+/.test(lines[i]) &&
-        !/^\s*\d+\.\s+/.test(lines[i])
-      ) {
-        para.push(lines[i]);
-        i++;
-      }
-      html += `<p>${inline(para.join(" "))}</p>\n`;
-    }
-
-    return html;
   }
 
   loadAbout();
