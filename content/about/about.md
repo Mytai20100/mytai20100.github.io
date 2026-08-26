@@ -12,7 +12,7 @@ Thể loại: **Platypus Anarchy** — không phải semi-anarchy (vì nó hỗn
 - **Phần cứng**: Dual xeon 2680v4 , ram ecc 32 gb ram buss 2133.Mainbroad hàng OEM giá rẻ ZX-DU99D4 version 11
 - **Nhà mạng (isp)**: FPT
 - **OS**: Debian 13
-- **Nguồn ý tưởng**: 2a2b.org(cơ chế crazyenchant và advancement enchant cũng là anarchy) đã die , 2y2c.org server anarchy đầu tiên ở VN(nổi) đã die hiện tại được tiếp quảng domain bởi người khác , meowsmp.net( slimefun và hệ sinh thái) dù chưa từng chơi bao giờ chỉ ghé thăm thôi.
+- **Nguồn ý tưởng**: 2a2b.org(cơ chế crazyenchant và advancement enchant cũng là anarchy) đã die , 2y2c.org server anarchy đầu tiên ở VN(nổi) đã die hiện tại được tiếp quảng domain bởi người khác , meowsmp.net( slimefun và hệ sinh thái) dù chưa từng chơi bao giờ chỉ ghé thăm thôi. Cái 1p9w.top thì giống server này vãi bìu ở khoảng bổ xung QOL thôi chứ slimefun thì ai mà dám thêm vô anarchy XD chứ có thì lag maching đc x5 sức mạnh huỷ diệt.
 
 ## Luật lệ
 
