@@ -1,0 +1,75 @@
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Máy nghiền quặng {#ore-crusher}
+
+Máy nghiền quặng (Ore Crusher) là một trong những [Máy cơ bản](/Basic-Machines) của Slimefun. Nó là cấu trúc đa khối.
+
+## Xây dựng {#obtaining}
+
+Máy nghiền quặng là một cấu trúc đa khối, gồm một máy phát, một hàng rào gạch Nether và hai thanh sắt.
+
+Một máy nghiền quặng hoàn chỉnh trông như thế này:
+
+<ImageGallery images={[
+  {
+    src: 'https://fastly.jsdelivr.net/gh/Slimefun/Wiki@master/images/multiblock-ore-crusher.png',
+    alt: 'Xây dựng máy nghiền quặng',
+    sizePercent: 80
+  }
+]}/>
+
+Bạn có thể đặt một [Rương xuất vật phẩm](/Output-Chest) bên cạnh máy phát để thu thập sản phẩm. Nếu không có [Rương xuất vật phẩm](/Output-Chest), sản phẩm sẽ được giữ lại trong máy phát.
+
+## Cách dùng {#usage}
+
+Máy nghiền quặng chủ yếu được dùng để nghiền quặng thành bột khoáng, nhưng nó cũng có các công dụng khác.
+
+## Công thức {#recipes}
+
+Các công thức khả dụng của máy nghiền quặng được liệt kê trong bảng dưới, danh sách dựa trên phiên bản 1.17.1.<br/>
+Một số công thức có thể bị tắt do cài đặt máy chủ, công thức do addon thêm vào không được liệt kê ở đây.<br/>
+Các bản cập nhật sau có thể sửa đổi công thức, cụ thể hãy theo công thức hiển thị trong sách hướng dẫn Slimefun trong game.
+
+| Nguyên liệu | Sản phẩm |
+| :-- | :-- |
+| 8 Đá cuội | 1 Cát |
+| 1 [Thỏi vàng (4 cara)](/Gold-Ingot) | 1 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (6 cara)](/Gold-Ingot) | 2 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (8 cara)](/Gold-Ingot) | 2 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (10 cara)](/Gold-Ingot) | 3 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (12 cara)](/Gold-Ingot) | 3 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (14 cara)](/Gold-Ingot) | 4 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (16 cara)](/Gold-Ingot) | 4 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (18 cara)](/Gold-Ingot) | 5 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (20 cara)](/Gold-Ingot) | 5 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (22 cara)](/Gold-Ingot) | 6 [Bột vàng](/Gold-Dust) |
+| 1 [Thỏi vàng (24 cara)](/Gold-Ingot) | 6 [Bột vàng](/Gold-Dust) |
+| 1 Sỏi | 1 Cát |
+| 1 Khối dung nham | 1 [Sulfate](/Sulfate) |
+| 1 [Carbon](/Carbon) | 8 Than |
+| 1 [Carbon nén](/Carbon) | 4 [Carbon](/Carbon) |
+| 1 [Carbon nén](/Carbon) | 4 [Carbon](/Carbon) |
+| 1 Sắt thô | 1 [Bột sắt](/Iron-Dust) |
+| 1 Đồng thô | 1 [Bột đồng](/Copper-Dust) |
+| 1 Vàng thô | 1 [Bột vàng](/Gold-Dust) |
+| 16 Đá Nether | 1 [Sulfate](/Sulfate) |
+| 1 [Quặng đã sàng](/Sifted-Ore) | 1 [Quặng đã nghiền](/Small-Chunk-of-Uranium) |
+| 1 [Quặng đã nghiền](/Small-Chunk-of-Uranium) | 1 [Quặng dạng bột](/Small-Chunk-of-Uranium) |
+| 1 [Cụm khoáng tinh khiết](/Small-Chunk-of-Uranium) | 1 [Nhúm nhỏ Uranium](/Small-Chunk-of-Uranium) |
+
+Trong `Items.yml` có thể cấu hình có bật nhân đôi khoáng sản `double-ores` hay không, mặc định bật.
+Khi bật, số lượng sản phẩm của công thức dưới sẽ được nhân đôi. Quặng bao gồm biến thể đá sâu (ví dụ, biến thể đá sâu của quặng than: quặng than đá sâu).
+
+| Nguyên liệu | Sản phẩm |
+| :-- | :-- |
+| 1 Quặng than | 1 Than |
+| 1 Quặng Lapis | 7 Lapis |
+| 1 Quặng Redstone | 4 Bột Redstone |
+| 1 Quặng kim cương | 1 Kim cương |
+| 1 Quặng ngọc lục bảo | 1 Ngọc lục bảo |
+| 1 Quặng thạch anh Nether | 1 Thạch anh Nether |
+| 1 Quặng vàng Nether | 4 Hạt vàng |
+| 1 Đá đen mạ vàng | 4 Hạt vàng |
+| 1 Quặng sắt | 1 [Bột sắt](/Iron-Dust) |
+| 1 Quặng đồng | 1 [Bột đồng](/Copper-Dust) |
+| 1 Quặng vàng | 1 [Bột vàng](/Gold-Dust) |

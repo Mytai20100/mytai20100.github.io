@@ -1,0 +1,35 @@
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Máy Dịch Chuyển {#teleporter}
+
+Máy Dịch Chuyển là một máy cấu trúc đa khối dựa trên [GPS](/GPS).
+
+<ImageGallery images={[
+  {
+    src: 'https://fastly.jsdelivr.net/gh/Slimefun/Wiki@master/images/Teleporter.png',
+    alt: 'Máy Dịch Chuyển',
+    sizePercent: 50
+  }
+]}/>
+
+## Xây dựng {#obtaining}
+
+Một Máy Dịch Chuyển bao gồm [Ma Trận Dịch Chuyển GPS](/GPS-Teleporter-Matrix) ở trung tâm, 8 [Trụ Dịch Chuyển GPS](/GPS-Teleporter-Pylon) bao quanh và [Thiết Bị Kích Hoạt GPS](/GPS-Activation-Device) đặt trên ma trận dịch chuyển.
+
+## Sử dụng {#usage}
+
+Máy Dịch Chuyển có thể dịch chuyển đến điểm đánh dấu được đặt bởi [Dụng Cụ Đặt Điểm Đánh Dấu GPS](/GPS-Marker-Tool) hoặc [Máy Phát Khẩn Cấp GPS](/GPS-Emergency-Transmitter).
+
+Thời gian dịch chuyển được quyết định bởi khoảng cách đến điểm đánh dấu và [độ phức tạp mạng lưới GPS](/GPS-Transmitter).
+
+Nếu độ phức tạp mạng lưới thấp hơn 100, thời gian dịch chuyển luôn là 50 giây.
+
+Nếu độ phức tạp mạng lưới cao hơn 100, thời gian dịch chuyển sẽ được tính theo công thức sau (đơn vị: giây):
+
+$$
+0.5 + \frac{2 \cdot D^{2}}{50000 + C^{2}}
+$$
+
+Trong đó $D$ là khoảng cách đến điểm đánh dấu, $C$ là độ phức tạp mạng lưới.
+
+$D$ tối đa là 10.000, nếu vượt quá khoảng cách này, hoặc vị trí của máy dịch chuyển và điểm đánh dấu không ở cùng thế giới, hoặc thời gian dịch chuyển tính được theo công thức trên vượt quá 20,5 giây, thì thời gian dịch chuyển sẽ cố định là 20,5 giây.

@@ -1,0 +1,35 @@
+# Thiết bị Ma thuật {#magical-gadgets}
+
+Danh mục Thiết bị Ma thuật chứa nhiều đạo cụ mang ma thuật khác nhau. Bạn sẽ dùng [Vật phẩm Ma thuật](/Magical-Items) để xây dựng chúng.
+
+## Mục lục {#table-of-contents}
+
+- [Ba lô Ender](/Ender-Backpack)
+- [Mắt Ender Ma thuật](/Magic-Eye-of-Ender)
+- [Gậy Nguyên tố](/Elemental-Staves)
+- [Gậy Nguyên tố - Gió](/Elemental-Staves)
+- [Gậy Nguyên tố - Nước](/Elemental-Staves)
+- [Gậy Nguyên tố - Lửa](/Elemental-Staves)
+- [Gậy Nguyên tố - Sấm](/Elemental-Staves)
+- [Thuốc Zombie Ma thuật](/Magical-Zombie-Pills)
+- [Nam châm truyền tải](/Infused-Magnet)
+- [Ba lô Linh hồn ràng buộc](/Soulbound-Backpack)
+- [Lồng quái đã gia cố](/Reinforced-Spawner)
+- [Cuộn dịch chuyển chiều không gian](/Scroll-of-Dimensional-Teleposition)
+- [Sách Tri thức](/Tome-of-Knowledge-Sharing)
+- [Bình Tri thức](/Flask-of-Knowledge)
+- [Bệ cổ đại](/Ancient-Pedestal)
+- [Bàn thờ cổ đại](/Ancient-Altar)
+- [Bột xương địa ngục](/Infernal-Bonemeal)
+- [Vảy Elytra](/Elytras)
+- [Cánh Elytra](/Elytras)
+- [Cánh Elytra (Mending)](/Elytras)
+- [Cánh Elytra Linh hồn ràng buộc](/Elytras)
+- [Totem Bất tử](/Totem-of-Undying)
+- [Len cầu vồng](/Rainbow-Blocks)
+- [Kính cầu vồng](/Rainbow-Blocks)
+- [Tấm kính cầu vồng](/Rainbow-Blocks)
+- [Khối đất sét cầu vồng](/Rainbow-Blocks)
+- [Bê tông cầu vồng](/Rainbow-Blocks)
+- [Gạch men cầu vồng](/Rainbow-Blocks)
+- [Phễu truyền tải](/Infused-Hopper)
