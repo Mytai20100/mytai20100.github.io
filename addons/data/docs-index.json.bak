@@ -1,0 +1,1628 @@
+[
+  {
+    "id": "Addons",
+    "title": "Addon",
+    "label": "Danh sách Addon Slimefun4",
+    "excerpt": "Bạn muốn thêm chút gia vị cho máy chủ Slimefun của mình? Bạn đã đến đúng nơi rồi."
+  },
+  {
+    "id": "Advanced-Output-Node",
+    "title": "Nút Xuất Nâng Cao",
+    "label": "Nút Xuất Nâng Cao",
+    "excerpt": "Nút Xuất Nâng Cao là một phần của hệ thống Quản Lý Vận Tải. Nó sẽ nhận vật phẩm từ Nút Nhập."
+  },
+  {
+    "id": "Aluminum-Brass-Ingot",
+    "title": "Thỏi Đồng Thau Nhôm",
+    "label": "Thỏi Đồng Thau Nhôm",
+    "excerpt": "Thỏi Đồng Thau Nhôm là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Aluminum-Bronze-Ingot",
+    "title": "Thỏi Đồng Thanh Nhôm",
+    "label": "Thỏi Đồng Thanh Nhôm",
+    "excerpt": "Thỏi Đồng Thanh Nhôm là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Aluminum-Dust",
+    "title": "Bột Nhôm",
+    "label": "Bột Nhôm",
+    "excerpt": "Bột Nhôm là một trong 9 loại bột khoáng trong Slimefun."
+  },
+  {
+    "id": "Aluminum-Ingot",
+    "title": "Thỏi Nhôm",
+    "label": "Thỏi Nhôm",
+    "excerpt": "Thỏi Nhôm là một loại thỏi mới được thêm vào trong Slimefun."
+  },
+  {
+    "id": "Ancient-Altar",
+    "title": "Bàn Thờ Cổ Đại",
+    "label": "Bàn Thờ Cổ Đại",
+    "excerpt": "Bàn Thờ Cổ Đại là một khối thuộc nhóm Thiết Bị Ma Thuật và đồng thời là một cấu trúc đa khối."
+  },
+  {
+    "id": "Ancient-Pedestal",
+    "title": "Bệ Cổ Đại",
+    "label": "Bệ Cổ Đại",
+    "excerpt": "Bệ Cổ Đại là vật phẩm thuộc nhóm Thiết Bị Ma Thuật. Đây là vật phẩm bắt buộc để xây dựng một Bàn Thờ Cổ Đại hoàn chỉnh."
+  },
+  {
+    "id": "Ancient-Runes",
+    "title": "Cổ Ngữ Cổ Đại",
+    "label": "Cổ Ngữ Cổ Đại",
+    "excerpt": "Cổ Ngữ Cổ Đại là một phần của nhóm Vật Phẩm Ma Thuật, hiện có 11 loại Cổ Ngữ khác nhau và 1 loại Cổ Ngữ Trống."
+  },
+  {
+    "id": "Android-Interfaces",
+    "title": "Giao Diện Tương Tác Android",
+    "label": "Giao Diện Tương Tác Android",
+    "excerpt": "Hiện tại có hai loại Giao Diện Tương Tác Android, loại vật phẩm và loại nhiên liệu. Mỗi loại giao diện có chức năng khác nhau."
+  },
+  {
+    "id": "Androids",
+    "title": "Android Lập Trình Được",
+    "label": "Android Lập Trình Được",
+    "excerpt": "Nhóm Android Lập Trình Được bao gồm các Android có thể tự động thực hiện nhiệm vụ."
+  },
+  {
+    "id": "Animal-Growth-Accelerator",
+    "title": "Máy Thúc Đẩy Sinh Trưởng Động Vật",
+    "label": "Máy Thúc Đẩy Sinh Trưởng Động Vật",
+    "excerpt": "Máy Thúc Đẩy Sinh Trưởng Động Vật là một loại máy điện. Nó có thể đẩy nhanh sự phát triển của động vật con."
+  },
+  {
+    "id": "Armor",
+    "title": "Giáp",
+    "label": "Giáp",
+    "excerpt": "Nhóm Giáp chứa sáu bộ giáp mới và cho phép bạn chế tạo bộ giáp xích (chainmail)."
+  },
+  {
+    "id": "Armor-Forge",
+    "title": "Bàn Rèn Giáp",
+    "label": "Bàn Rèn Giáp",
+    "excerpt": "Bàn Rèn Giáp (Armor Forge) là một trong những máy cơ bản của Slimefun. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Auto-Anvil",
+    "title": "Đe Tự Động",
+    "label": "Đe Tự Động",
+    "excerpt": "Đe Tự Động là một loại máy điện. Nó có thể sửa chữa vũ khí, công cụ và giáp của bạn (khi không thể sửa trong đe thường)."
+  },
+  {
+    "id": "Auto-Breeder",
+    "title": "Máy Cho Ăn Tự Động",
+    "label": "Máy Cho Ăn Tự Động",
+    "excerpt": "Máy Cho Ăn Tự Động là một loại máy điện. Nó có thể tự động cho ăn tối đa 2 con vật."
+  },
+  {
+    "id": "Auto-Crafter",
+    "title": "Máy Chế Tạo Tự Động",
+    "label": "Máy Chế Tạo Tự Động",
+    "excerpt": "Máy Chế Tạo Tự Động là máy thuộc nhóm Quản Lý Vận Tải, sử dụng điện để tự động hóa việc chế tạo."
+  },
+  {
+    "id": "Auto-Disenchanter",
+    "title": "Máy Gỡ Phù Phép Tự Động",
+    "label": "Máy Gỡ Phù Phép Tự Động",
+    "excerpt": "Máy Gỡ Phù Phép Tự Động là một loại máy điện. Nó có thể gỡ bỏ phù phép khỏi vũ khí, công cụ hoặc giáp."
+  },
+  {
+    "id": "Auto-Drier",
+    "title": "Máy Sấy Tự Động",
+    "label": "Máy Sấy Tự Động",
+    "excerpt": "Máy Sấy Tự Động là một loại máy điện. Nó sấy khô vật phẩm thành một vật phẩm khác. Nó cũng có thể sấy thịt chín thành thịt khô tương ứng."
+  },
+  {
+    "id": "Auto-Enchanter",
+    "title": "Máy Phù Phép Tự Động",
+    "label": "Máy Phù Phép Tự Động",
+    "excerpt": "Máy Phù Phép Tự Động là một loại máy điện. Nó có thể chuyển phù phép từ sách phù phép sang trang bị."
+  },
+  {
+    "id": "Automated-Panning-Machine",
+    "title": "Máy Đãi Tự Động",
+    "label": "Máy Đãi Tự Động",
+    "excerpt": "Máy Đãi Tự Động là một trong những máy cơ bản của Slimefun. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Automatic-Ignition-Chamber",
+    "title": "Buồng Đánh Lửa Tự Động",
+    "label": "Buồng Đánh Lửa Tự Động",
+    "excerpt": "Buồng Đánh Lửa Tự Động (Automatic Ignition Chamber) là một trong những máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Backpacks",
+    "title": "Ba Lô",
+    "label": "Ba Lô",
+    "excerpt": "Ba Lô là một loạt vật phẩm trong nhóm Vật Phẩm Hữu Ích, có thể dùng để lưu trữ vật phẩm. Rất phù hợp để mang theo khi đi thám hiểm."
+  },
+  {
+    "id": "Basic-Machines",
+    "title": "Máy Cơ Bản",
+    "label": "Máy Cơ Bản",
+    "excerpt": "Nhóm này chứa nhiều loại máy đơn giản, không cần sử dụng bất kỳ điện năng nào."
+  },
+  {
+    "id": "Battery",
+    "title": "Pin",
+    "label": "Pin",
+    "excerpt": "Pin là vật phẩm thuộc nhóm Linh Kiện Kỹ Thuật, có thể dùng để chế tạo các linh kiện kỹ thuật khác và máy móc."
+  },
+  {
+    "id": "Billon-Ingot",
+    "title": "Thỏi Hợp Kim Bạc Đồng",
+    "label": "Thỏi Hợp Kim Bạc Đồng",
+    "excerpt": "Thỏi Hợp Kim Bạc Đồng là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Bio-Reactor",
+    "title": "Lò Phản Ứng Sinh Học",
+    "label": "Lò Phản Ứng Sinh Học",
+    "excerpt": "Lò Phản Ứng Sinh Học là một loại máy phát điện."
+  },
+  {
+    "id": "Birthday-Seasonal-Category",
+    "title": "Nhóm Theo Mùa - Sinh Nhật",
+    "label": "Nhóm Theo Mùa - Sinh Nhật",
+    "excerpt": "Nhóm Sinh Nhật chỉ hiển thị vào tháng 10. Tháng 10 là tháng sinh nhật của TheBusyBiscuit (26 tháng 10). Nếu bạn chưa biết TheBusyBiscuit là ai, anh ấy là người sáng lập Slimefun."
+  },
+  {
+    "id": "Blade-of-Vampires",
+    "title": "Lưỡi Dao Ma Cà Rồng",
+    "label": "Lưỡi Dao Ma Cà Rồng",
+    "excerpt": "Lưỡi Dao Ma Cà Rồng là một loại vũ khí trong Slimefun."
+  },
+  {
+    "id": "Blistering-Ingot",
+    "title": "Thỏi Rộp",
+    "label": "Thỏi Rộp",
+    "excerpt": "Thỏi Rộp là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp các vật phẩm liên quan đến lò phản ứng và một số máy giai đoạn cuối."
+  },
+  {
+    "id": "Block-Placer",
+    "title": "Máy Đặt Khối",
+    "label": "Máy Đặt Khối",
+    "excerpt": "Máy Đặt Khối là một trong những máy cơ bản của Slimefun. Đây là một vật phẩm có thể chế tạo, dùng để đặt các khối chứa bên trong nó ra ngoài."
+  },
+  {
+    "id": "Book-Binder",
+    "title": "Máy Kết Hợp Sách Phù Phép",
+    "label": "Máy Kết Hợp Sách Phù Phép",
+    "excerpt": "Máy Kết Hợp Sách Phù Phép là một máy điện. Nó có thể hợp nhất các phù phép từ các sách phù phép khác nhau, tương tự như đe."
+  },
+  {
+    "id": "Boosted-Uranium",
+    "title": "Nhiên Liệu Hỗn Hợp Plutonium-Uranium (MOX)",
+    "label": "Nhiên Liệu Hỗn Hợp Plutonium-Uranium (MOX)",
+    "excerpt": "Nhiên Liệu Hỗn Hợp Plutonium-Uranium (MOX) là một loại tài nguyên trong Slimefun, có thể dùng làm nhiên liệu cho Lò Phản Ứng Hạt Nhân. Trong tất cả các nhiên liệu hạt nhân, "
+  },
+  {
+    "id": "Bows",
+    "title": "Cung",
+    "label": "Cung",
+    "excerpt": "Nhóm Vũ Khí của Slimefun đã thêm ba loại cung: Cung Linh Hồn Liên Kết, Cung Bùng Nổ, Cung Băng Giá."
+  },
+  {
+    "id": "Brass-Ingot",
+    "title": "Thỏi Đồng Thau",
+    "label": "Thỏi Đồng Thau",
+    "excerpt": "Thỏi Đồng Thau là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Broken-Spawner",
+    "title": "Hộp Sinh Quái Hỏng",
+    "label": "Hộp Sinh Quái Hỏng",
+    "excerpt": "Hộp Sinh Quái Hỏng là vật phẩm thuộc nhóm Vật Phẩm Ma Thuật. Như tên gọi, vật phẩm này không có chức năng gì."
+  },
+  {
+    "id": "Bronze-Ingot",
+    "title": "Thỏi Đồng Thanh",
+    "label": "Thỏi Đồng Thanh",
+    "excerpt": "Thỏi Đồng Thanh là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Bucket-of-Fuel",
+    "title": "Xô Nhiên Liệu",
+    "label": "Xô Nhiên Liệu",
+    "excerpt": "Xô Nhiên Liệu là một loại tài nguyên trong Slimefun, có thể dùng làm nhiên liệu cho Máy Khai Thác Công Nghiệp Nâng Cao và một số máy điện."
+  },
+  {
+    "id": "Bucket-of-Oil",
+    "title": "Xô Dầu Thô",
+    "label": "Xô Dầu Thô",
+    "excerpt": "Xô Dầu Thô là một loại tài nguyên trong Slimefun, có thể dùng làm nhiên liệu cho Máy Khai Thác Công Nghiệp Nâng Cao và một số máy điện."
+  },
+  {
+    "id": "Butcher-Androids",
+    "title": "Android Lập Trình Được (Đồ Tể)",
+    "label": "Android Lập Trình Được (Đồ Tể)",
+    "excerpt": "Android Đồ Tể là Android được thiết kế để tiêu diệt sinh vật thù địch hoặc động vật."
+  },
+  {
+    "id": "Carbon",
+    "title": "Carbon",
+    "label": "Carbon",
+    "excerpt": "Carbon là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiều vật phẩm. Nó bao gồm 3 dạng vật phẩm:"
+  },
+  {
+    "id": "Carbon-Press",
+    "title": "Máy Ép Carbon",
+    "label": "Máy Ép Carbon",
+    "excerpt": "Máy Ép Carbon là một loại máy điện. Nó có thể được dùng để tổng hợp hầu hết các vật phẩm liên quan đến Carbon."
+  },
+  {
+    "id": "Carbonado",
+    "title": "Carbonado",
+    "label": "Carbonado",
+    "excerpt": "Carbonado là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiều vật phẩm cao cấp giai đoạn cuối. Trước khi chế tạo Carbonado, bạn phải chế tạo Quặng Carbonado trước."
+  },
+  {
+    "id": "Cargo-Management",
+    "title": "Quản Lý Vận Tải",
+    "label": "Quản Lý Vận Tải",
+    "excerpt": "Quản Lý Vận Tải là hệ thống vận chuyển hàng hóa của Slimefun. Bạn có thể sử dụng nó để vận chuyển vật phẩm một cách nhanh chóng, tự động, gần như không giới hạn khoảng cách giữa các thùng chứa hoặc [m"
+  },
+  {
+    "id": "Cargo-Manager",
+    "title": "Bộ Quản Lý Vận Tải",
+    "label": "Bộ Quản Lý Vận Tải",
+    "excerpt": "Bộ Quản Lý Vận Tải là trung tâm của hệ thống Quản Lý Vận Tải. Nó cho phép vật phẩm được truyền trong hệ thống vận tải."
+  },
+  {
+    "id": "Cargo-Motor",
+    "title": "Động Cơ Vận Tải",
+    "label": "Động Cơ Vận Tải",
+    "excerpt": "Động Cơ Vận Tải là vật phẩm thuộc nhóm Quản Lý Vận Tải."
+  },
+  {
+    "id": "Charging-Bench",
+    "title": "Bàn Sạc",
+    "label": "Bàn Sạc",
+    "excerpt": "Bàn Sạc là một loại máy điện. Nó có thể sạc cho vật phẩm."
+  },
+  {
+    "id": "Christmas-Items",
+    "title": "Vật Phẩm Giáng Sinh",
+    "label": "Vật Phẩm Giáng Sinh",
+    "excerpt": "Vật Phẩm Giáng Sinh là các vật phẩm thuộc Nhóm Giáng Sinh Theo Mùa. Phần lớn các vật phẩm trong nhóm này đều là thức ăn."
+  },
+  {
+    "id": "Christmas-Seasonal-Category",
+    "title": "Nhóm Theo Mùa - Giáng Sinh",
+    "label": "Nhóm Theo Mùa - Giáng Sinh",
+    "excerpt": "Nhóm Giáng Sinh Theo Mùa thêm các vật phẩm liên quan đến Giáng Sinh (phần lớn là thức ăn). Nhóm Giáng Sinh Theo Mùa chỉ hiển thị vào tháng 12."
+  },
+  {
+    "id": "Circuit-Boards",
+    "title": "Bo Mạch",
+    "label": "Bo Mạch",
+    "excerpt": "Bo Mạch là vật phẩm thuộc nhóm Linh Kiện Kỹ Thuật."
+  },
+  {
+    "id": "Climbing-Pick",
+    "title": "Cuốc Leo Núi",
+    "label": "Cuốc Leo Núi",
+    "excerpt": "Cuốc Leo Núi là một trong những công cụ của Slimefun. Bạn có thể sử dụng công cụ này để leo tường dễ dàng hơn."
+  },
+  {
+    "id": "Coal-Generator",
+    "title": "Máy Phát Điện Than",
+    "label": "Máy Phát Điện Than",
+    "excerpt": "Máy Phát Điện Than là một loại máy phát điện."
+  },
+  {
+    "id": "Cobalt-Ingot",
+    "title": "Thỏi Cobalt",
+    "label": "Thỏi Cobalt",
+    "excerpt": "Thỏi Cobalt là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Cobalt-Pickaxe",
+    "title": "Cuốc Chim Cobalt",
+    "label": "Cuốc Chim Cobalt",
+    "excerpt": "Cuốc Chim Cobalt là một trong những công cụ của Slimefun."
+  },
+  {
+    "id": "Combustion-Reactor",
+    "title": "Lò Phản Ứng Đốt Cháy",
+    "label": "Lò Phản Ứng Đốt Cháy",
+    "excerpt": "Lò Phản Ứng Đốt Cháy là một loại máy phát điện."
+  },
+  {
+    "id": "Commands",
+    "title": "Lệnh",
+    "label": "Lệnh",
+    "excerpt": "Trang này chứa thông tin về các lệnh của Slimefun. Mặc dù Slimefun4 không có nhiều lệnh, nhưng việc hiểu các lệnh này vẫn rất quan trọng."
+  },
+  {
+    "id": "Common-Issues",
+    "title": "Các vấn đề thường gặp trong game",
+    "label": "Các vấn đề thường gặp trong game",
+    "excerpt": "Trang này chứa một số vấn đề thường gặp trong game và giải pháp. Hầu hết các giải pháp yêu cầu quyền quản trị viên, nếu bạn không có quyền tương ứng, vui lòng liên hệ quản trị viên để giải quyết!"
+  },
+  {
+    "id": "Composter",
+    "title": "Máy Ủ Phân",
+    "label": "Máy Ủ Phân",
+    "excerpt": "Máy Ủ Phân (Composter) là một trong những máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Compressor",
+    "title": "Máy Nén",
+    "label": "Máy Nén",
+    "excerpt": "Máy Nén (Compressor) là một trong những máy cơ bản của Slimefun. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Connector-Node",
+    "title": "Nút Kết Nối",
+    "label": "Nút Kết Nối",
+    "excerpt": "Nút Kết Nối là một phần của hệ thống Quản Lý Vận Tải. Nó chịu trách nhiệm kết nối các phần khác nhau trong mạng lưới vận tải."
+  },
+  {
+    "id": "Coolant-Cells",
+    "title": "Tế Bào Làm Mát",
+    "label": "Tế Bào Làm Mát",
+    "excerpt": "Tế Bào Làm Mát là một loạt vật phẩm thuộc nhóm Linh Kiện Kỹ Thuật, được sử dụng làm chất làm mát cho Lò Phản Ứng Hạt Nhân và [Lò Phản Ứng Ngôi Sao Địa Ngục](/Reac"
+  },
+  {
+    "id": "Cooler",
+    "title": "Tủ Mát Nhỏ",
+    "label": "Tủ Mát Nhỏ",
+    "excerpt": "Tủ Mát Nhỏ là vật phẩm thuộc nhóm Vật Phẩm Hữu Ích, cho phép bạn mang theo nước trái cây và sinh tố, và tự động tiêu thụ nước trái cây hoặc sinh tố mang theo khi độ đói bị tiêu hao."
+  },
+  {
+    "id": "Cooling-Unit",
+    "title": "Bộ Làm Mát",
+    "label": "Bộ Làm Mát",
+    "excerpt": "Bộ Làm Mát là vật phẩm thuộc nhóm Linh Kiện Kỹ Thuật, có thể dùng để chế tạo một số máy móc và Tủ Mát Nhỏ."
+  },
+  {
+    "id": "Copper-Dust",
+    "title": "Bột Đồng",
+    "label": "Bột Đồng",
+    "excerpt": "Bột Đồng là một trong 9 loại bột khoáng trong Slimefun."
+  },
+  {
+    "id": "Copper-Ingot",
+    "title": "Thỏi Đồng",
+    "label": "Thỏi Đồng",
+    "excerpt": "Thỏi Đồng là một loại thỏi mới được thêm vào trong Slimefun. Thỏi Đồng trong Slimefun không phải là thỏi đồng được thêm vào trong Minecraft 1.17. Chúng không thể thay thế cho nhau."
+  },
+  {
+    "id": "Copper-Wire",
+    "title": "Dây Đồng",
+    "label": "Dây Đồng",
+    "excerpt": "Dây Đồng là vật phẩm thuộc nhóm Linh Kiện Kỹ Thuật, có thể dùng để chế tạo các linh kiện kỹ thuật khác."
+  },
+  {
+    "id": "Corinthian-Bronze-Ingot",
+    "title": "Thỏi Đồng Corinthian",
+    "label": "Thỏi Đồng Corinthian",
+    "excerpt": "Thỏi Đồng Corinthian là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Crafter-Smart-Port",
+    "title": "Cổng Thông Minh Máy Chế Tạo",
+    "label": "Cổng Thông Minh Máy Chế Tạo",
+    "excerpt": "Vật phẩm này là vật phẩm đặc thù của bản Slimefun Việt hóa, không có trong Slimefun gốc."
+  },
+  {
+    "id": "Crafting-Motor",
+    "title": "Động Cơ Chế Tạo",
+    "label": "Động Cơ Chế Tạo",
+    "excerpt": "Động Cơ Chế Tạo là vật phẩm thuộc nhóm Quản Lý Vận Tải."
+  },
+  {
+    "id": "Crop-Growth-Accelerator",
+    "title": "Máy Tăng Tốc Sinh Trưởng Cây Trồng",
+    "label": "Máy Tăng Tốc Sinh Trưởng Cây Trồng",
+    "excerpt": "Máy Tăng Tốc Sinh Trưởng Cây Trồng là một máy điện. Nó có thể tăng tốc độ sinh trưởng của cây trồng xung quanh."
+  },
+  {
+    "id": "Crucible",
+    "title": "Nồi Nấu Chảy",
+    "label": "Nồi Nấu Chảy",
+    "excerpt": "Nồi Nấu Chảy (Crucible) là một trong những máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Damascus-Steel-Ingot",
+    "title": "Thỏi Thép Damascus",
+    "label": "Thỏi Thép Damascus",
+    "excerpt": "Thỏi Thép Damascus là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Developer-Guide",
+    "title": "Hướng dẫn dành cho nhà phát triển",
+    "label": "Viết addon của riêng bạn",
+    "excerpt": "Hướng dẫn dành cho nhà phát triển chính thức: Developer Guide (tiếng Anh)"
+  },
+  {
+    "id": "Developer-Guide-1-Project-Setup",
+    "title": "Hướng dẫn phát triển (1. Thiết lập dự án)",
+    "label": "Hướng dẫn phát triển (1. Thiết lập dự án)",
+    "excerpt": "Đây là chương đầu tiên của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây."
+  },
+  {
+    "id": "Developer-Guide-2-Creating-the-Addon",
+    "title": "Hướng dẫn phát triển (2. Tạo addon)",
+    "label": "Hướng dẫn phát triển (2. Tạo addon)",
+    "excerpt": "Đây là chương thứ hai của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-3-Your-first-Item",
+    "title": "Hướng dẫn phát triển (3. Vật phẩm đầu tiên của bạn)",
+    "label": "Hướng dẫn phát triển (3. Vật phẩm đầu tiên của bạn)",
+    "excerpt": "Đây là chương thứ ba của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-4a-Right-Clicks",
+    "title": "Hướng dẫn phát triển (4a. Nhấp chuột phải)",
+    "label": "Hướng dẫn phát triển (4a. Nhấp chuột phải)",
+    "excerpt": "Đây là chương thứ tư của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-4b-Radioactive-and-WitherProof",
+    "title": "Hướng dẫn phát triển (4b. Phóng xạ và Miễn nhiễm Wither)",
+    "label": "Hướng dẫn phát triển (4b. Phóng xạ và Miễn nhiễm Wither)",
+    "excerpt": "Đây là chương thứ tư của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-5-Researches",
+    "title": "Hướng dẫn phát triển (5. Nghiên cứu)",
+    "label": "Hướng dẫn phát triển (5. Nghiên cứu)",
+    "excerpt": "Đây là chương thứ năm của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-6-Custom-Heads",
+    "title": "Hướng dẫn phát triển (6. Đầu tùy chỉnh)",
+    "label": "Hướng dẫn phát triển (6. Đầu tùy chỉnh)",
+    "excerpt": "Đây là chương thứ sáu của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-7-GEO-Resources",
+    "title": "Hướng dẫn phát triển (7. Tài nguyên GEO)",
+    "label": "Hướng dẫn phát triển (7. Tài nguyên GEO)",
+    "excerpt": "Đây là chương thứ bảy của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây. Nếu bạn chưa xem nội dung trước đó, vui lòng đọc chúng trước."
+  },
+  {
+    "id": "Developer-Guide-9-Compiling",
+    "title": "Hướng dẫn phát triển (9. Biên dịch)",
+    "label": "Hướng dẫn phát triển (9. Biên dịch)",
+    "excerpt": "Đây là một phần của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây."
+  },
+  {
+    "id": "Developer-Guide-Publishing",
+    "title": "Hướng dẫn phát triển (Phát hành)",
+    "label": "Hướng dẫn phát triển (Phát hành)",
+    "excerpt": "Đây là phần cuối cùng của hướng dẫn phát triển của chúng tôi, bạn có thể xem mục lục tại đây."
+  },
+  {
+    "id": "Diet-Cookie",
+    "title": "Bánh Quy Ăn Kiêng",
+    "label": "Bánh Quy Ăn Kiêng",
+    "excerpt": "Bánh Quy Ăn Kiêng là một loại thực phẩm trong Slimefun. Sau khi ăn, bạn sẽ nhận được hiệu ứng Lơ Lửng II trong 3 giây."
+  },
+  {
+    "id": "Duralumin-Ingot",
+    "title": "Thỏi Duralumin",
+    "label": "Thỏi Duralumin",
+    "excerpt": "Thỏi Duralumin là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Dusts",
+    "title": "Bột Kim Loại",
+    "label": "Bột Kim Loại",
+    "excerpt": "Danh mục tài nguyên của Slimefun bao gồm 9 loại bột kim loại:"
+  },
+  {
+    "id": "EXP-Collector",
+    "title": "Máy Thu Thập Kinh Nghiệm",
+    "label": "Máy Thu Thập Kinh Nghiệm",
+    "excerpt": "Máy Thu Thập Kinh Nghiệm là một máy điện. Nó có thể thu thập các quả cầu kinh nghiệm xung quanh."
+  },
+  {
+    "id": "Easter-Seasonal-Category",
+    "title": "Danh Mục Theo Mùa Phục Sinh",
+    "label": "Danh Mục Theo Mùa Phục Sinh",
+    "excerpt": "Danh mục theo mùa Phục Sinh chỉ hiển thị vào tháng 4."
+  },
+  {
+    "id": "Electric-Dust-Washer",
+    "title": "Máy Rửa Quặng Điện",
+    "label": "Máy Rửa Quặng Điện",
+    "excerpt": "Máy Rửa Quặng Điện là một máy điện. Nó có thể chuyển đổi Quặng Đã Sàng thành Bột Kim Loại."
+  },
+  {
+    "id": "Electric-Furnace",
+    "title": "Lò Điện",
+    "label": "Lò Điện",
+    "excerpt": "Lò Điện là một máy điện. Nó có thể sử dụng điện để nung chảy vật phẩm."
+  },
+  {
+    "id": "Electric-Gold-Pan",
+    "title": "Máy Đãi Vàng Điện",
+    "label": "Máy Đãi Vàng Điện",
+    "excerpt": "Máy Đãi Vàng Điện là một máy điện."
+  },
+  {
+    "id": "Electric-Ingot-Factory",
+    "title": "Nhà Máy Đúc Thỏi Điện",
+    "label": "Nhà Máy Đúc Thỏi Điện",
+    "excerpt": "Nhà Máy Đúc Thỏi Điện là một máy điện. Nó có thể nung chảy bột kim loại thành thỏi tương ứng."
+  },
+  {
+    "id": "Electric-Ingot-Pulverizer",
+    "title": "Máy Nghiền Thỏi Điện",
+    "label": "Máy Nghiền Thỏi Điện",
+    "excerpt": "Máy Nghiền Thỏi Điện là một máy điện. Nó có thể nghiền thỏi thành bột kim loại tương ứng."
+  },
+  {
+    "id": "Electric-Machines",
+    "title": "Năng Lượng và Điện",
+    "label": "Năng Lượng và Điện",
+    "excerpt": "Danh mục Năng Lượng và Điện chứa các loại máy phát điện, máy tiêu thụ điện hoặc thiết bị truyền tải điện. Chúng ta sử dụng Joule (J) làm đơn vị năng lượng/điện."
+  },
+  {
+    "id": "Electric-Motor",
+    "title": "Động Cơ Điện",
+    "label": "Động Cơ Điện",
+    "excerpt": "Động Cơ Điện là vật phẩm thuộc danh mục linh kiện kỹ thuật, có thể dùng để chế tạo một số máy móc và các linh kiện kỹ thuật khác."
+  },
+  {
+    "id": "Electric-Ore-Grinder",
+    "title": "Máy Nghiền Quặng Điện",
+    "label": "Máy Nghiền Quặng Điện",
+    "excerpt": "Máy Nghiền Quặng Điện là một máy điện. Nó có thể nghiền và xay nhiều vật phẩm."
+  },
+  {
+    "id": "Electric-Press",
+    "title": "Máy Nén Điện",
+    "label": "Máy Nén Điện",
+    "excerpt": "Máy Nén Điện là một máy điện. Nó có thể nén vật phẩm thành các loại vật phẩm khác."
+  },
+  {
+    "id": "Electric-Smeltery",
+    "title": "Lò Nung Chảy Điện",
+    "label": "Lò Nung Chảy Điện",
+    "excerpt": "Lò Nung Chảy Điện là một máy điện. Nó có thể nung chảy hợp kim."
+  },
+  {
+    "id": "Electrified-Crucible",
+    "title": "Nồi Nấu Chảy Điện",
+    "label": "Nồi Nấu Chảy Điện",
+    "excerpt": "Nồi Nấu Chảy Điện là một máy điện. Nó có thể chuyển đổi vật phẩm thành dạng chất lỏng."
+  },
+  {
+    "id": "Electromagnet",
+    "title": "Nam Châm Điện",
+    "label": "Nam Châm Điện",
+    "excerpt": "Nam Châm Điện là vật phẩm thuộc danh mục linh kiện kỹ thuật, có thể dùng để chế tạo một số máy móc và các linh kiện kỹ thuật khác."
+  },
+  {
+    "id": "Elemental-Staves",
+    "title": "Gậy Nguyên Tố",
+    "label": "Gậy Nguyên Tố",
+    "excerpt": "Gậy Nguyên Tố là vật phẩm thuộc danh mục dụng cụ ma thuật, tổng cộng có 5 loại."
+  },
+  {
+    "id": "Elevator-Plate",
+    "title": "Tấm Thang Máy",
+    "label": "Tấm Thang Máy",
+    "excerpt": "Tấm Thang Máy là một trong những dụng cụ có thể đặt thuộc danh mục GPS."
+  },
+  {
+    "id": "Elytras",
+    "title": "Cánh Elytra",
+    "label": "Cánh Elytra",
+    "excerpt": "Trang này chứa thông tin về các vật phẩm sau:"
+  },
+  {
+    "id": "Ender-Backpack",
+    "title": "Ba Lô Ender",
+    "label": "Ba Lô Ender",
+    "excerpt": "Ba Lô Ender là vật phẩm thuộc danh mục dụng cụ ma thuật. Thực chất, vật phẩm này là một rương Ender di động."
+  },
+  {
+    "id": "Energy-Capacitors",
+    "title": "Tụ Điện",
+    "label": "Tụ Điện",
+    "excerpt": "Tụ Điện là vật phẩm thuộc danh mục năng lượng và điện, có thể truyền và lưu trữ năng lượng trong mạng lưới năng lượng."
+  },
+  {
+    "id": "Energy-Connector",
+    "title": "Đầu Nối Năng Lượng",
+    "label": "Đầu Nối Năng Lượng",
+    "excerpt": "Đầu Nối Năng Lượng là vật phẩm thuộc danh mục năng lượng và điện, có thể truyền năng lượng trong mạng lưới năng lượng. Khác với Tụ Điện, Đầu Nối Năng Lượng "
+  },
+  {
+    "id": "Energy-Regulator",
+    "title": "Bộ Điều Chỉnh Năng Lượng",
+    "label": "Bộ Điều Chỉnh Năng Lượng",
+    "excerpt": "Bộ Điều Chỉnh Năng Lượng là phần cốt lõi của mạng lưới năng lượng, có nó thì năng lượng mới có thể được truyền tải."
+  },
+  {
+    "id": "Enhanced-Crafting-Table",
+    "title": "Bàn Chế Tạo Nâng Cao",
+    "label": "Bàn Chế Tạo Nâng Cao",
+    "excerpt": "Bàn Chế Tạo Nâng Cao (Enhanced Crafting Table) là một máy cơ bản không thể thiếu trong Slimefun."
+  },
+  {
+    "id": "Enhanced-Furnaces",
+    "title": "Lò Nung Cường Hóa",
+    "label": "Lò Nung Cường Hóa",
+    "excerpt": "Lò Nung Cường Hóa là một trong những máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Enriched-Nether-Ice",
+    "title": "Băng Địa Ngục Cô Đặc",
+    "label": "Băng Địa Ngục Cô Đặc",
+    "excerpt": "Băng Địa Ngục Cô Đặc là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp Viên Làm Mát Băng Địa Ngục."
+  },
+  {
+    "id": "Expanding-the-Wiki",
+    "title": "Mở rộng Wiki",
+    "label": "Giúp chúng tôi mở rộng Wiki!",
+    "excerpt": "Nếu bạn muốn giúp mở rộng Wiki chính thức, vui lòng nhấp vào đây."
+  },
+  {
+    "id": "Explosive-Pickaxe",
+    "title": "Cúp Nổ",
+    "label": "Cúp Nổ",
+    "excerpt": "Cúp Nổ là một trong những dụng cụ của Slimefun."
+  },
+  {
+    "id": "Explosive-Shovel",
+    "title": "Xẻng Nổ",
+    "label": "Xẻng Nổ",
+    "excerpt": "Xẻng Nổ là một trong những dụng cụ của Slimefun."
+  },
+  {
+    "id": "FAQ",
+    "title": "Câu hỏi thường gặp (FAQ)",
+    "label": "Câu hỏi thường gặp (FAQ)",
+    "excerpt": "Để tải và cài đặt Slimefun, bạn có thể xem hướng dẫn này. Bạn có thể tìm thấy danh sách addon của Slimefun4 tại trang Addon."
+  },
+  {
+    "id": "Farmer-Androids",
+    "title": "Robot Lập Trình Được (Nông Dân)",
+    "label": "Robot Lập Trình Được (Nông Dân)",
+    "excerpt": "Robot Nông Dân là robot được thiết kế để tự động hóa việc trồng trọt."
+  },
+  {
+    "id": "Ferrosilicon",
+    "title": "Ferrosilicon",
+    "label": "Ferrosilicon",
+    "excerpt": "Ferrosilicon là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Fisherman-Androids",
+    "title": "Robot Lập Trình Được (Ngư Dân)",
+    "label": "Robot Lập Trình Được (Ngư Dân)",
+    "excerpt": "Robot Ngư Dân là robot được thiết kế để tự động hóa việc câu cá."
+  },
+  {
+    "id": "Flask-of-Knowledge",
+    "title": "Bình Tri Thức",
+    "label": "Bình Tri Thức",
+    "excerpt": "Bình Tri Thức là vật phẩm thuộc danh mục dụng cụ ma thuật."
+  },
+  {
+    "id": "Fluid-Pump",
+    "title": "Máy Bơm Chất Lỏng",
+    "label": "Máy Bơm Chất Lỏng",
+    "excerpt": "Máy Bơm Chất Lỏng là một máy điện. Nó có thể thu thập chất lỏng từ môi trường xung quanh."
+  },
+  {
+    "id": "Food",
+    "title": "Thực phẩm",
+    "label": "Thực phẩm",
+    "excerpt": "Danh mục thực phẩm chứa các loại thực phẩm và nước ép."
+  },
+  {
+    "id": "Food-Composter",
+    "title": "Máy Ủ Phân Thực Phẩm",
+    "label": "Máy Ủ Phân Thực Phẩm",
+    "excerpt": "Máy Ủ Phân Thực Phẩm là một máy điện. Nó có thể chuyển đổi thực phẩm hữu cơ thành phân bón hữu cơ. [Phân bón hữu cơ](/Mis"
+  },
+  {
+    "id": "Food-Fabricator",
+    "title": "Máy Chế Biến Thực Phẩm",
+    "label": "Máy Chế Biến Thực Phẩm",
+    "excerpt": "Máy Chế Biến Thực Phẩm là một máy điện. Nó được dùng để chế tạo thực phẩm hữu cơ, có thể được dùng cho một số [máy điện](/Electric-Machines#machi"
+  },
+  {
+    "id": "Fortune-Cookie",
+    "title": "Bánh Quy May Mắn",
+    "label": "Bánh Quy May Mắn",
+    "excerpt": "Bánh Quy May Mắn là một loại thực phẩm trong Slimefun. Sau khi ăn, sẽ hiển thị một thông điệp về tương lai."
+  },
+  {
+    "id": "Freezer",
+    "title": "Tủ Đông",
+    "label": "Tủ Đông",
+    "excerpt": "Tủ Đông là một máy điện. Nó có thể làm lạnh nhiều vật phẩm. Ví dụ, Tủ Đông có thể tạo ra Băng Trôi và Băng Xanh, cũng có thể tạo ra chất làm mát cho lò"
+  },
+  {
+    "id": "GEO-Miner",
+    "title": "Máy Khai Thác Tài Nguyên GEO",
+    "label": "Máy Khai Thác Tài Nguyên GEO",
+    "excerpt": "Máy Khai Thác Tài Nguyên GEO là một trong những máy có thể đặt thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS",
+    "title": "GPS",
+    "label": "GPS",
+    "excerpt": "Danh mục GPS chứa các loại máy móc khác nhau liên quan đến mạng GPS."
+  },
+  {
+    "id": "GPS-Activation-Device",
+    "title": "Thiết Bị Kích Hoạt GPS",
+    "label": "Thiết Bị Kích Hoạt GPS",
+    "excerpt": "Thiết Bị Kích Hoạt GPS là một trong những dụng cụ có thể đặt thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Control-Panel",
+    "title": "Bảng Điều Khiển GPS",
+    "label": "Bảng Điều Khiển GPS",
+    "excerpt": "Bảng Điều Khiển GPS là một trong những dụng cụ có thể đặt thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Emergency-Transmitter",
+    "title": "Máy Phát Khẩn Cấp GPS",
+    "label": "Máy Phát Khẩn Cấp GPS",
+    "excerpt": "Máy Phát Khẩn Cấp GPS là vật phẩm thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Geo-Scanner",
+    "title": "Máy Quét Địa Hình GPS",
+    "label": "Máy Quét Địa Hình GPS",
+    "excerpt": "Máy Quét Địa Hình GPS là một trong những dụng cụ thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Marker-Tool",
+    "title": "Dụng Cụ Đặt Điểm Đánh Dấu GPS",
+    "label": "Dụng Cụ Đặt Điểm Đánh Dấu GPS",
+    "excerpt": "Dụng Cụ Đặt Điểm Đánh Dấu GPS là một trong những dụng cụ thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Teleporter-Matrix",
+    "title": "Ma Trận Dịch Chuyển GPS",
+    "label": "Ma Trận Dịch Chuyển GPS",
+    "excerpt": "Ma Trận Dịch Chuyển GPS là một trong những khối thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Teleporter-Pylon",
+    "title": "Tháp Tín Hiệu GPS",
+    "label": "Tháp Tín Hiệu GPS",
+    "excerpt": "Tháp Tín Hiệu GPS là một trong những khối thuộc danh mục GPS."
+  },
+  {
+    "id": "GPS-Transmitter",
+    "title": "Máy Phát GPS",
+    "label": "Máy Phát GPS",
+    "excerpt": "Máy Phát GPS là nền tảng để xây dựng mạng GPS."
+  },
+  {
+    "id": "Getting-Started",
+    "title": "Bắt đầu",
+    "label": "Bắt đầu",
+    "excerpt": "Nếu bạn mới tiếp xúc với Slimefun, nó có vẻ rất lớn và phức tạp. Bạn có thể không biết nên bắt đầu từ đâu. Nếu bạn cũng nghĩ vậy, chúc mừng bạn, bạn đã đến đúng nơi!"
+  },
+  {
+    "id": "Gilded-Iron",
+    "title": "Thỏi Sắt Mạ Vàng",
+    "label": "Thỏi Sắt Mạ Vàng",
+    "excerpt": "Thỏi Sắt Mạ Vàng là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Gold-Dust",
+    "title": "Bột Vàng",
+    "label": "Bột Vàng",
+    "excerpt": "Bột Vàng là một trong 9 loại bột kim loại trong Slimefun."
+  },
+  {
+    "id": "Gold-Ingot",
+    "title": "Thỏi Vàng",
+    "label": "Thỏi Vàng",
+    "excerpt": "Slimefun đã thêm 11 loại thỏi vàng vào trò chơi. Chúng được phân biệt bằng độ tinh khiết (cara) khác nhau, thấp nhất là 4 cara, cao nhất là 24 cara."
+  },
+  {
+    "id": "Gold-Pan",
+    "title": "Chảo Đãi Vàng",
+    "label": "Chảo Đãi Vàng",
+    "excerpt": "Chảo Đãi Vàng là một vật phẩm rất quan trọng, nằm trong danh mục dụng cụ."
+  },
+  {
+    "id": "Grappling-Hook",
+    "title": "Móc Leo",
+    "label": "Móc Leo",
+    "excerpt": "Móc Leo là một dụng cụ rất hữu ích, có thể mang lại khả năng cơ động cao, đến được những nơi khó tiếp cận."
+  },
+  {
+    "id": "Grind-Stone",
+    "title": "Đá Mài",
+    "label": "Đá Mài",
+    "excerpt": "Đá Mài (Grind Stone) là một trong những máy cơ bản của Slimefun. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Halloween-Seasonal-Category",
+    "title": "Danh mục giới hạn Halloween",
+    "label": "Danh mục giới hạn Halloween",
+    "excerpt": "Danh mục giới hạn Halloween chỉ hiển thị vào tháng 10."
+  },
+  {
+    "id": "Hardened-Glass",
+    "title": "Kính cường lực",
+    "label": "Kính cường lực",
+    "excerpt": "Kính cường lực là vật phẩm thuộc danh mục Linh kiện Công nghệ, có thể dùng để chế tạo các linh kiện công nghệ khác."
+  },
+  {
+    "id": "Hardened-Metal",
+    "title": "Kim loại cứng",
+    "label": "Kim loại cứng",
+    "excerpt": "Kim loại cứng là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Heated-Pressure-Chamber",
+    "title": "Buồng áp suất gia nhiệt",
+    "label": "Buồng áp suất gia nhiệt",
+    "excerpt": "Buồng áp suất gia nhiệt là một loại Máy điện. Nó được dùng để tổng hợp một số vật phẩm giai đoạn cuối game."
+  },
+  {
+    "id": "Heating-Coil",
+    "title": "Cuộn dây gia nhiệt",
+    "label": "Cuộn dây gia nhiệt",
+    "excerpt": "Cuộn dây gia nhiệt là vật phẩm thuộc danh mục Linh kiện Công nghệ, có thể dùng để chế tạo một số máy móc."
+  },
+  {
+    "id": "Hercules'-Pickaxe",
+    "title": "Cuốc chim Hercules",
+    "label": "Cuốc chim Hercules",
+    "excerpt": "Cuốc chim Hercules là một trong những Công cụ của Slimefun."
+  },
+  {
+    "id": "Hologram-Projector",
+    "title": "Máy chiếu Hologram",
+    "label": "Máy chiếu Hologram",
+    "excerpt": "Máy chiếu Hologram là một Thiết bị Công nghệ."
+  },
+  {
+    "id": "Home",
+    "title": "Trang chủ",
+    "label": "Trang chủ",
+    "excerpt": "Chào mừng bạn đến với Wiki tiếng Việt không chính thức của Slimefun4! Wiki này được tạo bởi ybw0014 và được cùng duy trì bởi [nhóm cộng tác viên](https://github.com/Guizh"
+  },
+  {
+    "id": "How-to-report-bugs",
+    "title": "Cách báo cáo lỗi",
+    "label": "Cách báo cáo lỗi",
+    "excerpt": "Báo cáo lỗi rất quan trọng đối với dự án mã nguồn mở này."
+  },
+  {
+    "id": "Industrial-Miners",
+    "title": "Máy khai thác công nghiệp",
+    "label": "Máy khai thác công nghiệp",
+    "excerpt": "Máy khai thác công nghiệp (Industrial Miner) là một trong những Máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Infernal-Bonemeal",
+    "title": "Bột xương địa ngục",
+    "label": "Bột xương địa ngục",
+    "excerpt": "Bột xương địa ngục là vật phẩm thuộc danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Infused-Hopper",
+    "title": "Phễu truyền tải",
+    "label": "Phễu truyền tải",
+    "excerpt": "Phễu truyền tải là vật phẩm thuộc danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Infused-Magnet",
+    "title": "Nam châm truyền tải",
+    "label": "Nam châm truyền tải",
+    "excerpt": "Nam châm truyền tải là vật phẩm thuộc danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Ingots",
+    "title": "Thỏi",
+    "label": "Thỏi",
+    "excerpt": "Slimefun bao gồm 25 loại thỏi, trong đó có 17 loại hợp kim. Chúng là tài nguyên cơ bản để tổng hợp."
+  },
+  {
+    "id": "Input-Node",
+    "title": "Nút nhập",
+    "label": "Nút nhập",
+    "excerpt": "Nút nhập là một phần của hệ thống Quản lý Vận chuyển. Nó chịu trách nhiệm lọc và truyền vật phẩm đến nút xuất (hoặc nút xuất nâng cao) khớ"
+  },
+  {
+    "id": "Installing-Slimefun",
+    "title": "Cài đặt Slimefun",
+    "label": "Cách cài đặt Slimefun",
+    "excerpt": "Bạn cần một máy chủ Paper (khuyến nghị dùng phiên bản mới nhất) để cài đặt Slimefun. Mặc dù chúng tôi chỉ kiểm thử trên Paper, các phiên bản phái sinh của nó cũng sẽ giúp Slimefun hoạt động bình thườn"
+  },
+  {
+    "id": "Iron-Dust",
+    "title": "Bột sắt",
+    "label": "Bột sắt",
+    "excerpt": "Bột sắt là một trong 9 loại bột khoáng của Slimefun."
+  },
+  {
+    "id": "Iron-Golem-Assembler",
+    "title": "Máy lắp ráp Golem Sắt",
+    "label": "Máy lắp ráp Golem Sắt",
+    "excerpt": "Máy lắp ráp Golem Sắt là một loại Máy điện. Nó có thể tự động lắp ráp Golem Sắt hoàn toàn tự động."
+  },
+  {
+    "id": "Iron-Ingot",
+    "title": "Thỏi sắt",
+    "label": "Thỏi sắt",
+    "excerpt": "Thỏi sắt là vật phẩm trong Minecraft nguyên bản. Mặc dù đây không phải là vật phẩm do Slimefun thêm vào, nhưng Slimefun cung cấp thêm phương thức để có được thỏi sắt, và nó cũng được dùng trong các cô"
+  },
+  {
+    "id": "Items",
+    "title": "Vật phẩm hữu ích",
+    "label": "Vật phẩm hữu ích",
+    "excerpt": "Danh mục Vật phẩm hữu ích chứa nhiều vật phẩm hữu dụng khác nhau."
+  },
+  {
+    "id": "Jet-Boots",
+    "title": "Giày phản lực",
+    "label": "Giày phản lực",
+    "excerpt": "Giày phản lực là một Thiết bị Công nghệ. Cần sạc trong Bàn sạc trước khi sử dụng."
+  },
+  {
+    "id": "Jetpacks",
+    "title": "Balo phản lực điện",
+    "label": "Balo phản lực điện",
+    "excerpt": "Balo phản lực điện là một Thiết bị Công nghệ. Cần sạc trong Bàn sạc trước khi sử dụng."
+  },
+  {
+    "id": "Juicer",
+    "title": "Máy ép nước trái cây",
+    "label": "Máy ép nước trái cây",
+    "excerpt": "Máy ép nước trái cây (Juicer) là một trong những Máy cơ bản của Slimefun. Nó có thể chế biến một số loại trái cây cụ thể thành nước ép."
+  },
+  {
+    "id": "Juices",
+    "title": "Nước ép",
+    "label": "Nước ép",
+    "excerpt": "Danh mục Thức ăn của Slimefun bao gồm nước ép. Bạn có thể chế biến trái cây/rau củ trong Máy ép nước để nhận được nước ép tương ứng."
+  },
+  {
+    "id": "Kelp-Cookie",
+    "title": "Bánh quy tảo bẹ",
+    "label": "Bánh quy tảo bẹ",
+    "excerpt": "Bánh quy tảo bẹ là một loại thức ăn trong Slimefun. Hiệu ứng của bánh quy tảo bẹ hoàn toàn giống với bánh quy thường, sau khi ăn sẽ hồi 2 điểm đói và 0.4 độ bão hòa."
+  },
+  {
+    "id": "Lava-Generator",
+    "title": "Máy phát điện dung nham",
+    "label": "Máy phát điện dung nham",
+    "excerpt": "Máy phát điện dung nham là một loại máy phát điện."
+  },
+  {
+    "id": "Lead-Dust",
+    "title": "Bột chì",
+    "label": "Bột chì",
+    "excerpt": "Bột chì là một trong 9 loại bột khoáng của Slimefun."
+  },
+  {
+    "id": "Lead-Ingot",
+    "title": "Thỏi chì",
+    "label": "Thỏi chì",
+    "excerpt": "Thỏi chì là một loại thỏi mới thêm trong Slimefun."
+  },
+  {
+    "id": "Lumber-Axe",
+    "title": "Rìu đốn gỗ",
+    "label": "Rìu đốn gỗ",
+    "excerpt": "Rìu đốn gỗ là một trong những Công cụ của Slimefun."
+  },
+  {
+    "id": "Lumps",
+    "title": "Tinh thể",
+    "label": "Tinh thể",
+    "excerpt": "Trong Slimefun có hai loại tinh thể: Tinh thể ma thuật và Tinh thể Ender. Chúng được dùng để tổng hợp vật phẩm trong Vật phẩm Ma thuật và Thiết bị Ma thuật."
+  },
+  {
+    "id": "Magic-Eye-of-Ender",
+    "title": "Mắt Ender Ma thuật",
+    "label": "Mắt Ender Ma thuật",
+    "excerpt": "Mắt Ender Ma thuật là vật phẩm thuộc danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Magic-Sugar",
+    "title": "Đường Ma thuật",
+    "label": "Đường Ma thuật",
+    "excerpt": "Đường Ma thuật là một loại thức ăn trong Slimefun. Sau khi ăn, sẽ nhận được hiệu ứng Tốc độ V trong 30 giây."
+  },
+  {
+    "id": "Magic-Workbench",
+    "title": "Bàn chế tạo Ma thuật",
+    "label": "Bàn chế tạo Ma thuật",
+    "excerpt": "Bàn chế tạo Ma thuật (Magic Workbench) là một trong những Máy cơ bản của Slimefun. Nó là cấu trúc đa khối."
+  },
+  {
+    "id": "Magical-Armor",
+    "title": "Giáp Ma thuật",
+    "label": "Giáp Ma thuật",
+    "excerpt": "Một số giáp trong danh mục này sẽ cung cấp hiệu ứng thuốc hoặc hiệu ứng bảo vệ nhất định."
+  },
+  {
+    "id": "Magical-Gadgets",
+    "title": "Thiết bị Ma thuật",
+    "label": "Thiết bị Ma thuật",
+    "excerpt": "Danh mục Thiết bị Ma thuật chứa nhiều đạo cụ mang ma thuật khác nhau. Bạn sẽ dùng Vật phẩm Ma thuật để xây dựng chúng."
+  },
+  {
+    "id": "Magical-Items",
+    "title": "Vật phẩm Ma thuật",
+    "label": "Vật phẩm Ma thuật",
+    "excerpt": "Hầu hết vật phẩm trong danh mục này là để chế tạo vật phẩm trong danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Magical-Zombie-Pills",
+    "title": "Thuốc Zombie Ma thuật",
+    "label": "Thuốc Zombie Ma thuật",
+    "excerpt": "Thuốc Zombie Ma thuật là vật phẩm thuộc danh mục Thiết bị Ma thuật."
+  },
+  {
+    "id": "Magnesium-Dust",
+    "title": "Bột magie",
+    "label": "Bột magie",
+    "excerpt": "Bột magie là một trong 9 loại bột khoáng của Slimefun."
+  },
+  {
+    "id": "Magnesium-Ingot",
+    "title": "Thỏi magie",
+    "label": "Thỏi magie",
+    "excerpt": "Thỏi magie là một loại thỏi mới thêm trong Slimefun."
+  },
+  {
+    "id": "Magnesium-Salt",
+    "title": "Muối magie",
+    "label": "Muối magie",
+    "excerpt": "Muối magie là một loại tài nguyên trong Slimefun, có thể dùng để cung cấp nhiên liệu cho Máy phát điện Magie."
+  },
+  {
+    "id": "Magnesium-powered-Generator",
+    "title": "Máy phát điện Magie",
+    "label": "Máy phát điện Magie",
+    "excerpt": "Máy phát điện Magie là một loại máy phát điện."
+  },
+  {
+    "id": "Magnet",
+    "title": "Nam châm",
+    "label": "Nam châm",
+    "excerpt": "Nam châm là vật phẩm thuộc danh mục Linh kiện Công nghệ, có thể dùng để chế tạo các linh kiện công nghệ khác và một số máy móc."
+  },
+  {
+    "id": "Makeshift-Smeltery",
+    "title": "Lò nung Tạm thời",
+    "label": "Lò nung Tạm thời",
+    "excerpt": "Lò nung Tạm thời (Makeshift Smeltery) là phiên bản thay thế rẻ tiền của Lò nung. Nó không cần vật liệu từ Nether."
+  },
+  {
+    "id": "Meat-Jerky",
+    "title": "Thịt khô",
+    "label": "Thịt khô",
+    "excerpt": "Thịt khô là một loại thức ăn trong Slimefun."
+  },
+  {
+    "id": "Medical-Supplies",
+    "title": "Vật tư y tế",
+    "label": "Vật tư y tế",
+    "excerpt": "Vật tư y tế là một loạt vật phẩm thuộc danh mục Vật phẩm hữu ích, dùng để hồi một lượng máu nhất định, và có thể có hiệu ứng bổ sung."
+  },
+  {
+    "id": "Miner-Androids",
+    "title": "Android có thể lập trình (Thợ mỏ)",
+    "label": "Android có thể lập trình (Thợ mỏ)",
+    "excerpt": "Android thợ mỏ là robot được thiết kế để khai thác, nhưng nó cũng có thể phá các khối khác."
+  },
+  {
+    "id": "Miscellaneous-Items",
+    "title": "Vật phẩm linh tinh",
+    "label": "Vật phẩm linh tinh",
+    "excerpt": "Danh mục Vật phẩm linh tinh chứa tất cả vật phẩm Slimefun không thuộc danh mục khác."
+  },
+  {
+    "id": "Monster-Jerky",
+    "title": "Thịt khô quái vật",
+    "label": "Thịt khô quái vật",
+    "excerpt": "Thịt khô quái vật là một loại thức ăn trong Slimefun. Sau khi ăn, sẽ xóa hiệu ứng đói và nhận hiệu ứng bão hòa trong 0.25 giây."
+  },
+  {
+    "id": "Multi-Tools",
+    "title": "Công cụ đa năng",
+    "label": "Công cụ đa năng",
+    "excerpt": "Công cụ đa năng là một Thiết bị Công nghệ. Cần sạc trong Bàn sạc trước khi sử dụng."
+  },
+  {
+    "id": "Neptunium",
+    "title": "Neptuni",
+    "label": "Neptuni",
+    "excerpt": "Neptuni là một loại tài nguyên trong Slimefun, có thể dùng để cung cấp nhiên liệu cho Lò phản ứng hạt nhân, hoặc tổng hợp nhiên liệu phóng xạ có cấp bức xạ cao hơn."
+  },
+  {
+    "id": "Nether-Gold-Pan",
+    "title": "Chảo đãi vàng Nether",
+    "label": "Chảo đãi vàng Nether",
+    "excerpt": "Chảo đãi vàng Nether là vật phẩm thuộc danh mục Công cụ."
+  },
+  {
+    "id": "Nether-Ice",
+    "title": "Băng Nether",
+    "label": "Băng Nether",
+    "excerpt": "Băng Nether là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp Băng Nether cô đặc."
+  },
+  {
+    "id": "Nickel-Ingot",
+    "title": "Thỏi niken",
+    "label": "Thỏi niken",
+    "excerpt": "Thỏi niken là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Normal-Androids",
+    "title": "Android có thể lập trình (Thường)",
+    "label": "Android có thể lập trình (Thường)",
+    "excerpt": "Android thường được dùng để tổng hợp các loại robot cụ thể."
+  },
+  {
+    "id": "Oil-Pump",
+    "title": "Máy bơm dầu thô",
+    "label": "Máy bơm dầu thô",
+    "excerpt": "Máy bơm dầu thô là một máy có thể đặt thuộc danh mục GPS."
+  },
+  {
+    "id": "Ore-Crusher",
+    "title": "Máy nghiền quặng",
+    "label": "Máy nghiền quặng",
+    "excerpt": "Máy nghiền quặng (Ore Crusher) là một trong những Máy cơ bản của Slimefun. Nó là cấu trúc đa khối."
+  },
+  {
+    "id": "Ore-Washer",
+    "title": "Máy rửa quặng",
+    "label": "Máy rửa quặng",
+    "excerpt": "Máy rửa quặng (Ore Washer) là một trong những Máy cơ bản của Slimefun. Nó là cấu trúc đa khối."
+  },
+  {
+    "id": "Output-Chest",
+    "title": "Rương xuất vật phẩm",
+    "label": "Rương xuất vật phẩm",
+    "excerpt": "Rương xuất vật phẩm là một trong những Máy cơ bản của Slimefun."
+  },
+  {
+    "id": "Output-Node",
+    "title": "Nút xuất",
+    "label": "Nút xuất",
+    "excerpt": "Nút xuất là một phần của hệ thống Quản lý Vận chuyển. Nó sẽ nhận vật phẩm từ nút nhập."
+  },
+  {
+    "id": "Permissions",
+    "title": "Quyền hạn",
+    "label": "Quyền hạn",
+    "excerpt": "Đây là danh sách các node quyền của Slimefun. Hầu hết dùng cho lệnh, xem chi tiết tại trang Lệnh."
+  },
+  {
+    "id": "Photovoltaic-Cell",
+    "title": "Pin quang điện",
+    "label": "Pin quang điện",
+    "excerpt": "Pin quang điện là vật phẩm thuộc danh mục Linh kiện Công nghệ, có thể dùng để chế tạo Tấm pin năng lượng mặt trời và [Thiết bị Công nghệ](/Technical-Gadget"
+  },
+  {
+    "id": "Pickaxe-of-Containment",
+    "title": "Cuốc Lồng quái",
+    "label": "Cuốc Lồng quái",
+    "excerpt": "Cuốc Lồng quái là một trong những Công cụ của Slimefun."
+  },
+  {
+    "id": "Pickaxe-of-Vein-Mining",
+    "title": "Cuốc Đào Mạch",
+    "label": "Cuốc Đào Mạch",
+    "excerpt": "Cuốc Đào Mạch là một trong những Công cụ của Slimefun."
+  },
+  {
+    "id": "Pickaxe-of-the-Seeker",
+    "title": "Cuốc Tìm kiếm",
+    "label": "Cuốc Tìm kiếm",
+    "excerpt": "Cuốc Tìm kiếm là một trong những Công cụ của Slimefun."
+  },
+  {
+    "id": "PlaceholderAPI",
+    "title": "PlaceholderAPI",
+    "label": "PlaceholderAPI",
+    "excerpt": "Slimefun 4 hiện đã hỗ trợ PlaceholderAPI. Bạn có thể xem tất cả các biến khả dụng tại đây."
+  },
+  {
+    "id": "Plastic-Sheet",
+    "title": "Tấm nhựa",
+    "label": "Tấm nhựa",
+    "excerpt": "!> Wiki chính thức tạm thời chưa có trang này, đang chờ bổ sung"
+  },
+  {
+    "id": "Plutonium",
+    "title": "Plutoni",
+    "label": "Plutoni",
+    "excerpt": "Plutoni là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiên liệu phóng xạ có cấp bức xạ cao hơn."
+  },
+  {
+    "id": "Portable-Crafter",
+    "title": "Bàn chế tạo di động",
+    "label": "Bàn chế tạo di động",
+    "excerpt": "Bàn chế tạo di động là vật phẩm thuộc danh mục Vật phẩm hữu ích."
+  },
+  {
+    "id": "Portable-Dustbin",
+    "title": "Thùng rác di động",
+    "label": "Thùng rác di động",
+    "excerpt": "Thùng rác di động là vật phẩm thuộc danh mục Vật phẩm hữu ích."
+  },
+  {
+    "id": "Portable-Geo-Scanner",
+    "title": "Máy quét tài nguyên di động",
+    "label": "Máy quét tài nguyên di động",
+    "excerpt": "Máy quét tài nguyên di động là một trong những công cụ thuộc danh mục GPS. Nó là phiên bản có thể mang theo của Máy quét địa hình GPS."
+  },
+  {
+    "id": "Power-Crystal",
+    "title": "Tinh thể năng lượng",
+    "label": "Tinh thể năng lượng",
+    "excerpt": "Tinh thể năng lượng là vật phẩm thuộc danh mục Linh kiện Công nghệ, có thể dùng để chế tạo một số máy móc và Thiết bị Công nghệ."
+  },
+  {
+    "id": "Pressure-Chamber",
+    "title": "Máy nén",
+    "label": "Máy nén",
+    "excerpt": "Máy nén (Pressure Chamber) là một trong những Máy cơ bản của Slimefun. Nó là cấu trúc đa khối."
+  },
+  {
+    "id": "Produce-Collector",
+    "title": "Máy thu hoạch sản phẩm",
+    "label": "Máy thu hoạch sản phẩm",
+    "excerpt": "Máy thu hoạch sản phẩm là một loại Máy điện. Nó có thể thu thập sản phẩm của động vật gần đó."
+  },
+  {
+    "id": "Protection-Plugins",
+    "title": "Plugin bảo vệ",
+    "label": "Plugin bảo vệ được hỗ trợ",
+    "excerpt": "Slimefun hỗ trợ nhiều plugin bảo vệ hiện có. Điều này sẽ tránh lạm dụng vật phẩm Slimefun và ảnh hưởng đến người chơi khác. Trang này liệt kê tất cả plugin bảo vệ đã được hỗ trợ, cũng như cách thêm pl"
+  },
+  {
+    "id": "Radiation",
+    "title": "Bức xạ",
+    "label": "Bức xạ",
+    "excerpt": "Bức xạ là hiệu ứng do vật phẩm phóng xạ trong Slimefun gây ra."
+  },
+  {
+    "id": "Rainbow-Blocks",
+    "title": "Khối Cầu Vồng",
+    "label": "Khối Cầu Vồng",
+    "excerpt": "Dưới đây là tất cả các khối cầu vồng có thể chế tạo không thuộc vật phẩm theo mùa:"
+  },
+  {
+    "id": "Reactors",
+    "title": "Lò Phản Ứng",
+    "label": "Lò Phản Ứng",
+    "excerpt": "Lò Phản Ứng là một loại máy phát điện nhanh và hiệu quả. Hiện có 2 loại lò phản ứng. Chúng đều cần được bao quanh bởi nước. Phía trên và phía dưới không cần nướ"
+  },
+  {
+    "id": "Redstone-Alloy-Ingot",
+    "title": "Thỏi Hợp Kim Redstone",
+    "label": "Thỏi Hợp Kim Redstone",
+    "excerpt": "Thỏi Hợp Kim Redstone là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Refinery",
+    "title": "Máy Lọc Dầu",
+    "label": "Máy Lọc Dầu",
+    "excerpt": "Máy Lọc Dầu là một máy điện. Nó có thể tinh luyện Thùng Dầu Thô thành Thùng Nhiên Liệu. Cần 40 giây để tinh luyện 1 thùng nhiên liệu"
+  },
+  {
+    "id": "Reinforced-Alloy-Ingot",
+    "title": "Thỏi Hợp Kim Cường Hóa",
+    "label": "Thỏi Hợp Kim Cường Hóa",
+    "excerpt": "Thỏi Hợp Kim Cường Hóa là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Reinforced-Cloth",
+    "title": "Vải Cường Hóa",
+    "label": "Vải Cường Hóa",
+    "excerpt": "Vải Cường Hóa là vật phẩm thuộc danh mục Linh Kiện Kỹ Thuật, có thể dùng để chế tạo Bộ Đồ Bảo Hộ Hóa Chất."
+  },
+  {
+    "id": "Reinforced-Spawner",
+    "title": "Lồng Quái Đã Gia Cố",
+    "label": "Lồng Quái Đã Gia Cố",
+    "excerpt": "Lồng Quái Đã Gia Cố là vật phẩm thuộc danh mục Thiết Bị Ma Thuật."
+  },
+  {
+    "id": "Resources",
+    "title": "Tài Nguyên",
+    "label": "Tài Nguyên",
+    "excerpt": "Danh mục tài nguyên chứa nhiều tài nguyên tự nhiên và nhân tạo, được sử dụng rộng rãi trong các công thức của Slimefun."
+  },
+  {
+    "id": "Scroll-of-Dimensional-Teleposition",
+    "title": "Cuộn Dịch Chuyển Chiều Không Gian",
+    "label": "Cuộn Dịch Chuyển Chiều Không Gian",
+    "excerpt": "Cuộn Dịch Chuyển Chiều Không Gian là vật phẩm thuộc danh mục Thiết Bị Ma Thuật."
+  },
+  {
+    "id": "Seasonal-Categories",
+    "title": "Vật Phẩm Theo Mùa",
+    "label": "Vật Phẩm Theo Mùa",
+    "excerpt": "Danh mục vật phẩm theo mùa là những danh mục vật phẩm chỉ hiển thị trong khoảng thời gian cụ thể. Nhưng bạn có thể vượt qua giới hạn này bằng lệnh `/sf cheat` để xem các danh mục đó."
+  },
+  {
+    "id": "Seismic-Axe",
+    "title": "Rìu Địa Chấn",
+    "label": "Rìu Địa Chấn",
+    "excerpt": "Rìu Địa Chấn là một loại vũ khí trong Slimefun."
+  },
+  {
+    "id": "Server-Optimizations",
+    "title": "Hướng Dẫn Tối Ưu Máy Chủ",
+    "label": "Hướng Dẫn Tối Ưu Máy Chủ",
+    "excerpt": "Slimefun là một plugin lớn, vì vậy chắc chắn sẽ ảnh hưởng đến hiệu năng máy chủ. Plugin này đã liên tục được cải tiến và tối ưu kể từ năm 2013, nhưng mức độ ảnh hưởng đến máy chủ vẫn khác nhau tùy the"
+  },
+  {
+    "id": "Sifted-Ore",
+    "title": "Quặng Đã Sàng",
+    "label": "Quặng Đã Sàng",
+    "excerpt": "Quặng Đã Sàng là một tài nguyên cơ bản, có thể được chuyển đổi thành các loại bột khoáng khác nhau."
+  },
+  {
+    "id": "Silicon",
+    "title": "Silicon",
+    "label": "Silicon",
+    "excerpt": "Silicon là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiều vật phẩm khác."
+  },
+  {
+    "id": "Silver-Dust",
+    "title": "Bột Bạc",
+    "label": "Bột Bạc",
+    "excerpt": "Bột Bạc là một trong 9 loại bột khoáng trong Slimefun."
+  },
+  {
+    "id": "Silver-Ingot",
+    "title": "Thỏi Bạc",
+    "label": "Thỏi Bạc",
+    "excerpt": "Thỏi Bạc là một loại thỏi mới được thêm vào trong Slimefun."
+  },
+  {
+    "id": "Slimefun-in-a-nutshell",
+    "title": "Slimefun là gì?",
+    "label": "Slimefun là gì?",
+    "excerpt": "Slimefun là một plugin Bukkit với mục tiêu mang lại trải nghiệm cấp độ mod cho máy chủ. Nếu bạn muốn biết cách cài đặt Slimefun, nhấp vào đây. Nếu bạn đang tìm hướng dẫn cách s"
+  },
+  {
+    "id": "Small-Chunk-of-Uranium",
+    "title": "Mảnh Urani Nhỏ",
+    "label": "Mảnh Urani Nhỏ",
+    "excerpt": "Mảnh Urani Nhỏ được dùng để tổng hợp Urani."
+  },
+  {
+    "id": "Smelter's-Pickaxe",
+    "title": "Cúp Lò Nung",
+    "label": "Cúp Lò Nung",
+    "excerpt": "Cúp Lò Nung là một trong những công cụ của Slimefun."
+  },
+  {
+    "id": "Smeltery",
+    "title": "Lò Luyện",
+    "label": "Lò Luyện",
+    "excerpt": "Lò Luyện (Smeltery) là một trong những máy cơ bản của Slimefun. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Solar-Generator",
+    "title": "Máy Phát Điện Năng Lượng Mặt Trời",
+    "label": "Máy Phát Điện Năng Lượng Mặt Trời",
+    "excerpt": "Máy Phát Điện Năng Lượng Mặt Trời là một loại máy phát điện. Khác với các máy phát điện khác, máy phát điện năng lượng mặt trời không cần nhiên liệu, chỉ cần ph"
+  },
+  {
+    "id": "Solder-Ingot",
+    "title": "Thỏi Hàn",
+    "label": "Thỏi Hàn",
+    "excerpt": "Thỏi Hàn là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Soulbound-Backpack",
+    "title": "Ba Lô Linh Hồn Ràng Buộc",
+    "label": "Ba Lô Linh Hồn Ràng Buộc",
+    "excerpt": "Ba Lô Linh Hồn Ràng Buộc là biến thể của Ba Lô."
+  },
+  {
+    "id": "Soulbound-Tools",
+    "title": "Dụng Cụ Linh Hồn Ràng Buộc",
+    "label": "Dụng Cụ Linh Hồn Ràng Buộc",
+    "excerpt": "Dụng Cụ Linh Hồn Ràng Buộc là danh mục con của Công Cụ."
+  },
+  {
+    "id": "Soulbound-Weapons",
+    "title": "Vũ Khí Linh Hồn Ràng Buộc",
+    "label": "Vũ Khí Linh Hồn Ràng Buộc",
+    "excerpt": "Vũ Khí Linh Hồn Ràng Buộc là danh mục con của Vũ Khí."
+  },
+  {
+    "id": "Steel-Ingot",
+    "title": "Thỏi Thép",
+    "label": "Thỏi Thép",
+    "excerpt": "Thỏi Thép là một loại hợp kim trong Slimefun."
+  },
+  {
+    "id": "Steel-Thruster",
+    "title": "Động Cơ Đẩy Thép",
+    "label": "Động Cơ Đẩy Thép",
+    "excerpt": "Động Cơ Đẩy Thép là vật phẩm thuộc danh mục Linh Kiện Kỹ Thuật, có thể dùng để chế tạo Balo Phản Lực Điện và Giày Phản Lực."
+  },
+  {
+    "id": "Sulfate",
+    "title": "Sulfate",
+    "label": "Sulfate",
+    "excerpt": "Sulfate là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiều vật phẩm khác."
+  },
+  {
+    "id": "Sword-of-Beheading",
+    "title": "Kiếm Đoạt Hồn",
+    "label": "Kiếm Đoạt Hồn",
+    "excerpt": "Kiếm Đoạt Hồn là một loại vũ khí trong Slimefun."
+  },
+  {
+    "id": "Synthetic-Diamond",
+    "title": "Kim Cương Nhân Tạo",
+    "label": "Kim Cương Nhân Tạo",
+    "excerpt": "Kim Cương Nhân Tạo là một loại tài nguyên trong Slimefun, có thể thay thế kim cương nguyên bản của Minecraft trong bàn chế tạo. Nó cũng được dùng để tổng hợp nhiều vật phẩm Slimefun."
+  },
+  {
+    "id": "Synthetic-Emerald",
+    "title": "Ngọc Lục Bảo Nhân Tạo",
+    "label": "Ngọc Lục Bảo Nhân Tạo",
+    "excerpt": "Ngọc Lục Bảo Nhân Tạo là một loại tài nguyên trong Slimefun, có chức năng hoàn toàn giống với ngọc lục bảo nguyên bản của Minecraft."
+  },
+  {
+    "id": "Synthetic-Sapphire",
+    "title": "Lam Ngọc Nhân Tạo",
+    "label": "Lam Ngọc Nhân Tạo",
+    "excerpt": "Lam Ngọc Nhân Tạo là một loại tài nguyên trong Slimefun, có thể dùng để tổng hợp nhiều vật phẩm khác."
+  },
+  {
+    "id": "Table-Saw",
+    "title": "Cưa Bàn",
+    "label": "Cưa Bàn",
+    "excerpt": "Cưa Bàn (Table Saw) là một máy cơ bản rất hữu ích. Nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "Talismans",
+    "title": "Bùa Hộ Mệnh",
+    "label": "Bùa Hộ Mệnh",
+    "excerpt": "Khi bạn sở hữu bùa hộ mệnh, bạn có thể nhận được hiệu ứng đặc biệt. Có thể tổng hợp chúng trong Bàn Chế Tạo Ma Thuật."
+  },
+  {
+    "id": "Tape-Measure",
+    "title": "Thước Dây",
+    "label": "Thước Dây",
+    "excerpt": "Thước Dây là vật phẩm thuộc danh mục Vật Phẩm Hữu Ích, dùng để đo khoảng cách giữa các khối."
+  },
+  {
+    "id": "Technical-Components",
+    "title": "Linh Kiện Kỹ Thuật",
+    "label": "Linh Kiện Kỹ Thuật",
+    "excerpt": "Danh mục Linh Kiện Kỹ Thuật chứa nhiều vật phẩm khác nhau, có thể dùng để tổng hợp hoặc vận hành số lượng lớn vật phẩm và máy móc."
+  },
+  {
+    "id": "Technical-Gadgets",
+    "title": "Thiết Bị Kỹ Thuật",
+    "label": "Thiết Bị Kỹ Thuật",
+    "excerpt": "Danh mục Thiết Bị Kỹ Thuật chứa một loạt các công cụ hữu ích khi chơi Slimefun."
+  },
+  {
+    "id": "Teleporter",
+    "title": "Máy Dịch Chuyển",
+    "label": "Máy Dịch Chuyển",
+    "excerpt": "Máy Dịch Chuyển là một máy cấu trúc đa khối dựa trên GPS."
+  },
+  {
+    "id": "Tin-Dust",
+    "title": "Bột Thiếc",
+    "label": "Bột Thiếc",
+    "excerpt": "Bột Thiếc là một trong 9 loại bột khoáng trong Slimefun."
+  },
+  {
+    "id": "Tin-Ingot",
+    "title": "Thỏi Thiếc",
+    "label": "Thỏi Thiếc",
+    "excerpt": "Thỏi Thiếc là một loại thỏi mới được thêm vào trong Slimefun."
+  },
+  {
+    "id": "Tome-of-Knowledge-Sharing",
+    "title": "Sách Tri Thức Chia Sẻ",
+    "label": "Sách Tri Thức Chia Sẻ",
+    "excerpt": "Sách Tri Thức Chia Sẻ là vật phẩm thuộc danh mục Thiết Bị Ma Thuật."
+  },
+  {
+    "id": "Tools",
+    "title": "Công Cụ",
+    "label": "Công Cụ",
+    "excerpt": "Danh mục Công Cụ chứa nhiều loại công cụ có đặc tính khác nhau."
+  },
+  {
+    "id": "Totem-of-Undying",
+    "title": "Totem Bất Tử",
+    "label": "Totem Bất Tử",
+    "excerpt": "Totem Bất Tử không phải là vật phẩm do Slimefun thêm vào, nhưng Slimefun đã thêm một công thức tổng hợp mới. Vật phẩm này có thể tìm thấy trong danh mục Thiết Bị Ma Thuật."
+  },
+  {
+    "id": "Translating-Slimefun",
+    "title": "Dịch Slimefun",
+    "label": "Giúp chúng tôi dịch Slimefun!",
+    "excerpt": "Trang này áp dụng cho Slimefun chính thức. Nếu bạn đang sử dụng bản Slimefun đã được Việt hóa, bạn có thể bỏ qua trang này."
+  },
+  {
+    "id": "Trash-Can",
+    "title": "Thùng Rác",
+    "label": "Thùng Rác",
+    "excerpt": "Thùng Rác là một thùng chứa, có thể cho bất kỳ vật phẩm nào vào trong. Nó tương tự như Thùng Rác Cầm Tay, nhưng khác ở chỗ nó phải được đặt xuống mới sử dụng được, và nó có thể kế"
+  },
+  {
+    "id": "Tree-Growth-Accelerator",
+    "title": "Máy Thúc Đẩy Tăng Trưởng Cây",
+    "label": "Máy Thúc Đẩy Tăng Trưởng Cây",
+    "excerpt": "Máy Thúc Đẩy Tăng Trưởng Cây là một máy điện. Nó có thể tăng tốc độ phát triển của cây non gần đó. Đây là một máy giai đoạn cuối game, có thể dùng để xây dựng trang trại"
+  },
+  {
+    "id": "Uranium",
+    "title": "Urani",
+    "label": "Urani",
+    "excerpt": "Urani là một loại tài nguyên trong Slimefun, có thể dùng làm nhiên liệu cho Lò Phản Ứng Hạt Nhân hoặc tổng hợp nhiên liệu phóng xạ có mức bức xạ cao hơn."
+  },
+  {
+    "id": "Valentines-Day-Seasonal-Category",
+    "title": "Danh Mục Giới Hạn Valentine",
+    "label": "Danh Mục Giới Hạn Valentine",
+    "excerpt": "Danh mục giới hạn Valentine chỉ hiển thị vào tháng 2."
+  },
+  {
+    "id": "Walking-Sticks",
+    "title": "Gậy Chống",
+    "label": "Gậy Chống",
+    "excerpt": "Gậy Chống là một loại vũ khí trong Slimefun."
+  },
+  {
+    "id": "Weapons",
+    "title": "Vũ Khí",
+    "label": "Vũ Khí",
+    "excerpt": "Danh mục Vũ Khí chứa nhiều vật phẩm khác nhau có thể dùng làm vũ khí."
+  },
+  {
+    "id": "Wither-Assembler",
+    "title": "Máy Lắp Ráp Wither",
+    "label": "Máy Lắp Ráp Wither",
+    "excerpt": "Máy Lắp Ráp Wither là một máy điện. Nó có thể tự động lắp ráp Wither. Đây là một máy giai đoạn cuối game, nên cẩn thận khi sử dụng."
+  },
+  {
+    "id": "Wither-Proof-Blocks",
+    "title": "Khối Chống Wither",
+    "label": "Khối Chống Wither",
+    "excerpt": "Khối Chống Wither là một loạt vật phẩm thuộc danh mục Linh Kiện Kỹ Thuật, chúng có thuộc tính đặc biệt và có thể dùng để chế tạo Máy Lắp Ráp Wither."
+  },
+  {
+    "id": "Woodcutter-Androids",
+    "title": "Robot Có Thể Lập Trình (Tiều Phu)",
+    "label": "Robot Có Thể Lập Trình (Tiều Phu)",
+    "excerpt": "Robot Tiều Phu là robot được thiết kế để tự động trồng cây."
+  },
+  {
+    "id": "Zinc-Dust",
+    "title": "Bột Kẽm",
+    "label": "Bột Kẽm",
+    "excerpt": "Bột Kẽm là một trong 9 loại bột khoáng trong Slimefun."
+  },
+  {
+    "id": "Zinc-Ingot",
+    "title": "Thỏi Kẽm",
+    "label": "Thỏi Kẽm",
+    "excerpt": "Thỏi Kẽm là một loại thỏi mới được thêm vào trong Slimefun."
+  }
+]

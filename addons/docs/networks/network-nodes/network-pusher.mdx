@@ -1,0 +1,22 @@
+---
+sidebar_position: 7
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Trình Đẩy Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-pusher.png', alt: 'Trình Đẩy Mạng lưới' }
+]} />
+
+Trình Đẩy Mạng lưới có thể đưa vật phẩm được chỉ định trong mạng lưới vào khối Slimefun kề bên.
+
+Trình Đẩy Mạng lưới là một khối mạng có thể chọn hướng. Khối mục tiêu phải là khối Slimefun và có ô đầu vào có thể nhận vật phẩm thông qua **đầu vào vận chuyển (Cargo)**.<br />
+Bạn có thể dùng [Bộ Cấu hình Mạng lưới](../tools/network-configurator) để sao chép cài đặt hướng.
+
+Nhấp chuột phải vào Trình Đẩy Mạng lưới để mở giao diện tương tác, cho phép bạn chọn hướng và đặt vật phẩm làm mẫu ở phía bên phải.
+
+Khối mục tiêu phải có không gian đầu vào khả dụng để trình đẩy hoạt động. Trình đẩy sẽ lấy vật phẩm tương ứng từ mạng lưới theo [cơ chế Lấy ra](../basics/mechanism).
+
+Nếu mạng lưới đã bật [chức năng vẽ](../tools/network-crayon), khi trình đẩy đẩy một vật phẩm, hiệu ứng hạt sẽ hiển thị phía trên khối để đánh dấu hướng đẩy.

@@ -1,0 +1,23 @@
+:root{
+--bg:#E7E4E0;
+--ink:#1A1210;
+--amber:#F2941F;
+--peach:#F2A6A0;
+--gold:#F7C948;
+--alert:#E85D4C;
+--panel:#FFFBF3;
+--muted:#6B5E57;
+--line:#1A1210;
+--border:3px solid var(--ink);
+--border-thin:2px solid var(--ink);
+--shadow:6px 6px 0 var(--ink);
+--shadow-sm:4px 4px 0 var(--ink);
+--shadow-lg:8px 8px 0 var(--ink);
+--radius-lg:20px;
+--radius-md:14px;
+--radius-sm:10px;
+--radius-xs:8px;
+--font-display:"Noto Sans SC","Inter",system-ui,sans-serif;
+--font-body:"Noto Sans SC","Inter",system-ui,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,monospace;
+}

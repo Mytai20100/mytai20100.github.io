@@ -1,0 +1,19 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:var(--bg);
+color:var(--ink);
+font-family:var(--font-body);
+line-height:1.65;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit}
+input{font:inherit}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--ink);border-radius:999px;border:2px solid var(--bg)}
+::-webkit-scrollbar-track{background:var(--bg)}
+::selection{background:var(--gold)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}

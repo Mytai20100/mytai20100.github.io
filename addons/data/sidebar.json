@@ -1,0 +1,1464 @@
+[
+  {
+    "type": "doc",
+    "id": "list",
+    "label": "Danh sách Wiki"
+  },
+  {
+    "type": "doc",
+    "id": "download",
+    "label": "Tải xuống và Cài đặt"
+  },
+  {
+    "type": "category",
+    "label": "Biên Niên Sử Pha Lê Ma Thuật",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "crystamae-historia/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Chế Tạo Phép Thuật",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/what-is-crystamae",
+            "label": "Pha Lê Ma Thuật là gì?"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/chronicling",
+            "label": "Khai Quật Câu Chuyện Khối"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/realisation",
+            "label": "Chuyển Hóa Thành Pha Lê Ma Thuật"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/liquefaction",
+            "label": "Hóa Lỏng"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/plate-charging",
+            "label": "Phiến Ma Thuật và Phiến Phép"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/stave-configurator",
+            "label": "Bộ Cấu Hình Gậy Phép"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Gậy Phép và Công Cụ",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/block-veil",
+            "label": "Màn Che Khối"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/refraction-lens",
+            "label": "Lăng Kính Khúc Xạ"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/ephemeral-tables",
+            "label": "Bàn Chế Tạo Tạm Thời"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/spell-plates",
+            "label": "Phiến Phép"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/connecting-compass",
+            "label": "La Bàn Kết Nối"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/displacer",
+            "label": "Máy Hoán Đổi"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/luminescence-scoops",
+            "label": "Muỗng Phát Quang"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/recalling-lattice",
+            "label": "Mạng Lưới Hồi Tưởng"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Ma Thuật và Công Nghệ",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/lamps",
+            "label": "Đèn Xua Đuổi"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/vacuums",
+            "label": "Pháo Không Khí"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/mob-spawning-dirt",
+            "label": "Đất Nguyền Rủa và Đất Linh Hồn"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/damage-plates",
+            "label": "Phiến Thiêu Đốt và Phiến Cạm Bẫy"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/experience-collector",
+            "label": "Bộ Thu Thập Kinh Nghiệm"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/ender-inhibitors",
+            "label": "Máy Ức Chế Enderman"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/verache-candles",
+            "label": "Nến Chống Quái"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/mysterious-items",
+            "label": "Vật Phẩm Huyền Bí"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/greenhouse-glass",
+            "label": "Kính Nhà Kính"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/trophy-display",
+            "label": "Bục Trưng Bày Chiến Lợi Phẩm"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/exaltation-stand",
+            "label": "Bệ Tôn Vinh"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/diverging-waystone",
+            "label": "Cột Mốc Phân Kỳ"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/angel-block",
+            "label": "Khối Thiên Thần"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/philosophers-spray",
+            "label": "Bình Xịt Triết Gia"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/glass-of-milk",
+            "label": "Ly Sữa Thủy Tinh"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/voids",
+            "label": "Khe Nứt Hư Không"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Ma Thuật và Nghệ Thuật",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/artistic-items/index",
+            "label": "Ma Thuật và Nghệ Thuật"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Vật Phẩm Tôn Quý",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/exalted-items/index",
+            "label": "Vật Phẩm Tôn Quý"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Vật Phẩm Độc Đáo",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/uniques/index",
+            "label": "Vật Phẩm Độc Đáo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Cultivation",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "cultivation/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Tổng Quan",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/overview/crop-breeding",
+            "label": "Lai Tạo Cây Trồng"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/overview/index",
+            "label": "Tổng Quan"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Vật Phẩm Chế Tạo",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/crafting-items/index",
+            "label": "Vật Phẩm Chế Tạo"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Công Cụ",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/tools/crop-sticks",
+            "label": "Cọc Cây Trồng"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/tools/plant-analyzer",
+            "label": "Máy Phân Tích Thực Vật"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/tools/seed-pack",
+            "label": "Túi Hạt Giống"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Máy Móc",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/machines/garden-cloche",
+            "label": "Lồng Kính Vườn"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/machines/cooking-work-stations",
+            "label": "Quầy Bếp"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Thực Vật",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/plants/index",
+            "label": "Thực Vật"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Nhà Phát Triển",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/developers/index",
+            "label": "Hướng Dẫn Dành Cho Nhà Phát Triển"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Công nghệ EMC",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "emctech/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "emctech/what-is-emc",
+        "label": "EMC là gì?"
+      },
+      {
+        "type": "doc",
+        "id": "emctech/emc-calculations",
+        "label": "Tính toán EMC"
+      },
+      {
+        "type": "doc",
+        "id": "emctech/balancing",
+        "label": "Giải thích về tính cân bằng"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Vườn kỳ lạ",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "exotic-garden/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "exotic-garden/getting-started",
+        "label": "Bắt đầu"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Máy móc Fluffy",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "fluffy-machines/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Cấu trúc đa khối",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/multiblock/crank-generator",
+            "label": "Máy phát điện quay tay"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/multiblock/foundry",
+            "label": "Xưởng đúc"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Máy móc",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/auto-crafting-table",
+            "label": "Bàn chế tạo tự động (vanilla)"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/auto-crafters",
+            "label": "Máy chế tạo tự động"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/advanced-charging-bench",
+            "label": "Bàn sạc nâng cao"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/smart-factory",
+            "label": "Nhà máy thông minh"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Thùng Fluffy",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/barrels/index",
+            "label": "Thùng Fluffy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Máy móc Foxy",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "foxy-machines/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "foxy-machines/damage-types",
+        "label": "Loại sát thương"
+      },
+      {
+        "type": "category",
+        "label": "Máy móc",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/improvement-forge",
+            "label": "Lò rèn cải tiến"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/potion-mixer",
+            "label": "Máy trộn thuốc"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/gold-refinery",
+            "label": "Nhà máy luyện kim điện lực"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/chunk-loader",
+            "label": "Máy tải chunk"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/forcefield-dome",
+            "label": "Mái vòm trường lực"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Công cụ",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/unbreakable-rune",
+            "label": "Cổ ngữ [Không thể phá hủy]"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/poseidons-fishing-rod",
+            "label": "Cần câu của Poseidon"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/electric-elemental-staves",
+            "label": "Gậy nguyên tố điện lực"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/boosted-rail",
+            "label": "Đường ray tăng tốc"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/berry-bush-trimmer",
+            "label": "Dụng cụ tỉa bụi mọng ngọt"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/wands",
+            "label": "Dụng cụ chọn vị trí/Gậy lấp đầy/Gậy bọt biển"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Trang bị",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/healing-bow",
+            "label": "Cung Hồi Máu"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/acri-arcum",
+            "label": "Cung Sắc Bén"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/cursed-sword",
+            "label": "Kiếm Nguyền Rủa"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/celestial-sword",
+            "label": "Kiếm Thiên Giới"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/elucidator",
+            "label": "Kiếm Elucidator"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/armor",
+            "label": "Giáp"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Bàn thờ hiến tế",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/sacrificial-altar/index",
+            "label": "Bàn thờ hiến tế"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Boss",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/boss/pixie-queen",
+            "label": "Nữ hoàng Tiên"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/boss/headless-horseman",
+            "label": "Kỵ sĩ không đầu"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Galactifun - Công nghệ Liên sao",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "galactifun/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "galactifun/sealing",
+        "label": "Bịt kín"
+      },
+      {
+        "type": "category",
+        "label": "Thiên thể",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/the-moon",
+            "label": "Mặt Trăng"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/mars",
+            "label": "Sao Hỏa"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/venus",
+            "label": "Sao Kim"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/index",
+            "label": "Thiên thể"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/titan",
+            "label": "Titan"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Infinity Expansion - Vô Hạn Mở Rộng",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "infinity-expansion/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Máy móc",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/advanced-anvil",
+            "label": "Đe Cao Cấp"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/infinity-forge",
+            "label": "Bàn Chế Tạo Vô Hạn"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/strainer",
+            "label": "Lưới Lọc"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/cobblestone-generator",
+            "label": "Máy Tạo Đá Cuội"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/virtual-farm",
+            "label": "Nông Trại Tự Động"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/tree-grower",
+            "label": "Máy Trồng Cây Tự Động"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/void-harvester",
+            "label": "Máy Thu Thập Hư Không"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/stoneworks-factory",
+            "label": "Nhà Máy Đá"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/singularity-constructor",
+            "label": "Máy Kiến Tạo Điểm Kỳ Dị"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/resource-synthesizer",
+            "label": "Máy Tổng Hợp Tài Nguyên"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/obsidian-generator",
+            "label": "Máy Tạo Hắc Diện Thạch"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/extreme-freezer",
+            "label": "Tủ Đông Cực Hạn"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/dust-extractor",
+            "label": "Máy Nghiền Bột"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/cobble-press",
+            "label": "Máy Nén Đá Cuội"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/ingot-former",
+            "label": "Máy Đúc Thỏi"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/uranium-extractor",
+            "label": "Máy Chiết Xuất Uranium"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/decompressor",
+            "label": "Máy Phân Rã"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/gear-transformer",
+            "label": "Máy Chuyển Đổi Chất Liệu Trang Bị"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/concrete-molding-machine",
+            "label": "Máy Đúc Bê Tông"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/quarries",
+            "label": "Máy Khai Thác"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/powered-bedrock",
+            "label": "Đá Nền Tích Điện"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Máy phát điện",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/solar-generator",
+            "label": "Tấm Pin Mặt Trời"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/hydro-generator",
+            "label": "Máy phát Thủy điện"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/geothermal-generator",
+            "label": "Máy phát Địa nhiệt"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/void-panel",
+            "label": "Tấm Pin Hư Không"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/infinity-reactor",
+            "label": "Lò Phản Ứng Vô Hạn"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/infinite-panel",
+            "label": "Tấm Pin Vô hạn"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/mob-simulation",
+        "label": "Mô Phỏng Sinh Vật"
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/singularities",
+        "label": "Điểm Kỳ Dị"
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/storage",
+        "label": "Lưu Trữ"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Netheopoiesis - Địa Đàng Nether",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "netheopoiesis/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Tổng quan",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/overview/purification",
+            "label": "Thanh tẩy"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/overview/growing-and-breeding-plants",
+            "label": "Lai tạo"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Thanh tẩy",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/sleeping-in-the-nether",
+            "label": "Ngủ trong Nether"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/water-in-the-nether",
+            "label": "Đặt nước trong Nether"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/friendly-mobs",
+            "label": "Sinh vật thân thiện"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/a-better-barter",
+            "label": "Phần thưởng trao đổi gấp đôi"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/mob-swapping",
+            "label": "Thay thế sinh vật"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/mob-spawning",
+            "label": "Sinh ra sinh vật"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/purifying-aura",
+            "label": "Hào quang thanh tẩy"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/to-the-end",
+            "label": "Đến The End"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Lai tạo",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/breeding/seed-data",
+            "label": "Bảng Dữ Liệu Hạt Giống"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Mạng lưới",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "networks/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Cơ bản",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/basics/what-is-networks",
+            "label": "Mạng lưới là gì?"
+          },
+          {
+            "type": "doc",
+            "id": "networks/basics/mechanism",
+            "label": "Cơ chế Lưu trữ và Lấy ra"
+          },
+          {
+            "type": "doc",
+            "id": "networks/basics/index",
+            "label": "Cơ bản"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Nút Mạng",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-controller",
+            "label": "Bộ Điều khiển Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-bridge",
+            "label": "Cầu Mạng"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-monitor",
+            "label": "Màn hình Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-importer",
+            "label": "Đầu vào Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-exporter",
+            "label": "Đầu ra Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-grabber",
+            "label": "Trình Lấy Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-pusher",
+            "label": "Trình Đẩy Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-control-x",
+            "label": "Trình Cắt Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-control-v",
+            "label": "Trình Dán Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vacuum",
+            "label": "Máy Hút Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vanilla-grabber",
+            "label": "Trình Lấy Nguyên bản Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vanilla-pusher",
+            "label": "Trình Đẩy Nguyên bản Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-wireless-transmitter",
+            "label": "Bộ Phát Không dây Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-wireless-receiver",
+            "label": "Bộ Thu Không dây Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-purger",
+            "label": "Bộ Thanh lọc Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-grid",
+            "label": "Lưới Mạng"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-cell",
+            "label": "Ô Mạng"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-greedy-block",
+            "label": "Bộ chặn Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-capacitor",
+            "label": "Tụ điện Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-power-outlet",
+            "label": "Ổ cắm Điện Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-power-display",
+            "label": "Đồng hồ Điện Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-encoder",
+            "label": "Bộ Mã hóa Công thức Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-autocrafters",
+            "label": "Máy Tự động Chế tạo Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/index",
+            "label": "Nút Mạng"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Công cụ",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/tools/crafting-blueprint",
+            "label": "Bản thiết kế Chế tạo"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-probe",
+            "label": "Đầu dò Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-remote",
+            "label": "Bộ Truy cập Từ xa Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-crayon",
+            "label": "Bút vẽ Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-configurator",
+            "label": "Bộ Cấu hình Mạng lưới"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-wireless-configurator",
+            "label": "Bộ Cấu hình Không dây Mạng lưới"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Lưu trữ Mạng lưới",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/network-storage/quantum-storage",
+            "label": "Kho lưu trữ Lượng tử"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Addon Slimefun Tùy chỉnh",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slime-customizer/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "slime-customizer/eula",
+        "label": "Thỏa thuận Người dùng Cuối"
+      },
+      {
+        "type": "category",
+        "label": "Thông tin Chung",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/registering",
+            "label": "Đăng ký"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/color-codes",
+            "label": "Mã màu"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/skull-items",
+            "label": "Sử dụng Vật phẩm Đầu lâu"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/crafting-recipe",
+            "label": "Công thức Chế tạo"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/saved-items",
+            "label": "Vật phẩm đã Lưu"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Tệp cấu hình",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/sc-addon",
+            "label": "Thông tin Tải Plugin"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/categories",
+            "label": "Phân loại"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/mob-drops",
+            "label": "Vật phẩm Rơi từ Quái"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/geo-resources",
+            "label": "Tài nguyên Địa chất"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/items",
+            "label": "Vật phẩm"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/capacitors",
+            "label": "Tụ điện"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/machines",
+            "label": "Máy móc"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/generators",
+            "label": "Máy phát điện"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/solar-generators",
+            "label": "Máy phát điện Năng lượng Mặt trời"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/material-generators",
+            "label": "Máy Tạo Vật liệu"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/researches",
+            "label": "Nghiên cứu"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/index",
+            "label": "Tệp cấu hình"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Hướng dẫn Nâng cao",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/use-slimefun-item-id",
+            "label": "Sử dụng ID Vật phẩm Slimefun"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/radioactive-items",
+            "label": "Vật phẩm Phóng xạ"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/food-items",
+            "label": "Vật phẩm Thức ăn Tùy chỉnh"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/placeable-items",
+            "label": "Khối Có Thể Đặt Tùy chỉnh"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/index",
+            "label": "Hướng dẫn Tùy chỉnh Nâng cao"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Thiết kế Addon",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/better-recipe",
+            "label": "Làm đẹp Trang Công thức"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/items-arrangement",
+            "label": "Gợi ý Sắp xếp Vật phẩm"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/balancing",
+            "label": "Cân bằng Game"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slime-tinker/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "slime-tinker/getting-started",
+        "label": "Nhập môn"
+      },
+      {
+        "type": "category",
+        "label": "Trạm làm việc",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-tinker/workstations/tinkers-smeltery",
+            "label": "Lò Nung Tinker"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "Danh sách Đặc tính",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-tinker/traits/tools-traits",
+            "label": "Đặc tính Công cụ"
+          },
+          {
+            "type": "doc",
+            "id": "slime-tinker/traits/armor-traits",
+            "label": "Đặc tính Giáp"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Tiến Độ Slimefun",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slimefun-advancements/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "Tệp cấu hình",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slimefun-advancements/config/groups",
+            "label": "Cấu hình Nhóm Tiến độ"
+          },
+          {
+            "type": "doc",
+            "id": "slimefun-advancements/config/advancements",
+            "label": "Cấu hình Tiến độ"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "doc",
+        "id": "slimefun-advancements/set-item",
+        "label": "Thiết lập Vật phẩm"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "Công Nghệ Tận Cùng",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "transc-endence/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "transc-endence/walkthrough",
+        "label": "Hướng dẫn chính thức"
+      },
+      {
+        "type": "category",
+        "label": "Máy móc",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-oscillator",
+            "label": "Máy Tạo Hạt"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-annihilator",
+            "label": "Máy Ngưng Tụ Hạt"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-scatterer",
+            "label": "Máy Phát Điện Hạt"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/stabilizer",
+            "label": "Bộ Ổn Định"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/zot-overloader",
+            "label": "Máy Quá Tải Hạt"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  }
+]

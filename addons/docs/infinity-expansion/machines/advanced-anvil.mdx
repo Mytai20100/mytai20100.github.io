@@ -1,0 +1,52 @@
+---
+sidebar_position: 1
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Đe Cao Cấp
+
+Đe cao cấp dùng để hợp nhất phù phép của hai vật phẩm.
+
+<ImageGallery images={[
+  { src: '/images/infinity-expansion/advanced-anvil.png', alt: 'Đe Cao Cấp' }
+]} />
+
+## Cách sử dụng
+
+Đặt 2 vật phẩm vào các ô nhập liệu. Phải thỏa mãn các điều kiện sau:
+
+- Hai vật phẩm phải cùng loại, hoặc vật phẩm thứ hai là sách phù phép.
+- Vật phẩm đầu tiên phải cho phép phù phép (một số vật phẩm Slimefun cấm phù phép).
+- Vật phẩm thứ hai phải cho phép tách phù phép (một số vật phẩm Slimefun cấm tách phù phép).
+- Cả hai vật phẩm phải có phù phép khả dụng (phải là phù phép có thể lấy được từ trung tâm đăng ký Bukkit, bao gồm phù phép gốc và một số phù phép do plugin thêm vào).
+- Khi hai vật phẩm có cùng loại phù phép, cấp độ phù phép của vật phẩm bên phải phải lớn hơn hoặc bằng vật phẩm bên trái.
+
+Nếu các điều kiện trên được thỏa mãn, vật phẩm sau khi hợp nhất sẽ hiển thị ở phía dưới, nhấp vào vật phẩm đó để hợp nhất.
+
+- Vật phẩm bên trái sẽ làm vật phẩm cơ sở sau khi hợp nhất phù phép, vật phẩm bên phải sẽ biến mất.
+- Với cùng loại phù phép, nếu cấp độ bằng nhau thì cấp độ sau khi hợp nhất sẽ tăng một cấp. Ngược lại, lấy cấp độ cao hơn làm cấp độ cuối cùng.
+- Khi vật phẩm bên phải chứa phù phép mà vật phẩm bên trái không có, các phù phép đó sẽ được chuyển sang vật phẩm bên trái.
+
+## Giới hạn cấp độ
+
+Phù phép sau khi hợp nhất sẽ không vượt quá giới hạn cấp độ đã thiết lập. Các giới hạn này có thể thay đổi qua tệp cấu hình của InfinityExpansion.
+
+Giới hạn **mặc định** như sau:
+
+- Sắc bén: 9
+- Sát thương Undead: 9
+- Sát thương Chân khớp: 9
+- Bảo vệ: 10
+- May mắn: 6
+- Hiệu suất: 7
+- Lửa: 6
+- Sức mạnh: 7
+- Gai: 13
+- Nhặt: 6
+- Bền: 13
+- Các phù phép khác giữ nguyên giới hạn gốc.
+
+## Thông tin
+
+**Tiêu thụ điện**: 100.000 J mỗi lần sử dụng

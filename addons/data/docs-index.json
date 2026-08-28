@@ -1,0 +1,1268 @@
+[
+  {
+    "id": "crystamae-historia/artistic-items/index",
+    "title": "Ma Thuật và Nghệ Thuật",
+    "label": "Ma Thuật và Nghệ Thuật",
+    "excerpt": "Danh mục này chứa các vật phẩm nghệ thuật."
+  },
+  {
+    "id": "crystamae-historia/exalted-items/index",
+    "title": "Vật Phẩm Tôn Quý",
+    "label": "Vật Phẩm Tôn Quý",
+    "excerpt": "Danh mục này chứa các vật phẩm tôn quý."
+  },
+  {
+    "id": "crystamae-historia/gadgets/angel-block",
+    "title": "Khối Thiên Thần",
+    "label": "Khối Thiên Thần",
+    "excerpt": "Loại kính ma thuật này có thể đặt trực tiếp trên không. Nhấp chuột phải vào bất kỳ đâu để đặt nó."
+  },
+  {
+    "id": "crystamae-historia/gadgets/damage-plates",
+    "title": "Phiến Thiêu Đốt và Phiến Cạm Bẫy",
+    "label": "Phiến Thiêu Đốt và Phiến Cạm Bẫy",
+    "excerpt": "Kết hợp tấm áp lực đá với pha lê giả kim, hư không và cơ khí có thể khiến nó gây sát thương mỗi Slimefun tick lên mọi sinh vật phía trên."
+  },
+  {
+    "id": "crystamae-historia/gadgets/diverging-waystone",
+    "title": "Cột Mốc Phân Kỳ",
+    "label": "Cột Mốc Phân Kỳ",
+    "excerpt": "Có thể dùng làm điểm đánh dấu dịch chuyển."
+  },
+  {
+    "id": "crystamae-historia/gadgets/ender-inhibitors",
+    "title": "Máy Ức Chế Enderman",
+    "label": "Máy Ức Chế Enderman",
+    "excerpt": "Bằng cách vận dụng cộng hưởng của Enderman để ức chế chúng, máy ức chế Enderman sẽ ngăn chúng dịch chuyển. Một khi Enderman rời khỏi phạm vi của máy ức chế, hiệ"
+  },
+  {
+    "id": "crystamae-historia/gadgets/exaltation-stand",
+    "title": "Bệ Tôn Vinh",
+    "label": "Bệ Tôn Vinh",
+    "excerpt": "Đặt vật phẩm tôn quý lên bệ này có thể kích hoạt hiệu ứng của nó."
+  },
+  {
+    "id": "crystamae-historia/gadgets/experience-collector",
+    "title": "Bộ Thu Thập Kinh Nghiệm",
+    "label": "Bộ Thu Thập Kinh Nghiệm",
+    "excerpt": "Sau khi được truyền pha lê cơ khí, nhân loại và động vật, những bộ thu thập kinh nghiệm này trở nên mạnh mẽ hơn trước."
+  },
+  {
+    "id": "crystamae-historia/gadgets/glass-of-milk",
+    "title": "Ly Sữa Thủy Tinh",
+    "label": "Ly Sữa Thủy Tinh",
+    "excerpt": "Sau khi đặt, nhấp chuột phải có thể xóa mọi hiệu ứng thuốc trên người."
+  },
+  {
+    "id": "crystamae-historia/gadgets/greenhouse-glass",
+    "title": "Kính Nhà Kính",
+    "label": "Kính Nhà Kính",
+    "excerpt": "Kính nhà kính có thể thúc đẩy cây trồng phát triển. Cây trồng phải có đủ ánh sáng và nằm trong phạm vi 30 khối cùng độ cao, cách kính nhà kính 1 khối bên dưới."
+  },
+  {
+    "id": "crystamae-historia/gadgets/lamps",
+    "title": "Đèn Xua Đuổi",
+    "label": "Đèn Xua Đuổi",
+    "excerpt": "Đèn xua đuổi sử dụng pha lê giả kim, triết học và nhân loại để tạo ra ánh sáng ma thuật, xua đuổi quái vật thù địch ở gần và đẩy chúng ra."
+  },
+  {
+    "id": "crystamae-historia/gadgets/mob-spawning-dirt",
+    "title": "Đất Nguyền Rủa và Đất Linh Hồn",
+    "label": "Đất Nguyền Rủa và Đất Linh Hồn",
+    "excerpt": "Đất nguyền rủa tỏa ra ma thuật hắc ám, khiến quái vật thù địch sẽ sinh ra trên đó."
+  },
+  {
+    "id": "crystamae-historia/gadgets/mysterious-items",
+    "title": "Vật Phẩm Huyền Bí",
+    "label": "Vật Phẩm Huyền Bí",
+    "excerpt": "Những vật phẩm huyền bí này không xác định chúng là gì, sẽ biến đổi ngẫu nhiên mỗi 15 Slimefun tick."
+  },
+  {
+    "id": "crystamae-historia/gadgets/philosophers-spray",
+    "title": "Bình Xịt Triết Gia",
+    "label": "Bình Xịt Triết Gia",
+    "excerpt": "Bình xịt triết gia là dạng “nâng cấp” cầm tay của Máy Hoán Đổi."
+  },
+  {
+    "id": "crystamae-historia/gadgets/trophy-display",
+    "title": "Bục Trưng Bày Chiến Lợi Phẩm",
+    "label": "Bục Trưng Bày Chiến Lợi Phẩm",
+    "excerpt": "Đặt chiến lợi phẩm của bạn lên bục này để trưng bày cho mọi người xem."
+  },
+  {
+    "id": "crystamae-historia/gadgets/vacuums",
+    "title": "Pháo Không Khí",
+    "label": "Pháo Không Khí",
+    "excerpt": "Không giống đèn xua đuổi, pháo không khí sử dụng pha lê lịch sử, hư không và triết học, do đó có thể đẩy bất kỳ thực thể nào. Nhược điểm là nó chỉ có thể đẩy th"
+  },
+  {
+    "id": "crystamae-historia/gadgets/verache-candles",
+    "title": "Nến Chống Quái",
+    "label": "Nến Chống Quái",
+    "excerpt": "Vật phẩm ma thuật này phát ra ánh sáng có thể làm sạch khu vực xung quanh và ngăn mọi quái vật sinh ra. Nến sẽ cháy hết sau một thời gian."
+  },
+  {
+    "id": "crystamae-historia/gadgets/voids",
+    "title": "Khe Nứt Hư Không",
+    "label": "Khe Nứt Hư Không",
+    "excerpt": "Kết hợp pha lê hư không, cơ khí và pha lê có thể xé rách vũ trụ, tạo ra một khe nứt hư không và hút các vật phẩm ở gần."
+  },
+  {
+    "id": "crystamae-historia/index",
+    "title": "Biên Niên Sử Pha Lê Ma Thuật",
+    "label": "Biên Niên Sử Pha Lê Ma Thuật",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Crystamae Historia."
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/chronicling",
+    "title": "Khai Quật Câu Chuyện Khối",
+    "label": "Khai Quật Câu Chuyện Khối",
+    "excerpt": "Bước đầu tiên để chế tạo phép thuật là khai quật câu chuyện trong khối hoặc vật phẩm thông qua Biên Niên Sử."
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/liquefaction",
+    "title": "Hóa Lỏng",
+    "label": "Hóa Lỏng",
+    "excerpt": "Bể hóa lỏng dùng để hóa lỏng pha lê ma thuật và chuyển thành dạng lỏng."
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/plate-charging",
+    "title": "Phiến Ma Thuật và Phiến Phép",
+    "label": "Phiến Ma Thuật và Phiến Phép",
+    "excerpt": "Một phép thuật được tạo ra bằng cách dung hợp 3 loại pha lê ma thuật khác nhau vào phiến ma thuật."
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/realisation",
+    "title": "Chuyển Hóa Thành Pha Lê Ma Thuật",
+    "label": "Chuyển Hóa Thành Pha Lê Ma Thuật",
+    "excerpt": "Sau khi khai quật câu chuyện của khối, chúng ta có một vấn đề mới: làm thế nào để những câu chuyện này không còn trừu tượng nữa? Lúc này, Bệ Tế Hiện Thực sẽ phá"
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/stave-configurator",
+    "title": "Bộ Cấu Hình Gậy Phép",
+    "label": "Bộ Cấu Hình Gậy Phép",
+    "excerpt": "Bộ cấu hình gậy phép được dùng để gắn phiến phép lên gậy phép hoặc tháo phiến phép ra khỏi gậy phép."
+  },
+  {
+    "id": "crystamae-historia/spell-crafting/what-is-crystamae",
+    "title": "Pha Lê Ma Thuật là gì?",
+    "label": "Pha Lê Ma Thuật là gì?",
+    "excerpt": "Pha lê ma thuật là một sức mạnh kỳ diệu, tồn tại ở khắp mọi nơi và tổ chức toàn bộ thế giới."
+  },
+  {
+    "id": "crystamae-historia/tools/block-veil",
+    "title": "Màn Che Khối",
+    "label": "Màn Che Khối",
+    "excerpt": "Màn che khối là một công cụ ma thuật có thể bao phủ khối đã chọn trong một lớp màng ma thuật mỏng, lớp màng này cộng hưởng với năng lượng của một khối khác."
+  },
+  {
+    "id": "crystamae-historia/tools/connecting-compass",
+    "title": "La Bàn Kết Nối",
+    "label": "La Bàn Kết Nối",
+    "excerpt": "Đầu la bàn kết nối được thấm một lớp pha lê lịch sử, khiến nó luôn ghi nhớ và chỉ về hướng đã chọn."
+  },
+  {
+    "id": "crystamae-historia/tools/displacer",
+    "title": "Máy Hoán Đổi",
+    "label": "Máy Hoán Đổi",
+    "excerpt": "Máy hoán đổi nhờ sự kết hợp giữa pha lê động vật và pha lê giả kim để tái tạo liên kết giữa các phân tử, dịch chuyển phân tử chưa liên kết sang chiều không gian"
+  },
+  {
+    "id": "crystamae-historia/tools/ephemeral-tables",
+    "title": "Bàn Chế Tạo Tạm Thời",
+    "label": "Bàn Chế Tạo Tạm Thời",
+    "excerpt": "Bàn chế tạo tạm thời cho phép bạn truy cập bàn chế tạo vanilla ở bất kỳ đâu, chỉ cần nhấp chuột phải là có thể mở. Một giải pháp di động!"
+  },
+  {
+    "id": "crystamae-historia/tools/luminescence-scoops",
+    "title": "Muỗng Phát Quang",
+    "label": "Muỗng Phát Quang",
+    "excerpt": "Muỗng phát quang hấp thụ năng lượng từ pha lê thiên thể ở gần, có thể tạo ra một nguồn sáng lơ lửng vô hình tại bất kỳ vị trí nào.<br />"
+  },
+  {
+    "id": "crystamae-historia/tools/recalling-lattice",
+    "title": "Mạng Lưới Hồi Tưởng",
+    "label": "Mạng Lưới Hồi Tưởng",
+    "excerpt": "Mạng lưới hồi tưởng sử dụng sức mạnh pha lê tiềm ẩn còn lại trong thỏi ma thuật để tạo liên kết với một điểm không gian cụ thể.<br />"
+  },
+  {
+    "id": "crystamae-historia/tools/refraction-lens",
+    "title": "Lăng Kính Khúc Xạ",
+    "label": "Lăng Kính Khúc Xạ",
+    "excerpt": "Lăng kính khúc xạ được dùng để “nhìn” dòng chảy của pha lê ma thuật được chiết xuất từ bên trong khối trong thế giới."
+  },
+  {
+    "id": "crystamae-historia/tools/spell-plates",
+    "title": "Phiến Phép",
+    "label": "Phiến Phép",
+    "excerpt": "Phiến phép cơ bản là phiên bản đầu tiên của phiến phép, dùng để lưu trữ phép thuật. Bản thân phiến phép không thể sử dụng riêng lẻ, phải dùng Bộ Cấu Hình Gậy Ph"
+  },
+  {
+    "id": "crystamae-historia/uniques/index",
+    "title": "Vật Phẩm Độc Đáo",
+    "label": "Vật Phẩm Độc Đáo",
+    "excerpt": "Danh mục này chứa các vật phẩm độc đáo."
+  },
+  {
+    "id": "cultivation/crafting-items/index",
+    "title": "Vật Phẩm Chế Tạo",
+    "label": "Vật Phẩm Chế Tạo",
+    "excerpt": "Danh mục này vốn dĩ được ẩn đi... Thôi được."
+  },
+  {
+    "id": "cultivation/developers/index",
+    "title": "Hướng Dẫn Dành Cho Nhà Phát Triển",
+    "label": "Hướng Dẫn Dành Cho Nhà Phát Triển",
+    "excerpt": "- Cách thêm món ăn mới qua PR (tiếng Anh)"
+  },
+  {
+    "id": "cultivation/index",
+    "title": "Cultivation",
+    "label": "Cultivation",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Cultivation."
+  },
+  {
+    "id": "cultivation/machines/cooking-work-stations",
+    "title": "Quầy Bếp",
+    "label": "Quầy Bếp",
+    "excerpt": "Quầy bếp cho phép bạn chuẩn bị nguyên liệu và chế biến món ăn từ nguyên liệu thô."
+  },
+  {
+    "id": "cultivation/machines/garden-cloche",
+    "title": "Lồng Kính Vườn",
+    "label": "Lồng Kính Vườn",
+    "excerpt": "Lồng kính vườn cho phép bạn tiêu thụ điện năng để tự động trồng và thu hoạch cây."
+  },
+  {
+    "id": "cultivation/overview/crop-breeding",
+    "title": "Lai Tạo Cây Trồng",
+    "label": "Lai Tạo Cây Trồng",
+    "excerpt": "Lai tạo cây trồng là dùng hai cây để nhân giống (lai tạo đơn giản) hoặc tạo ra loại cây mới (lai chéo)."
+  },
+  {
+    "id": "cultivation/overview/index",
+    "title": "Tổng Quan",
+    "label": "Tổng Quan",
+    "excerpt": "Cultivation là gì?"
+  },
+  {
+    "id": "cultivation/plants/index",
+    "title": "Thực Vật",
+    "label": "Thực Vật",
+    "excerpt": "Trong Cultivation có hai loại thực vật: Thực vật Nguyên thủy và Thực vật Canh tác."
+  },
+  {
+    "id": "cultivation/tools/crop-sticks",
+    "title": "Cọc Cây Trồng",
+    "label": "Cọc Cây Trồng",
+    "excerpt": "Cọc cây trồng là công cụ trồng trọt dùng để trồng cây nông nghiệp. Nhấp chuột phải vào cây trồng Cultivation là có thể đặt cọc cây trồng."
+  },
+  {
+    "id": "cultivation/tools/plant-analyzer",
+    "title": "Máy Phân Tích Thực Vật",
+    "label": "Máy Phân Tích Thực Vật",
+    "excerpt": "Máy phân tích thực vật cho phép bạn xem cấp độ, tốc độ, độ bền của cây trồng Cultivation."
+  },
+  {
+    "id": "cultivation/tools/seed-pack",
+    "title": "Túi Hạt Giống",
+    "label": "Túi Hạt Giống",
+    "excerpt": "Túi hạt giống cho phép bạn lưu trữ và trích xuất hạt giống theo cấp độ, tốc độ và độ bền mong muốn, với điều kiện bạn đã lưu trữ đủ số lượng hạt giống."
+  },
+  {
+    "id": "download",
+    "title": "Tải xuống và Cài đặt",
+    "label": "Tải xuống và Cài đặt",
+    "excerpt": "Vì danh sách addon trên Wiki tiếng Trung của Slimefun đã bao gồm địa chỉ tải xuống của tất cả addon trong Wiki này, vui lòng truy cập danh sách addon của Wiki t"
+  },
+  {
+    "id": "emctech/balancing",
+    "title": "Giải thích về tính cân bằng",
+    "label": "Giải thích về tính cân bằng",
+    "excerpt": "Nội dung của trang này rất quan trọng!"
+  },
+  {
+    "id": "emctech/emc-calculations",
+    "title": "Tính toán EMC",
+    "label": "Tính toán EMC",
+    "excerpt": "Trong EMCTech, cách tính giá trị EMC khác với trong mod."
+  },
+  {
+    "id": "emctech/index",
+    "title": "Công nghệ EMC",
+    "label": "Công nghệ EMC",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của EMCTech."
+  },
+  {
+    "id": "emctech/what-is-emc",
+    "title": "EMC là gì?",
+    "label": "EMC là gì?",
+    "excerpt": "EMC (Energy-Matter Covalence) là một khái niệm đến từ các mod nổi tiếng Equivalent Exchange 2, 3 và ProjectE."
+  },
+  {
+    "id": "exotic-garden/getting-started",
+    "title": "Bắt đầu",
+    "label": "Bắt đầu",
+    "excerpt": "Khi thế giới của bạn đã bật tính năng tạo địa hình ExoticGarden, bạn có thể tìm thấy các bụi cây, thực vật và cây ăn quả ở khắp nơi trên thế giới."
+  },
+  {
+    "id": "exotic-garden/index",
+    "title": "Vườn kỳ lạ",
+    "label": "Vườn kỳ lạ",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của ExoticGarden."
+  },
+  {
+    "id": "fluffy-machines/barrels/index",
+    "title": "Thùng Fluffy",
+    "label": "Thùng Fluffy",
+    "excerpt": "Thùng Fluffy là giải pháp lưu trữ do FluffyMachines cung cấp."
+  },
+  {
+    "id": "fluffy-machines/index",
+    "title": "Máy móc Fluffy",
+    "label": "Máy móc Fluffy",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của FluffyMachines."
+  },
+  {
+    "id": "fluffy-machines/machines/advanced-charging-bench",
+    "title": "Bàn sạc nâng cao",
+    "label": "Bàn sạc nâng cao",
+    "excerpt": "Bàn sạc nâng cao là máy trong FluffyMachines có thể sạc cho vật phẩm."
+  },
+  {
+    "id": "fluffy-machines/machines/auto-crafters",
+    "title": "Máy chế tạo tự động",
+    "label": "Máy chế tạo tự động",
+    "excerpt": "Máy chế tạo tự động là một loạt máy trong FluffyMachines có thể tự động chế tạo vật phẩm."
+  },
+  {
+    "id": "fluffy-machines/machines/auto-crafting-table",
+    "title": "Bàn chế tạo tự động (vanilla)",
+    "label": "Bàn chế tạo tự động (vanilla)",
+    "excerpt": "Bàn chế tạo tự động (vanilla) là máy chế tạo tự động trong FluffyMachines, có thể sử dụng công thức của bàn chế tạo vanilla để chế tạo vật phẩm."
+  },
+  {
+    "id": "fluffy-machines/machines/smart-factory",
+    "title": "Nhà máy thông minh",
+    "label": "Nhà máy thông minh",
+    "excerpt": "Nhà máy thông minh là cỗ máy lười biếng tối thượng do FluffyMachines cung cấp, có thể trực tiếp sử dụng bột khoáng và than đá để chế tạo thành vật phẩm chỉ định"
+  },
+  {
+    "id": "fluffy-machines/multiblock/crank-generator",
+    "title": "Máy phát điện quay tay",
+    "label": "Máy phát điện quay tay",
+    "excerpt": "Máy phát điện quay tay là một cấu trúc đa khối cho phép người chơi vung tay để phát điện."
+  },
+  {
+    "id": "fluffy-machines/multiblock/foundry",
+    "title": "Xưởng đúc",
+    "label": "Xưởng đúc",
+    "excerpt": "Xưởng đúc là một cấu trúc đa khối có thể lưu trữ một loại bột khoáng và lấy ra bột khoáng hoặc thỏi bất cứ lúc nào khi cần."
+  },
+  {
+    "id": "foxy-machines/boss/headless-horseman",
+    "title": "Kỵ sĩ không đầu",
+    "label": "Kỵ sĩ không đầu",
+    "excerpt": "Kỵ sĩ không đầu là một trong những sinh vật Boss trong FoxyMachines. Cần chế tạo trứng triệu hồi để triệu hồi (yêu cầu Trái tim Nữ hoàng Tiên)."
+  },
+  {
+    "id": "foxy-machines/boss/pixie-queen",
+    "title": "Nữ hoàng Tiên",
+    "label": "Nữ hoàng Tiên",
+    "excerpt": "Nữ hoàng Tiên là một trong những sinh vật Boss trong FoxyMachines. Cần chế tạo trứng triệu hồi để triệu hồi."
+  },
+  {
+    "id": "foxy-machines/damage-types",
+    "title": "Loại sát thương",
+    "label": "Loại sát thương",
+    "excerpt": "Sát thương xuyên giáp là một loại sát thương đặc biệt mà vũ khí trong FoxyMachines có thể gây ra."
+  },
+  {
+    "id": "foxy-machines/equipment/acri-arcum",
+    "title": "Cung Sắc Bén",
+    "label": "Cung Sắc Bén",
+    "excerpt": "Cung Sắc Bén là một vũ khí có khả năng xuyên giáp, đi kèm sẵn phù phép Vô hạn, Sức mạnh VII."
+  },
+  {
+    "id": "foxy-machines/equipment/armor",
+    "title": "Giáp",
+    "label": "Giáp",
+    "excerpt": "Một chiếc mũ Netherite bao gồm phù phép Đào nhanh dưới nước, Chân sâu V, Bảo vệ V."
+  },
+  {
+    "id": "foxy-machines/equipment/celestial-sword",
+    "title": "Kiếm Thiên Giới",
+    "label": "Kiếm Thiên Giới",
+    "excerpt": "Kiếm Thiên Giới là một thanh kiếm Netherite sở hữu Thần Thánh Trọng Kích."
+  },
+  {
+    "id": "foxy-machines/equipment/cursed-sword",
+    "title": "Kiếm Nguyền Rủa",
+    "label": "Kiếm Nguyền Rủa",
+    "excerpt": "Kiếm Nguyền Rủa là một thanh kiếm Netherite sở hữu Hút Máu."
+  },
+  {
+    "id": "foxy-machines/equipment/elucidator",
+    "title": "Kiếm Elucidator",
+    "label": "Kiếm Elucidator",
+    "excerpt": "Elucidator là một thanh kiếm Netherite sở hữu Sát Thương III, Hút Máu II, Hồi Máu Vượt Trội, đi kèm phù phép Cướp bóc V, Sắc bén X."
+  },
+  {
+    "id": "foxy-machines/equipment/healing-bow",
+    "title": "Cung Hồi Máu",
+    "label": "Cung Hồi Máu",
+    "excerpt": "Cung Hồi Máu là một vũ khí hỗ trợ có thể hồi máu cho mục tiêu trúng phải, không gây sát thương cho mục tiêu."
+  },
+  {
+    "id": "foxy-machines/index",
+    "title": "Máy móc Foxy",
+    "label": "Máy móc Foxy",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của FoxyMachines."
+  },
+  {
+    "id": "foxy-machines/machines/chunk-loader",
+    "title": "Máy tải chunk",
+    "label": "Máy tải chunk",
+    "excerpt": "Máy tải chunk có thể giữ cho chunk nơi nó đặt luôn được tải, không cần tiêu thụ điện."
+  },
+  {
+    "id": "foxy-machines/machines/forcefield-dome",
+    "title": "Mái vòm trường lực",
+    "label": "Mái vòm trường lực",
+    "excerpt": "Mái vòm trường lực có thể tạo ra rào chắn bảo vệ xung quanh."
+  },
+  {
+    "id": "foxy-machines/machines/gold-refinery",
+    "title": "Nhà máy luyện kim điện lực",
+    "label": "Nhà máy luyện kim điện lực",
+    "excerpt": "Nhà máy luyện kim điện lực có thể trực tiếp nung bột vàng thành thỏi vàng với số kara chỉ định."
+  },
+  {
+    "id": "foxy-machines/machines/improvement-forge",
+    "title": "Lò rèn cải tiến",
+    "label": "Lò rèn cải tiến",
+    "excerpt": "Lò rèn cải tiến có thể nâng cấp chất liệu của bất kỳ trang bị nào."
+  },
+  {
+    "id": "foxy-machines/machines/potion-mixer",
+    "title": "Máy trộn thuốc",
+    "label": "Máy trộn thuốc",
+    "excerpt": "Máy trộn thuốc có thể trộn hai bình thuốc cùng loại với nhau."
+  },
+  {
+    "id": "foxy-machines/sacrificial-altar/index",
+    "title": "Bàn thờ hiến tế",
+    "label": "Bàn thờ hiến tế",
+    "excerpt": "Bàn thờ hiến tế là một cấu trúc đa khối quan trọng trong FoxyMachines, nhiều vật phẩm phải thông qua bàn thờ hiến tế mới có thể thu được."
+  },
+  {
+    "id": "foxy-machines/tools/berry-bush-trimmer",
+    "title": "Dụng cụ tỉa bụi mọng ngọt",
+    "label": "Dụng cụ tỉa bụi mọng ngọt",
+    "excerpt": "Dụng cụ tỉa bụi mọng ngọt là một công cụ có thể tỉa bụi mọng ngọt."
+  },
+  {
+    "id": "foxy-machines/tools/boosted-rail",
+    "title": "Đường ray tăng tốc",
+    "label": "Đường ray tăng tốc",
+    "excerpt": "Đường ray tăng tốc (phiên bản tăng tốc của 4 loại đường ray vanilla) có thể tăng tốc độ di chuyển của xe mỏ trên đó lên 2.5 lần."
+  },
+  {
+    "id": "foxy-machines/tools/electric-elemental-staves",
+    "title": "Gậy nguyên tố điện lực",
+    "label": "Gậy nguyên tố điện lực",
+    "excerpt": "Gậy nguyên tố điện lực là phiên bản điện lực của Gậy nguyên tố."
+  },
+  {
+    "id": "foxy-machines/tools/poseidons-fishing-rod",
+    "title": "Cần câu của Poseidon",
+    "label": "Cần câu của Poseidon",
+    "excerpt": "Cần câu của Poseidon là một chiếc cần câu có phù phép Mồi câu III, Ưu đãi của biển V."
+  },
+  {
+    "id": "foxy-machines/tools/unbreakable-rune",
+    "title": "Cổ ngữ [Không thể phá hủy]",
+    "label": "Cổ ngữ [Không thể phá hủy]",
+    "excerpt": "Cổ ngữ này có thể kết hợp với bất kỳ vật phẩm nào, giúp vật phẩm nhận được thuộc tính không thể phá hủy."
+  },
+  {
+    "id": "foxy-machines/tools/wands",
+    "title": "Dụng cụ chọn vị trí/Gậy lấp đầy/Gậy bọt biển",
+    "label": "Dụng cụ chọn vị trí/Gậy lấp đầy/Gậy bọt biển",
+    "excerpt": "Ba vật phẩm này đều là công cụ tương tự như WorldEdit."
+  },
+  {
+    "id": "galactifun/celestial-objects/index",
+    "title": "Thiên thể",
+    "label": "Thiên thể",
+    "excerpt": "Đây là tất cả các thiên thể trong Galactifun:"
+  },
+  {
+    "id": "galactifun/celestial-objects/mars",
+    "title": "Sao Hỏa",
+    "label": "Sao Hỏa",
+    "excerpt": "Sao Hỏa là một hành tinh đỏ nhiều núi. Đây là hành tinh duy nhất có hang động, hang rộng nhưng thấp."
+  },
+  {
+    "id": "galactifun/celestial-objects/the-moon",
+    "title": "Mặt Trăng",
+    "label": "Mặt Trăng",
+    "excerpt": "Mặt Trăng là thiên thể gần Trái Đất thứ hai. Đây là môi trường sống tự nhiên của Creeper Đột biến. Mặt Trăng chủ yếu được cấu thành từ đá Andesite xen lẫn quặng"
+  },
+  {
+    "id": "galactifun/celestial-objects/titan",
+    "title": "Titan",
+    "label": "Titan",
+    "excerpt": "Titan là một vệ tinh của Sao Thổ. Đây là thiên thể duy nhất có các quần xã khác nhau và đại dương."
+  },
+  {
+    "id": "galactifun/celestial-objects/venus",
+    "title": "Sao Kim",
+    "label": "Sao Kim",
+    "excerpt": "Sao Kim là một hành tinh nguy hiểm, tràn ngập hồ dung nham, núi lửa, bầu khí quyển độc hại và những sinh vật nguy hiểm."
+  },
+  {
+    "id": "galactifun/index",
+    "title": "Galactifun - Công nghệ Liên sao",
+    "label": "Galactifun - Công nghệ Liên sao",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Galactifun."
+  },
+  {
+    "id": "galactifun/sealing",
+    "title": "Bịt kín",
+    "label": "Bịt kín",
+    "excerpt": "Trong Galactifun, một số khối cần có khu vực bịt kín mới có thể hoạt động bình thường."
+  },
+  {
+    "id": "infinity-expansion/generators/geothermal-generator",
+    "title": "Máy phát Địa nhiệt",
+    "label": "Máy phát Địa nhiệt",
+    "excerpt": "Máy phát địa nhiệt là máy phát chỉ hoạt động ở Overworld và Nether."
+  },
+  {
+    "id": "infinity-expansion/generators/hydro-generator",
+    "title": "Máy phát Thủy điện",
+    "label": "Máy phát Thủy điện",
+    "excerpt": "Máy phát thủy điện là loại máy phát sử dụng dòng nước để phát điện."
+  },
+  {
+    "id": "infinity-expansion/generators/infinite-panel",
+    "title": "Tấm Pin Vô hạn",
+    "label": "Tấm Pin Vô hạn",
+    "excerpt": "Đây là một vật phẩm vô hạn."
+  },
+  {
+    "id": "infinity-expansion/generators/infinity-reactor",
+    "title": "Lò Phản Ứng Vô Hạn",
+    "label": "Lò Phản Ứng Vô Hạn",
+    "excerpt": "Đây là một vật phẩm vô hạn."
+  },
+  {
+    "id": "infinity-expansion/generators/solar-generator",
+    "title": "Tấm Pin Mặt Trời",
+    "label": "Tấm Pin Mặt Trời",
+    "excerpt": "Tấm pin mặt trời là máy phát chỉ hoạt động vào ban ngày ở Overworld."
+  },
+  {
+    "id": "infinity-expansion/generators/void-panel",
+    "title": "Tấm Pin Hư Không",
+    "label": "Tấm Pin Hư Không",
+    "excerpt": "Tấm pin hư không là máy phát sử dụng năng lượng tối để phát điện."
+  },
+  {
+    "id": "infinity-expansion/index",
+    "title": "Infinity Expansion - Vô Hạn Mở Rộng",
+    "label": "Infinity Expansion - Vô Hạn Mở Rộng",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của InfinityExpansion."
+  },
+  {
+    "id": "infinity-expansion/machines/advanced-anvil",
+    "title": "Đe Cao Cấp",
+    "label": "Đe Cao Cấp",
+    "excerpt": "Đe cao cấp dùng để hợp nhất phù phép của hai vật phẩm."
+  },
+  {
+    "id": "infinity-expansion/machines/cobble-press",
+    "title": "Máy Nén Đá Cuội",
+    "label": "Máy Nén Đá Cuội",
+    "excerpt": "Máy nén đá cuội là máy dùng để chế tạo Đá Cuội Nén."
+  },
+  {
+    "id": "infinity-expansion/machines/cobblestone-generator",
+    "title": "Máy Tạo Đá Cuội",
+    "label": "Máy Tạo Đá Cuội",
+    "excerpt": "Máy tạo đá cuội có thể liên tục tạo ra đá cuội, thay thế máy tạo đá gốc."
+  },
+  {
+    "id": "infinity-expansion/machines/concrete-molding-machine",
+    "title": "Máy Đúc Bê Tông",
+    "label": "Máy Đúc Bê Tông",
+    "excerpt": "Máy này độc quyền của bản Việt hóa/Hán hóa, bản tiếng Anh và bản Hán hóa chỉnh sửa đều không có máy này."
+  },
+  {
+    "id": "infinity-expansion/machines/decompressor",
+    "title": "Máy Phân Rã",
+    "label": "Máy Phân Rã",
+    "excerpt": "Máy phân rã là máy có thể hoàn nguyên một số khối về vật liệu cơ bản."
+  },
+  {
+    "id": "infinity-expansion/machines/dust-extractor",
+    "title": "Máy Nghiền Bột",
+    "label": "Máy Nghiền Bột",
+    "excerpt": "Máy nghiền bột là máy chiết xuất bột khoáng ngay lập tức từ đá cuội và các loại đá khác."
+  },
+  {
+    "id": "infinity-expansion/machines/extreme-freezer",
+    "title": "Tủ Đông Cực Hạn",
+    "label": "Tủ Đông Cực Hạn",
+    "excerpt": "Tủ đông cực hạn là một máy điện có thể nhanh chóng chế tạo chất làm mát."
+  },
+  {
+    "id": "infinity-expansion/machines/gear-transformer",
+    "title": "Máy Chuyển Đổi Chất Liệu Trang Bị",
+    "label": "Máy Chuyển Đổi Chất Liệu Trang Bị",
+    "excerpt": "Máy chuyển đổi chất liệu trang bị là máy có thể thay đổi chất liệu của trang bị."
+  },
+  {
+    "id": "infinity-expansion/machines/infinity-forge",
+    "title": "Bàn Chế Tạo Vô Hạn",
+    "label": "Bàn Chế Tạo Vô Hạn",
+    "excerpt": "Bàn chế tạo vô hạn là bàn làm việc cần thiết để chế tạo các vật phẩm thuộc danh mục Vật phẩm Vô hạn."
+  },
+  {
+    "id": "infinity-expansion/machines/ingot-former",
+    "title": "Máy Đúc Thỏi",
+    "label": "Máy Đúc Thỏi",
+    "excerpt": "Máy đúc thỏi là máy điện có thể biến bột khoáng thành thỏi."
+  },
+  {
+    "id": "infinity-expansion/machines/obsidian-generator",
+    "title": "Máy Tạo Hắc Diện Thạch",
+    "label": "Máy Tạo Hắc Diện Thạch",
+    "excerpt": "Máy tạo hắc diện thạch là máy điện có thể liên tục tạo ra hắc diện thạch."
+  },
+  {
+    "id": "infinity-expansion/machines/powered-bedrock",
+    "title": "Đá Nền Tích Điện",
+    "label": "Đá Nền Tích Điện",
+    "excerpt": "Đây là một vật phẩm vô hạn."
+  },
+  {
+    "id": "infinity-expansion/machines/quarries",
+    "title": "Máy Khai Thác",
+    "label": "Máy Khai Thác",
+    "excerpt": "Máy khai thác là máy có thể tự động khai thác khoáng sản ở Overworld và Nether, các cấp độ máy khai thác khác nhau có thể khai thác các loại khoáng sản khác nha"
+  },
+  {
+    "id": "infinity-expansion/machines/resource-synthesizer",
+    "title": "Máy Tổng Hợp Tài Nguyên",
+    "label": "Máy Tổng Hợp Tài Nguyên",
+    "excerpt": "Máy tổng hợp tài nguyên là máy điện sử dụng hai loại Điểm kỳ dị (Singularity) khác nhau để tổng hợp vật phẩm."
+  },
+  {
+    "id": "infinity-expansion/machines/singularity-constructor",
+    "title": "Máy Kiến Tạo Điểm Kỳ Dị",
+    "label": "Máy Kiến Tạo Điểm Kỳ Dị",
+    "excerpt": "Máy kiến tạo điểm kỳ dị là máy ngưng tụ lượng lớn tài nguyên để sản xuất điểm kỳ dị."
+  },
+  {
+    "id": "infinity-expansion/machines/stoneworks-factory",
+    "title": "Nhà Máy Đá",
+    "label": "Nhà Máy Đá",
+    "excerpt": "Nhà máy đá là máy chế tạo các vật phẩm liên quan đến đá cuội."
+  },
+  {
+    "id": "infinity-expansion/machines/strainer",
+    "title": "Lưới Lọc",
+    "label": "Lưới Lọc",
+    "excerpt": "Lưới lọc là một trong những cách để thu thập vật liệu trong giai đoạn đầu game."
+  },
+  {
+    "id": "infinity-expansion/machines/tree-grower",
+    "title": "Máy Trồng Cây Tự Động",
+    "label": "Máy Trồng Cây Tự Động",
+    "excerpt": "Máy trồng cây tự động là máy điện có thể trồng cây hoàn toàn tự động."
+  },
+  {
+    "id": "infinity-expansion/machines/uranium-extractor",
+    "title": "Máy Chiết Xuất Uranium",
+    "label": "Máy Chiết Xuất Uranium",
+    "excerpt": "Máy chiết xuất uranium là máy chiết xuất mảnh uranium nhỏ ngay lập tức từ đá cuội và các loại đá khác."
+  },
+  {
+    "id": "infinity-expansion/machines/virtual-farm",
+    "title": "Nông Trại Tự Động",
+    "label": "Nông Trại Tự Động",
+    "excerpt": "Nông trại tự động là máy điện có thể trồng cây nông nghiệp hoàn toàn tự động."
+  },
+  {
+    "id": "infinity-expansion/machines/void-harvester",
+    "title": "Máy Thu Thập Hư Không",
+    "label": "Máy Thu Thập Hư Không",
+    "excerpt": "Máy thu thập hư không là máy dùng để thu thập hạt hư không."
+  },
+  {
+    "id": "infinity-expansion/mob-simulation",
+    "title": "Mô Phỏng Sinh Vật",
+    "label": "Mô Phỏng Sinh Vật",
+    "excerpt": "Mô phỏng sinh vật là một trong những phương pháp tự động thu thập vật phẩm rơi ra từ sinh vật."
+  },
+  {
+    "id": "infinity-expansion/singularities",
+    "title": "Điểm Kỳ Dị",
+    "label": "Điểm Kỳ Dị",
+    "excerpt": "Các vật phẩm trong danh mục này đều được tổng hợp từ lượng lớn tài nguyên, dùng cho các công thức khác."
+  },
+  {
+    "id": "infinity-expansion/storage",
+    "title": "Lưu Trữ",
+    "label": "Lưu Trữ",
+    "excerpt": "Các đơn vị lưu trữ trong InfinityExpansion có thể lưu trữ lượng lớn vật phẩm."
+  },
+  {
+    "id": "list",
+    "title": "Danh sách Wiki",
+    "label": "Danh sách Wiki",
+    "excerpt": "Trang này chứa hầu hết Wiki tiếng Trung của các addon Slimefun."
+  },
+  {
+    "id": "netheopoiesis/breeding/seed-data",
+    "title": "Bảng Dữ Liệu Hạt Giống",
+    "label": "Bảng Dữ Liệu Hạt Giống",
+    "excerpt": "Trang này được chia thành ba phần: Phát triển, Lai tạo, Hương vị. Mỗi hạt giống đều có thuộc tính khác nhau."
+  },
+  {
+    "id": "netheopoiesis/index",
+    "title": "Netheopoiesis - Địa Đàng Nether",
+    "label": "Netheopoiesis - Địa Đàng Nether",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Netheopoiesis."
+  },
+  {
+    "id": "netheopoiesis/overview/growing-and-breeding-plants",
+    "title": "Lai tạo",
+    "label": "Lai tạo",
+    "excerpt": "Cơ chế thứ hai là một hệ thống trồng trọt/lai tạo khổng lồ. Bắt đầu từ hai hạt Thanh Tẩy kề nhau (cách nhau một khối không khí ở giữa), bạn có thể bắt đầu nhân "
+  },
+  {
+    "id": "netheopoiesis/overview/purification",
+    "title": "Thanh tẩy",
+    "label": "Thanh tẩy",
+    "excerpt": "Cơ chế hàng đầu của Netheopoiesis chính là hệ thống thanh tẩy. Khi bạn đặt hoặc trồng các vật phẩm cụ thể của addon trong Nether, chúng sẽ bắt đầu dần dần vén m"
+  },
+  {
+    "id": "netheopoiesis/purification/a-better-barter",
+    "title": "Phần thưởng trao đổi gấp đôi",
+    "label": "Phần thưởng trao đổi gấp đôi",
+    "excerpt": "Khi cấp độ thanh tẩy tăng lên, Piglin không chỉ trở nên thân thiện mà còn có xác suất cho bạn phần thưởng trao đổi gấp đôi."
+  },
+  {
+    "id": "netheopoiesis/purification/friendly-mobs",
+    "title": "Sinh vật thân thiện",
+    "label": "Sinh vật thân thiện",
+    "excerpt": "Khi Nether được thanh tẩy, một số sinh vật vốn thù địch sẽ trở nên thân thiện với bạn."
+  },
+  {
+    "id": "netheopoiesis/purification/mob-spawning",
+    "title": "Sinh ra sinh vật",
+    "label": "Sinh ra sinh vật",
+    "excerpt": "Khi bạn dần thanh tẩy Nether, bạn sẽ thu hút những sinh vật mới đến với thế giới này. Những sinh vật này sẽ sinh ra ngẫu nhiên ở những nơi có cấp độ thanh tẩy đ"
+  },
+  {
+    "id": "netheopoiesis/purification/mob-swapping",
+    "title": "Thay thế sinh vật",
+    "label": "Thay thế sinh vật",
+    "excerpt": "Khi bạn dần thanh tẩy Nether, bạn sẽ từ từ thu hút những sinh vật mới đến với thế giới này. Khi một sinh vật Nether thông thường cố gắng sinh ra ở một vị trí có"
+  },
+  {
+    "id": "netheopoiesis/purification/purifying-aura",
+    "title": "Hào quang thanh tẩy",
+    "label": "Hào quang thanh tẩy",
+    "excerpt": "Khi bạn dần thanh tẩy Nether, bạn có thể nhận được hiệu ứng tăng cường trong khu vực đã thanh tẩy."
+  },
+  {
+    "id": "netheopoiesis/purification/sleeping-in-the-nether",
+    "title": "Ngủ trong Nether",
+    "label": "Ngủ trong Nether",
+    "excerpt": "Có người bạn nào đặt giường trong Nether rồi bảo bạn nhấp vào giường để đặt điểm hồi sinh không? Rồi bị nổ tan tành? Bây giờ, bạn thực sự có thể đặt điểm hồi si"
+  },
+  {
+    "id": "netheopoiesis/purification/to-the-end",
+    "title": "Đến The End",
+    "label": "Đến The End",
+    "excerpt": "Trong addon này, có một vật phẩm gọi là \"Bánh Ender\". Khi bạn có đủ vật liệu, bạn có thể chế tạo vật phẩm này bất cứ lúc nào. Tuy nhiên, nó chỉ có thể phát huy "
+  },
+  {
+    "id": "netheopoiesis/purification/water-in-the-nether",
+    "title": "Đặt nước trong Nether",
+    "label": "Đặt nước trong Nether",
+    "excerpt": "Bạn không nghe nhầm đâu, bạn có thể dùng xô nước để đặt nước trong Nether! Tất nhiên, chỉ khi cấp độ thanh tẩy của chunk đủ cao bạn mới có thể làm như vậy."
+  },
+  {
+    "id": "networks/basics/index",
+    "title": "Cơ bản",
+    "label": "Cơ bản",
+    "excerpt": "Phần này chứa kiến thức cơ bản về Mạng lưới (Networks)."
+  },
+  {
+    "id": "networks/basics/mechanism",
+    "title": "Cơ chế Lưu trữ và Lấy ra",
+    "label": "Cơ chế Lưu trữ và Lấy ra",
+    "excerpt": "Bất kỳ nút mạng nào trong mạng lưới khi lưu trữ hoặc lấy vật phẩm đều sẽ tuân theo cơ chế sau:"
+  },
+  {
+    "id": "networks/basics/what-is-networks",
+    "title": "Mạng lưới là gì?",
+    "label": "Mạng lưới là gì?",
+    "excerpt": "Mạng lưới (Networks) là một Addon của Slimefun, cung cấp cho máy chủ của bạn một hệ thống lưu trữ vật phẩm đơn giản, dễ sử dụng và mạnh mẽ."
+  },
+  {
+    "id": "networks/index",
+    "title": "Mạng lưới",
+    "label": "Mạng lưới",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Networks."
+  },
+  {
+    "id": "networks/network-nodes/index",
+    "title": "Nút Mạng",
+    "label": "Nút Mạng",
+    "excerpt": "Phần này chứa thông tin về tất cả các khối Nút Mạng."
+  },
+  {
+    "id": "networks/network-nodes/network-autocrafters",
+    "title": "Máy Tự động Chế tạo Mạng lưới",
+    "label": "Máy Tự động Chế tạo Mạng lưới",
+    "excerpt": "Máy Tự động Chế tạo Mạng lưới có thể tự động chế tạo vật phẩm thông qua Bản thiết kế Mạng lưới đã được mã hóa được cung cấp."
+  },
+  {
+    "id": "networks/network-nodes/network-bridge",
+    "title": "Cầu Mạng",
+    "label": "Cầu Mạng",
+    "excerpt": "Tác dụng duy nhất của Cầu Mạng là mở rộng phạm vi của mạng lưới. Nó có chi phí chế tạo rẻ, ngoài ra không có tác dụng nào khác."
+  },
+  {
+    "id": "networks/network-nodes/network-capacitor",
+    "title": "Tụ điện Mạng lưới",
+    "label": "Tụ điện Mạng lưới",
+    "excerpt": "Tụ điện Mạng lưới có thể nhận điện năng từ Mạng lưới Năng lượng và lưu trữ để các thiết bị mạng khác sử dụng."
+  },
+  {
+    "id": "networks/network-nodes/network-cell",
+    "title": "Ô Mạng",
+    "label": "Ô Mạng",
+    "excerpt": "Ô Mạng là giải pháp lưu trữ cơ bản nhất do Mạng lưới cung cấp.<br />"
+  },
+  {
+    "id": "networks/network-nodes/network-control-v",
+    "title": "Trình Dán Mạng lưới",
+    "label": "Trình Dán Mạng lưới",
+    "excerpt": "Trình Dán Mạng lưới có thể đặt khối nguyên bản đã chỉ định vào thế giới. (Không hỗ trợ bất kỳ khối lưu trữ nào)"
+  },
+  {
+    "id": "networks/network-nodes/network-control-x",
+    "title": "Trình Cắt Mạng lưới",
+    "label": "Trình Cắt Mạng lưới",
+    "excerpt": "Trình Cắt Mạng lưới có thể phá khối nguyên bản kề bên và lưu vào mạng lưới. (Không hỗ trợ bất kỳ khối lưu trữ nào)"
+  },
+  {
+    "id": "networks/network-nodes/network-controller",
+    "title": "Bộ Điều khiển Mạng lưới",
+    "label": "Bộ Điều khiển Mạng lưới",
+    "excerpt": "Bộ Điều khiển Mạng lưới là bộ não của một mạng lưới.<br />"
+  },
+  {
+    "id": "networks/network-nodes/network-encoder",
+    "title": "Bộ Mã hóa Công thức Mạng lưới",
+    "label": "Bộ Mã hóa Công thức Mạng lưới",
+    "excerpt": "Bộ Mã hóa Công thức Mạng lưới có thể ghi công thức vào một bản thiết kế trống."
+  },
+  {
+    "id": "networks/network-nodes/network-exporter",
+    "title": "Đầu ra Mạng lưới",
+    "label": "Đầu ra Mạng lưới",
+    "excerpt": "Đầu ra Mạng lưới cho phép người chơi lấy vật phẩm từ mạng lưới để sử dụng cho Mạng lưới Vận chuyển (Cargo)."
+  },
+  {
+    "id": "networks/network-nodes/network-grabber",
+    "title": "Trình Lấy Mạng lưới",
+    "label": "Trình Lấy Mạng lưới",
+    "excerpt": "Trình Lấy Mạng lưới có thể trích xuất vật phẩm từ khối Slimefun kề bên và lưu vào mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-greedy-block",
+    "title": "Bộ chặn Mạng lưới",
+    "label": "Bộ chặn Mạng lưới",
+    "excerpt": "Bộ chặn Mạng lưới được dùng để chặn việc truyền một loại vật phẩm nhất định trong mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-grid",
+    "title": "Lưới Mạng",
+    "label": "Lưới Mạng",
+    "excerpt": "Lưới Mạng cho phép người chơi xem tình trạng tất cả vật phẩm trong mạng lưới hiện tại."
+  },
+  {
+    "id": "networks/network-nodes/network-importer",
+    "title": "Đầu vào Mạng lưới",
+    "label": "Đầu vào Mạng lưới",
+    "excerpt": "Đầu vào Mạng lưới cho phép người chơi đưa vật phẩm vào mạng lưới thông qua Mạng lưới Vận chuyển (Cargo)."
+  },
+  {
+    "id": "networks/network-nodes/network-monitor",
+    "title": "Màn hình Mạng lưới",
+    "label": "Màn hình Mạng lưới",
+    "excerpt": "Màn hình Mạng lưới được dùng để kết nối ô lưu trữ liên kết với nó vào mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-power-display",
+    "title": "Đồng hồ Điện Mạng lưới",
+    "label": "Đồng hồ Điện Mạng lưới",
+    "excerpt": "Nhấp chuột phải vào Đồng hồ Điện Mạng lưới có thể hiển thị tổng điện năng trong mạng lưới (tổng điện năng được lưu trữ trong tất cả các tụ điện trong mạng lưới)"
+  },
+  {
+    "id": "networks/network-nodes/network-power-outlet",
+    "title": "Ổ cắm Điện Mạng lưới",
+    "label": "Ổ cắm Điện Mạng lưới",
+    "excerpt": "Ổ cắm Điện Mạng lưới có thể truyền điện năng từ mạng lưới sang Mạng lưới Năng lượng."
+  },
+  {
+    "id": "networks/network-nodes/network-purger",
+    "title": "Bộ Thanh lọc Mạng lưới",
+    "label": "Bộ Thanh lọc Mạng lưới",
+    "excerpt": "Bộ Thanh lọc Mạng lưới được dùng để xóa vật phẩm được chỉ định trong mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-pusher",
+    "title": "Trình Đẩy Mạng lưới",
+    "label": "Trình Đẩy Mạng lưới",
+    "excerpt": "Trình Đẩy Mạng lưới có thể đưa vật phẩm được chỉ định trong mạng lưới vào khối Slimefun kề bên."
+  },
+  {
+    "id": "networks/network-nodes/network-vacuum",
+    "title": "Máy Hút Mạng lưới",
+    "label": "Máy Hút Mạng lưới",
+    "excerpt": "Máy Hút Mạng lưới có thể hút các vật phẩm trong khu vực 4x4 xung quanh khối và cố gắng đẩy chúng vào mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-vanilla-grabber",
+    "title": "Trình Lấy Nguyên bản Mạng lưới",
+    "label": "Trình Lấy Nguyên bản Mạng lưới",
+    "excerpt": "Trình Lấy Nguyên bản Mạng lưới có thể trích xuất vật phẩm từ khối nguyên bản kề bên."
+  },
+  {
+    "id": "networks/network-nodes/network-vanilla-pusher",
+    "title": "Trình Đẩy Nguyên bản Mạng lưới",
+    "label": "Trình Đẩy Nguyên bản Mạng lưới",
+    "excerpt": "Trình Đẩy Nguyên bản Mạng lưới có thể đẩy vật phẩm trong khối sang khối lưu trữ nguyên bản kề bên."
+  },
+  {
+    "id": "networks/network-nodes/network-wireless-receiver",
+    "title": "Bộ Thu Không dây Mạng lưới",
+    "label": "Bộ Thu Không dây Mạng lưới",
+    "excerpt": "Bộ Thu Không dây Mạng lưới nhận vật phẩm từ Bộ Phát Không dây Mạng lưới đã liên kết và lưu vào mạng lưới."
+  },
+  {
+    "id": "networks/network-nodes/network-wireless-transmitter",
+    "title": "Bộ Phát Không dây Mạng lưới",
+    "label": "Bộ Phát Không dây Mạng lưới",
+    "excerpt": "Bộ Phát Không dây Mạng lưới có thể gửi vật phẩm được chỉ định đến Bộ Thu Không dây Mạng lưới đã liên kết."
+  },
+  {
+    "id": "networks/network-storage/quantum-storage",
+    "title": "Kho lưu trữ Lượng tử",
+    "label": "Kho lưu trữ Lượng tử",
+    "excerpt": "Kho lưu trữ Lượng tử là giải pháp lưu trữ do Mạng lưới cung cấp, có thể lưu trữ số lượng lớn một loại vật phẩm duy nhất và có thể kết nối vào mạng lưới."
+  },
+  {
+    "id": "networks/tools/crafting-blueprint",
+    "title": "Bản thiết kế Chế tạo",
+    "label": "Bản thiết kế Chế tạo",
+    "excerpt": "Bản thiết kế Chế tạo có thể lưu một công thức, được sử dụng cho Máy Tự động Chế tạo."
+  },
+  {
+    "id": "networks/tools/network-configurator",
+    "title": "Bộ Cấu hình Mạng lưới",
+    "label": "Bộ Cấu hình Mạng lưới",
+    "excerpt": "Bộ Cấu hình Mạng lưới có thể lưu cấu hình của bất kỳ khối mạng có hướng nào và áp dụng cho khối mạng có hướng khác."
+  },
+  {
+    "id": "networks/tools/network-crayon",
+    "title": "Bút vẽ Mạng lưới",
+    "label": "Bút vẽ Mạng lưới",
+    "excerpt": "Bút vẽ Mạng lưới có thể bật/tắt chế độ vẽ mạng lưới. Cầm Bút vẽ Mạng lưới và nhấp chuột phải vào Bộ Điều khiển Mạng lưới để chuyển đổi."
+  },
+  {
+    "id": "networks/tools/network-probe",
+    "title": "Đầu dò Mạng lưới",
+    "label": "Đầu dò Mạng lưới",
+    "excerpt": "Cầm Đầu dò Mạng lưới và nhấp chuột phải vào Bộ Điều khiển Mạng lưới, bạn có thể xem tất cả các loại khối đã kết nối trong mạng lưới, số lượng và tổng số vật phẩ"
+  },
+  {
+    "id": "networks/tools/network-remote",
+    "title": "Bộ Truy cập Từ xa Mạng lưới",
+    "label": "Bộ Truy cập Từ xa Mạng lưới",
+    "excerpt": "Bộ Truy cập Từ xa Mạng lưới cho phép bạn truy cập Lưới Mạng từ xa."
+  },
+  {
+    "id": "networks/tools/network-wireless-configurator",
+    "title": "Bộ Cấu hình Không dây Mạng lưới",
+    "label": "Bộ Cấu hình Không dây Mạng lưới",
+    "excerpt": "Bộ Cấu hình Không dây Mạng lưới có thể lưu vị trí của một Bộ Thu Không dây Mạng lưới và áp dụng nó cho Bộ Phát Không dây Mạng lưới."
+  },
+  {
+    "id": "slime-customizer/advanced/food-items",
+    "title": "Vật phẩm Thức ăn Tùy chỉnh",
+    "label": "Vật phẩm Thức ăn Tùy chỉnh",
+    "excerpt": "Tận dụng cơ chế nhận diện ID vật phẩm Slimefun, bạn có thể tạo vật phẩm thức ăn tùy chỉnh bằng cách đặt ID Slimefun thành một vật phẩm thức ăn."
+  },
+  {
+    "id": "slime-customizer/advanced/index",
+    "title": "Hướng dẫn Tùy chỉnh Nâng cao",
+    "label": "Hướng dẫn Tùy chỉnh Nâng cao",
+    "excerpt": "Phần này sẽ giới thiệu cách sử dụng vật phẩm đã lưu để thực hiện tùy chỉnh nâng cao hơn."
+  },
+  {
+    "id": "slime-customizer/advanced/placeable-items",
+    "title": "Khối Có Thể Đặt Tùy chỉnh",
+    "label": "Khối Có Thể Đặt Tùy chỉnh",
+    "excerpt": "Tận dụng cơ chế nhận diện ID vật phẩm Slimefun, bạn có thể sửa đổi tên vật phẩm, mô tả và các thuộc tính khác của một khối có thể đặt."
+  },
+  {
+    "id": "slime-customizer/advanced/radioactive-items",
+    "title": "Vật phẩm Phóng xạ",
+    "label": "Vật phẩm Phóng xạ",
+    "excerpt": "Tận dụng cơ chế nhận diện ID vật phẩm Slimefun, bạn có thể tạo vật phẩm phóng xạ tùy chỉnh bằng cách đặt ID Slimefun thành một vật phẩm có phóng xạ."
+  },
+  {
+    "id": "slime-customizer/advanced/use-slimefun-item-id",
+    "title": "Sử dụng ID Vật phẩm Slimefun",
+    "label": "Sử dụng ID Vật phẩm Slimefun",
+    "excerpt": "Slimefun nhận diện vật phẩm có phải là vật phẩm Slimefun hay không bằng cách thêm thẻ slimefun:slimefunitem vào NBT của vật phẩm."
+  },
+  {
+    "id": "slime-customizer/common/color-codes",
+    "title": "Mã màu",
+    "label": "Mã màu",
+    "excerpt": "Addon Slimefun Tùy chỉnh hỗ trợ mã màu Minecraft tiêu chuẩn. Bạn có thể sử dụng & thay cho §."
+  },
+  {
+    "id": "slime-customizer/common/crafting-recipe",
+    "title": "Công thức Chế tạo",
+    "label": "Công thức Chế tạo",
+    "excerpt": "Mỗi vật phẩm đều cần chỉ định công thức. Trang này sẽ giải thích thống nhất về phần công thức."
+  },
+  {
+    "id": "slime-customizer/common/registering",
+    "title": "Đăng ký",
+    "label": "Đăng ký",
+    "excerpt": "Tất cả phân loại / vật phẩm đều cần được đăng ký mới có thể hiển thị trong sách hướng dẫn Slimefun."
+  },
+  {
+    "id": "slime-customizer/common/saved-items",
+    "title": "Vật phẩm đã Lưu",
+    "label": "Vật phẩm đã Lưu",
+    "excerpt": "Addon Slimefun Tùy chỉnh hỗ trợ bất kỳ vật phẩm tùy chỉnh nào, có thể là vật phẩm từ bất kỳ plugin nào khác."
+  },
+  {
+    "id": "slime-customizer/common/skull-items",
+    "title": "Sử dụng Vật phẩm Đầu lâu",
+    "label": "Sử dụng Vật phẩm Đầu lâu",
+    "excerpt": "Bạn muốn sử dụng vật phẩm đầu lâu thay vì khối khác làm máy móc? Hoàn toàn không vấn đề. Bạn chỉ cần thay thế loại khối của máy thành SKULL<hash>."
+  },
+  {
+    "id": "slime-customizer/config/capacitors",
+    "title": "Tụ điện",
+    "label": "Tụ điện",
+    "excerpt": "EXAMPLECAPACITOR:"
+  },
+  {
+    "id": "slime-customizer/config/categories",
+    "title": "Phân loại",
+    "label": "Phân loại",
+    "excerpt": "slimecustomizer:"
+  },
+  {
+    "id": "slime-customizer/config/generators",
+    "title": "Máy phát điện",
+    "label": "Máy phát điện",
+    "excerpt": "EXAMPLEGENERATOR:"
+  },
+  {
+    "id": "slime-customizer/config/geo-resources",
+    "title": "Tài nguyên Địa chất",
+    "label": "Tài nguyên Địa chất",
+    "excerpt": "EXAMPLEGEO:"
+  },
+  {
+    "id": "slime-customizer/config/index",
+    "title": "Tệp cấu hình",
+    "label": "Tệp cấu hình",
+    "excerpt": "Tất cả các tệp cấu hình sẽ được tải theo thứ tự, thứ tự tải là thứ tự tệp cấu hình trong thanh điều hướng bên trái."
+  },
+  {
+    "id": "slime-customizer/config/items",
+    "title": "Vật phẩm",
+    "label": "Vật phẩm",
+    "excerpt": "EXAMPLEITEM:"
+  },
+  {
+    "id": "slime-customizer/config/machines",
+    "title": "Máy móc",
+    "label": "Máy móc",
+    "excerpt": "EXAMPLEMACHINE:"
+  },
+  {
+    "id": "slime-customizer/config/material-generators",
+    "title": "Máy Tạo Vật liệu",
+    "label": "Máy Tạo Vật liệu",
+    "excerpt": "EXAMPLEMATERIALGENERATOR:"
+  },
+  {
+    "id": "slime-customizer/config/mob-drops",
+    "title": "Vật phẩm Rơi từ Quái",
+    "label": "Vật phẩm Rơi từ Quái",
+    "excerpt": "EXAMPLEDROP:"
+  },
+  {
+    "id": "slime-customizer/config/researches",
+    "title": "Nghiên cứu",
+    "label": "Nghiên cứu",
+    "excerpt": "exampleresearch:"
+  },
+  {
+    "id": "slime-customizer/config/sc-addon",
+    "title": "Thông tin Tải Plugin",
+    "label": "Thông tin Tải Plugin",
+    "excerpt": "depend:"
+  },
+  {
+    "id": "slime-customizer/config/solar-generators",
+    "title": "Máy phát điện Năng lượng Mặt trời",
+    "label": "Máy phát điện Năng lượng Mặt trời",
+    "excerpt": "EXAMPLESOLARGENERATOR:"
+  },
+  {
+    "id": "slime-customizer/design/balancing",
+    "title": "Cân bằng Game",
+    "label": "Cân bằng Game",
+    "excerpt": "Một addon tốt cần có sự cân bằng game tốt. Khi chế tạo một máy móc, cần xem xét tiến độ chơi tổng thể của người chơi trên máy chủ, tránh tạo ra quá nhiều máy mó"
+  },
+  {
+    "id": "slime-customizer/design/better-recipe",
+    "title": "Làm đẹp Trang Công thức",
+    "label": "Làm đẹp Trang Công thức",
+    "excerpt": "Trang này chủ yếu nói về việc làm đẹp trang công thức."
+  },
+  {
+    "id": "slime-customizer/design/items-arrangement",
+    "title": "Gợi ý Sắp xếp Vật phẩm",
+    "label": "Gợi ý Sắp xếp Vật phẩm",
+    "excerpt": "Nếu bạn muốn addon của mình có tổ chức hơn, bạn có thể tạo nhiều phân loại con và đặt các loại vật phẩm khác nhau vào phân loại con tương ứng."
+  },
+  {
+    "id": "slime-customizer/eula",
+    "title": "Thỏa thuận Người dùng Cuối",
+    "label": "Thỏa thuận Người dùng Cuối",
+    "excerpt": "Thỏa thuận Người dùng Cuối (sau đây gọi là “Thỏa thuận này”) áp dụng cho plugin SlimeCustomizer bản Hán hóa (sau đây gọi là “Plugin này”) của Nhóm Hán hóa Slime"
+  },
+  {
+    "id": "slime-customizer/index",
+    "title": "Addon Slimefun Tùy chỉnh",
+    "label": "Addon Slimefun Tùy chỉnh",
+    "excerpt": "SlimeCustomizer là một addon Slimefun (sau đây gọi tắt là SC), cho phép chủ máy chủ tạo một addon chỉ thông qua tệp cấu hình, thao tác đơn giản dễ hiểu."
+  },
+  {
+    "id": "slime-tinker/getting-started",
+    "title": "Nhập môn",
+    "label": "Nhập môn",
+    "excerpt": "Chào mừng đến với Linh Hồn Thợ Rèn! Hướng dẫn này sẽ cho bạn biết những kiến thức thiết yếu về Slime Tinker và cách chế tạo một trang bị Tinker."
+  },
+  {
+    "id": "slime-tinker/index",
+    "title": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
+    "label": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
+    "excerpt": "Slime Tinker là một addon của Slimefun, nhằm tái hiện trải nghiệm của mod Tinkers' Construct nổi tiếng (liên kết) trên máy chủ không dùng mod."
+  },
+  {
+    "id": "slime-tinker/traits/armor-traits",
+    "title": "Đặc tính Giáp",
+    "label": "Đặc tính Giáp",
+    "excerpt": "Các bộ phận khác nhau của giáp sở hữu các đặc tính khác nhau tùy theo chất liệu của chúng. Mỗi đặc tính sẽ có biểu hiện khác nhau trong các tình huống khác nhau"
+  },
+  {
+    "id": "slime-tinker/traits/tools-traits",
+    "title": "Đặc tính Công cụ",
+    "label": "Đặc tính Công cụ",
+    "excerpt": "Các bộ phận khác nhau của công cụ sở hữu các đặc tính khác nhau tùy theo chất liệu của chúng. Mỗi đặc tính sẽ có biểu hiện khác nhau trong các tình huống khác n"
+  },
+  {
+    "id": "slime-tinker/workstations/tinkers-smeltery",
+    "title": "Lò Nung Tinker",
+    "label": "Lò Nung Tinker",
+    "excerpt": "Lò Nung Tinker là trạm làm việc quan trọng nhất trong Slime Tinker, nó là một cấu trúc đa khối."
+  },
+  {
+    "id": "slimefun-advancements/config/advancements",
+    "title": "Cấu hình Tiến độ",
+    "label": "Cấu hình Tiến độ",
+    "excerpt": "portableworkbench:"
+  },
+  {
+    "id": "slimefun-advancements/config/groups",
+    "title": "Cấu hình Nhóm Tiến độ",
+    "label": "Cấu hình Nhóm Tiến độ",
+    "excerpt": "Nhóm tiến độ sẽ được Tiến độ sử dụng để hiển thị tiến độ theo nhóm."
+  },
+  {
+    "id": "slimefun-advancements/index",
+    "title": "Tiến Độ Slimefun",
+    "label": "Tiến Độ Slimefun",
+    "excerpt": "Đây là Wiki tiếng Trung không chính thức của SlimefunAdvancements."
+  },
+  {
+    "id": "slimefun-advancements/set-item",
+    "title": "Thiết lập Vật phẩm",
+    "label": "Thiết lập Vật phẩm",
+    "excerpt": "Bạn có thể sử dụng ba phương pháp sau để thiết lập vật phẩm."
+  },
+  {
+    "id": "transc-endence/index",
+    "title": "Công Nghệ Tận Cùng",
+    "label": "Công Nghệ Tận Cùng",
+    "excerpt": "Wiki tiếng Trung không chính thức của TranscEndence, được biên soạn bởi haiman233."
+  },
+  {
+    "id": "transc-endence/machines/quirp-annihilator",
+    "title": "Máy Ngưng Tụ Hạt",
+    "label": "Máy Ngưng Tụ Hạt",
+    "excerpt": "Máy Ngưng Tụ Hạt được dùng để sản xuất Hạt ngưng tụ."
+  },
+  {
+    "id": "transc-endence/machines/quirp-oscillator",
+    "title": "Máy Tạo Hạt",
+    "label": "Máy Tạo Hạt",
+    "excerpt": "Máy Tạo Hạt được dùng để sản xuất hai loại Hạt ngang (Up/Down) và hai loại Hạt dọc (Left/Right)."
+  },
+  {
+    "id": "transc-endence/machines/quirp-scatterer",
+    "title": "Máy Phát Điện Hạt",
+    "label": "Máy Phát Điện Hạt",
+    "excerpt": "Máy Phát Điện Hạt có thể sử dụng hạt để phát điện."
+  },
+  {
+    "id": "transc-endence/machines/stabilizer",
+    "title": "Bộ Ổn Định",
+    "label": "Bộ Ổn Định",
+    "excerpt": "Bộ Ổn Định được dùng để chế tạo thỏi ổn định."
+  },
+  {
+    "id": "transc-endence/machines/zot-overloader",
+    "title": "Máy Quá Tải Hạt",
+    "label": "Máy Quá Tải Hạt",
+    "excerpt": "Máy Quá Tải Hạt được dùng để tích điện cho hạt định hướng chưa tích điện."
+  },
+  {
+    "id": "transc-endence/walkthrough",
+    "title": "Hướng dẫn chính thức",
+    "label": "Hướng dẫn chính thức",
+    "excerpt": "Trang này chứa một phần hướng dẫn về addon, bạn có thể tìm thấy thêm chi tiết về từng phần và lộ trình lý thuyết bạn nên tuân theo để phát triển thuận lợi ở đây"
+  }
+]

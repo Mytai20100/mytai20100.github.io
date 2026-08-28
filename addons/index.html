@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wiki Addons Slimefun Tiếng Việt</title>
+<meta name="description" content="Wiki Slimefun tiếng Việt không chính thức">
+<link rel="icon" href="static/images/favicon.ico">
+<link rel="stylesheet" href="static/katex/katex.min.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/content.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800;900&family=JetBrains+Mono:wght@600&family=Noto+Sans+SC:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="topbar">
+<a class="brand" href="#/Home">
+<img src="static/images/logo.webp" alt="logo" width="38" height="38">
+<div>
+<div class="brand-title">Wiki Slimefun Tiếng Việt</div>
+<div class="brand-subtitle">Slimefun Wiki · Không chính thức</div>
+</div>
+</a>
+<nav class="nav-links" aria-label="Điều hướng chính">
+<a href="#/Home" data-route="Home">Wiki</a>
+<a href="https://github.com/Servernotdie/Slimefun-Wiki" target="_blank" rel="noopener">GitHub</a>
+</nav>
+<div class="topbar-actions">
+<div class="search-wrap">
+<input id="searchInput" type="search" placeholder="Tìm tài liệu, máy móc, tài nguyên…" autocomplete="off">
+<span class="search-icon">⌕</span>
+<div id="searchPanel" class="search-panel">
+<div class="search-panel-head"><span>Tìm kiếm</span><span id="searchCount" class="kbd">271 bài</span><button id="searchClear" class="chip">Xóa</button></div>
+<div id="searchResults" class="search-results"></div>
+</div>
+</div>
+</div>
+</header>
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+<div class="layout">
+<aside id="sidebar" class="sidebar"></aside>
+<main class="main">
+<section id="hero" class="hero">
+<div class="hero-main">
+<h1>Wiki Slimefun Tiếng Việt</h1>
+<p>Sổ tay Slimefun4 không chính thức, gồm <strong id="statDocs">271</strong> tài liệu, bao phủ máy cơ bản, năng lượng, GPS, vận chuyển và toàn bộ vật phẩm.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#/Home" data-route="Home">Vào Wiki</a>
+<a class="btn btn-ghost" href="#/Getting-Started" data-route="Getting-Started">Bắt đầu nhanh</a>
+</div>
+</div>
+</section>
+<section class="content-card">
+<div class="content-head">
+<div style="flex:1;min-width:0">
+<div id="breadcrumb" class="breadcrumb"><a href="#/">Trang chủ</a><span>/</span><span>Đang tải</span></div>
+<h1 id="docTitle" class="doc-title">Đang tải…</h1>
+</div>
+<div id="docMeta" class="doc-meta"></div>
+</div>
+<div id="tocInline" class="toc-inline"></div>
+<article id="article" class="article"></article>
+<div id="nextPrev" class="nextprev" style="margin:0 22px 22px"></div>
+</section>
+</main>
+<aside class="toc">
+<div class="toc-card">
+<div class="toc-head"><span>Mục lục</span><span class="kbd">TOC</span></div>
+<div id="tocList" class="toc-list"></div>
+</div>
+</aside>
+</div>
+<footer class="footer">
+<div class="footer-inner" style="padding-top:0">
+<div class="footer-bottom" style="grid-column:1/-1">
+<span>© 2026 mytai20100</span>
+</div>
+</div>
+</footer>
+<script type="module" src="assets/js/app.js?v=20260827b"></script>
+</body>
+</html>

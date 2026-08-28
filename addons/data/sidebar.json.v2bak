@@ -1,0 +1,1464 @@
+[
+  {
+    "type": "doc",
+    "id": "list",
+    "label": "Wiki 列表"
+  },
+  {
+    "type": "doc",
+    "id": "download",
+    "label": "下载与安装"
+  },
+  {
+    "type": "category",
+    "label": "魔法水晶编年史",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "crystamae-historia/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "制作法术",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/what-is-crystamae",
+            "label": "什么是魔法水晶?"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/chronicling",
+            "label": "发掘方块故事"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/realisation",
+            "label": "转化为魔法水晶"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/liquefaction",
+            "label": "液化"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/plate-charging",
+            "label": "魔法板与法术板"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/spell-crafting/stave-configurator",
+            "label": "法杖配置器"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "法杖与工具",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/block-veil",
+            "label": "方块隐藏器"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/refraction-lens",
+            "label": "折射棱镜"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/ephemeral-tables",
+            "label": "临时工作台"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/spell-plates",
+            "label": "法术板"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/connecting-compass",
+            "label": "连接指南针"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/displacer",
+            "label": "置换器"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/luminescence-scoops",
+            "label": "发光勺"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/tools/recalling-lattice",
+            "label": "魔法传送网"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "魔法与科技",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/lamps",
+            "label": "驱散之灯"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/vacuums",
+            "label": "空气炮"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/mob-spawning-dirt",
+            "label": "诅咒之地与灵魂之地"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/damage-plates",
+            "label": "灼烧板与陷阱板"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/experience-collector",
+            "label": "经验收集器"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/ender-inhibitors",
+            "label": "末影人抑制器"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/verache-candles",
+            "label": "防刷怪蜡烛"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/mysterious-items",
+            "label": "神秘物品"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/greenhouse-glass",
+            "label": "温室玻璃"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/trophy-display",
+            "label": "战利品展示"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/exaltation-stand",
+            "label": "尊贵展台"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/diverging-waystone",
+            "label": "路标"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/angel-block",
+            "label": "天使方块"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/philosophers-spray",
+            "label": "哲学家喷雾"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/glass-of-milk",
+            "label": "牛奶玻璃"
+          },
+          {
+            "type": "doc",
+            "id": "crystamae-historia/gadgets/voids",
+            "label": "虚空裂隙"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "魔法与艺术",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/artistic-items/index",
+            "label": "魔法与艺术"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "尊贵物品",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/exalted-items/index",
+            "label": "尊贵物品"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "独特物品",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "crystamae-historia/uniques/index",
+            "label": "独特物品"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "农耕工艺",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "cultivation/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "总览",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/overview/crop-breeding",
+            "label": "培育作物"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/overview/index",
+            "label": "总览"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "合成物品",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/crafting-items/index",
+            "label": "合成物品"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "工具",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/tools/crop-sticks",
+            "label": "作物架"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/tools/plant-analyzer",
+            "label": "植物分析仪"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/tools/seed-pack",
+            "label": "种子袋"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "机器",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/machines/garden-cloche",
+            "label": "园艺玻璃罩"
+          },
+          {
+            "type": "doc",
+            "id": "cultivation/machines/cooking-work-stations",
+            "label": "厨房柜台"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "植物",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/plants/index",
+            "label": "植物"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "开发者",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "cultivation/developers/index",
+            "label": "开发者指南"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "EMC 科技",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "emctech/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "emctech/what-is-emc",
+        "label": "什么是 EMC？"
+      },
+      {
+        "type": "doc",
+        "id": "emctech/emc-calculations",
+        "label": "EMC 计算"
+      },
+      {
+        "type": "doc",
+        "id": "emctech/balancing",
+        "label": "平衡性说明"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "异域花园",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "exotic-garden/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "exotic-garden/getting-started",
+        "label": "入门"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "蓬松机器",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "fluffy-machines/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "多方块结构",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/multiblock/crank-generator",
+            "label": "手摇发电机"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/multiblock/foundry",
+            "label": "铸造厂"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "机器",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/auto-crafting-table",
+            "label": "全自动工作台（原版）"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/auto-crafters",
+            "label": "全自动合成机"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/advanced-charging-bench",
+            "label": "高级充电台"
+          },
+          {
+            "type": "doc",
+            "id": "fluffy-machines/machines/smart-factory",
+            "label": "智能工厂"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "蓬松箱子",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "fluffy-machines/barrels/index",
+            "label": "蓬松箱子"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "神秘科技",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "foxy-machines/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "foxy-machines/damage-types",
+        "label": "伤害类型"
+      },
+      {
+        "type": "category",
+        "label": "机器",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/improvement-forge",
+            "label": "改进锻造台"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/potion-mixer",
+            "label": "药水混合器"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/gold-refinery",
+            "label": "电力炼金厂"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/chunk-loader",
+            "label": "区块加载器"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/machines/forcefield-dome",
+            "label": "穹顶力场"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "工具",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/unbreakable-rune",
+            "label": "古代符文[无法破坏]"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/poseidons-fishing-rod",
+            "label": "波塞冬的钓鱼竿"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/electric-elemental-staves",
+            "label": "电力元素法杖"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/boosted-rail",
+            "label": "提速铁轨"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/berry-bush-trimmer",
+            "label": "甜浆果丛修剪器"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/tools/wands",
+            "label": "位置选择器/填充棒/海绵棒"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "装备",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/healing-bow",
+            "label": "治愈之弓"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/acri-arcum",
+            "label": "锋利之弓"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/cursed-sword",
+            "label": "诅咒之剑"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/celestial-sword",
+            "label": "天界之剑"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/elucidator",
+            "label": "阐释者"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/equipment/armor",
+            "label": "护甲"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "献祭祭坛",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/sacrificial-altar/index",
+            "label": "献祭祭坛"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "首领",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "foxy-machines/boss/pixie-queen",
+            "label": "精灵女王"
+          },
+          {
+            "type": "doc",
+            "id": "foxy-machines/boss/headless-horseman",
+            "label": "无头骑士"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "星际科技",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "galactifun/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "galactifun/sealing",
+        "label": "密封"
+      },
+      {
+        "type": "category",
+        "label": "天体",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/index",
+            "label": "天体"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/mars",
+            "label": "火星"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/the-moon",
+            "label": "月球"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/titan",
+            "label": "泰坦"
+          },
+          {
+            "type": "doc",
+            "id": "galactifun/celestial-objects/venus",
+            "label": "金星"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "无尽贪婪",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "infinity-expansion/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "机器",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/advanced-anvil",
+            "label": "高级铁砧"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/infinity-forge",
+            "label": "无尽工作台"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/strainer",
+            "label": "滤网"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/cobblestone-generator",
+            "label": "圆石生成器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/virtual-farm",
+            "label": "自动农场"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/tree-grower",
+            "label": "自动植树机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/void-harvester",
+            "label": "虚空收集者"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/stoneworks-factory",
+            "label": "石材厂"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/singularity-constructor",
+            "label": "奇点构造机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/resource-synthesizer",
+            "label": "资源合成器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/obsidian-generator",
+            "label": "黑曜石生成器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/extreme-freezer",
+            "label": "极寒冰柜"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/dust-extractor",
+            "label": "磨粉机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/cobble-press",
+            "label": "圆石压缩机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/ingot-former",
+            "label": "铸锭机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/uranium-extractor",
+            "label": "铀提取器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/decompressor",
+            "label": "分解器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/gear-transformer",
+            "label": "装备材质转换器"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/concrete-molding-machine",
+            "label": "混凝土浇筑机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/quarries",
+            "label": "矿机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/machines/powered-bedrock",
+            "label": "充能基岩"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "发电机",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/solar-generator",
+            "label": "太阳能板"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/hydro-generator",
+            "label": "水力发电机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/geothermal-generator",
+            "label": "地热发电机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/void-panel",
+            "label": "虚空发电机"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/infinity-reactor",
+            "label": "无尽反应堆"
+          },
+          {
+            "type": "doc",
+            "id": "infinity-expansion/generators/infinite-panel",
+            "label": "无尽发电机"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/mob-simulation",
+        "label": "生物模拟"
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/singularities",
+        "label": "奇点"
+      },
+      {
+        "type": "doc",
+        "id": "infinity-expansion/storage",
+        "label": "存储"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "下界乌托邦",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "netheopoiesis/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "总览",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/overview/purification",
+            "label": "净化"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/overview/growing-and-breeding-plants",
+            "label": "培育"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "净化",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/sleeping-in-the-nether",
+            "label": "在下界睡觉"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/water-in-the-nether",
+            "label": "在下界放水"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/friendly-mobs",
+            "label": "友好生物"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/a-better-barter",
+            "label": "以物换物奖励翻倍"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/mob-swapping",
+            "label": "生物替换"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/mob-spawning",
+            "label": "生物生成"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/purifying-aura",
+            "label": "净化光环"
+          },
+          {
+            "type": "doc",
+            "id": "netheopoiesis/purification/to-the-end",
+            "label": "前往末地"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "培育",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "netheopoiesis/breeding/seed-data",
+            "label": "种子数据表"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "网络",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "networks/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "基础",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/basics/what-is-networks",
+            "label": "什么是网络？"
+          },
+          {
+            "type": "doc",
+            "id": "networks/basics/mechanism",
+            "label": "存储与取出机制"
+          },
+          {
+            "type": "doc",
+            "id": "networks/basics/index",
+            "label": "基础"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "网络节点",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-controller",
+            "label": "网络控制器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-bridge",
+            "label": "网桥"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-monitor",
+            "label": "网络监视器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-importer",
+            "label": "网络入口"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-exporter",
+            "label": "网络出口"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-grabber",
+            "label": "网络抓取器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-pusher",
+            "label": "网络推送器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-control-x",
+            "label": "网络剪切器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-control-v",
+            "label": "网络粘贴器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vacuum",
+            "label": "网络吸尘器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vanilla-grabber",
+            "label": "网络原版抓取器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-vanilla-pusher",
+            "label": "网络原版推送器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-wireless-transmitter",
+            "label": "网络无线发射器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-wireless-receiver",
+            "label": "网络无线接收器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-purger",
+            "label": "网络清除器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-grid",
+            "label": "网格"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-cell",
+            "label": "网络单元"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-greedy-block",
+            "label": "网络阻断器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-capacitor",
+            "label": "网络电容"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-power-outlet",
+            "label": "网络插口"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-power-display",
+            "label": "网络电表"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-encoder",
+            "label": "网络配方编码器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/network-autocrafters",
+            "label": "网络自动合成机"
+          },
+          {
+            "type": "doc",
+            "id": "networks/network-nodes/index",
+            "label": "网络节点"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "工具",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/tools/crafting-blueprint",
+            "label": "合成蓝图"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-probe",
+            "label": "网络探测器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-remote",
+            "label": "网络远程访问器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-crayon",
+            "label": "网络绘制器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-configurator",
+            "label": "网络配置器"
+          },
+          {
+            "type": "doc",
+            "id": "networks/tools/network-wireless-configurator",
+            "label": "网络无线配置器"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "网络存储",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "networks/network-storage/quantum-storage",
+            "label": "量子存储"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "自定义粘液附属",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slime-customizer/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "slime-customizer/eula",
+        "label": "最终用户协议"
+      },
+      {
+        "type": "category",
+        "label": "通用信息",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/registering",
+            "label": "注册"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/color-codes",
+            "label": "颜色代码"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/skull-items",
+            "label": "使用头颅物品"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/crafting-recipe",
+            "label": "合成配方"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/common/saved-items",
+            "label": "保存的物品"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "配置文件",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/sc-addon",
+            "label": "插件加载信息"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/categories",
+            "label": "分类"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/mob-drops",
+            "label": "生物掉落"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/geo-resources",
+            "label": "自然资源"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/items",
+            "label": "物品"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/capacitors",
+            "label": "电容"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/machines",
+            "label": "机器"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/generators",
+            "label": "发电机"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/solar-generators",
+            "label": "太阳能发电机"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/material-generators",
+            "label": "材料生成器"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/researches",
+            "label": "研究"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/config/index",
+            "label": "配置文件"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "进阶教程",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/use-slimefun-item-id",
+            "label": "使用粘液物品 ID"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/radioactive-items",
+            "label": "辐射物品"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/food-items",
+            "label": "自定义食物"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/placeable-items",
+            "label": "自定义可放置方块"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/advanced/index",
+            "label": "进阶自定义教程"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "附属设计",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/better-recipe",
+            "label": "配方页面美化"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/items-arrangement",
+            "label": "物品排布建议"
+          },
+          {
+            "type": "doc",
+            "id": "slime-customizer/design/balancing",
+            "label": "游戏平衡"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "粘液匠魂",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slime-tinker/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "slime-tinker/getting-started",
+        "label": "入门"
+      },
+      {
+        "type": "category",
+        "label": "工作站",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-tinker/workstations/tinkers-smeltery",
+            "label": "匠魂冶炼炉"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "category",
+        "label": "特性列表",
+        "collapsed": true,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slime-tinker/traits/tools-traits",
+            "label": "工具特性"
+          },
+          {
+            "type": "doc",
+            "id": "slime-tinker/traits/armor-traits",
+            "label": "防具特性"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "粘液科技进度",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "slimefun-advancements/index"
+    },
+    "items": [
+      {
+        "type": "category",
+        "label": "配置文件",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "slimefun-advancements/config/groups",
+            "label": "进度组配置"
+          },
+          {
+            "type": "doc",
+            "id": "slimefun-advancements/config/advancements",
+            "label": "进度配置"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      },
+      {
+        "type": "doc",
+        "id": "slimefun-advancements/set-item",
+        "label": "设置物品"
+      }
+    ]
+  },
+  {
+    "type": "category",
+    "label": "末地科技",
+    "collapsed": false,
+    "link": {
+      "type": "doc",
+      "id": "transc-endence/index"
+    },
+    "items": [
+      {
+        "type": "doc",
+        "id": "transc-endence/walkthrough",
+        "label": "官方攻略"
+      },
+      {
+        "type": "category",
+        "label": "机器",
+        "collapsed": false,
+        "items": [
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-oscillator",
+            "label": "粒子生产机"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-annihilator",
+            "label": "粒子冷凝机"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/quirp-scatterer",
+            "label": "粒子发电机"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/stabilizer",
+            "label": "稳定器"
+          },
+          {
+            "type": "doc",
+            "id": "transc-endence/machines/zot-overloader",
+            "label": "粒子过载机"
+          }
+        ],
+        "link": {
+          "type": "generated-index"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+---
+sidebar_position: 15
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Lưu Trữ
+
+Các đơn vị lưu trữ trong InfinityExpansion có thể lưu trữ lượng lớn vật phẩm.
+
+Đơn vị lưu trữ hỗ trợ tương tác với hệ thống vận chuyển, có thể chế tạo nhiều đơn vị lưu trữ để tạo thành một trung tâm kho tự động.
+
+## Bàn Chế Tạo Đơn Vị Lưu Trữ \{#storage-forge}
+
+Bạn có thể chế tạo hoặc nâng cấp đơn vị lưu trữ trong bàn chế tạo đơn vị lưu trữ.
+
+Sau khi nâng cấp đơn vị lưu trữ, các vật phẩm bên trong sẽ được chuyển sang, do đó bạn không cần lo lắng về việc mất vật phẩm sau khi nâng cấp.
+
+## Đơn Vị Lưu Trữ \{#storage-unit}
+
+Một đơn vị lưu trữ có thể lưu trữ một loại vật phẩm.
+
+Khi bạn nhấp chuột phải vào một đơn vị lưu trữ, bạn có thể mở giao diện đơn vị lưu trữ.
+
+<ImageGallery images={[
+  { src: '/images/infinity-expansion/storage-empty.png', alt: 'Đơn vị lưu trữ trống'}
+]} />
+
+### Cho vật phẩm vào
+
+Bạn có thể đặt vật phẩm vào ô nhập liệu bên trái, hoặc cho vật phẩm vào qua hệ thống vận chuyển.
+
+Khi bạn cho một loại vật phẩm nào đó vào, đơn vị lưu trữ đó sẽ chỉ dùng để lưu trữ loại vật phẩm đó. Khi cho vật phẩm khác vào ô nhập liệu, đơn vị lưu trữ sẽ không nhận.
+
+### Xem trạng thái
+
+Khi đã cho ít nhất 2 vật phẩm vào, ở giữa giao diện sẽ hiển thị vật phẩm mà đơn vị đang lưu trữ.
+Di chuột lên **trạng thái** ở phía trên để xem số lượng đã lưu trữ.
+
+Bạn có thể nhấp vào nút đó để chuyển đổi cách xử lý khi lưu trữ đầy:
+
+- **Bật** *Xóa đầu vào khi đầy* : Khi lưu trữ đầy, đơn vị lưu trữ sẽ xóa các vật phẩm nhập vào tiếp theo. Lưu ý: khi cho vật phẩm khác vào vẫn sẽ làm tắc đầu vào.
+- **Tắt** *Xóa đầu vào khi đầy* : Khi lưu trữ đầy, việc cho bất kỳ vật phẩm nào vào cũng sẽ làm tắc đầu vào, điều này có thể khiến các máy khác không thể xuất ra hoặc hệ thống vận chuyển bị đầy.
+
+<ImageGallery images={[
+  { src: '/images/infinity-expansion/storage-status.png', alt: 'Trạng thái đơn vị lưu trữ'}
+]} />
+
+### Thao tác nhanh
+
+Bạn có thể thực hiện một số thao tác nhanh thông qua các nút màu xanh lá ở phía dưới giao diện:
+
+<ImageGallery images={[
+  { src: '/images/infinity-expansion/storage-interactions.png', alt: 'Thao tác nhanh'}
+]} />
+
+### Biển hiệu
+
+Bạn có thể đặt một biển hiệu (bất kỳ loại nào) ở mặt bên của đơn vị lưu trữ, như vậy bạn có thể biết vật phẩm và số lượng đang lưu trữ mà không cần mở đơn vị lưu trữ.
+
+<ImageGallery images={[
+  { src: '/images/infinity-expansion/storage-sign.png', alt: 'Biển hiệu'}
+]} />
+
+Biển hiệu không cần điền bất kỳ nội dung nào, cứ khoảng 10 giây sẽ cập nhật nội dung biển hiệu một lần.

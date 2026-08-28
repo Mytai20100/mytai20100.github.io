@@ -1,0 +1,23 @@
+---
+sidebar_position: 4
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Đầu vào Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-importer.png', alt: 'Đầu vào Mạng lưới' }
+]} />
+
+Đầu vào Mạng lưới cho phép người chơi đưa vật phẩm vào mạng lưới thông qua Mạng lưới Vận chuyển (Cargo).
+
+Đầu vào Mạng lưới có tổng cộng 9 ô, có thể **đưa** vật phẩm vào thông qua Mạng lưới Vận chuyển.
+
+Mỗi tick Slimefun, mạng lưới sẽ nhận vật phẩm từ Đầu vào Mạng lưới và đưa vật phẩm vào mạng lưới theo [cơ chế Lưu trữ](../basics/mechanism).
+
+:::info
+
+Không giống như nút vận chuyển (đầu vào), Đầu vào Mạng lưới sẽ không lấy vật phẩm từ khối kề bên. Đầu vào Mạng lưới chủ yếu đóng vai trò là giao diện giữa mạng lưới và hệ thống vận chuyển.
+
+:::

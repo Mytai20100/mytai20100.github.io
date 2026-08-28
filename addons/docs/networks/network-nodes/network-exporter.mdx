@@ -1,0 +1,21 @@
+---
+sidebar_position: 5
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Đầu ra Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-exporter.png', alt: 'Đầu ra Mạng lưới' }
+]} />
+
+Đầu ra Mạng lưới cho phép người chơi **lấy** vật phẩm từ mạng lưới để sử dụng cho Mạng lưới Vận chuyển (Cargo).
+
+Đầu ra Mạng lưới cần đặt một vật phẩm làm mẫu. Mỗi tick Slimefun, mạng lưới sẽ lấy một nhóm vật phẩm tương ứng từ mạng lưới theo [cơ chế Lấy ra](../basics/mechanism). Hệ thống vận chuyển có thể lấy vật phẩm từ đó.
+
+:::info
+
+Không giống như nút vận chuyển (đầu ra), Đầu ra Mạng lưới sẽ không xuất vật phẩm sang khối kề bên. Cần sử dụng hệ thống vận chuyển hoặc lấy thủ công.
+
+:::

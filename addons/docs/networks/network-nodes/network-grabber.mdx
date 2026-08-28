@@ -1,0 +1,20 @@
+---
+sidebar_position: 6
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Trình Lấy Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-grabber.png', alt: 'Trình Lấy Mạng lưới' }
+]} />
+
+Trình Lấy Mạng lưới có thể trích xuất vật phẩm từ khối Slimefun kề bên và lưu vào mạng lưới.
+
+Trình Lấy Mạng lưới là một khối mạng có thể chọn hướng. Khối mục tiêu phải là khối Slimefun và có ô đầu ra có thể được lấy ra thông qua **vận chuyển (Cargo)**.<br />
+Bạn có thể dùng [Bộ Cấu hình Mạng lưới](../tools/network-configurator) để sao chép cài đặt hướng.
+
+Mạng lưới cần có không gian khả dụng để trình lấy hoạt động. Trình lấy sẽ lưu vật phẩm vào mạng lưới theo [cơ chế Lưu trữ](../basics/mechanism).
+
+Nếu mạng lưới đã bật [chức năng vẽ](../tools/network-crayon), khi trình lấy lấy được một vật phẩm, hiệu ứng hạt sẽ hiển thị phía trên khối để đánh dấu hướng lấy.
