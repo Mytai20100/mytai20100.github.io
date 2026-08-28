@@ -2,8 +2,8 @@
 sidebar_position: 1
 ---
 
-# Tiến Độ Slimefun
+# SlimefunAdvancements
 
-Đây là Wiki tiếng Trung không chính thức của SlimefunAdvancements.
+Đây là Wiki tiếng Việt không chính thức của SlimefunAdvancements.
 
 Sử dụng chức năng tìm kiếm, hoặc tìm trang liên quan trong thanh điều hướng bên trái.

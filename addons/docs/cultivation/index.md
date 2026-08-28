@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# cultivation
+# Cultivation
 
 Đây là Wiki tiếng Việt không chính thức của Cultivation.
 

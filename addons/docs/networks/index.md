@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Mạng lưới
+# Networks
 
 Đây là Wiki tiếng Việt không chính thức của Networks.
 

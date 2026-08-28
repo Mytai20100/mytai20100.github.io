@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Addon Slimefun Tùy chỉnh
+# SlimeCustomizer
 
 SlimeCustomizer là một addon Slimefun (sau đây gọi tắt là SC), cho phép chủ máy chủ tạo một addon chỉ thông qua tệp cấu hình, thao tác đơn giản dễ hiểu.
 

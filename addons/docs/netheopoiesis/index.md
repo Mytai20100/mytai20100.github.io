@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Netheopoiesis - Địa Đàng Nether
+# Netheopoiesis
 
 Đây là Wiki tiếng Việt không chính thức của Netheopoiesis.
 

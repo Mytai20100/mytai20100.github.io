@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính
+# SlimeTinker
 
-Slime Tinker là một addon của Slimefun, nhằm tái hiện trải nghiệm của mod Tinkers' Construct nổi tiếng ([liên kết](https://www.curseforge.com/minecraft/mc-mods/tinkers-construct)) trên máy chủ không dùng mod.
+SlimeTinker là một addon của Slimefun, nhằm tái hiện trải nghiệm của mod Tinkers' Construct nổi tiếng ([liên kết](https://www.curseforge.com/minecraft/mc-mods/tinkers-construct)) trên máy chủ không dùng mod.
 
 ## Các tính năng bao gồm
 

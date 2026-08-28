@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Máy móc Fluffy
+# FluffyMachines
 
 Đây là Wiki tiếng Việt không chính thức của FluffyMachines.
 

@@ -109,9 +109,9 @@
   },
   {
     "id": "crystamae-historia/index",
-    "title": "Biên Niên Sử Pha Lê Ma Thuật",
-    "label": "Biên Niên Sử Pha Lê Ma Thuật",
-    "excerpt": "Đây là Wiki tiếng Việt không chính thức của Crystamae Historia."
+    "title": "CrystamaeHistoria",
+    "label": "CrystamaeHistoria",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của CrystamaeHistoria."
   },
   {
     "id": "crystamae-historia/spell-crafting/chronicling",
@@ -289,8 +289,8 @@
   },
   {
     "id": "emctech/index",
-    "title": "Công nghệ EMC",
-    "label": "Công nghệ EMC",
+    "title": "EMCTech",
+    "label": "EMCTech",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của EMCTech."
   },
   {
@@ -307,8 +307,8 @@
   },
   {
     "id": "exotic-garden/index",
-    "title": "Vườn kỳ lạ",
-    "label": "Vườn kỳ lạ",
+    "title": "ExoticGarden",
+    "label": "ExoticGarden",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của ExoticGarden."
   },
   {
@@ -319,8 +319,8 @@
   },
   {
     "id": "fluffy-machines/index",
-    "title": "Máy móc Fluffy",
-    "label": "Máy móc Fluffy",
+    "title": "FluffyMachines",
+    "label": "FluffyMachines",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của FluffyMachines."
   },
   {
@@ -415,8 +415,8 @@
   },
   {
     "id": "foxy-machines/index",
-    "title": "Máy móc Foxy",
-    "label": "Máy móc Foxy",
+    "title": "FoxyMachines",
+    "label": "FoxyMachines",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của FoxyMachines."
   },
   {
@@ -523,8 +523,8 @@
   },
   {
     "id": "galactifun/index",
-    "title": "Galactifun - Công nghệ Liên sao",
-    "label": "Galactifun - Công nghệ Liên sao",
+    "title": "Galactifun",
+    "label": "Galactifun",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của Galactifun."
   },
   {
@@ -571,8 +571,8 @@
   },
   {
     "id": "infinity-expansion/index",
-    "title": "Infinity Expansion - Vô Hạn Mở Rộng",
-    "label": "Infinity Expansion - Vô Hạn Mở Rộng",
+    "title": "InfinityExpansion",
+    "label": "InfinityExpansion",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của InfinityExpansion."
   },
   {
@@ -733,8 +733,8 @@
   },
   {
     "id": "netheopoiesis/index",
-    "title": "Netheopoiesis - Địa Đàng Nether",
-    "label": "Netheopoiesis - Địa Đàng Nether",
+    "title": "Netheopoiesis",
+    "label": "Netheopoiesis",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của Netheopoiesis."
   },
   {
@@ -817,8 +817,8 @@
   },
   {
     "id": "networks/index",
-    "title": "Mạng lưới",
-    "label": "Mạng lưới",
+    "title": "Networks",
+    "label": "Networks",
     "excerpt": "Đây là Wiki tiếng Việt không chính thức của Networks."
   },
   {
@@ -1165,8 +1165,8 @@
   },
   {
     "id": "slime-customizer/index",
-    "title": "Addon Slimefun Tùy chỉnh",
-    "label": "Addon Slimefun Tùy chỉnh",
+    "title": "SlimeCustomizer",
+    "label": "SlimeCustomizer",
     "excerpt": "SlimeCustomizer là một addon Slimefun (sau đây gọi tắt là SC), cho phép chủ máy chủ tạo một addon chỉ thông qua tệp cấu hình, thao tác đơn giản dễ hiểu."
   },
   {
@@ -1177,9 +1177,9 @@
   },
   {
     "id": "slime-tinker/index",
-    "title": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
-    "label": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
-    "excerpt": "Slime Tinker là một addon của Slimefun, nhằm tái hiện trải nghiệm của mod Tinkers' Construct nổi tiếng (liên kết) trên máy chủ không dùng mod."
+    "title": "SlimeTinker",
+    "label": "SlimeTinker",
+    "excerpt": "SlimeTinker là một addon của Slimefun, nhằm tái hiện trải nghiệm của mod Tinkers' Construct nổi tiếng (liên kết) trên máy chủ không dùng mod."
   },
   {
     "id": "slime-tinker/traits/armor-traits",
@@ -1213,9 +1213,9 @@
   },
   {
     "id": "slimefun-advancements/index",
-    "title": "Tiến Độ Slimefun",
-    "label": "Tiến Độ Slimefun",
-    "excerpt": "Đây là Wiki tiếng Trung không chính thức của SlimefunAdvancements."
+    "title": "SlimefunAdvancements",
+    "label": "SlimefunAdvancements",
+    "excerpt": "Đây là Wiki tiếng Việt không chính thức của SlimefunAdvancements."
   },
   {
     "id": "slimefun-advancements/set-item",
@@ -1225,9 +1225,9 @@
   },
   {
     "id": "transc-endence/index",
-    "title": "Công Nghệ Tận Cùng",
-    "label": "Công Nghệ Tận Cùng",
-    "excerpt": "Wiki tiếng Trung không chính thức của TranscEndence, được biên soạn bởi haiman233."
+    "title": "TranscEndence",
+    "label": "TranscEndence",
+    "excerpt": "Wiki tiếng Việt không chính thức của TranscEndence, được biên soạn bởi haiman233."
   },
   {
     "id": "transc-endence/machines/quirp-annihilator",

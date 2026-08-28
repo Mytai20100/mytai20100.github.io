@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Infinity Expansion - Vô Hạn Mở Rộng
+# InfinityExpansion
 
 Đây là Wiki tiếng Việt không chính thức của InfinityExpansion.
 

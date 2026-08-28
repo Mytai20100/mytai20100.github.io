@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Galactifun - Công nghệ Liên sao
+# Galactifun
 
 Đây là Wiki tiếng Việt không chính thức của Galactifun.
 

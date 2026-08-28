@@ -11,7 +11,7 @@
   },
   {
     "type": "category",
-    "label": "Biên Niên Sử Pha Lê Ma Thuật",
+    "label": "CrystamaeHistoria",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -347,7 +347,7 @@
   },
   {
     "type": "category",
-    "label": "Công nghệ EMC",
+    "label": "EMCTech",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -373,7 +373,7 @@
   },
   {
     "type": "category",
-    "label": "Vườn kỳ lạ",
+    "label": "ExoticGarden",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -389,7 +389,7 @@
   },
   {
     "type": "category",
-    "label": "Máy móc Fluffy",
+    "label": "FluffyMachines",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -462,7 +462,7 @@
   },
   {
     "type": "category",
-    "label": "Máy móc Foxy",
+    "label": "FoxyMachines",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -625,7 +625,7 @@
   },
   {
     "type": "category",
-    "label": "Galactifun - Công nghệ Liên sao",
+    "label": "Galactifun",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -673,7 +673,7 @@
   },
   {
     "type": "category",
-    "label": "Infinity Expansion - Vô Hạn Mở Rộng",
+    "label": "InfinityExpansion",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -854,7 +854,7 @@
   },
   {
     "type": "category",
-    "label": "Netheopoiesis - Địa Đàng Nether",
+    "label": "Netheopoiesis",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -941,7 +941,7 @@
   },
   {
     "type": "category",
-    "label": "Mạng lưới",
+    "label": "Networks",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -1156,7 +1156,7 @@
   },
   {
     "type": "category",
-    "label": "Addon Slimefun Tùy chỉnh",
+    "label": "SlimeCustomizer",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -1325,7 +1325,7 @@
   },
   {
     "type": "category",
-    "label": "Slime Tinker - Linh Hồn Thợ Rèn Nhớt Dính",
+    "label": "SlimeTinker",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -1376,7 +1376,7 @@
   },
   {
     "type": "category",
-    "label": "Tiến Độ Slimefun",
+    "label": "SlimefunAdvancements",
     "collapsed": false,
     "link": {
       "type": "doc",
@@ -1412,7 +1412,7 @@
   },
   {
     "type": "category",
-    "label": "Công Nghệ Tận Cùng",
+    "label": "TranscEndence",
     "collapsed": false,
     "link": {
       "type": "doc",

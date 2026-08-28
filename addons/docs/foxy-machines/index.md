@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Máy móc Foxy
+# FoxyMachines
 
 Đây là Wiki tiếng Việt không chính thức của FoxyMachines.
 
