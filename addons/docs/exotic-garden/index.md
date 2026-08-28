@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Vườn kỳ lạ
+# exotic-garden
 
 Đây là Wiki tiếng Việt không chính thức của ExoticGarden.
 

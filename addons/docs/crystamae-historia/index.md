@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Biên Niên Sử Pha Lê Ma Thuật
+# crystamae-historia
 
 Đây là Wiki tiếng Việt không chính thức của Crystamae Historia.
 
