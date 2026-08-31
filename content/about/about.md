@@ -6,7 +6,7 @@ Thể loại: **Platypus Anarchy** — không phải semi-anarchy (vì nó hỗn
 ## Thông tin server
 
 - **Phiên bản server sử dụng:** Java 26.1.2 (bản cũ hơn vẫn vào được).
-- **World:** Bắt đâu từ 4/6/2026 tháng hiện tại 8/25/2026 đạt 46.33 GiB
+- **World:** Bắt đâu từ 4/6/2026 tháng hiện tại 8/31/2026 đạt 48.79 GiB
 - **Minecraft server core** : Lophine là 1 bản fork hiệu năng cực cao dành cho anarchy là em của luminol(Đã die) cho phép sử dụng cpu hiệu quả hơn bình thường
 - **Plugin:** Slimefun , CrazyEnchant(CE) , TPA , GSit Mememoon ,v.v
 - **Phần cứng**: Dual xeon 2680v4 , ram ecc 32 gb ram buss 2133.Mainbroad hàng OEM giá rẻ ZX-DU99D4 version 11
@@ -41,6 +41,8 @@ Chả có :D
 AuthMeBia, Mememoon, SlimeEasy , AdvancedTech, AuthMe, AxGraves, BackpackPlus, BetterReactor, Bump, CrazyEnchantments, DankTech2, Draconic, DynaTech , EcoPower, ElectricSpawners, EMCTech, ExoticGarden, floodgate, FluffyMachines, FNAmplifications, FoxyMachines, Geyser-Spigot, GrimAC ,GSit, GuizhanLibPlugin, InfinityExpansion, LiteXpansion, LuckPerms, MissileWarfare, MobCapturer, MomoTech, Networks, packetevents , PlaceholderAPI, randomspawn, SimpleMaterialGenerators, SimpleUtils, SkinsRestorer, Slimefun, SlimefunLuckyBlocks, SlimeGlue, SlimeHUD, SlimeTinker , SoulJars, SoundMuffler, spark, Supreme, TAB, TPA, VanillaRefresh, ViaBackwards, ViaVersion, voicechat , WorldStatus, zEssentials, zMenu 
 ## Wiki 
 [https://www.r34.cc.cd/wiki](https://www.r34.cc.cd/wiki)
+## Trang status
+[https://status.r34.cc.cd/](https://status.r34.cc.cd/)
 ## Giải thích plugin
 
 - **Mememoon là cái éo gì** Nó là 1 plugin custom do khứa rảnh như tui làm , chủ yếu nó vẫn thêm event bloodmoon vô thôi :P nhưng súc vật hơn nhiều lần ở chỗ nó buff sức mạnh nổ của creeper , buff mọi quái đều có giáp cả , cho phép spawn ở cả những nên éo thể spawn đc , mọi buff khác giống với bloodmoon thông thường . CÒn vài cơ chế ẩn như thỉnh thoảng nếu chunk hoặc vùng đó không có ánh sáng thì 1-10% sẽ có tỉ lệ dân làng thành zombie . Còn có 2 secret moon là 1# serene moon(trăng thanh bình) không spawn quái , buff tỉ lệ spawn cừu hồng lên tận 2.3 lần ; spawn động vật nhiều hơn , buff 3.2 lần xp nhận được 2# Super gravity moon(Éo bt dịch sao) Kiểu buff toàn sv kiểu trọng lực mặt trăng thôi loại này hiếm vaiz ra 
