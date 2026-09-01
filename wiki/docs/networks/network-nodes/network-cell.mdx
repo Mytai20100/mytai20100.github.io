@@ -1,0 +1,20 @@
+---
+sidebar_position: 18
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Ô Mạng
+
+<ImageGallery images={[
+  { src: '/images/networks/network-cell.png', alt: 'Ô Mạng' }
+]} />
+
+Ô Mạng là giải pháp lưu trữ cơ bản nhất do Mạng lưới cung cấp.<br />
+Một Ô Mạng có thể lưu trữ tối đa 54 ô vật phẩm (tương đương một rương đôi).
+
+Ô Mạng **không thể** tương tác với hệ thống vận chuyển (Cargo), cũng **không thể** tương tác với Trình Lấy Mạng lưới / Trình Đẩy Mạng lưới.
+
+Ô Mạng không cần đặt [Màn hình Mạng](./network-monitor) bên cạnh, nó được kết nối trực tiếp vào mạng lưới.
+
+Bạn có thể không cần sử dụng [Cầu Mạng](./network-bridge) để kết nối các Ô Mạng khác nhau. Giống như các [Nút Mạng](../network-nodes) khác, bản thân Ô Mạng đã có thể mở rộng phạm vi mạng lưới.

@@ -1,0 +1,73 @@
+---
+sidebar_position: 2
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Khai Quật Câu Chuyện Khối
+
+Bước đầu tiên để chế tạo phép thuật là khai quật câu chuyện trong khối hoặc vật phẩm thông qua Biên Niên Sử.
+
+## Giới thiệu
+
+Bất kỳ khối hoặc vật phẩm nào trên thế giới cũng đều chứa đựng ma thuật.
+
+Loại ma thuật này sẽ lưu động giữa các vật phẩm, không bao giờ ngừng. Tuy nhiên, các pháp sư thời kỳ đầu phát hiện, loại ma thuật này có thể ngừng lưu động trong điều kiện cụ thể.<br />
+Họ phát hiện, sau khi ma thuật này ngừng lưu động sẽ hiển hiện câu chuyện chứa trong khối.
+
+Các pháp sư đã chế tạo một thiết bị gọi là "Biên Niên Sử" để khai quật câu chuyện trong khối.
+
+<ImageGallery images={[
+  { src: '/images/crystamae-historia/chronicler.png', alt: 'Biên Niên Sử' }
+]} />
+
+Khi cung cấp cho Biên Niên Sử một khối hoặc vật phẩm trong Minecraft vanilla, Biên Niên Sử sẽ cố gắng khai quật câu chuyện ẩn giấu trong khối hoặc vật phẩm đó.<br />
+Khi một câu chuyện được khai quật, câu chuyện sẽ được ghi vào mô tả của khối hoặc vật phẩm, kèm theo loại pha lê ma thuật cụ thể.
+
+Khi tất cả câu chuyện được khai quật, chút pha lê ma thuật cuối cùng trong khối sẽ tạo thành một câu chuyện độc đáo, kể về chính bản thân khối.
+
+## Cơ chế
+
+### Cấp độ khối
+
+Mỗi khối/vật phẩm đều có cấp độ, cấp độ của khối phụ thuộc vào lượng năng lượng ma thuật chứa trong khối. Thông thường, khối càng phổ biến thì cấp độ càng thấp.
+
+| Cấp độ khối | Số lượng câu chuyện | Tỷ lệ câu chuyện |
+| ------ | ------- | ------- |
+| T1 | 1 ~ 3 | Thường: 90%<br />Hiếm: 10%<br />Quý hiếm: 0%<br />Sử thi: 0%<br />Huyền bí: 0% |
+| T2 | 2 ~ 3 | Thường: 70%<br />Hiếm: 20%<br />Quý hiếm: 10%<br />Sử thi: 0%<br />Huyền bí: 0% |
+| T3 | 2 ~ 4 | Thường: 50%<br />Hiếm: 30%<br />Quý hiếm: 15%<br />Sử thi: 5%<br />Huyền bí: 0% |
+| T4 | 3 ~ 4 | Thường: 25%<br />Hiếm: 35%<br />Quý hiếm: 25%<br />Sử thi: 15%<br />Huyền bí: 5% |
+| T5 | 4 ~ 5 | Thường: 10%<br />Hiếm: 30%<br />Quý hiếm: 25%<br />Sử thi: 20%<br />Huyền bí: 15% |
+
+## Cấp độ Biên Niên Sử
+
+Biên Niên Sử có 5 cấp độ, có thể khai quật vật phẩm hoặc khối ở cấp độ khác nhau.
+
+| Cấp độ Biên Niên Sử | Cấp khối có thể khai quật |
+| ------ | ------- |
+| T1 | T1 - T2 |
+| T2 | T1 - T3 |
+| T3 | T1 - T4 |
+| T4 | T1 - T5 |
+| T5 | T1 - T5 |
+
+Trong đó, Biên Niên Sử T5 hỗ trợ tự động hóa, vật phẩm ném phía trên nó sẽ được tự động thu thập và khai quật, sau khi hoàn thành sẽ rơi ra phía dưới.
+
+[ Tự động hóa sản xuất pha lê ma thuật](https://www.bilibili.com/video/av383199409)
+
+## Cấp độ câu chuyện
+
+Do khối cấp cao hơn chứa năng lượng ma thuật nhiều hơn, nên câu chuyện cấp cao hơn chứa số lượng pha lê ma thuật hóa lỏng cũng nhiều hơn.<br />
+Do đó, trong quá trình khai quật, bạn có thể thấy những câu chuyện hiếm hơn.
+
+Tất cả khối/vật phẩm đều chứa một câu chuyện độc đáo, mỗi khối/vật phẩm có câu chuyện độc đáo khác nhau, có hơn 1000 câu chuyện độc đáo đang chờ bạn khai quật.
+
+| Cấp độ câu chuyện | Số lượng pha lê ma thuật hóa lỏng |
+| ------ | ------------- |
+| Thường | 1 |
+| Hiếm | 3 |
+| Quý hiếm | 10 |
+| Sử thi | 25 |
+| Huyền bí | 50 |
+| Độc đáo | 2 |

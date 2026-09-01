@@ -1,0 +1,33 @@
+---
+sidebar_position: 3
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Bộ Truy cập Từ xa Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-remote.png', alt: 'Bộ Truy cập Từ xa Mạng lưới' }
+]} />
+
+Bộ Truy cập Từ xa Mạng lưới cho phép bạn truy cập [Lưới Mạng](../network-nodes/network-grid) từ xa.
+
+Cầm một Bộ Truy cập Từ xa và *Shift + nhấp chuột phải* vào một Lưới Mạng để liên kết.
+
+Nếu ở trong phạm vi, cầm Bộ Truy cập Từ xa đã liên kết là có thể mở Lưới Mạng đã liên kết.
+
+Chunk nơi Lưới Mạng đã liên kết phải được tải mới có thể sử dụng truy cập từ xa, vì vậy bạn cần đảm bảo Lưới Mạng thỏa mãn một trong các điều kiện sau:
+
+- Ở chunk điểm hồi sinh (spawn chunk)
+- Chunk nơi nó nằm đã được tải
+- Sử dụng bộ tải chunk (chunk loader) để giữ chunk được tải
+
+## Thông tin
+
+| Loại | Phạm vi | Mô tả |
+| --- | --- | ---- |
+| Thường | 150 khối | Chỉ trong cùng thế giới |
+| Đã sạc | 500 khối | Chỉ trong cùng thế giới |
+| Cổ đại | Vô hạn | Chỉ trong cùng thế giới |
+| Tối thượng | Vô hạn | Có thể xuyên thế giới |
+

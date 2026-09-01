@@ -1,0 +1,32 @@
+---
+sidebar_position: 1
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Bộ Điều khiển Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-controller.png', alt: 'Bộ Điều khiển Mạng lưới' }
+]} />
+
+Bộ Điều khiển Mạng lưới là bộ não của một mạng lưới.<br />
+Một mạng lưới khả dụng không thể thiếu Bộ Điều khiển Mạng lưới, và đương nhiên cũng không thể có nhiều Bộ Điều khiển Mạng lưới.
+
+Bất kỳ [Nút Mạng](../network-nodes/) nào khác, khi được kết nối với Bộ Điều khiển Mạng lưới thông qua một chuỗi các nút mạng, đều sẽ trở thành một phần của mạng lưới đó.
+
+Bạn có thể sử dụng [Đầu dò Mạng lưới](../tools/network-probe) lên Bộ Điều khiển Mạng lưới để xem số lượng khối đã kết nối trong mạng lưới.
+
+## Giới hạn số lượng nút
+
+Bạn có thể tìm vật phẩm Bộ điều khiển (ID: `NTW_CONTROLLER`) trong `Items.yml` của Slimefun để thiết lập số lượng nút trong mạng lưới.
+
+Tùy chọn này mặc định là 2000, bạn có thể đặt bất kỳ giá trị nào từ 10-5000.
+
+Nếu số lượng nút trong một mạng lưới vượt quá giá trị này, Bộ Điều khiển Mạng lưới sẽ hiển thị hiệu ứng hạt để cảnh báo người chơi. Các nút trong mạng lưới sẽ ngẫu nhiên không khả dụng.
+
+:::danger Lưu ý
+
+Không khuyến khích sửa đổi cài đặt này, vì ngay cả khi hiệu suất của mạng lưới tốt hơn so với hệ thống vận chuyển (Cargo), số lượng quá lớn vẫn sẽ ảnh hưởng nghiêm trọng đến hiệu suất máy chủ.
+
+:::

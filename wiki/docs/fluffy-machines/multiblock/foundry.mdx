@@ -1,0 +1,85 @@
+---
+sidebar_position: 2
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Xưởng đúc
+
+Xưởng đúc là một cấu trúc đa khối có thể lưu trữ một loại bột khoáng và lấy ra bột khoáng hoặc thỏi bất cứ lúc nào khi cần.
+
+## Xây dựng
+
+:::danger Chú ý
+
+Quá trình xây dựng xưởng đúc phải được thực hiện theo đúng thứ tự, nếu không sẽ khiến xưởng đúc không thể sử dụng (hiện thông báo không có quyền).
+
+:::
+
+1. Đặt máy móc trong thế giới như hướng dẫn (khuyến nghị đặt **lò siêu nhiệt** **cuối cùng**).
+
+:::warning
+
+Đừng đổ bất kỳ chất lỏng nào vào vạc.
+
+:::
+
+<ImageGallery images={[
+  { src: '/images/fluffy-machines/foundry-setup-1.png', alt: 'Xây dựng xưởng đúc 1', sizePercent: 50 }
+]} />
+
+2. Nhấp chuột phải vào lò siêu nhiệt, sẽ hiện ra thông báo sau.<br />
+Điều này cho biết xưởng đúc đã được xây dựng chính xác, nếu không hiện thông báo đăng ký thành công, hãy tháo ra và đặt lại.
+
+<ImageGallery images={[
+  { src: '/images/fluffy-machines/foundry-setup-2.png', alt: 'Xây dựng xưởng đúc 2' }
+]} />
+
+3. Dùng xô dung nham để đổ đầy **lò siêu nhiệt**.
+
+:::warning
+
+**Không phải đổ vào vạc**, mà là lò siêu nhiệt.
+
+:::
+
+Sau khi đổ đầy, lò siêu nhiệt sẽ sáng lên và "dung nham" xuất hiện trong vạc bên dưới.
+
+<ImageGallery images={[
+  { src: '/images/fluffy-machines/foundry-setup-3.png', alt: 'Xây dựng xưởng đúc 3', sizePercent: 50 }
+]} />
+
+4. Hoàn thành, bây giờ bạn có thể *nhấp chuột phải* vào lò siêu nhiệt để sử dụng xưởng đúc.
+
+:::warning
+
+Bất cứ lúc nào cũng đừng đổ chất lỏng vào vạc bên dưới, điều này sẽ khiến xưởng đúc không thể sử dụng.
+
+:::
+
+## Sử dụng
+
+*Nhấp chuột phải* vào lò siêu nhiệt để mở xưởng đúc.
+
+Bạn có thể đặt bột khoáng hoặc thỏi vào bên trái. Một xưởng đúc chỉ có thể lưu trữ một loại bột khoáng, tối đa có thể lưu trữ 138,240 bột khoáng.
+
+Ở giữa có thể lấy ra bột khoáng, bên phải có thể lấy trực tiếp thỏi.
+
+<ImageGallery images={[
+  { src: '/images/fluffy-machines/foundry-gui.png', alt: 'Giao diện xưởng đúc' }
+]} />
+
+### Kết nối với hệ thống vận chuyển
+
+Bạn có thể kết nối xưởng đúc với hệ thống vận chuyển, nhưng tôi không khuyến khích làm vậy.
+
+Để kết nối xưởng đúc với hệ thống vận chuyển, bạn cần:
+
+1. Khi xây dựng xưởng đúc, trước tiên đặt một chiếc rương tại vị trí của lò siêu nhiệt;
+2. Đặt nút xuất của hệ thống vận chuyển hướng vào rương;
+3. Tháo rương ra, thay bằng lò siêu nhiệt.
+
+Như vậy, bạn có thể đưa bột khoáng hoặc thỏi vào xưởng đúc thông qua hệ thống vận chuyển.
+
+Tại sao không khuyến khích làm vậy?
+Vì xưởng đúc chỉ xuất vật phẩm khi bạn nhấp thủ công để lấy bột khoáng/thỏi, điều này khiến xưởng đúc không thể hoạt động như một phần của dây chuyền tự động hoàn toàn.

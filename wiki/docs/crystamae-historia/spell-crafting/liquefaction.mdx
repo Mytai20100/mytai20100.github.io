@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Hóa Lỏng
+
+Bể hóa lỏng dùng để hóa lỏng [pha lê ma thuật](./realisation) và chuyển thành dạng lỏng.
+
+Để hóa lỏng pha lê ma thuật, chỉ cần ném pha lê ma thuật vào bể hóa lỏng. Bạn có thể thêm bất kỳ pha lê ma thuật nào vào bể, miễn là bể vẫn còn chỗ trống.
+
+Màu sắc chất lỏng trong bể sẽ thay đổi theo tỷ lệ các loại pha lê ma thuật khác nhau. Chiều cao chất lỏng đại diện cho số lượng pha lê ma thuật. Tại sao lại đề cập điều này? Vì tôi thấy nó rất ngầu.
+
+Bạn có thể dùng [Lăng Kính Khúc Xạ](../tools/refraction-lens) để xem số lượng chính xác của mọi pha lê ma thuật bên trong.
+
+<ImageGallery images={[
+  { src: '/images/crystamae-historia/liquefaction.png', alt: 'Bể Hóa Lỏng' }
+]} />
+
+## Công thức
+
+Khi bạn ném bất kỳ vật phẩm không phải pha lê ma thuật nào vào bể hóa lỏng, nó sẽ khiến sức mạnh pha lê ma thuật trong bể chảy về vật phẩm đó để tạo thành vật phẩm hoàn toàn mới.
+
+Nếu công thức sai, sức mạnh pha lê ma thuật này sẽ trở về với tự nhiên, không thể tiếp tục điều khiển.<br />
+Bất kỳ pha lê ma thuật còn sót lại sau khi chế tạo thành công vật phẩm sẽ cố gắng chảy về vật phẩm, nếu không thể thực hiện thì cũng sẽ trở về với tự nhiên, không thể tiếp tục điều khiển.
+
+Bất kỳ công thức bể hóa lỏng nào cũng gồm ba phần sau:
+
+- **Thành phần chất lỏng**: Ba loại pha lê ma thuật hóa lỏng có số lượng nhiều nhất trong bể sẽ được dùng để tổng hợp. Bạn có thể cho bất kỳ loại pha lê ma thuật nào vào bể, nhưng chỉ tối đa 3 loại có số lượng nhiều nhất mới được dùng để tổng hợp.
+- **Chất xúc tác**: Đây là vật phẩm không phải pha lê ma thuật được ném vào bể hóa lỏng.
+- **Số lượng pha lê ma thuật hóa lỏng**: Khi thành phần chất lỏng và chất xúc tác khớp nhau, và số lượng pha lê ma thuật hóa lỏng thỏa mãn điều kiện, vật phẩm mới sẽ được tổng hợp. Một số công thức sẽ sử dụng toàn bộ chất lỏng (bao gồm cả các pha lê ma thuật khác ngoài 3 loại có số lượng nhiều nhất).
+
+:::tip
+
+Bể hóa lỏng không chỉ dùng để chế tạo phép thuật, nó còn có thể tổng hợp nhiều vật phẩm khác trong Biên Niên Sử Pha Lê Ma Thuật.
+
+:::

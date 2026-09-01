@@ -1,0 +1,29 @@
+---
+sidebar_position: 28
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Máy Tự động Chế tạo Mạng lưới
+
+<ImageGallery images={[
+  { src: '/images/networks/network-autocrafter.png', alt: 'Máy Tự động Chế tạo Mạng lưới' },
+  { src: '/images/networks/network-autocrafter-withholding.png', alt: 'Máy Tự động Chế tạo Mạng lưới (Bản Dự trữ)' }
+]} />
+
+Máy Tự động Chế tạo Mạng lưới có thể tự động chế tạo vật phẩm thông qua [Bản thiết kế Mạng lưới](../tools/crafting-blueprint) đã được [mã hóa](./network-encoder) được cung cấp.
+
+Mỗi tick Slimefun, máy sẽ cố gắng sử dụng công thức trên bản thiết kế và lấy vật liệu phù hợp từ mạng lưới để chế tạo.
+
+Máy cần tiêu thụ [điện năng Mạng lưới](./network-capacitor) để hoạt động.
+
+## Khác biệt
+
+Phiên bản thường sẽ liên tục chế tạo vật phẩm cho đến khi bản thiết kế bị gỡ bỏ hoặc nguyên liệu không đủ.
+
+Trong khi phiên bản dự trữ sẽ dừng chế tạo sau khi ô đầu ra đầy 1 nhóm vật phẩm. Do đặc tính này, mức tiêu thụ điện năng của phiên bản dự trữ cao hơn phiên bản thường.
+
+| Cấp độ | Tiêu thụ điện mỗi lần chế tạo |
+| --- | ------- |
+| Bản thường | 64 |
+| Bản dự trữ | 128 |

@@ -1,0 +1,43 @@
+---
+sidebar_position: 16
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Lưới Mạng
+
+<ImageGallery images={[
+  { src: '/images/networks/network-grid.png', alt: 'Lưới Mạng' },
+  { src: '/images/networks/network-crafting-grid.png', alt: 'Lưới Mạng (có chế tạo)' }
+]} />
+
+Lưới Mạng cho phép người chơi xem tình trạng tất cả vật phẩm trong mạng lưới hiện tại.
+
+Bao gồm vật phẩm trong Ô Mạng, vật phẩm trong ô lưu trữ được kết nối với Màn hình Mạng, vật phẩm được giữ lại trong Máy Tự động Chế tạo.<br />
+Các vật phẩm này được hiển thị trong một giao diện có thể lật trang.
+
+Nhấp chuột trái vào bất kỳ vật phẩm nào để lấy ra 1 cái, nhấp nhiều lần để tăng số lượng lấy ra.
+
+Bạn cũng có thể nhấp chuột phải trực tiếp vào vật phẩm để lấy ra một nhóm.
+
+## Giao diện
+
+<ImageGallery images={[
+  { src: '/images/networks/network-grid-gui.png', alt: 'Giao diện Lưới Mạng' },
+  { src: '/images/networks/network-crafting-grid-gui.png', alt: 'Giao diện Lưới Mạng (có chế tạo)' }
+]} />
+
+Cả hai loại Lưới Mạng đều có nút lật trang trong giao diện (kính đỏ).
+
+Nhấp vào kính xanh để thay đổi cách sắp xếp.<br />
+Mặc định, vật phẩm được sắp xếp theo thứ tự tên. Bạn có thể đổi thành sắp xếp theo số lượng.<br />
+Cài đặt sắp xếp sẽ không được lưu vĩnh viễn và sẽ **mất hiệu lực** sau khi khởi động lại.
+
+Nhấp chuột trái vào nút tìm kiếm (thẻ tên) để tìm vật phẩm được chỉ định trong mạng lưới.<br />
+Nhập tên hiển thị hoặc ID của vật phẩm để Lưới Mạng chỉ hiển thị các vật phẩm liên quan. (Hiện tại chưa hỗ trợ tìm kiếm vật phẩm nguyên bản bằng tiếng Việt)<br />
+Nhấp chuột phải vào nút tìm kiếm để xóa bộ lọc và khôi phục hiển thị tất cả vật phẩm.
+
+Góc trên bên phải của giao diện Lưới Mạng và phía trên bên trái của giao diện Lưới Mạng (có chế tạo) đều có thể đặt vật phẩm vào mạng lưới, sẽ lưu trữ vật phẩm theo [cơ chế Lưu trữ](../basics/mechanism).
+
+Lưới Mạng có chế tạo sẽ hiển thị ít vật phẩm hơn mỗi trang, nhưng phía bên phải cung cấp bàn chế tạo, có thể chế tạo nhanh vật phẩm (có thể sử dụng công thức bàn chế tạo nguyên bản và bàn chế tạo nâng cao).
+Khi thực hiện một lần chế tạo, vật phẩm trong bàn chế tạo bên phải sẽ tự động được bổ sung từ mạng lưới theo [cơ chế Lấy ra](../basics/mechanism).

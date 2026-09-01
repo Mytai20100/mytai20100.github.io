@@ -1,0 +1,32 @@
+---
+sidebar_position: 5
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Phiến Ma Thuật và Phiến Phép
+
+Một phép thuật được tạo ra bằng cách dung hợp 3 loại pha lê ma thuật khác nhau vào phiến ma thuật.
+
+<ImageGallery images={[
+  { src: '/images/crystamae-historia/basic-plate.png', alt: 'Phiến Phép' },
+  { src: '/images/crystamae-historia/basic-charged-plate.png', alt: 'Phiến Phép Đã Nạp' }
+]} />
+
+## Chế tạo Phiến Ma Thuật
+
+Trong [Bể Hóa Lỏng](./liquefaction), ném vào pha lê nguyên tố, nhân loại, triết học và ném vào [Tấm Thép Cốt](https://slimefun-wiki.guizhanss.cn/Miscellaneous-Items) để chế tạo phiến ma thuật.
+
+## Chế tạo Phiến Phép
+
+Để chế tạo phiến phép, trong [Bể Hóa Lỏng](./liquefaction) ném vào ba loại pha lê ma thuật bất kỳ và ném vào phiến ma thuật.<br />
+Nếu ba loại pha lê ma thuật có thể tạo thành phép thuật, bạn sẽ nhận được phiến phép. Không phải mọi tổ hợp đều có thể tạo ra phép thuật.<br />
+Phiến phép ghi rõ tên phép thuật và lượng nạp còn lại.
+
+Bạn không thể trực tiếp thi triển phép thuật qua phiến phép. Bạn cần dùng [Bộ Cấu Hình Gậy Phép](./stave-configurator) để gắn phiến phép lên gậy phép.
+
+## Nạp lại Phiến Phép
+
+Lượng nạp của phép thuật dựa trên số lượng pha lê ma thuật đã hóa lỏng. Khi lượng nạp của phép thuật không đủ để thi triển một lần, bạn cần dùng [Bộ Cấu Hình Gậy Phép](./stave-configurator) để lấy phiến phép ra.
+
+Trong [Bể Hóa Lỏng](./liquefaction), ném vào ba loại pha lê ma thuật đã dùng để chế tạo phép thuật, sau đó ném phiến phép vào là có thể nạp lại.

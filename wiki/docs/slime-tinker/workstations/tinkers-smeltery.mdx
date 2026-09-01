@@ -1,0 +1,81 @@
+---
+sidebar_position: 1
+---
+
+import ImageGallery from '@site/src/components/ImageGallery';
+
+# Lò Nung Tinker
+
+Lò Nung Tinker là **trạm làm việc** quan trọng nhất trong Slime Tinker, nó là một cấu trúc đa khối.
+
+## Xây dựng
+
+Một Lò Nung Tinker khả dụng như hình dưới đây:
+
+<ImageGallery images={[
+  { src: '/images/slime-tinker/tinkers-smeltery.png', alt: 'Lò Nung Tinker' }
+]} />
+
+Trong đó, 3 khối trên cùng và 3 khối dưới cùng là **Gạch Scorched**. Khối bên trái ở giữa là **Bể Chứa Dung Dịch Scorched**, khối bên phải ở giữa là **Vòi Rót Scorched**.
+Khối ở chính giữa là **Bộ Điều Khiển Lò Nung**. Khi tất cả các khối được đặt đúng vị trí, nhấp chuột phải vào Bộ Điều Khiển Lò Nung là có thể mở ra, nếu không sẽ hiện ra một thông báo.
+
+## Sử dụng
+
+Nhấp chuột phải để mở Bộ Điều Khiển Lò Nung, bạn có thể thấy giao diện sau:
+
+<ImageGallery images={[
+  { src: '/images/slime-tinker/tinkers-smeltery-controller.png', alt: 'Bộ Điều Khiển Lò Nung Tinker' }
+]} />
+
+### Ô nhập liệu
+
+Ô nhập liệu là khu vực được bao quanh bởi kính nhuộm màu xanh nhạt. Có thể đặt bất kỳ hạt/thỏi/khối kim loại có thể nung chảy nào và xô dung nham vào ô này.
+
+### Ô khuôn/khuôn mẫu
+
+Ô khuôn/khuôn mẫu là khu vực được bao quanh bởi kính nhuộm màu vàng xanh. Có thể đặt khuôn đúc, khuôn mẫu hoặc vật liệu chế tạo khuôn vào ô này. Nội dung chi tiết vui lòng xem danh mục **Vật đúc**.
+
+### Ô xuất liệu
+
+Ô xuất liệu là khu vực được bao quanh bởi kính nhuộm màu cam. Khuôn đúc và bộ phận đã đúc sẽ xuất hiện tại đây.
+
+### Kho chứa dung nham
+
+Kho chứa dung nham là nơi lưu trữ dung nham, có thể lưu trữ tối đa 1000 đơn vị dung nham. Đặt xô dung nham vào ô nhập liệu có thể nạp thêm 250 đơn vị dung nham.
+Dung nham được dùng để nung chảy hạt/thỏi/khối kim loại đã nhập vào.
+
+Dưới đây là lượng dung nham cần thiết để nung chảy kim loại:
+
+| Kim loại | Tiêu hao dung nham (đơn vị) |
+| --- | ------- |
+| Hạt | 1 |
+| Thỏi | 9 |
+| Khối | 81 |
+
+### Kho chứa kim loại
+
+Kim loại sau khi nung chảy sẽ trở thành kim loại nóng chảy, được lưu trữ tại đây. Có thể nhấp vào nút **Kho chứa kim loại** để thay đổi thứ tự kim loại.
+
+Dưới đây là lượng kim loại nóng chảy thu được sau khi nung chảy kim loại:
+
+| Kim loại | Kim loại nóng chảy (đơn vị) |
+| --- | ------- |
+| Hạt | 1 |
+| Thỏi | 9 |
+| Khối | 81 |
+
+### Xóa kim loại
+
+Có thể thông qua nút này để xóa kim loại ở lớp trên cùng, hoặc tất cả kim loại.
+
+### Luyện hợp kim
+
+Trộn tất cả kim loại nóng chảy lại, thử luyện hợp kim.
+
+### Đúc
+
+Đặt vật phẩm chính xác vào ô khuôn/khuôn mẫu là có thể tiến hành đúc. Quá trình đúc sẽ sử dụng kim loại nóng chảy ở lớp trên cùng của kho chứa kim loại.
+
+### Khu vực lưu trữ
+
+18 ô ở dưới cùng là khu vực lưu trữ, có thể lưu trữ vật phẩm tại đây. Vật phẩm sẽ rơi ra khi bộ điều khiển bị phá hủy.
