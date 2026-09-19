@@ -33,8 +33,9 @@ Chả có :D
 ## Lưu ý quan trọng
 
 - Server **vẫn có thể sập** nếu cúp điện, hoặc máy nổ / cháy main gì đó từng bị hồi 2025 và 2021.Hồi 2021 chả có chạy server đâu :V máy đời khủng long.
-- Tiền duy trì server hiện tại tới từ túi admin — thu nhập từ đào coin(xmr) hiện chỉ khoảng **10,43$/tháng**, trong khi tiền điện chạy máy ngốn khoảng **21$/tháng** riêng mỗi 1 node.
+- Tiền duy trì server hiện tại tới từ túi admin — thu nhập từ đào coin(xmr) hiện chỉ khoảng **10,43$/tháng**, trong khi tiền điện chạy máy ngốn khoảng **21$/tháng** riêng mỗi 1 node. Nghe lỗ thế thôi chứ tiền điện free mà hẹ hẹ.
 - Không có sử dụng tcp shield ăn ddos thì cút :D .Sử dụng Haproxy bên 1 con máy i3-4170 ram 6 gb để cân bằng tải 1 phần nào đó.(chả biết có sống nổi khi ăn ddos ko nữa).Cập nhật lại hiện tại 11/9/2026 không xài stack haproxy nữa vì nó quá phiền phức + ping rất cao :V bản thân haproxy cũng cổ đại rồi nên bỏ chuyển sang velocity :D cho mượt cũng đã khắc phục tình trạng ping cao.
+- Dừng Hỗ trợ người chơi bedrock vì đã suốt 2 tháng không có nổi 1 người chơi bedrock nên thôi tạm dừng hỗ trợ m vừa tiết kiệm ram lẫn cpu.
 - Vì bản chất folia khác vanilla nên datapack xài mcfunction không thể chạy được trên server nên tui phải patch xoá những tính năng liên quan để vẫn load đc datapack và không gây lag server.
 - Người đứng ra bảo trì server chỉ có một người , với trình độ videcoding(videcode) gà hơn trình độ code ;D(Nói nôm na teo vẫn xài AI code thôi , ko xài thì cút moẹ mày đi ngồi tự viết lại gãy tay + gãy lưng).
 
@@ -47,9 +48,9 @@ AuthMeBia, Mememoon, SlimeEasy , AdvancedTech, AuthMe, AxGraves, BackpackPlus, B
 [https://status.r34.cc.cd/](https://status.r34.cc.cd/)
 ## Giải thích plugin
 
-- **Mememoon là cái éo gì** Nó là 1 plugin custom do khứa rảnh như tui làm , chủ yếu nó vẫn thêm event bloodmoon vô thôi :P nhưng súc vật hơn nhiều lần ở chỗ nó buff sức mạnh nổ của creeper , buff mọi quái đều có giáp cả , cho phép spawn ở cả những nên éo thể spawn đc , mọi buff khác giống với bloodmoon thông thường . CÒn vài cơ chế ẩn như thỉnh thoảng nếu chunk hoặc vùng đó không có ánh sáng thì 1-10% sẽ có tỉ lệ dân làng thành zombie . Còn có 2 secret moon là 1# serene moon(trăng thanh bình) không spawn quái , buff tỉ lệ spawn cừu hồng lên tận 2.3 lần ; spawn động vật nhiều hơn , buff 3.2 lần xp nhận được 2# Super gravity moon(Éo bt dịch sao) Kiểu buff toàn sv kiểu trọng lực mặt trăng thôi loại này hiếm vaiz ra 
+- **Mememoon là cái éo gì** Nó là 1 plugin custom do khứa rảnh như tui làm , chủ yếu nó vẫn thêm event bloodmoon vô thôi :P nhưng súc vật hơn nhiều lần ở chỗ nó buff sức mạnh nổ của creeper , buff mọi quái đều có giáp cả , cho phép spawn ở cả những nên éo thể spawn đc , mọi buff khác giống với bloodmoon thông thường . CÒn vài cơ chế ẩn như thỉnh thoảng nếu chunk hoặc vùng đó không có ánh sáng thì 1-10% sẽ có tỉ lệ dân làng thành zombie . Còn có 2 secret moon là 1# serene moon(trăng thanh bình) không spawn quái , buff tỉ lệ spawn cừu hồng lên tận 2.3 lần ; spawn động vật nhiều hơn , buff 3.2 lần xp nhận được 2# Super gravity moon(Éo bt dịch sao) Kiểu buff toàn sv kiểu trọng lực mặt trăng thôi loại này hiếm vaiz ra. Settings hiện tại của server là 10-20 ngày trong game mới có 1 bloodmoon với tắt vài cơ chế để đỡ lag .
 - **Slimefun là gì ?** Chả bt nữa mới chơi lần đầu đc khứa datpjk giới thiệu lấy ý tưởng từ bên meowsmp.net .Ờ tui ko rõ về sv này lắm :D thấy nó cũng được 5 năm tuổi rồi ad sv đó xịn hơn tui bruhh . Nếu muốn qua chs smp thì cứ qua meowsmp.net thoải mái tui chả quan tâm >;V 
-- **Vanilla Refrest ?** Nó là 1 plugin được port từ một datapack cùng tên bổ xung thêm 39 QOL.Dễ thấy nhất khi nhảy xuống nước nó có hiệu ứng + âm thanh , nói chung còn nhiều mà lười kể.
+- **Vanilla Refrest ?** Nó là 1 plugin được port từ một datapack cùng tên bổ xung thêm 39 QOL.Dễ thấy nhất khi nhảy xuống nước nó có hiệu ứng + âm thanh , nói chung còn nhiều mà lười kể. Cái này được tui patch viết lại hoàn toàn từ mcfuntion thành base bukkit + tối ưu nó luôn . Datapack này vốn rất kém người xài cho sv lớn vì nó được kì nặng :V. 
 - **Authmebia :V** Là một addons bé nhỏ hỗ trợ nhiều tính năng dialog cho server vậy thôi :P như login | register và mấy câu tục để khịa mấy bé khi chs sv thôi ấy mà.
 - **GrimAc** Chủ yếu xài mỗi modun giả lập vật lý để chặn anti hungy/ nofall / fly(hack). Mấy cái hack còn lại vẫn sử dụng bth không bị giới hạn. 
 ## Lịch sử ?
@@ -79,9 +80,9 @@ Tạm thời chưa có gì nổi bật vì server nhỏ vãi
 - Slimefun(addons): [Servernotdie](https://github.com/orgs/servernotdie/repositories)
 - Vanilla Refrest(Bản port từ datapack cùng tên): [Vanilla-Refresh](https://github.com/Mytai20100/Vanilla-Refresh)
 
-Bên phần addons slimefun có thể tui chưa hoàn toàn publics sạch vì khá nản cảnh public lên github thì github workflow build lại lỗi :P.
+Bên phần addons slimefun có thể tui chưa hoàn toàn publics sạch vì khá nản cảnh public lên github thì github workflow build lại lỗi :P.Phần slimefun và addons được tui viết lại code để giúp cho nó chạy được hoàn toàn trên folia mà không nổ(crash) và tối ưu cách nó tính toán :D, có lẽ sẽ có 1 số chỗ tps thấp ;V ko phải do slimefun chỉ là do xmr nó bào  core ở region đó nên tps mới thấp vậy.
 ### Datapack 
-- Địa hình: [Terralith](https://github.com/servernotdie/Terralith)
-- Công trình #1 : [Incendium](https://github.com/servernotdie/Incendium)
-- Công trình #2 : [Dungeons_and_Taverns](https://github.com/servernotdie/Dungeons_and_Taverns)
-- Công trình #3 : [Yggdrasil](https://github.com/servernotdie/Yggdrasil)  
+- Địa hình #1: [Terralith](https://github.com/servernotdie/Terralith)
+- Địa hình #2: [Incendium](https://github.com/servernotdie/Incendium)
+- Công trình #1: [Dungeons_and_Taverns](https://github.com/servernotdie/Dungeons_and_Taverns)
+- Công trình #2: [Yggdrasil](https://github.com/servernotdie/Yggdrasil)  
